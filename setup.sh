@@ -1,10 +1,15 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 WORKDIR="$(realpath "$(dirname "$0")")"
 
 # bash
 rm $HOME/.bashrc
 ln -s $WORKDIR/.bashrc $HOME/.bashrc
+
+# secret
+if [ ! -f $HOME/.secret ]; then
+    ln -s $WORKDIR/.secret.env $HOME/.secret.env
+fi
 
 # vim
 rm $HOME/.vimrc
