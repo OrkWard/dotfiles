@@ -13,7 +13,7 @@ set encoding=utf-8
 set laststatus=2 " Always show  status line
 
 syntax on
-filetype indent plugin on
+filetype off
 
 " vim-plug
 call plug#begin()
@@ -21,6 +21,7 @@ Plug 'tpope/vim-surround'         " Vim Surround
 Plug 'preservim/nerdtree'         " File Explorer
 Plug 'tomasiser/vim-code-dark'    " VS Code Dark Theme
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'vim-airline/vim-airline'    " airline
 Plug 'easymotion/vim-easymotion'  " EasyMotion
 Plug 'NLKNguyen/papercolor-theme' " White Theme
 Plug 'terryma/vim-smooth-scroll'  " Smooth scroll
@@ -29,6 +30,7 @@ Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plug 'jparise/vim-graphql'        " GraphQL syntax
 call plug#end()
+filetype indent plugin on
 
 " Plug: coc.nvim
 let g:coc_global_extensions = ['coc-tsserver']
