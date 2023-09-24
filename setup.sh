@@ -7,8 +7,8 @@ rm $HOME/.bashrc
 ln -s $WORKDIR/.bashrc $HOME/.bashrc
 
 # secret
-if [ ! -f $HOME/.secret ]; then
-    ln -s $WORKDIR/.secret.env $HOME/.secret.env
+if [ ! -f $HOME/.secrets.env ]; then
+    ln -s $WORKDIR/.secrets.env $HOME/.secrets.env
 fi
 
 # vim

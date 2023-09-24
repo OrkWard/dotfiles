@@ -64,5 +64,7 @@ set background=light
 colorscheme PaperColor
 
 " gvim
-set lines=40 columns=150
-set guifont=iAWriterMonoS-Regular:h14
+if has('gui_running')
+  set lines=40 columns=150
+  set guifont=iAWriterMonoS-Regular:h14
+endif

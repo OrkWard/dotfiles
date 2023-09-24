@@ -114,8 +114,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # secrets
-if [ -f ./secrets.env ]; then
-    . ./secrets.env
+if [ -f ~/.secrets.env ]; then
+    . ~/.secrets.env
 fi
 
 # ---------------------MacOS-------------------------
