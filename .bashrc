@@ -28,14 +28,13 @@ shopt -s checkwinsize
 #shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
-#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# ---------------------color & prompt---------------------
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
@@ -48,12 +47,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-        # We have color support; assume it's compliant with Ecma-48
-        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-        # a case would tend to support setf rather than setaf.)
-        color_prompt=yes
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
     else
-        color_prompt=
+	color_prompt=
     fi
 fi
 
@@ -64,7 +63,6 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# ---------------------xterm----------------------
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
@@ -74,28 +72,38 @@ xterm*|rxvt*)
     ;;
 esac
 
-# ---------------------alias---------------------
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
 
+# colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
 # some more ls aliases
-alias ll='ls -al'
+alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# kardolus/chatgpt-cli
-alias ??="chatgpt"
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# colored GCC warnings and errors
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -108,16 +116,46 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Customize alias
+alias update='sudo gg apt update && sudo gg apt upgrade --autoremove -y'
+alias setproxy='export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890'
+alias unproxy='unset HTTP_PROXY HTTPS_PROXY SOCKS_PROXY'
+alias clash-edit='sudo vim /etc/clash/config.yaml && sudo systemctl restart clash'
+setproxy
+
+# go
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=~/gopath
+
+# mzz2017/gg complete
+complete -F _command gg
+
+# java
+export JAVA_HOME='/home/orkward/.jdks/corretto-18.0.2/'
+
+export EDITOR=vim
+export SYSTEMD_EDITOR=vim
+
+# jetbrains
+___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# secrets
-if [ -f ~/.secrets.env ]; then
-    . ~/.secrets.env
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/orkward/Toolchains/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/orkward/Toolchains/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/orkward/Toolchains/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/orkward/Toolchains/miniconda3/bin:$PATH"
+    fi
 fi
+unset __conda_setup
+# <<< conda initialize <<<
 
-# ---------------------MacOS-------------------------
-[ -f /use/local/bin/brew ] && eval "$(/usr/local/bin/brew shellenv)"
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
