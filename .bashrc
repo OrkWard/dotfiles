@@ -35,7 +35,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# ---------------------color & prompt---------------------
+# --------------------- color & prompt ---------------------
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
@@ -64,7 +64,7 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# ---------------------xterm----------------------
+# --------------------- xterm ----------------------
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
@@ -74,7 +74,7 @@ xterm*|rxvt*)
     ;;
 esac
 
-# ---------------------alias---------------------
+# --------------------- alias & applications ---------------------
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -86,13 +86,21 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
+# ls aliases
 alias ll='ls -al'
 alias la='ls -A'
 alias l='ls -CF'
 
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
 # kardolus/chatgpt-cli
 alias ??="chatgpt"
+
+# go
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=~/gopath
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -118,6 +126,35 @@ if [ -f ~/.secrets.env ]; then
     . ~/.secrets.env
 fi
 
-# ---------------------MacOS-------------------------
-[ -f /use/local/bin/brew ] && eval "$(/usr/local/bin/brew shellenv)"
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+# --------------------- Machine-Specific -------------------------
+# detect machine type
+case "$(uname -s)" in
+    Linux*)     machine=Linux;;
+    Darwin*)    machine=Mac;;
+    CYGWIN*)    machine=Cygwin;;
+    MINGW*)     machine=MinGw;;
+    MSYS_NT*)   machine=Git;;
+    *)          machine="UNKNOWN:${unameOut}"
+esac
+
+# Linux
+if [ machine = "Linux" ]; then
+  alias update='sudo gg apt update && sudo gg apt upgrade --autoremove -y'
+  alias setproxy='export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890'
+  alias unproxy='unset HTTP_PROXY HTTPS_PROXY SOCKS_PROXY'
+  alias clash-edit='sudo vim /etc/clash/config.yaml && sudo systemctl restart clash'
+  setproxy
+fi
+
+# mzz2017/gg complete
+complete -F _command gg
+
+
+
+# MaxOS
+if [ machine = "Mac" ]; then
+  [ -f /use/local/bin/brew ] && eval "$(/usr/local/bin/brew shellenv)"
+  [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+fi
+
+unset machine
