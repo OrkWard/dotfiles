@@ -1,0 +1,15 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = caizelun
+	email = caizelun@bytedance.com
+[core]
+	ignorecase = false
+[pull]
+	rebase = false
+[commit]
+	gpgsign = true
+[gpg]
+	program = /usr/local/bin/gpg
+[merge]
+	conflictstyle = diff3
