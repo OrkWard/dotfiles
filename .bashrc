@@ -37,6 +37,7 @@ fi
 
 # --------------------- system ---------------------
 export EDITOR=vim
+export PATH=~/.local/bin:$PATH
 
 # --------------------- color & prompt ---------------------
 # set a fancy prompt (non-color, unless we know we "want" color)
@@ -78,6 +79,11 @@ xterm*|rxvt*)
 esac
 
 # --------------------- alias & applications ---------------------
+# git alias
+alias ga='git add .'
+alias gc='git commit -m'
+alias gp='git push'
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
