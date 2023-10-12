@@ -12,6 +12,8 @@ set encoding=utf-8
 
 set laststatus=2 " Always show  status line
 
+nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
+
 syntax on
 filetype off
 
@@ -49,8 +51,8 @@ inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm()
 inoremap <silent><expr> <c-@> coc#refresh()
 
 " Plug: nerdtree
-inoremap <c-b> <Esc>:NERDTreeToggle<cr>
-nnoremap <c-b> <Esc>:NERDTreeToggle<cr>
+inoremap <c-b> <Esc>:NERDTreeFocus<cr>
+nnoremap <c-b> <Esc>:NERDTreeFocus<cr>
 
 " Plug: easymotion
 map <Leader> <Plug>(easymotion-prefix)
