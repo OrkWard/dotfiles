@@ -17,7 +17,8 @@ nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
 syntax on
 filetype off
 
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=eol:$,tab:>-,space:·,extends:>,precedes:<
+set list
 
 " vim-plug
 call plug#begin()
@@ -38,6 +39,7 @@ filetype indent plugin on
 
 " Plug: coc.nvim
 let g:coc_global_extensions = ['coc-tsserver']
+let g:coc_disable_startup_warning = 1
 
 "inoremap <silent><expr> <TAB>
       "\ coc#pum#visible() ? "\<C-n>" :
