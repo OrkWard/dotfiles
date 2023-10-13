@@ -84,6 +84,12 @@ alias ga='git add .'
 alias gc='git commit -m'
 alias gp='git push'
 
+# yadm alias
+alias ya='yadm add'
+alias ys='yadm status'
+alias yc='yadm commit -m'
+alias yp='yadm push'
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
