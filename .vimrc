@@ -17,6 +17,8 @@ nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
 syntax on
 filetype off
 
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
 " vim-plug
 call plug#begin()
 Plug 'tpope/vim-surround'         " Vim Surround
@@ -49,6 +51,28 @@ inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " Use <c-@> to trigger completion
 inoremap <silent><expr> <c-@> coc#refresh()
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
 
 " Plug: nerdtree
 inoremap <c-b> <Esc>:NERDTreeFocus<cr>
