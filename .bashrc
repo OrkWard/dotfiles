@@ -89,6 +89,7 @@ alias ya='yadm add'
 alias ys='yadm status'
 alias yc='yadm commit -m'
 alias yp='yadm push'
+alias yd='yadm diff'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
