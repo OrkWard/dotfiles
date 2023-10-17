@@ -17,7 +17,8 @@ nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
 syntax on
 filetype off
 
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=eol:$,tab:>-,space:·,extends:>,precedes:<
+set list
 
 " vim-plug
 call plug#begin()
