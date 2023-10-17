@@ -10,8 +10,5 @@ set visible-stats on
 "\e\e[C": forward-word   
 "\e\e[D": backward-word 
 
-# Shows all files instead of beep when tab-completing
-set show-all-if-ambiguous on
-
 # Ignore case when completing, very nice!
 set completion-ignore-case on

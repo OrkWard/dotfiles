@@ -1,3 +1,5 @@
 [user]
 	name = caizelun
 	email = caizelun@bytedance.com
+[gpg]
+	program = /usr/local/bin/gpg

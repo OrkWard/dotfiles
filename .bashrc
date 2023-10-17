@@ -79,6 +79,9 @@ xterm*|rxvt*)
 esac
 
 # --------------------- alias & applications ---------------------
+# bash alias
+alias setc='export TERM=xterm-256color && exec bash'
+
 # git alias
 alias ga='git add .'
 alias gc='git commit -m'
@@ -88,7 +91,8 @@ alias gp='git push'
 alias ya='yadm add'
 alias ys='yadm status'
 alias yc='yadm commit -m'
-alias yp='yadm push'
+alias yps='yadm push'
+alias ypl='yadm pull'
 alias yd='yadm diff'
 
 # enable color support of ls and also add handy aliases
