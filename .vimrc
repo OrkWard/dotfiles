@@ -2,20 +2,15 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
-set nu
-set ai
-set si
-set cindent
-set number
+set number " line number
 set hidden " Allow buffer to be hidden without save change
 set encoding=utf-8
 
-set laststatus=2 " Always show  status line
+set laststatus=2 " Always show status line
 
 nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
 
 syntax on
-filetype off
 
 set listchars=eol:$,tab:>-,space:·,extends:>,precedes:<
 set list
@@ -33,7 +28,7 @@ Plug 'terryma/vim-smooth-scroll'  " Smooth scroll
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
-Plug 'jparise/vim-graphql'        " GraphQL syntax
+Plug 'tmsvg/pear-tree'            " auto-pair
 call plug#end()
 filetype indent plugin on
 
@@ -48,8 +43,7 @@ let g:coc_global_extensions = ['coc-tsserver']
 
 " Make <TAB> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "<TAB>"
 " Use <c-@> to trigger completion
 inoremap <silent><expr> <c-@> coc#refresh()
 
@@ -83,8 +77,13 @@ nnoremap <c-b> <Esc>:NERDTreeFocus<cr>
 map <Leader> <Plug>(easymotion-prefix)
 
 " Plug: smooth scroll
-nnoremap <silent> <c-u> :call smooth_scroll#up(&scroll, 30, 1)<CR>
-nnoremap <silent> <c-d> :call smooth_scroll#down(&scroll, 30, 1)<CR>
+nnoremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 1)<CR>
+nnoremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 1)<CR>
+
+" Plug: pear-tree
+let g:pear_tree_smart_openers = 1
+let g:pear_tree_smart_closers = 1
+let g:pear_tree_smart_backspace = 1
 
 " set code scheme
 set background=light
