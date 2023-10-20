@@ -12,7 +12,7 @@ nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
 
 syntax on
 
-set listchars=eol:$,tab:>-,space:·,extends:>,precedes:<
+set listchars=tab:>-,space:·,extends:>,precedes:<
 set list
 
 " vim-plug
