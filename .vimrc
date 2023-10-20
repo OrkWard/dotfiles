@@ -87,7 +87,9 @@ let g:pear_tree_smart_backspace = 1
 
 " set code scheme
 set background=light
-colorscheme PaperColor
+if $TERM =~# 'xterm-color\|.*-256color'
+  colorscheme PaperColor
+endif
 
 " gvim
 if has('gui_running')
