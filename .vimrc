@@ -2,6 +2,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+set autoindent
 set number " line number
 set hidden " Allow buffer to be hidden without save change
 set encoding=utf-8
@@ -10,7 +11,13 @@ set laststatus=2 " Always show status line
 
 nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
 
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
 syntax on
+set nocompatible
+filetype indent plugin on
 
 set listchars=tab:>-,space:·,extends:>,precedes:<
 set list
@@ -29,8 +36,8 @@ Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plug 'tmsvg/pear-tree'            " auto-pair
+Plug 'kylelaker/riscv.vim'        " RISC-V highlight
 call plug#end()
-filetype indent plugin on
 
 " Plug: coc.nvim
 let g:coc_global_extensions = ['coc-tsserver']
