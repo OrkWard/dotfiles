@@ -85,7 +85,10 @@ alias setc='export TERM=xterm-256color && exec bash'
 # git alias
 alias ga='git add .'
 alias gc='git commit -m'
-alias gp='git push'
+alias gps='git push'
+alias gs='git status'
+alias gpl='git pull'
+alias gd='git diff'
 
 # yadm alias
 alias ya='yadm add'
