@@ -115,7 +115,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # other alias
-alias du='du -ahd1'
+alias du='du -hd1'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
