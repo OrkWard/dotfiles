@@ -40,7 +40,7 @@ Plug 'kylelaker/riscv.vim'        " RISC-V highlight
 call plug#end()
 
 " Plug: coc.nvim
-let g:coc_global_extensions = ['coc-tsserver']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd']
 
 "inoremap <silent><expr> <TAB>
       "\ coc#pum#visible() ? "\<C-n>" :
