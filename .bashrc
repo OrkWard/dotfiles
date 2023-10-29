@@ -155,6 +155,9 @@ if [ -f ~/.secrets.env ]; then
     . ~/.secrets.env
 fi
 
+# mzz2017/gg complete
+complete -F _command gg
+
 # --------------------- Machine-Specific -------------------------
 # detect machine type
 case "$(uname -s)" in
@@ -167,7 +170,7 @@ case "$(uname -s)" in
 esac
 
 # Linux
-if [ machine = "Linux" ]; then
+if [ $machine = "Linux" ]; then
   alias update='sudo gg apt update && sudo gg apt upgrade --autoremove -y'
   alias setproxy='export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890'
   alias unproxy='unset HTTP_PROXY HTTPS_PROXY SOCKS_PROXY'
@@ -175,15 +178,11 @@ if [ machine = "Linux" ]; then
   setproxy
 fi
 
-# mzz2017/gg complete
-complete -F _command gg
-
-
-
 # MaxOS
-if [ machine = "Mac" ]; then
-  [ -f /use/local/bin/brew ] && eval "$(/usr/local/bin/brew shellenv)"
-  [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+if [ $machine = "Mac" ]; then
+  export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+  [[ -f /use/local/bin/brew ]] && eval "$(/usr/local/bin/brew shellenv)"
+  [[ -r "/usr/local/share/bash-completion/bash_completion" ]] && . "/usr/local/share/bash-completion/bash_completion"
 fi
 
 unset machine
