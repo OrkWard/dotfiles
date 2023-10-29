@@ -180,8 +180,11 @@ fi
 
 # MaxOS
 if [ $machine = "Mac" ]; then
-  export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
   [[ -f /use/local/bin/brew ]] && eval "$(/usr/local/bin/brew shellenv)"
+
+  # completion
+  export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+  complete -cf sudo
   [[ -r "/usr/local/share/bash-completion/bash_completion" ]] && . "/usr/local/share/bash-completion/bash_completion"
 fi
 
