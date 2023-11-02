@@ -170,13 +170,12 @@ case "$(uname -s)" in
 esac
 
 # Linux
-if [ $machine = "Linux" ]; then
-  alias update='sudo gg apt update && sudo gg apt upgrade --autoremove -y'
-  alias setproxy='export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890'
-  alias unproxy='unset HTTP_PROXY HTTPS_PROXY SOCKS_PROXY'
-  alias clash-edit='sudo vim /etc/clash/config.yaml && sudo systemctl restart clash'
-  setproxy
-fi
+# if [ $machine = "Linux" ]; then
+#   alias update='sudo gg apt update && sudo gg apt upgrade --autoremove -y'
+#   alias setproxy='export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890'
+#   alias unproxy='unset HTTP_PROXY HTTPS_PROXY SOCKS_PROXY'
+#   setproxy
+# fi
 
 # MaxOS
 if [ $machine = "Mac" ]; then
