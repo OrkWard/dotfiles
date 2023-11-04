@@ -9,6 +9,8 @@ set encoding=utf-8
 
 set laststatus=2 " Always show status line
 
+autocmd BufNewFile,BufWinEnter * setlocal formatoptions=t " Don't auto insert comment leader on return/hitting 'o'
+
 nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
 
 if $TERM_PROGRAM ==# 'iTerm.app'
@@ -23,7 +25,6 @@ endif
 
 syntax on
 set nocompatible
-filetype indent plugin on
 
 set listchars=tab:>-,space:·,extends:>,precedes:<
 set list
@@ -44,6 +45,7 @@ Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plug 'tmsvg/pear-tree'            " auto-pair
 Plug 'kylelaker/riscv.vim'        " RISC-V highlight
 call plug#end()
+filetype indent plugin on
 
 " Plug: coc.nvim
 let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd']
