@@ -9,7 +9,7 @@ set encoding=utf-8
 
 set laststatus=2 " Always show status line
 
-autocmd BufNewFile,BufWinEnter * setlocal formatoptions=t " Don't auto insert comment leader on return/hitting 'o'
+autocmd BufNewFile,BufWinEnter * setlocal formatoptions=trc " Don't auto insert comment leader on return/hitting 'o'
 
 nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
 
