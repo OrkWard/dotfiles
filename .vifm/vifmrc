@@ -1,1 +1,7 @@
+nnoremap w :view<cr>
+nnoremap s :sync<cr>
+nnoremap K :!code %<cr>
+
+set relativenumber
+
 colorscheme Paper
