@@ -126,7 +126,7 @@ alias ??="chatgpt"
 
 # go
 export PATH=$PATH:/usr/local/go/bin
-export GOPATH=~/gopath
+export GOPATH=~/.gopath
 
 # rust
 . "$HOME/.cargo/env"

@@ -3,7 +3,7 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set autoindent
-set number " line number
+set relativenumber " relative line number
 set hidden " Allow buffer to be hidden without save change
 set encoding=utf-8
 
