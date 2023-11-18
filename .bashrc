@@ -148,6 +148,9 @@ fi
 # z.sh
 . ~/.local/source/z.sh
 
+# bat
+alias bat='bat --theme=OneHalfLight'
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -174,9 +177,6 @@ esac
 
 # Linux
 if [ $machine = "Linux" ]; then
-  # bat
-  alias bat='batcat --theme=OneHalfLight'
-
   alias update='sudo apt update && sudo apt upgrade --autoremove -y'
   alias setproxy='export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890'
   alias unproxy='unset HTTP_PROXY HTTPS_PROXY SOCKS_PROXY'
@@ -186,10 +186,6 @@ fi
 # MaxOS
 if [ $machine = "Mac" ]; then
   [[ -f /use/local/bin/brew ]] && eval "$(/usr/local/bin/brew shellenv)"
-
-  # bat
-  alias bat='bat --theme=OneHalfLight'
-
   # completion
   export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
   complete -cf sudo
