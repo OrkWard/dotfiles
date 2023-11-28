@@ -38,7 +38,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'vim-airline/vim-airline'    " airline
 Plug 'easymotion/vim-easymotion'  " EasyMotion
 Plug 'NLKNguyen/papercolor-theme' " White Theme
-Plug 'terryma/vim-smooth-scroll'  " Smooth scroll
+Plug 'psliwka/vim-smoothie'       " smooth scroll
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
@@ -90,10 +90,6 @@ nnoremap <c-b> <Esc>:NERDTreeFocus<cr>
 
 " Plug: easymotion
 map <Leader> <Plug>(easymotion-prefix)
-
-" Plug: smooth scroll
-nnoremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 1)<CR>
-nnoremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 1)<CR>
 
 " Plug: pear-tree
 let g:pear_tree_smart_openers = 1
