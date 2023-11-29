@@ -6,6 +6,8 @@ set autoindent
 set relativenumber " relative line number
 set hidden " Allow buffer to be hidden without save change
 set encoding=utf-8
+set cursorcolumn
+set cursorline
 
 set laststatus=2 " Always show status line
 
@@ -31,6 +33,7 @@ set list
 
 " vim-plug
 call plug#begin()
+Plug 'justinmk/vim-sneak'         " Sneak
 Plug 'tpope/vim-surround'         " Vim Surround
 Plug 'preservim/nerdtree'         " File Explorer
 Plug 'tomasiser/vim-code-dark'    " VS Code Dark Theme
@@ -95,6 +98,10 @@ map <Leader> <Plug>(easymotion-prefix)
 let g:pear_tree_smart_openers = 1
 let g:pear_tree_smart_closers = 1
 let g:pear_tree_smart_backspace = 1
+
+" Plug: vim-sneak
+nnoremap f <Plug>Sneak_s
+nnoremap F <Plug>Sneak_S
 
 " set code scheme
 set background=light
