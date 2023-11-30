@@ -129,7 +129,7 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=~/.gopath
 
 # rust
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ]. "$HOME/.cargo/env"
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -178,9 +178,6 @@ esac
 # Linux
 if [ $machine = "Linux" ]; then
   alias update='sudo apt update && sudo apt upgrade --autoremove -y'
-  alias setproxy='export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890'
-  alias unproxy='unset http_proxy https_proxy all_proxy'
-  export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890
 fi
 
 # MaxOS
@@ -194,6 +191,4 @@ fi
 
 unset machine
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+[ -f ~/.bashrc.local ] . ~/.bashrc.local
