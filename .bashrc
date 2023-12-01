@@ -129,7 +129,7 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=~/.gopath
 
 # rust
-[ -f "$HOME/.cargo/env" ]. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -191,6 +191,6 @@ fi
 
 unset machine
 
-if [ -f ~/.bashrc.local ]; then 
+if [ -f ~/.bashrc.local ]; then
   . ~/.bashrc.local
 fi
