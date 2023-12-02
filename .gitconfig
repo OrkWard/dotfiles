@@ -16,3 +16,4 @@
 	p = pull
 	ps = push
 	d = diff
+	sw = swtich

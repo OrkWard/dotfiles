@@ -88,8 +88,9 @@ function! ShowDocumentation()
 endfunction
 
 " Plug: nerdtree
-inoremap <c-b> <Esc>:NERDTreeFocus<cr>
-nnoremap <c-b> <Esc>:NERDTreeFocus<cr>
+set <A-b>=b
+inoremap <A-b> <Esc>:NERDTreeFocus<cr>
+nnoremap <A-b> <Esc>:NERDTreeFocus<cr>
 
 " Plug: easymotion
 map <Leader> <Plug>(easymotion-prefix)
