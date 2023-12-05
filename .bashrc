@@ -110,7 +110,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # ls aliases
-alias ls='ls -GF --color=auto'
+alias ls='ls -F --color=auto'
 alias ll='ls -al'
 alias la='ls -A'
 
