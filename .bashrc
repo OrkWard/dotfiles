@@ -149,7 +149,7 @@ fi
 . ~/.local/source/z.sh
 
 # bat
-alias bat='bat --theme=OneHalfLight'
+alias bat='bat --theme=GitHub'
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
