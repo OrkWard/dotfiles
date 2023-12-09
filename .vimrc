@@ -35,7 +35,7 @@ set list
 call plug#begin()
 Plug 'justinmk/vim-sneak'         " Sneak
 Plug 'tpope/vim-surround'         " Vim Surround
-Plug 'preservim/nerdtree'         " File Explorer
+Plug 'vifm/vifm.vim'              " Vifm
 Plug 'tomasiser/vim-code-dark'    " VS Code Dark Theme
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'vim-airline/vim-airline'    " airline
