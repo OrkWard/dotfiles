@@ -86,19 +86,17 @@ esac
 alias setc='export TERM=xterm-256color && exec bash'
 
 # git alias
+alias g='git'
 alias ga='git add .'
 alias gc='git commit -m'
-alias gps='git push'
 alias gs='git status'
-alias gpl='git pull'
 alias gd='git diff'
 
 # yadm alias
+alias y='yadm'
 alias ya='yadm add -u'
 alias ys='yadm status'
 alias yc='yadm commit -m'
-alias yps='yadm push'
-alias ypl='yadm pull'
 alias yd='yadm diff'
 
 # enable color support of ls and also add handy aliases
@@ -113,12 +111,12 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # ls aliases
-alias ls='ls -F --color=auto'
+alias l='ls -F --color=auto'
 alias ll='ls -al'
 alias la='ls -A'
 
 # other alias
-alias du='du -hd1'
+alias d='du -hd1'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
