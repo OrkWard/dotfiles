@@ -8,6 +8,7 @@ set hidden " Allow buffer to be hidden without save change
 set encoding=utf-8
 set cursorcolumn
 set cursorline
+set splitbelow " default split in below
 
 set laststatus=2 " Always show status line
 
@@ -47,6 +48,7 @@ Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plug 'tmsvg/pear-tree'            " auto-pair
 Plug 'kylelaker/riscv.vim'        " RISC-V highlight
+Plug 'tpope/vim-commentary'       " comment
 call plug#end()
 filetype indent plugin on
 
