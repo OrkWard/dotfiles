@@ -34,11 +34,11 @@ set list
 call plug#begin()
 Plug 'justinmk/vim-sneak'         " Sneak
 Plug 'tpope/vim-surround'         " Vim Surround
+Plug 'vifm/vifm.vim'              " Vifm
 Plug 'tomasiser/vim-code-dark'    " VS Code Dark Theme
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'vim-airline/vim-airline'    " airline
 Plug 'vim-airline/vim-airline-themes' " airline theme
-Plug 'vifm/vifm.vim'            " explorer
 Plug 'easymotion/vim-easymotion'  " EasyMotion
 Plug 'NLKNguyen/papercolor-theme' " White Theme
 Plug 'psliwka/vim-smoothie'       " smooth scroll
