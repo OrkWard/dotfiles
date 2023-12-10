@@ -3,14 +3,23 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set autoindent
+
 set relativenumber " relative line number
+
 set hidden " Allow buffer to be hidden without save change
+
 set encoding=utf-8
 set cursorcolumn
 set cursorline
+
 set splitbelow " default split in below
 
 set laststatus=2 " Always show status line
+
+set list
+set listchars=tab:>-,space:·,extends:>,precedes:<
+
+filetype indent plugin on
 
 autocmd BufNewFile,BufWinEnter * setlocal formatoptions=trc " Don't auto insert comment leader on return/hitting 'o'
 
@@ -27,9 +36,6 @@ else
 endif
 
 syntax on
-
-set listchars=tab:>-,space:·,extends:>,precedes:<
-set list
 
 " vim-plug
 call plug#begin()
@@ -50,7 +56,6 @@ Plug 'tmsvg/pear-tree'            " auto-pair
 Plug 'kylelaker/riscv.vim'        " RISC-V highlight
 Plug 'tpope/vim-commentary'       " comment
 call plug#end()
-filetype indent plugin on
 
 " Plug: coc.nvim
 let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd']
