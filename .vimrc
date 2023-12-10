@@ -26,7 +26,6 @@ else
 endif
 
 syntax on
-set nocompatible
 
 set listchars=tab:>-,space:·,extends:>,precedes:<
 set list
@@ -35,10 +34,11 @@ set list
 call plug#begin()
 Plug 'justinmk/vim-sneak'         " Sneak
 Plug 'tpope/vim-surround'         " Vim Surround
-Plug 'preservim/nerdtree'         " File Explorer
 Plug 'tomasiser/vim-code-dark'    " VS Code Dark Theme
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'vim-airline/vim-airline'    " airline
+Plug 'vim-airline/vim-airline-themes' " airline theme
+Plug 'vifm/vifm.vim'            " explorer
 Plug 'easymotion/vim-easymotion'  " EasyMotion
 Plug 'NLKNguyen/papercolor-theme' " White Theme
 Plug 'psliwka/vim-smoothie'       " smooth scroll
@@ -88,12 +88,15 @@ function! ShowDocumentation()
 endfunction
 
 " Plug: nerdtree
-set <A-b>=b
-inoremap <A-b> <Esc>:NERDTreeFocus<cr>
-nnoremap <A-b> <Esc>:NERDTreeFocus<cr>
+" set <A-b>=b
+" inoremap <A-b> <Esc>:NERDTreeFocus<cr>
+" nnoremap <A-b> <Esc>:NERDTreeFocus<cr>
 
 " Plug: easymotion
 map <Leader> <Plug>(easymotion-prefix)
+
+" Plug airline
+let g:airline_theme='papercolor'
 
 " Plug: pear-tree
 let g:pear_tree_smart_openers = 1
