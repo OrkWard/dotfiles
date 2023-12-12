@@ -82,6 +82,12 @@ case "$TERM" in
 esac
 
 # --------------------- alias & applications ---------------------
+# basic
+alias ..="cd .."
+alias ...="cd ..."
+alias vb="vim ~/.bashrc"
+alias vv="vim ~/.vimrc"
+
 # bash alias
 alias setc='export TERM=xterm-256color && exec bash'
 
