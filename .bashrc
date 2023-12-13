@@ -105,19 +105,13 @@ alias ys='yadm status'
 alias yc='yadm commit -m'
 alias yd='yadm diff'
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-  alias dir='dir --color=auto'
-  alias tldr='tldr --color'
-  alias vdir='vdir --color=auto'
-  alias grep='grep --color=auto'
-  alias fgrep='fgrep --color=auto'
-  alias egrep='egrep --color=auto'
-fi
+alias tldr='tldr --color'
+
+# eza
+alias e='eza'
 
 # ls aliases
-alias l='ls -F --color=auto'
+alias ls='ls -F --color=auto'
 alias ll='ls -al'
 alias la='ls -A'
 
