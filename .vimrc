@@ -121,6 +121,8 @@ if $TERM =~# 'xterm-color\|.*-256color'
   colorscheme PaperColor
 endif
 
+let g:vifm_embed_term = 1
+
 " gvim
 if has('gui_running')
   set lines=40 columns=150
