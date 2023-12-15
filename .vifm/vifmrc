@@ -1,6 +1,8 @@
 nnoremap w :view<cr>
 nnoremap s :sync<cr>
 nnoremap K :!code %c<cr>
+nnoremap zq ZQ
+nnoremap za :qa
 
 set relativenumber
 

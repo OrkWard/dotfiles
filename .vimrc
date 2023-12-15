@@ -24,6 +24,8 @@ filetype indent plugin on
 autocmd BufNewFile,BufWinEnter * setlocal formatoptions=trc " Don't auto insert comment leader on return/hitting 'o'
 
 nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
+nnoremap <c-c> ZQ
+nnoremap zz ZZ
 
 if $TERM_PROGRAM ==# 'iTerm.app'
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -60,6 +62,9 @@ call plug#end()
 
 " Plug: coc.nvim
 let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd']
+
+" Plug: vifm
+nnoremap <c-a> :Vifm<CR>
 
 "inoremap <silent><expr> <TAB>
       "\ coc#pum#visible() ? "\<C-n>" :
