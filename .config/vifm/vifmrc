@@ -1,0 +1,30 @@
+" vim: filetype=vifm :
+nnoremap w :view<cr>
+nnoremap s :sync<cr>
+nnoremap K :!code %c<cr>
+nnoremap zq ZQ
+nnoremap zz ZZ
+nnoremap za :qa
+
+set relativenumber
+set statusline="%t %20s %= %-30d %a"
+set timefmt='%b %d, %Y @ %H:%M'
+set ignorecase smartcase nohlsearch incsearch
+
+mark h ~/
+mark d ~/Downloads/
+mark c ~/.config/
+mark r ~/Repos/
+
+colorscheme Paper
+
+fileviewer */ eza --color=always
+fileviewer .*/ eza --color=always
+fileviewer * highlight --out-format=ansi --force -qWJ %pw -t 2 %c
+
+nnoremap <c-n> :touch<space>
+nnoremap <c-m> :mkdir<space>
+
+nnoremap a cW
+nnoremap A cw
+
