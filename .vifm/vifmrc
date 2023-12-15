@@ -6,4 +6,7 @@ nnoremap za :qa
 
 set relativenumber
 
-colorscheme Paper
+" colorscheme Paper
+
+fileviewer */ eza
+fileviewer .*/ eza
