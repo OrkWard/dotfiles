@@ -105,8 +105,6 @@ alias ys='yadm status'
 alias yc='yadm commit -m'
 alias yd='yadm diff'
 
-alias tldr='tldr --color'
-
 # eza
 alias e='eza'
 
