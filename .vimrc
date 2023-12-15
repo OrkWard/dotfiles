@@ -44,7 +44,6 @@ syntax on
 call plug#begin()
 Plug 'justinmk/vim-sneak'         " Sneak
 Plug 'tpope/vim-surround'         " Vim Surround
-Plug 'vifm/vifm.vim'              " Vifm
 Plug 'tomasiser/vim-code-dark'    " VS Code Dark Theme
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'vim-airline/vim-airline'    " airline
@@ -63,9 +62,6 @@ call plug#end()
 
 " Plug: coc.nvim
 let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd']
-
-" Plug: vifm
-nnoremap <c-a> :TabVifm<CR>
 
 "inoremap <silent><expr> <TAB>
       "\ coc#pum#visible() ? "\<C-n>" :
