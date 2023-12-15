@@ -77,6 +77,10 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=~/.gopath
 
+# secrets
+if [ -f ~/.secrets.env ]; then
+  . ~/.secrets.env
+fi
 
 # -------------------------- completion --------------------------
 if ! shopt -oq posix; then
@@ -166,23 +170,17 @@ alias ??="chatgpt"
 # bat
 alias bat='bat --theme=GitHub'
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# secrets
-if [ -f ~/.secrets.env ]; then
-  . ~/.secrets.env
-fi
-
 # ---------------------- applications ----------------------------
-
 # rust
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # z.sh
 . ~/.local/source/z.sh
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
 # --------------------- Machine-Specific -------------------------
