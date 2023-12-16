@@ -138,7 +138,6 @@ alias setc='export TERM=xterm-256color && exec bash'
 # code
 if [ $TERM_PROGRAM = 'vscode' ]; then
   alias c='code'
-  _fzf_setup_completion path c
 fi
 
 # git alias
