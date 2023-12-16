@@ -119,7 +119,7 @@ _fzf_comprun() {
 }
 
 _fzf_setup_completion dir tree
-_fzf_setup_completion path rm
+_fzf_setup_completion path rm yadm y
 
 # mzz2017/gg complete
 complete -F _command gg
@@ -134,6 +134,12 @@ alias vv="vim ~/.vimrc"
 
 # bash alias
 alias setc='export TERM=xterm-256color && exec bash'
+
+# code
+if [ $TERM_PROGRAM = 'vscode' ]; then
+  alias c='code'
+  _fzf_setup_completion path c
+fi
 
 # git alias
 alias g='git'

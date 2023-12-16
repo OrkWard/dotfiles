@@ -17,7 +17,8 @@ set splitbelow " default split in below
 set laststatus=2 " Always show status line
 
 set list
-set listchars=tab:>-,space:·,extends:>,precedes:<
+" set listchars=tab:>-,space:·,extends:>,precedes:<
+set listchars=tab:>-,extends:>,precedes:<
 
 filetype indent plugin on
 
