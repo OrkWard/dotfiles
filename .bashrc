@@ -136,7 +136,7 @@ alias vv="vim ~/.vimrc"
 alias setc='export TERM=xterm-256color && exec bash'
 
 # code
-if [ $TERM_PROGRAM = 'vscode' ]; then
+if [ "$TERM_PROGRAM" = 'vscode' ]; then
   alias c='code'
 fi
 
