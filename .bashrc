@@ -119,7 +119,7 @@ _fzf_comprun() {
 }
 
 _fzf_setup_completion dir tree
-_fzf_setup_completion path rm yadm y
+_fzf_setup_completion path rm yadm y bat
 
 # mzz2017/gg complete
 complete -F _command gg
