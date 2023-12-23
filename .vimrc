@@ -25,9 +25,12 @@ filetype indent plugin on
 autocmd BufNewFile,BufWinEnter * setlocal formatoptions=trc " Don't auto insert comment leader on return/hitting 'o'
 
 nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
+
+" some useful map
 nnoremap zq ZQ
 nnoremap za :qa!<CR>
 nnoremap zz ZZ
+nnoremap Y y$
 
 if $TERM_PROGRAM ==# 'iTerm.app'
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
