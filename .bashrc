@@ -131,6 +131,7 @@ alias ..="cd .."
 alias ...="cd ..."
 alias vb="vim ~/.bashrc"
 alias vv="vim ~/.vimrc"
+alias va="vim ~/.config/alacritty/alacritty.yml"
 
 # bash alias
 alias setc='export TERM=xterm-256color && exec bash'

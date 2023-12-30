@@ -1,0 +1,10 @@
+import:
+  - "~/.config/alacritty/papercolor_light.yaml"
+
+font:
+  normal:
+    family: "iA Writer Mono S"
+    style: "Regular"
+
+env:
+  TERM: "xterm-256color"
