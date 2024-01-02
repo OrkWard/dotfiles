@@ -46,6 +46,7 @@ syntax on
 
 " vim-plug
 call plug#begin()
+Plug 'wakatime/vim-wakatime'      " wakatime
 Plug 'justinmk/vim-sneak'         " Sneak
 Plug 'tpope/vim-surround'         " Vim Surround
 Plug 'tomasiser/vim-code-dark'    " VS Code Dark Theme
