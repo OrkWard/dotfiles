@@ -18,8 +18,8 @@ set splitbelow " default split in below
 set laststatus=2 " Always show status line
 
 set list
-" set listchars=tab:>-,space:·,extends:>,precedes:<
-set listchars=tab:>-,extends:>,precedes:<
+set listchars=tab:>-,space:·,extends:>,precedes:<
+" set listchars=tab:>-,extends:>,precedes:<
 
 filetype indent plugin on
 
@@ -33,16 +33,16 @@ nnoremap za :qa!<CR>
 nnoremap zz ZZ
 nnoremap Y y$
 
-nnoremap <silent><ESC>]1 1gt
-nnoremap <silent><ESC>]2 2gt
-nnoremap <silent><ESC>]3 3gt
-nnoremap <silent><ESC>]4 4gt
-nnoremap <silent><ESC>]5 5gt
-nnoremap <silent><ESC>]6 6gt
-nnoremap <silent><ESC>]7 7gt
-nnoremap <silent><ESC>]8 8gt
-nnoremap <silent><ESC>]9 9gt
-nnoremap <silent><ESC>]0 0gt
+nnoremap <silent><ESC>1 1gt
+nnoremap <silent><ESC>2 2gt
+nnoremap <silent><ESC>3 3gt
+nnoremap <silent><ESC>4 4gt
+nnoremap <silent><ESC>5 5gt
+nnoremap <silent><ESC>6 6gt
+nnoremap <silent><ESC>7 7gt
+nnoremap <silent><ESC>8 8gt
+nnoremap <silent><ESC>9 9gt
+nnoremap <silent><ESC>0 0gt
 
 if $TERM_PROGRAM ==# 'iTerm.app'
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"

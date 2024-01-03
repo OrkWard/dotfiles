@@ -7,3 +7,8 @@ font:
     style: "Regular"
 # env:
 #  TERM: "xterm-256color"
+
+bindings:
+  - key: '1'
+    mods: 'Alt'
+    chars: '^[1'
