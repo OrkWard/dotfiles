@@ -102,11 +102,6 @@ function! ShowDocumentation()
   endif
 endfunction
 
-" Plug: nerdtree
-" set <A-b>=b
-" inoremap <A-b> <Esc>:NERDTreeFocus<cr>
-" nnoremap <A-b> <Esc>:NERDTreeFocus<cr>
-
 " Plug: easymotion
 map <Leader> <Plug>(easymotion-prefix)
 
@@ -127,8 +122,6 @@ set background=light
 if $TERM =~# 'xterm-color\|.*-256color'
   colorscheme PaperColor
 endif
-
-let g:vifm_embed_term = 1
 
 " gvim
 if has('gui_running')
