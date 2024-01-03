@@ -1,3 +1,4 @@
+" ------------------------------ Basics ------------------------------
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -32,6 +33,17 @@ nnoremap za :qa!<CR>
 nnoremap zz ZZ
 nnoremap Y y$
 
+nnoremap <Alt-1> 1gt
+nnoremap <Alt-2> 2gt
+nnoremap <Alt-3> 3gt
+nnoremap <Alt-4> 4gt
+nnoremap <Alt-5> 5gt
+nnoremap <Alt-6> 6gt
+nnoremap <Alt-7> 7gt
+nnoremap <Alt-8> 8gt
+nnoremap <Alt-9> 9gt
+nnoremap <Alt-0> 0gt
+
 if $TERM_PROGRAM ==# 'iTerm.app'
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_SR = "\<Esc>]50;CursorShape=2\x7"
@@ -43,6 +55,8 @@ else
 endif
 
 syntax on
+
+" ------------------------------ Plugins ------------------------------
 
 " vim-plug
 call plug#begin()
@@ -123,7 +137,7 @@ if $TERM =~# 'xterm-color\|.*-256color\|alacritty'
   colorscheme PaperColor
 endif
 
-" gvim
+" ------------------------------ gvim ------------------------------
 if has('gui_running')
   set lines=40 columns=150
   set guifont=iAWriterMonoS-Regular:h14

@@ -3,7 +3,6 @@ nnoremap s :sync<cr>
 nnoremap K :!code %c<cr>
 nnoremap zq ZQ
 nnoremap zz ZZ
-nnoremap za :qa
 
 set relativenumber
 set statusline="%t %20s %= %-30d %a"
