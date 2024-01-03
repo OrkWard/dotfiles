@@ -119,7 +119,7 @@ nnoremap F <Plug>Sneak_S
 
 " set code scheme
 set background=light
-if $TERM =~# 'xterm-color\|.*-256color'
+if $TERM =~# 'xterm-color\|.*-256color\|alacritty'
   colorscheme PaperColor
 endif
 

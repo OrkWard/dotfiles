@@ -5,6 +5,5 @@ font:
   normal:
     family: "iA Writer Mono S"
     style: "Regular"
-
-env:
-  TERM: "xterm-256color"
+# env:
+#  TERM: "xterm-256color"
