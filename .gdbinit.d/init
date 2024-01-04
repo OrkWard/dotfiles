@@ -13,3 +13,6 @@ dashboard -style divider_label_style_off_primary '96'
 dashboard -style divider_fill_style_secondary '30'
 dashboard -style divider_label_style_on_secondary '30;1'
 dashboard -style divider_label_style_off_secondary '30'
+
+dashboard -style prompt_running '\\[\\e[1;31m\\]>>>\\[\\e[0m\\]'
+
