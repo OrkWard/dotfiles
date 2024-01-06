@@ -124,6 +124,10 @@ _fzf_setup_completion path rm yadm y bat
 # mzz2017/gg complete
 complete -F _command gg
 
+# alias completion
+. .local/source/complete_alias.sh
+complete -F _complete_alias g
+complete -F _complete_alias y
 
 # --------------------- alias --------------------
 # basic
@@ -133,9 +137,6 @@ alias vb="vim ~/.bashrc"
 alias vv="vim ~/.vimrc"
 alias va="vim ~/.config/alacritty/alacritty.yml"
 alias vn="nvim ~/.config/nvim/init.lua"
-
-# bash alias
-alias setc='export TERM=xterm-256color && exec bash'
 
 # code
 if [ "$TERM_PROGRAM" = 'vscode' ]; then
