@@ -125,7 +125,7 @@ _fzf_setup_completion path rm yadm y bat
 complete -F _command gg
 
 # alias completion
-. .local/source/complete_alias.sh
+. ~/.local/source/complete_alias.sh
 complete -F _complete_alias g
 complete -F _complete_alias y
 
