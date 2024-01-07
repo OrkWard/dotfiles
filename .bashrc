@@ -179,6 +179,9 @@ alias ??="chatgpt"
 # bat
 alias bat='bat --theme=GitHub'
 
+# ripgrep
+alias rg='rg --no-heading --column'
+
 # ---------------------- applications ----------------------------
 # rust
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
