@@ -137,6 +137,7 @@ alias vb="vim ~/.bashrc"
 alias vv="vim ~/.vimrc"
 alias va="vim ~/.config/alacritty/alacritty.yml"
 alias vn="nvim ~/.config/nvim/init.lua"
+alias vt="vim ~/.tmux.conf"
 
 # code
 if [ "$TERM_PROGRAM" = 'vscode' ]; then
