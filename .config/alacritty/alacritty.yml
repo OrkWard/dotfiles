@@ -5,13 +5,8 @@ font:
   normal:
     family: "iA Writer Mono S"
     style: "Regular"
-# env:
-#  TERM: "xterm-256color"
 
-bindings:
-  # - key: '1'
-  #   mods: 'Alt'
-  #   chars: '^[1'
-  - key: '1'
-    mods: 'Ctrl'
+key_bindings:
+  - key: 'Key1'
+    mods: 'Control'
     chars: '^1'
