@@ -6,7 +6,7 @@ font:
     family: "iA Writer Mono S"
     style: "Regular"
 
-key_bindings:
-  - key: 'Key1'
-    mods: 'Control'
-    chars: '^1'
+# key_bindings:
+#   - key: 'Key1'
+#     mods: 'Control'
+#     chars: '^1'
