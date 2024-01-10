@@ -9,6 +9,9 @@ font:
 #  TERM: "xterm-256color"
 
 bindings:
+  # - key: '1'
+  #   mods: 'Alt'
+  #   chars: '^[1'
   - key: '1'
-    mods: 'Alt'
-    chars: '^[1'
+    mods: 'Ctrl'
+    chars: '^1'
