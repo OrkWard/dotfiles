@@ -17,3 +17,5 @@
 	ps = push
 	d = diff
 	sw = swtich
+[init]
+	defaultBranch = master
