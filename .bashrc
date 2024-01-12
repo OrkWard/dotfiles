@@ -148,7 +148,7 @@ fi
 # git alias
 alias g='git'
 alias ga='git add .'
-alias gc='git commit -m'
+alias gc='git cz'
 alias gs='git status'
 alias gd='git diff'
 
