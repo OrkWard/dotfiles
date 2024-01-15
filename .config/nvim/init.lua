@@ -25,3 +25,6 @@ require('plugins')
 
 vim.keymap.set({'n', 'x', 'o'}, 'f', '<Plug>(leap-forward)')
 vim.keymap.set({'n', 'x', 'o'}, 'F', '<Plug>(leap-backward)')
+
+vim.keymap.set({'n', 'x'}, 'j', 'gj')
+vim.keymap.set({'n', 'x'}, 'k', 'gk')

@@ -33,6 +33,9 @@ nnoremap za :qa!<CR>
 nnoremap zz ZZ
 nnoremap Y y$
 
+nnoremap j gj
+nnoremap k gk
+
 nnoremap <silent><ESC>1 1gt
 nnoremap <silent><ESC>2 2gt
 nnoremap <silent><ESC>3 3gt
