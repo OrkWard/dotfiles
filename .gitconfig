@@ -16,6 +16,6 @@
 	p = pull
 	ps = push
 	d = diff
-	sw = swtich
+	sw = switch
 [init]
 	defaultBranch = master
