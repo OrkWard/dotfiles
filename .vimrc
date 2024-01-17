@@ -79,6 +79,7 @@ Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plug 'tmsvg/pear-tree'            " auto-pair
 Plug 'kylelaker/riscv.vim'        " RISC-V highlight
 Plug 'tpope/vim-commentary'       " comment
+Plug 'junegunn/fzf'               " fzf
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 

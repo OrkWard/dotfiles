@@ -31,22 +31,10 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 # --------------------- color & prompt ---------------------
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-  xterm-color|*-256color|alacritty) color_prompt=yes;;
-esac
-
-#force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-  if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-    # We have color support; assume it's compliant with Ecma-48
-    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-    # a case would tend to support setf rather than setaf.)
-    color_prompt=yes
-  else
-    color_prompt=
-  fi
+if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+  color_prompt=yes
+else
+  color_prompt=
 fi
 
 if [ "$color_prompt" = yes ]; then
@@ -54,17 +42,7 @@ if [ "$color_prompt" = yes ]; then
 else
   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-unset color_prompt force_color_prompt
-
-# --------------------- xterm ----------------------
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-  xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-  *)
-    ;;
-esac
+unset color_prompt
 
 # ------------------------- environments -------------------------
 export EDITOR=vim
@@ -92,7 +70,7 @@ if ! shopt -oq posix; then
 fi
 
 # fzf
-[ -f /usr/share/doc/fzf/examples/key-bindings.bash ] && source /usr/share/doc/fzf/examples/key-bindings.bash
+[ -f ~/.config/bash/fzf-key-bindings.bash ] && source ~/.config/bash/fzf-key-bindings.bash
 [ -f /usr/share/bash-completion/completions/fzf ] && source /usr/share/bash-completion/completions/fzf
 _fzf_compgen_path() {
   fd --hidden --follow --exclude ".git" . "$1"
@@ -125,7 +103,7 @@ _fzf_setup_completion path rm yadm y bat
 complete -F _command gg
 
 # alias completion
-. ~/.local/source/complete_alias.sh
+. ~/.config/bash/complete_alias.sh
 complete -F _complete_alias g
 complete -F _complete_alias y
 
@@ -161,6 +139,7 @@ alias yd='yadm diff'
 
 # eza
 alias e='eza'
+alias ea='eza -a'
 
 # ls aliases
 alias ls='ls -F --color=auto'
@@ -188,7 +167,7 @@ alias rg='rg --no-heading --column'
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # z.sh
-. ~/.local/source/z.sh
+. ~/.config/bash/z.sh
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -203,6 +182,10 @@ export LESS_TERMCAP_us=$'\e[01;31m'    # begin underline
 export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
 export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
 export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
+
+# atuin
+[[ -f ~/.config/bash/bash-preexec.sh ]] && source ~/.config/bash/bash-preexec.sh
+# eval "$(atuin init bash)"
 
 # --------------------- Machine-Specific -------------------------
 # detect machine type
@@ -234,4 +217,3 @@ unset machine
 if [ -f ~/.bashrc.local ]; then
   . ~/.bashrc.local
 fi
-
