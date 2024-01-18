@@ -74,44 +74,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# fzf
-[ -f $config_dir/fzf-key-bindings.bash ] && source $config_dir/fzf-key-bindings.bash
-[ -f /usr/share/bash-completion/completions/fzf ] && source /usr/share/bash-completion/completions/fzf
-_fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" --exclude ".wine" . "$1"
-}
-
-# Use fd to generate the list for directory completion
-_fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
-}
-
-# Advanced customization of fzf options via _fzf_comprun function
-# - The first argument to the function is the name of the command.
-# - You should make sure to pass the rest of the arguments to fzf.
-_fzf_comprun() {
-  local command=$1
-  shift
-
-  case "$command" in
-    cd)           fzf --preview 'tree -C {} | head -200'   "$@" ;;
-    export|unset) fzf --preview "eval 'echo \$'{}"         "$@" ;;
-    ssh)          fzf --preview 'dig {}'                   "$@" ;;
-    *)            fzf --preview 'bat -n --color=always {}' "$@" ;;
-  esac
-}
-
-_fzf_setup_completion dir tree
-_fzf_setup_completion path rm yadm y bat
-
-# mzz2017/gg complete
-complete -F _command gg
-
-# alias completion
-. $config_dir/complete_alias.sh
-complete -F _complete_alias g
-complete -F _complete_alias y
-
 # --------------------- alias --------------------
 # basic
 alias ..="cd .."
@@ -187,6 +149,44 @@ export LESS_TERMCAP_us=$'\e[01;31m'    # begin underline
 export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
 export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
 export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
+
+# fzf
+[ -f $config_dir/fzf-key-bindings.bash ] && source $config_dir/fzf-key-bindings.bash
+[ -f /usr/share/bash-completion/completions/fzf ] && source /usr/share/bash-completion/completions/fzf
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" --exclude ".wine" . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
+# Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments to fzf.
+_fzf_comprun() {
+  local command=$1
+  shift
+
+  case "$command" in
+    cd)           fzf --preview 'tree -C {} | head -200'   "$@" ;;
+    export|unset) fzf --preview "eval 'echo \$'{}"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview 'bat -n --color=always {}' "$@" ;;
+  esac
+}
+
+_fzf_setup_completion dir tree
+_fzf_setup_completion path rm yadm y bat
+
+# mzz2017/gg complete
+complete -F _command gg
+
+# alias completion
+. $config_dir/complete_alias.sh
+complete -F _complete_alias g
+complete -F _complete_alias y
 
 # --------------------- Machine-Specific -------------------------
 # detect machine type

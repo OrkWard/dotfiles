@@ -24,7 +24,6 @@ set listchars=tab:>-,space:·,extends:>,precedes:<
 filetype indent plugin on
 
 command! -nargs=1 Z execute "cd" system('source ~/.config/bash/z.sh; _z -e '.<q-args>)
-
 autocmd BufNewFile,BufWinEnter * setlocal formatoptions=trc " Don't auto insert comment leader on return/hitting 'o'
 
 nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
@@ -48,6 +47,8 @@ nnoremap <silent><ESC>7 7gt
 nnoremap <silent><ESC>8 8gt
 nnoremap <silent><ESC>9 9gt
 nnoremap <silent><ESC>0 0gt
+
+" nnoremap <C-t> :FZF<CR>
 
 if $TERM_PROGRAM ==# 'iTerm.app'
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -136,6 +137,9 @@ let g:pear_tree_smart_backspace = 1
 " Plug: vim-sneak
 nnoremap f <Plug>Sneak_s
 nnoremap F <Plug>Sneak_S
+
+" fzf
+nnoremap <C-z> :FZF<CR>
 
 " set code scheme
 set background=light
