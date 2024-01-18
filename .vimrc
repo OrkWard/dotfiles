@@ -23,6 +23,8 @@ set listchars=tab:>-,space:·,extends:>,precedes:<
 
 filetype indent plugin on
 
+command! -nargs=1 Z execute "cd" system('source ~/.config/bash/z.sh; _z -e '.<q-args>)
+
 autocmd BufNewFile,BufWinEnter * setlocal formatoptions=trc " Don't auto insert comment leader on return/hitting 'o'
 
 nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
@@ -30,7 +32,7 @@ nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
 " some useful map
 nnoremap zq ZQ
 nnoremap za :qa!<CR>
-nnoremap zz ZZ
+nnoremap zz :Z 
 nnoremap Y y$
 
 nnoremap j gj
