@@ -30,6 +30,11 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
   debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+# sync history
+export PROMPT_COMMAND="history -a; history -n"
+
+config_dir=~/.config/bash
+
 # --------------------- color & prompt ---------------------
 if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
   color_prompt=yes
@@ -70,10 +75,10 @@ if ! shopt -oq posix; then
 fi
 
 # fzf
-[ -f ~/.config/bash/fzf-key-bindings.bash ] && source ~/.config/bash/fzf-key-bindings.bash
+[ -f $config_dir/fzf-key-bindings.bash ] && source $config_dir/fzf-key-bindings.bash
 [ -f /usr/share/bash-completion/completions/fzf ] && source /usr/share/bash-completion/completions/fzf
 _fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" . "$1"
+  fd --hidden --follow --exclude ".git" --exclude ".wine" . "$1"
 }
 
 # Use fd to generate the list for directory completion
@@ -103,7 +108,7 @@ _fzf_setup_completion path rm yadm y bat
 complete -F _command gg
 
 # alias completion
-. ~/.config/bash/complete_alias.sh
+. $config_dir/complete_alias.sh
 complete -F _complete_alias g
 complete -F _complete_alias y
 
@@ -167,7 +172,7 @@ alias rg='rg --no-heading --column'
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
 # z.sh
-. ~/.config/bash/z.sh
+. $config_dir/z.sh
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -182,10 +187,6 @@ export LESS_TERMCAP_us=$'\e[01;31m'    # begin underline
 export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
 export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
 export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
-
-# atuin
-[[ -f ~/.config/bash/bash-preexec.sh ]] && source ~/.config/bash/bash-preexec.sh
-# eval "$(atuin init bash)"
 
 # --------------------- Machine-Specific -------------------------
 # detect machine type
