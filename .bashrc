@@ -157,6 +157,8 @@ alias ga='git add .'
 alias gc='git cz'
 alias gs='git status'
 alias gd='git diff'
+alias gl='git pull'
+alias gp='git push'
 
 # yadm alias
 alias y='yadm'
@@ -164,6 +166,8 @@ alias ya='yadm add -u'
 alias ys='yadm status'
 alias yc='yadm commit -m'
 alias yd='yadm diff'
+alias yl='yadm pull'
+alias yp='yadm push'
 
 # eza
 alias e='eza'
