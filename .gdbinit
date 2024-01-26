@@ -2358,6 +2358,11 @@ class Breakpoints(Dashboard.Module):
             }
         }
 
+# Pretty-Printers --------------------------------------------------------------
+sys.path.insert(0, '/usr/share/gcc/python')
+from libstdcxx.v6.printers import register_libstdcxx_printers
+register_libstdcxx_printers (None)
+
 # XXX traceback line numbers in this Python block must be increased by 1
 end
 

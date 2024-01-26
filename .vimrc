@@ -29,8 +29,6 @@ autocmd BufNewFile,BufWinEnter * setlocal formatoptions=trc " Don't auto insert 
 nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
 
 " some useful map
-nnoremap zq ZQ
-nnoremap za :qa!<CR>
 nnoremap zz :Z 
 nnoremap Y y$
 
@@ -47,6 +45,10 @@ nnoremap <silent><ESC>7 7gt
 nnoremap <silent><ESC>8 8gt
 nnoremap <silent><ESC>9 9gt
 nnoremap <silent><ESC>0 0gt
+
+set foldmethod=indent
+nnoremap <space> za
+vnoremap <space> zf
 
 " nnoremap <C-t> :FZF<CR>
 
