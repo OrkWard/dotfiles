@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
   use 'psliwka/vim-smoothie'
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
-  use 'ggandor/leap.nvim'
+  use 'justinmk/vim-sneak'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

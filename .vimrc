@@ -69,6 +69,7 @@ call plug#begin()
 Plug 'wakatime/vim-wakatime'      " wakatime
 Plug 'justinmk/vim-sneak'         " Sneak
 Plug 'tpope/vim-surround'         " Vim Surround
+Plug 'tpope/vim-repeat'           " Repeat
 Plug 'tomasiser/vim-code-dark'    " VS Code Dark Theme
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'vim-airline/vim-airline'    " airline
@@ -135,8 +136,6 @@ let g:pear_tree_smart_closers = 1
 let g:pear_tree_smart_backspace = 1
 
 " Plug: vim-sneak
-nnoremap f <Plug>Sneak_s
-nnoremap F <Plug>Sneak_S
 let g:sneak#label = 1
 
 " fzf
