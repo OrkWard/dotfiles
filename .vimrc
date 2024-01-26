@@ -137,6 +137,7 @@ let g:pear_tree_smart_backspace = 1
 " Plug: vim-sneak
 nnoremap f <Plug>Sneak_s
 nnoremap F <Plug>Sneak_S
+let g:sneak#label = 1
 
 " fzf
 nnoremap <C-z> :FZF<CR>
