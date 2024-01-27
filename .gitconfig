@@ -17,5 +17,6 @@
 	ps = push
 	d = diff
 	sw = switch
+	m = merge
 [init]
 	defaultBranch = master
