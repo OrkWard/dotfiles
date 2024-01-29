@@ -140,7 +140,8 @@ let g:pear_tree_smart_backspace = 1
 let g:sneak#label = 1
 
 " fzf
-nnoremap <C-z> :FZF<CR>
+nnoremap <C-f> :FZF<CR>
+nnoremap <C-t> :call fzf#run({'source': 'source ~/.config/bash/z.sh; _z -l', 'sink': 'e'})
 
 " set code scheme
 set background=light
