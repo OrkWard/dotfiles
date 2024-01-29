@@ -46,7 +46,6 @@ nnoremap <silent><ESC>8 8gt
 nnoremap <silent><ESC>9 9gt
 nnoremap <silent><ESC>0 0gt
 
-set foldmethod=indent
 nnoremap <space> za
 vnoremap <space> zf
 
