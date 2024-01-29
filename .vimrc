@@ -24,8 +24,12 @@ set listchars=tab:>-,space:·,extends:>,precedes:<
 
 filetype indent plugin on
 
-function! NewTabWithJump(path)
-  let l:cmd = 'source ~/.config/bash/z.sh; _z -e '.a:path
+" Create a new tab with jump to specific path
+function! NewTabWithJump(...)
+  let l:cmd = 'source ~/.config/bash/z.sh; _z -e'
+  for l:arg in a:000
+    let l:cmd = l:cmd.' '.l:arg
+  endfor
   let l:output = system(cmd)
 
   " Remove possible trailing newline
@@ -33,15 +37,15 @@ function! NewTabWithJump(path)
 
   execute 'tabnew'
   execute 'cd'.l:output
+  execute 'pwd'
 endfunction
-command! -nargs=1 Z call NewTabWithJump(<f-args>)
+command! -nargs=+ Z call NewTabWithJump(<f-args>)
 
 autocmd BufNewFile,BufWinEnter * setlocal formatoptions=trc " Don't auto insert comment leader on return/hitting 'o'
 
 nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
 
 " some useful map
-nnoremap zz :Z 
 nnoremap Y y$
 
 nnoremap j gj
