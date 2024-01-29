@@ -141,7 +141,7 @@ let g:sneak#label = 1
 
 " fzf
 nnoremap <C-f> :FZF<CR>
-nnoremap <C-t> :call fzf#run({'source': 'source ~/.config/bash/z.sh; _z -l', 'sink': 'e'})
+nnoremap <C-t> :call fzf#run({'source': 'source ~/.config/bash/z.sh; _z -l', 'sink': 'e'})<CR>
 
 " set code scheme
 set background=light
