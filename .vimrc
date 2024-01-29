@@ -12,6 +12,7 @@ set hidden " Allow buffer to be hidden without save change
 set encoding=utf-8
 set cursorcolumn
 set cursorline
+set textwidth=0 " No auto new line
 
 set splitbelow " default split in below
 
@@ -23,7 +24,18 @@ set listchars=tab:>-,space:·,extends:>,precedes:<
 
 filetype indent plugin on
 
-command! -nargs=1 Z execute "cd" system('source ~/.config/bash/z.sh; _z -e '.<q-args>)
+function! NewTabWithJump(path)
+  let l:cmd = 'source ~/.config/bash/z.sh; _z -e '.a:path
+  let l:output = system(cmd)
+
+  " Remove possible trailing newline
+  let l:output = substitute(l:output, '\n\+$', '', '')
+
+  execute 'tabnew'
+  execute 'cd'.l:output
+endfunction
+command! -nargs=1 Z call NewTabWithJump(<f-args>)
+
 autocmd BufNewFile,BufWinEnter * setlocal formatoptions=trc " Don't auto insert comment leader on return/hitting 'o'
 
 nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
@@ -141,7 +153,7 @@ let g:sneak#label = 1
 
 " fzf
 nnoremap <C-f> :FZF<CR>
-nnoremap <C-t> :call fzf#run({'source': 'source ~/.config/bash/z.sh; _z -l', 'sink': 'e'})<CR>
+nnoremap <C-t> :call fzf#run({'source': 'ls', 'sink': 'e'})<CR>
 
 " set code scheme
 set background=light
