@@ -98,8 +98,8 @@ export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
 # fzf
 export FZF_DEFAULT_COMMAND="fd -H"
 
-[ -f $config_dir/fzf-key-bindings.bash ] && source $config_dir/fzf-key-bindings.bash
-[ -f /usr/share/bash-completion/completions/fzf ] && source /usr/share/bash-completion/completions/fzf
+[ -f $config_dir/fzf-key-bindings.bash ] && . $config_dir/fzf-key-bindings.bash
+[ -f /usr/share/bash-completion/completions/fzf ] && . /usr/share/bash-completion/completions/fzf
 _fzf_compgen_path() {
   fd --hidden --follow --exclude ".git" --exclude ".wine" . "$1"
 }
