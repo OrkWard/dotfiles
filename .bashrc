@@ -97,6 +97,7 @@ export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
 
 # fzf
 export FZF_DEFAULT_COMMAND="fd -H"
+export FZF_CTRL_T_COMMAND="fd -H"
 
 [ -f $config_dir/fzf-key-bindings.bash ] && . $config_dir/fzf-key-bindings.bash
 [ -f /usr/share/bash-completion/completions/fzf ] && . /usr/share/bash-completion/completions/fzf

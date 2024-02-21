@@ -1,7 +1,5 @@
 # visible ring
 set visible-stats on
-# menu complete
-"\C-n": menu-complete
 
 # word move
 "\e\e[C": forward-word   
