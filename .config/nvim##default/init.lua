@@ -1,2 +1,4 @@
-require('plugins')
-require('options')
+if exists('g:vscode') then
+  require('plugins')
+  require('options')
+end
