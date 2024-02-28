@@ -20,5 +20,3 @@ vim.opt.splitbelow = true
 
 -- Always show status line
 vim.opt.laststatus = 2
-
-vim.g["sneak#label"] = 1
