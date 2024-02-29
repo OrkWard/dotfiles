@@ -20,10 +20,10 @@ return require("packer").startup(function(use)
   use("folke/flash.nvim")
 
   vim.keymap.set({ "n", "x", "o" }, "f", function()
-    require("flash").jump()
+    require("flash").jump({ modes = { char = { jump_labels = true } } })
   end)
   vim.keymap.set({ "n", "x", "o" }, "F", function()
-    require("flash").treesitter()
+    require("flash").treesitter({ modes = { char = { jump_labels = true } } })
   end)
 
   -- Automatically set up your configuration after cloning packer.nvim
