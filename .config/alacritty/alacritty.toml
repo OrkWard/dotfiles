@@ -1,0 +1,11 @@
+import = ["~/.config/alacritty/papercolor_light.toml"]
+
+[shell]
+program = "/usr/local/bin/bash"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font]
+size = 14
