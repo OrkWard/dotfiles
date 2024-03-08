@@ -1,8 +1,24 @@
 # If not running interactively, don't do anything
 case $- in
-  *i*) ;;
-  *) return;;
+*i*) ;;
+*) return ;;
 esac
+
+# exit on error
+#set -e
+
+# detect machine type
+case "$(uname -s)" in
+Linux*) machine=Linux ;;
+Darwin*) machine=Mac ;;
+CYGWIN*) machine=Cygwin ;;
+MINGW*) machine=MinGw ;;
+MSYS_NT*) machine=Git ;;
+*) machine="UNKNOWN:${unameOut}" ;;
+esac
+
+# set config dir
+config_dir=~/.config/bash
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -27,30 +43,21 @@ HISTFILESIZE=2000
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-  debian_chroot=$(cat /etc/debian_chroot)
+	debian_chroot=$(cat /etc/debian_chroot)
 fi
 
 # sync history
 export PROMPT_COMMAND="history -a; history -n"
 
-config_dir=~/.config/bash
-
 # --------------------- color & prompt ---------------------
 if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-  color_prompt=yes
+	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-  color_prompt=
+	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-
-if [ "$color_prompt" = yes ]; then
-  PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-  PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt
 
 # ------------------------- environments -------------------------
-export EDITOR=vim
+export EDITOR=nvim
 export PATH=~/.local/bin:$PATH
 
 # colored GCC warnings and errors
@@ -62,19 +69,40 @@ export GOPATH=~/.gopath
 
 # secrets
 if [ -f ~/.secrets.env ]; then
-  . ~/.secrets.env
+	. ~/.secrets.env
+
 fi
 
-# -------------------------- completion --------------------------
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+# load machine-specific config
+if [ -f ~/.bashrc.local ]; then
+	. ~/.bashrc.local
 fi
 
-# ---------------------- applications ----------------------------
+# --------------------- Completion -------------------------
+# Linux
+if [ $machine = "Linux" ]; then
+	alias update='sudo apt update && sudo apt upgrade --autoremove -y'
+	if [ -f /usr/share/bash-completion/bash_completion ]; then
+		. /usr/share/bash-completion/bash_completion
+	elif [ -f /etc/bash_completion ]; then
+		. /etc/bash_completion
+	fi
+fi
+
+# MaxOS
+if [ $machine = "Mac" ]; then
+	# completion
+	export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+	complete -cf sudo
+	. "/usr/local/etc/profile.d/bash_completion.sh"
+fi
+
+# ---------------------- Applications ----------------------------
+# homebrew
+if [ $machine = "Mac" ]; then
+	eval "$(/usr/local/bin/brew shellenv)"
+fi
+
 # rust
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 
@@ -83,8 +111,8 @@ fi
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 # less
 export LESS_TERMCAP_mb=$'\e[1;31m'     # begin bold
@@ -100,29 +128,29 @@ export FZF_DEFAULT_COMMAND="fd -H"
 export FZF_CTRL_T_COMMAND="fd -H"
 
 [ -f $config_dir/fzf-key-bindings.bash ] && . $config_dir/fzf-key-bindings.bash
-[ -f /usr/share/bash-completion/completions/fzf ] && . /usr/share/bash-completion/completions/fzf
+[ -f $config_dir/fzf-completion.bash ] && . $config_dir/fzf-completion.bash
 _fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" --exclude ".wine" . "$1"
+	fd --hidden --follow --exclude ".git" --exclude ".wine" . "$1"
 }
 
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
+	fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
 # Advanced customization of fzf options via _fzf_comprun function
 # - The first argument to the function is the name of the command.
 # - You should make sure to pass the rest of the arguments to fzf.
 _fzf_comprun() {
-  local command=$1
-  shift
+	local command=$1
+	shift
 
-  case "$command" in
-    cd)           fzf --preview 'tree -C {} | head -200'   "$@" ;;
-    export|unset) fzf --preview "eval 'echo \$'{}"         "$@" ;;
-    ssh)          fzf --preview 'dig {}'                   "$@" ;;
-    *)            fzf --preview 'bat -n --color=always {}' "$@" ;;
-  esac
+	case "$command" in
+	cd) fzf --preview 'tree -C {} | head -200' "$@" ;;
+	export | unset) fzf --preview "eval 'echo \$'{}" "$@" ;;
+	ssh) fzf --preview 'dig {}' "$@" ;;
+	*) fzf --preview 'bat -n --color=always {}' "$@" ;;
+	esac
 }
 
 _fzf_setup_completion dir tree
@@ -137,16 +165,16 @@ complete -F _complete_alias y
 # basic
 alias ..="cd .."
 alias ...="cd ..."
-alias vb="vim ~/.bashrc"
+alias vb="nvim ~/.bashrc"
 alias vv="vim ~/.vimrc"
-alias va="vim ~/.config/alacritty/alacritty.yml"
+alias va="nvim ~/.config/alacritty/alacritty.toml"
 alias vn="nvim ~/.config/nvim/init.lua"
-alias vt="vim ~/.tmux.conf"
+alias vt="nvim ~/.tmux.conf"
 
 # code
 if [ "$TERM_PROGRAM" = 'vscode' ]; then
-  alias c='code'
-  _fzf_setup_completion path c
+	alias c='code'
+	_fzf_setup_completion path c
 fi
 
 # git alias
@@ -183,42 +211,12 @@ alias d='du -hd1'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# kardolus/chatgpt-cli
-alias ??="chatgpt"
-
 # bat
 alias bat='bat --theme=GitHub'
 
 # ripgrep
 alias rg='rg --no-heading --column'
 
-# --------------------- Machine-Specific -------------------------
-# detect machine type
-case "$(uname -s)" in
-  Linux*)     machine=Linux;;
-  Darwin*)    machine=Mac;;
-  CYGWIN*)    machine=Cygwin;;
-  MINGW*)     machine=MinGw;;
-  MSYS_NT*)   machine=Git;;
-  *)          machine="UNKNOWN:${unameOut}"
-esac
-
-# Linux
-if [ $machine = "Linux" ]; then
-  alias update='sudo apt update && sudo apt upgrade --autoremove -y'
-fi
-
-# MaxOS
-if [ $machine = "Mac" ]; then
-  [[ -f /use/local/bin/brew ]] && eval "$(/usr/local/bin/brew shellenv)"
-  # completion
-  export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
-  complete -cf sudo
-  [[ -r "/usr/local/share/bash-completion/bash_completion" ]] && . "/usr/local/share/bash-completion/bash_completion"
-fi
-
+#------------------------ Clean ----------------------------
 unset machine
-
-if [ -f ~/.bashrc.local ]; then
-  . ~/.bashrc.local
-fi
+unset config_dir
