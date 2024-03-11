@@ -51,17 +51,6 @@ nnoremap Y y$
 nnoremap j gj
 nnoremap k gk
 
-nnoremap <silent><ESC>1 1gt
-nnoremap <silent><ESC>2 2gt
-nnoremap <silent><ESC>3 3gt
-nnoremap <silent><ESC>4 4gt
-nnoremap <silent><ESC>5 5gt
-nnoremap <silent><ESC>6 6gt
-nnoremap <silent><ESC>7 7gt
-nnoremap <silent><ESC>8 8gt
-nnoremap <silent><ESC>9 9gt
-nnoremap <silent><ESC>0 0gt
-
 nnoremap <space> za
 vnoremap <space> zf
 
@@ -93,7 +82,7 @@ Plug 'vim-airline/vim-airline'    " airline
 Plug 'vim-airline/vim-airline-themes' " airline theme
 Plug 'easymotion/vim-easymotion'  " EasyMotion
 Plug 'NLKNguyen/papercolor-theme' " White Theme
-Plug 'psliwka/vim-smoothie'       " smooth scroll
+" Plug 'psliwka/vim-smoothie'       " smooth scroll
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
