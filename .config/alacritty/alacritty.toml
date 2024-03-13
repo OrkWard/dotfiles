@@ -7,5 +7,8 @@ program = "/usr/local/bin/bash"
 family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
+[window]
+option_as_alt = "Both"
+
 [font]
 size = 14
