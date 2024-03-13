@@ -57,7 +57,7 @@ else
 fi
 
 # ------------------------- environments -------------------------
-export EDITOR=nvim
+export EDITOR=vim
 export PATH=~/.local/bin:$PATH
 
 # colored GCC warnings and errors
