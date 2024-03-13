@@ -170,6 +170,7 @@ alias vv="vim ~/.vimrc"
 alias va="nvim ~/.config/alacritty/alacritty.toml"
 alias vn="nvim ~/.config/nvim/init.lua"
 alias vt="nvim ~/.tmux.conf"
+alias v3="nvim ~/.config/i3/config"
 
 # code
 if [ "$TERM_PROGRAM" = 'vscode' ]; then
