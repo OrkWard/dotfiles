@@ -37,6 +37,9 @@ exec --no-startup-id nm-applet
 # set keyboard repeat rate
 exec --no-startup-id xset r rate 200 35
 
+# set background
+exec --no-startup-id feh --no-fehbg --bg-fill '/home/orks/Pictures/11-0-Color-Day.jpg'
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -152,12 +155,19 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# default workspace layout: tabbed
+workspace_layout tabbed
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# assign windows
+assign [class="^Alacritty$"] 1
+assign [class="^Google-chrome$"] 2
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
