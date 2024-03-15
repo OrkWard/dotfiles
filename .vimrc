@@ -72,10 +72,9 @@ call plug#end()
 " Plug: coc.nvim
 let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd']
 
-" Make <TAB> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "<TAB>"
-inoremap <silent><expr> <c-@> coc#refresh()
+inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent> <c-c> <ESC>:call coc#pum#cancel()<CR>
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
@@ -99,6 +98,13 @@ function! ShowDocumentation()
   endif
 endfunction
 
+" Symbol renaming
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
 " Plug airline
 let g:airline_theme='papercolor'
 
@@ -110,7 +116,7 @@ let g:sneak#label = 1
 " nnoremap <C-t> :call fzf#run({'source': 'ls', 'sink': 'e'})<CR>
 nnoremap <Leader>b :Buffers
 
-# nerdtree
+" nerdtree
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>

@@ -168,12 +168,12 @@ complete -F _complete_alias y
 # basic
 alias ..="cd .."
 alias ...="cd ..."
-alias vb="nvim ~/.bashrc"
+alias vb="vim ~/.bashrc"
 alias vv="vim ~/.vimrc"
-alias va="nvim ~/.config/alacritty/alacritty.toml"
-alias vn="nvim ~/.config/nvim/init.lua"
-alias vt="nvim ~/.tmux.conf"
-alias v3="nvim ~/.config/i3/config"
+alias va="vim ~/.config/alacritty/alacritty.toml"
+alias vn="vim ~/.config/nvim/init.lua"
+alias vt="vim ~/.tmux.conf"
+alias v3="vim ~/.config/i3/config"
 
 # code
 if [ "$TERM_PROGRAM" = 'vscode' ]; then
