@@ -38,7 +38,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xset r rate 200 35
 
 # set background
-exec --no-startup-id feh --no-fehbg --bg-fill '/home/orks/Pictures/11-0-Color-Day.jpg'
+exec --no-startup-id feh --no-fehbg --bg-fill '/home/orks/Pictures/Evil Bubble_Crop.png'
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
