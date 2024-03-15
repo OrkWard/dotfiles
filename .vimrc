@@ -4,55 +4,31 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set autoindent
-
 set relativenumber " relative line number
-
 set hidden " Allow buffer to be hidden without save change
-
 set encoding=utf-8
 set cursorcolumn
 set cursorline
-set textwidth=0 " No auto new line
-
 set splitbelow " default split in below
-
 set laststatus=2 " Always show status line
-
 set list
 set listchars=tab:>-,space:·,extends:>,precedes:<
 " set listchars=tab:>-,extends:>,precedes:<
 
+let mapleader = " "
+
 filetype indent plugin on
-
-" Create a new tab with jump to specific path
-function! NewTabWithJump(...)
-  let l:cmd = 'source ~/.config/bash/z.sh; _z -e'
-  for l:arg in a:000
-    let l:cmd = l:cmd.' '.l:arg
-  endfor
-  let l:output = system(cmd)
-
-  " Remove possible trailing newline
-  let l:output = substitute(l:output, '\n\+$', '', '')
-
-  execute 'tabnew'
-  execute 'cd'.l:output
-  execute 'pwd'
-endfunction
-command! -nargs=+ Z call NewTabWithJump(<f-args>)
+syntax on
 
 autocmd BufNewFile,BufWinEnter * setlocal formatoptions=trc " Don't auto insert comment leader on return/hitting 'o'
 
-nnoremap <Leader>b <Esc>:buffers<CR>:buffer<Space>
-
 " some useful map
 nnoremap Y y$
-
 nnoremap j gj
 nnoremap k gk
 
-nnoremap <space> za
-vnoremap <space> zf
+" nnoremap <space> za
+" vnoremap <space> zf
 
 " nnoremap <C-t> :FZF<CR>
 
@@ -66,7 +42,6 @@ else
   let &t_EI = "\<Esc>[2 q"
 endif
 
-syntax on
 
 " ------------------------------ Plugins ------------------------------
 
@@ -86,7 +61,6 @@ Plug 'NLKNguyen/papercolor-theme' " White Theme
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
-Plug 'tmsvg/pear-tree'            " auto-pair
 Plug 'kylelaker/riscv.vim'        " RISC-V highlight
 Plug 'tpope/vim-commentary'       " comment
 Plug 'junegunn/fzf'               " fzf
@@ -96,16 +70,9 @@ call plug#end()
 " Plug: coc.nvim
 let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd']
 
-"inoremap <silent><expr> <TAB>
-      "\ coc#pum#visible() ? "\<C-n>" :
-      "\ <SID>check_back_space() ? "\<TAB>" :
-      "\ coc#refresh()
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 " Make <TAB> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "<TAB>"
-" Use <c-@> to trigger completion
 inoremap <silent><expr> <c-@> coc#refresh()
 
 " Use `[g` and `]g` to navigate diagnostics
@@ -135,11 +102,6 @@ map <Leader> <Plug>(easymotion-prefix)
 
 " Plug airline
 let g:airline_theme='papercolor'
-
-" Plug: pear-tree
-let g:pear_tree_smart_openers = 1
-let g:pear_tree_smart_closers = 1
-let g:pear_tree_smart_backspace = 1
 
 " Plug: vim-sneak
 let g:sneak#label = 1
