@@ -48,22 +48,24 @@ endif
 " vim-plug
 call plug#begin()
 Plug 'wakatime/vim-wakatime'      " wakatime
-Plug 'justinmk/vim-sneak'         " Sneak
+Plug 'justinmk/vim-sneak'
+Plug 'jiangmiao/auto-pairs'
+Plug 'bling/vim-bufferline'
 Plug 'tpope/vim-surround'         " Vim Surround
 Plug 'tpope/vim-repeat'           " Repeat
-Plug 'tomasiser/vim-code-dark'    " VS Code Dark Theme
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'vim-airline/vim-airline'    " airline
 Plug 'vim-airline/vim-airline-themes' " airline theme
-Plug 'easymotion/vim-easymotion'  " EasyMotion
 Plug 'NLKNguyen/papercolor-theme' " White Theme
+Plug 'preservim/nerdtree'
 " Plug 'psliwka/vim-smoothie'       " smooth scroll
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plug 'kylelaker/riscv.vim'        " RISC-V highlight
 Plug 'tpope/vim-commentary'       " comment
-Plug 'junegunn/fzf'               " fzf
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
@@ -97,9 +99,6 @@ function! ShowDocumentation()
   endif
 endfunction
 
-" Plug: easymotion
-map <Leader> <Plug>(easymotion-prefix)
-
 " Plug airline
 let g:airline_theme='papercolor'
 
@@ -107,17 +106,19 @@ let g:airline_theme='papercolor'
 let g:sneak#label = 1
 
 " fzf
-nnoremap <C-f> :FZF<CR>
-nnoremap <C-t> :call fzf#run({'source': 'ls', 'sink': 'e'})<CR>
+" nnoremap <C-f> :FZF<CR>
+" nnoremap <C-t> :call fzf#run({'source': 'ls', 'sink': 'e'})<CR>
+nnoremap <Leader>b :Buffers
+
+# nerdtree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " set code scheme
 set background=light
 if $TERM =~# 'xterm-color\|.*-256color\|alacritty'
   colorscheme PaperColor
-endif
-
-" ------------------------------ gvim ------------------------------
-if has('gui_running')
-  set lines=40 columns=150
-  set guifont=iAWriterMonoS-Regular:h14
 endif
