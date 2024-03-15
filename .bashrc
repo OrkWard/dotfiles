@@ -202,6 +202,7 @@ alias yp='yadm push'
 # eza
 alias e='eza'
 alias ea='eza -a'
+alias el='eza -l'
 
 # ls aliases
 alias ls='ls -F --color=auto'
