@@ -5,7 +5,7 @@ cyan = "0x005faf"
 green = "0xd70087"
 magenta = "0xd75f00"
 red = "0xd70000"
-white = "0x005f87"
+white = "0xeeeeee"
 yellow = "0x8700af"
 
 [colors.cursor]
