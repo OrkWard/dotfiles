@@ -133,7 +133,7 @@ export FZF_CTRL_T_COMMAND="fd -H"
 [ -f $config_dir/fzf-key-bindings.bash ] && . $config_dir/fzf-key-bindings.bash
 [ -f $config_dir/fzf-completion.bash ] && . $config_dir/fzf-completion.bash
 _fzf_compgen_path() {
-	fd -HLE".git" -E".wine" . "$1"
+	fd -tf -HLE".git" -E".wine" . "$1"
 }
 
 # Use fd to generate the list for directory completion
