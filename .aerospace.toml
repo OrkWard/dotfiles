@@ -70,6 +70,6 @@ enter = 'mode main'
 esc = 'mode main'
 
 [workspace-to-monitor-force-assignment]
-1 = 'secondary'
-2 = 'main'
-3 = 'secondary'
+1 = '2'
+2 = '3'
+3 = '1'
