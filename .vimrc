@@ -102,8 +102,8 @@ endfunction
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>f <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
 
 " Plug airline
 let g:airline_theme='papercolor'
@@ -114,7 +114,7 @@ let g:sneak#label = 1
 " fzf
 " nnoremap <C-f> :FZF<CR>
 " nnoremap <C-t> :call fzf#run({'source': 'ls', 'sink': 'e'})<CR>
-nnoremap <Leader>b :Buffers
+nnoremap <Leader>b :Buffers<CR>
 
 " nerdtree
 nnoremap <leader>n :NERDTreeFocus<CR>
