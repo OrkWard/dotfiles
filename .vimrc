@@ -50,7 +50,6 @@ call plug#begin()
 Plug 'wakatime/vim-wakatime'      " wakatime
 Plug 'justinmk/vim-sneak'
 Plug 'jiangmiao/auto-pairs'
-Plug 'ap/vim-buftabline'
 Plug 'tpope/vim-surround'         " Vim Surround
 Plug 'tpope/vim-repeat'           " Repeat
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -58,7 +57,6 @@ Plug 'vim-airline/vim-airline'    " airline
 Plug 'vim-airline/vim-airline-themes' " airline theme
 Plug 'NLKNguyen/papercolor-theme' " White Theme
 Plug 'preservim/nerdtree'
-" Plug 'psliwka/vim-smoothie'       " smooth scroll
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
@@ -66,7 +64,6 @@ Plug 'kylelaker/riscv.vim'        " RISC-V highlight
 Plug 'tpope/vim-commentary'       " comment
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 " Plug: coc.nvim
@@ -107,6 +104,8 @@ nmap <leader>f <Plug>(coc-format-selected)
 
 " Plug airline
 let g:airline_theme='papercolor'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 " Plug: vim-sneak
 let g:sneak#label = 1
