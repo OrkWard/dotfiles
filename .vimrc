@@ -9,7 +9,8 @@ set hidden " Allow buffer to be hidden without save change
 set encoding=utf-8
 set cursorcolumn
 set cursorline
-set splitbelow " default split in below
+set splitbelow " default split on the below
+set splitright " default split on the right
 set laststatus=2 " Always show status line
 set list
 set listchars=tab:>-,space:·,extends:>,precedes:<
