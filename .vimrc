@@ -50,7 +50,7 @@ call plug#begin()
 Plug 'wakatime/vim-wakatime'      " wakatime
 Plug 'justinmk/vim-sneak'
 Plug 'jiangmiao/auto-pairs'
-Plug 'bling/vim-bufferline'
+Plug 'ap/vim-buftabline'
 Plug 'tpope/vim-surround'         " Vim Surround
 Plug 'tpope/vim-repeat'           " Repeat
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
