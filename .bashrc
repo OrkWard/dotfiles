@@ -126,6 +126,9 @@ export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
 export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
 export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
 
+# cht.sh
+export CHTSH_QUERY_OPTIONS="style=xcode"
+
 # fzf
 export FZF_DEFAULT_COMMAND="fd -H"
 export FZF_CTRL_T_COMMAND="fd -H"
