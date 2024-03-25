@@ -30,18 +30,10 @@ nnoremap k gk
 " nnoremap <space> za
 " vnoremap <space> zf
 
-" nnoremap <C-t> :FZF<CR>
-
-if $TERM_PROGRAM ==# 'iTerm.app'
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-else
-  let &t_SI = "\<Esc>[6 q"
-  let &t_SR = "\<Esc>[4 q"
-  let &t_EI = "\<Esc>[2 q"
-endif
-
+" set cursor
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
 " ------------------------------ Plugins ------------------------------
 
@@ -72,7 +64,6 @@ let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd', 'coc-go', 'coc-viml
 
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "<TAB>"
 inoremap <silent><expr> <c-space> coc#refresh()
-inoremap <silent> <c-c> <ESC>:call coc#pum#cancel()<CR>
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list

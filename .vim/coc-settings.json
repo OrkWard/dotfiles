@@ -1,3 +1,9 @@
 {
-  "tsserver.useLocalTsdk": true
+  "suggest.asciiCharactersOnly": true,
+  "tsserver.useLocalTsdk": true,
+  "suggest.invalidInsertCharacters": [
+    "\r",
+    "\n",
+    " "
+  ]
 }
