@@ -176,7 +176,7 @@ complete -F _complete_alias y
 alias ..="cd .."
 alias ...="cd ..."
 alias vb="vim ~/.bashrc"
-alias vv="vim ~/.vimrc"
+alias vv="vim ~/.vim/vimrc"
 alias va="vim ~/.config/alacritty/alacritty.toml"
 alias vn="nvim ~/.config/nvim/init.lua"
 alias vt="vim ~/.tmux.conf"
