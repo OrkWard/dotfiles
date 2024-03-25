@@ -68,7 +68,6 @@ call plug#end()
 
 " Plug: coc.nvim
 let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd', 'coc-go']
-au ColorScheme * highlight! CocFloatDividingLine ctermfg=4
 
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "<TAB>"
 inoremap <silent><expr> <c-space> coc#refresh()
