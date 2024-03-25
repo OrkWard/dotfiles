@@ -1,3 +1,4 @@
+
 " ------------------------------ Basics ------------------------------
 set tabstop=2
 set softtabstop=2
@@ -64,6 +65,7 @@ let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd', 'coc-go', 'coc-viml
 
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "<TAB>"
 inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent> <c-c> <ESC>:call coc#pum#cancel()<CR>
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list

@@ -178,7 +178,7 @@ alias ...="cd ..."
 alias vb="vim ~/.bashrc"
 alias vv="vim ~/.vimrc"
 alias va="vim ~/.config/alacritty/alacritty.toml"
-alias vn="vim ~/.config/nvim/init.lua"
+alias vn="nvim ~/.config/nvim/init.lua"
 alias vt="vim ~/.tmux.conf"
 alias v3="vim ~/.config/i3/config"
 
