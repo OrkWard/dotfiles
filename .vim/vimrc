@@ -27,9 +27,6 @@ nnoremap Y y$
 nnoremap j gj
 nnoremap k gk
 
-" nnoremap <space> za
-" vnoremap <space> zf
-
 " set cursor
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
