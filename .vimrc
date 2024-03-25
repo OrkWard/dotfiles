@@ -47,11 +47,12 @@ endif
 
 " vim-plug
 call plug#begin()
-Plug 'wakatime/vim-wakatime'      " wakatime
+Plug 'wakatime/vim-wakatime'
+Plug 'liuchengxu/vim-which-key'
 Plug 'justinmk/vim-sneak'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'         " Vim Surround
-Plug 'tpope/vim-repeat'           " Repeat
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'vim-airline/vim-airline'    " airline
 Plug 'vim-airline/vim-airline-themes' " airline theme
@@ -67,7 +68,7 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Plug: coc.nvim
-let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd', 'coc-go']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd', 'coc-go', 'coc-vimlsp']
 
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "<TAB>"
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -102,7 +103,7 @@ nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>f <Plug>(coc-format-selected)
 nmap <leader>f <Plug>(coc-format-selected)
 
-" Plug airline
+" Plug: airline
 let g:airline_theme='papercolor'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
@@ -122,20 +123,26 @@ nmap <leader>+ <Plug>AirlineSelectNextTab
 " Plug: vim-sneak
 let g:sneak#label = 1
 
-" fzf
+" Plug: fzf
 " nnoremap <C-f> :FZF<CR>
 " nnoremap <C-t> :call fzf#run({'source': 'ls', 'sink': 'e'})<CR>
 nnoremap <Leader>b :Buffers<CR>
 
-" nerdtree
+" Plug: nerdtree
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
+" Plug: which-key
+set timeoutlen=500
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+
 " set code scheme
 set background=light
 if $TERM =~# 'xterm-color\|.*-256color\|alacritty'
   colorscheme PaperColor
+  highlight CocFloatDividingLine ctermfg=4
+  highlight ErrorMsg ctermfg=0
 endif
