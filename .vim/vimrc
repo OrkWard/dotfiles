@@ -111,6 +111,10 @@ nmap <leader>+ <Plug>AirlineSelectNextTab
 
 " Plug: vim-sneak
 let g:sneak#label = 1
+noremap f <Plug>Sneak_f
+noremap F <Plug>Sneak_F
+noremap t <Plug>Sneak_t
+noremap T <Plug>Sneak_T
 
 " Plug: fzf
 " nnoremap <C-f> :FZF<CR>
