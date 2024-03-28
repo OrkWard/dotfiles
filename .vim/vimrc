@@ -7,6 +7,9 @@ set autoindent
 set relativenumber " relative line number
 set hidden " Allow buffer to be hidden without save change
 set encoding=utf-8
+set timeoutlen=50
+set ttimeout
+set ttimeoutlen=50
 set cursorcolumn
 set cursorline
 set splitbelow " default split on the below
