@@ -15,8 +15,7 @@ set cursorline
 set splitbelow " default split on the below
 set laststatus=2 " Always show status line
 set list
-set listchars=tab:>-,space:·,extends:>,precedes:<
-" set listchars=tab:>-,extends:>,precedes:<
+set listchars=tab:>-,space:·,extends:>,precedes:<,leadmultispace:\|\ 
 
 let mapleader = " "
 
@@ -39,6 +38,7 @@ let &t_EI = "\<Esc>[2 q"
 
 " vim-plug
 call plug#begin()
+Plug 'editorconfig/editorconfig-vim'
 Plug 'wakatime/vim-wakatime'
 Plug 'liuchengxu/vim-which-key'
 Plug 'justinmk/vim-sneak'
