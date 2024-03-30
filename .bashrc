@@ -160,7 +160,7 @@ _fzf_comprun() {
 	cd) fzf --preview 'tree -C {} | head -200' "$@" ;;
 	export | unset) fzf --preview "eval 'echo \$'{}" "$@" ;;
 	ssh) fzf --preview 'dig {}' "$@" ;;
-	*) fzf --preview 'bat -n --color=always {}' "$@" ;;
+	*) fzf --preview 'bat -n --color=always --theme=GitHub {}' "$@" ;;
 	esac
 }
 
