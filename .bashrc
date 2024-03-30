@@ -135,7 +135,7 @@ export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
 export CHTSH_QUERY_OPTIONS="style=xcode"
 
 # fzf
-export FZF_DEFAULT_COMMAND="fd -H"
+export FZF_DEFAULT_COMMAND="fd -tf -H"
 export FZF_CTRL_T_COMMAND="fd -H"
 
 [ -f $config_dir/fzf-key-bindings.bash ] && . $config_dir/fzf-key-bindings.bash
@@ -163,6 +163,8 @@ _fzf_comprun() {
 	*) fzf --preview 'bat -n --color=always --theme=GitHub {}' "$@" ;;
 	esac
 }
+
+export FZF_PREVIEW_COMMAND="bat -n --color=always --theme=GitHub {}"
 
 _fzf_setup_completion dir tree
 _fzf_setup_completion path rm yadm y bat code
