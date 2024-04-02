@@ -7,7 +7,7 @@ set autoindent
 set relativenumber " relative line number
 set hidden " Allow buffer to be hidden without save change
 set encoding=utf-8
-set timeoutlen=50
+set timeoutlen=300
 set ttimeout
 set ttimeoutlen=50
 set cursorcolumn
@@ -40,7 +40,7 @@ let &t_EI = "\<Esc>[2 q"
 call plug#begin()
 Plug 'editorconfig/editorconfig-vim'
 Plug 'wakatime/vim-wakatime'
-Plug 'liuchengxu/vim-which-key'
+" Plug 'liuchengxu/vim-which-key'
 Plug 'justinmk/vim-sneak'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
@@ -132,8 +132,7 @@ nnoremap <C-f> :NERDTreeFind<CR>
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " Plug: which-key
-set timeoutlen=500
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+" nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
 " set code scheme
 set background=light
