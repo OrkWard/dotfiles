@@ -111,9 +111,6 @@ if [ $machine = "Mac" ]; then
 	eval "$(/usr/local/bin/brew shellenv)"
 fi
 
-# rust
-[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
-
 # z.sh
 . $config_dir/z.sh
 

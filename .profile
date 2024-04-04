@@ -19,4 +19,5 @@ fi
 PATH="/usr/local/go/bin:$HOME/.local/bin:$PATH"
 
 # rust bin
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
