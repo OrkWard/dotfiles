@@ -49,7 +49,10 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'vim-airline/vim-airline'    " airline
 Plug 'vim-airline/vim-airline-themes' " airline theme
 Plug 'NLKNguyen/papercolor-theme' " White Theme
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-git-status.vim'
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
@@ -124,15 +127,15 @@ noremap T <Plug>Sneak_T
 " nnoremap <C-t> :call fzf#run({'source': 'ls', 'sink': 'e'})<CR>
 nnoremap <Leader>b :Buffers<CR>
 
-" Plug: nerdtree
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" Relative line number
-let g:NERDTreeShowLineNumbers=1
-autocmd FileType nerdtree setlocal relativenumber
+" " Plug: nerdtree
+" nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <C-t> :NERDTreeToggle<CR>
+" nnoremap <leader>f :NERDTreeFind<CR>
+" " Exit Vim if NERDTree is the only window remaining in the only tab.
+" autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" " Relative line number
+" let g:NERDTreeShowLineNumbers=1
+" autocmd FileType nerdtree setlocal relativenumber
 
 " Plug: which-key
 " nnoremap <silent> <leader> :WhichKey '<Space>'<CR>

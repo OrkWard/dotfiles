@@ -1,6 +1,7 @@
 {
   "suggest.asciiCharactersOnly": true,
   "tsserver.useLocalTsdk": true,
+  "inlayHint.enable": false,
   "suggest.invalidInsertCharacters": [
     "\r",
     "\n",
