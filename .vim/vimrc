@@ -95,7 +95,6 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code
 xmap <leader>f <Plug>(coc-format-selected)
-nmap <c-f> :Files<CR>
 
 " Plug: airline
 let g:airline_theme='papercolor'
@@ -122,9 +121,9 @@ noremap t <Plug>Sneak_t
 noremap T <Plug>Sneak_T
 
 " Plug: fzf
-" nnoremap <C-f> :FZF<CR>
-" nnoremap <C-t> :call fzf#run({'source': 'ls', 'sink': 'e'})<CR>
 nnoremap <Leader>b :Buffers<CR>
+nnoremap <c-f> :Rg<CR>
+nnoremap <c-p> :Files<CR>
 
 " " Plug: nerdtree
 " nnoremap <leader>n :NERDTreeFocus<CR>
@@ -135,6 +134,8 @@ nnoremap <Leader>b :Buffers<CR>
 " " Relative line number
 " let g:NERDTreeShowLineNumbers=1
 " autocmd FileType nerdtree setlocal relativenumber
+
+" Plug: Vifm
 nnoremap <C-i> :Vifm<CR>
 
 " Plug: which-key
