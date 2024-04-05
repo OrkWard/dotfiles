@@ -49,10 +49,9 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'vim-airline/vim-airline'    " airline
 Plug 'vim-airline/vim-airline-themes' " airline theme
 Plug 'NLKNguyen/papercolor-theme' " White Theme
-" Plug 'preservim/nerdtree'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/fern-git-status.vim'
+" Plug 'lambdalisue/fern.vim'
+" Plug 'lambdalisue/fern-git-status.vim'
+Plug 'vifm/vifm.vim'
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
@@ -136,6 +135,7 @@ nnoremap <Leader>b :Buffers<CR>
 " " Relative line number
 " let g:NERDTreeShowLineNumbers=1
 " autocmd FileType nerdtree setlocal relativenumber
+nnoremap <C-i> :Vifm<CR>
 
 " Plug: which-key
 " nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
