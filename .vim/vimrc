@@ -136,7 +136,7 @@ nnoremap <c-p> :Files<CR>
 " autocmd FileType nerdtree setlocal relativenumber
 
 " Plug: Vifm
-nnoremap <C-i> :Vifm<CR>
+nnoremap <c-l> :Vifm<CR>
 
 " Plug: which-key
 " nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
