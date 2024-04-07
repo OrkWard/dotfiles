@@ -52,6 +52,7 @@ Plug 'vim-airline/vim-airline-themes' " airline theme
 Plug 'NLKNguyen/papercolor-theme' " White Theme
 " Plug 'lambdalisue/fern.vim'
 " Plug 'lambdalisue/fern-git-status.vim'
+Plug 'zivyangll/git-blame.vim'
 Plug 'vifm/vifm.vim'
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
@@ -97,6 +98,9 @@ nmap <leader>rn <Plug>(coc-rename)
 " Formatting selected code
 xmap <leader>f <Plug>(coc-format-selected)
 
+" Plug: git blame
+nnoremap <leader>b :<C-u>call gitblame#echo()<CR>
+
 " Plug: airline
 let g:airline_theme='papercolor'
 let g:airline#extensions#tabline#enabled = 1
@@ -122,9 +126,8 @@ noremap t <Plug>Sneak_t
 noremap T <Plug>Sneak_T
 
 " Plug: fzf
-nnoremap <Leader>b :Buffers<CR>
 nnoremap <c-f> :Rg<CR>
-nnoremap <c-p> :Files<CR>
+nnoremap <c-k> :Files<CR>
 
 " " Plug: nerdtree
 " nnoremap <leader>n :NERDTreeFocus<CR>
