@@ -5,7 +5,7 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set autoindent
-set relativenumber " relative line number
+set relativenumber number
 set hidden " Allow buffer to be hidden without save change
 set encoding=utf-8
 set timeoutlen=300
@@ -17,6 +17,15 @@ set splitbelow " default split on the below
 set laststatus=2 " Always show status line
 set list
 set listchars=tab:>-,space:·,extends:>,precedes:<,leadmultispace:\|\ 
+
+function SwitchListchars()
+  if &listchars == ''
+    let &listchars = 'tab:>-,space:·,extends:>,precedes:<,leadmultispace:| '
+  else
+    let &listchars = ''
+  endif
+endfunction
+vnoremap <leader>l :<C-u>call SwitchListchars()<CR>gv
 
 let mapleader = " "
 
