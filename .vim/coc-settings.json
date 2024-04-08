@@ -1,10 +1,9 @@
 {
   "suggest.asciiCharactersOnly": true,
+  "coc.preferences.formatOnSave": true,
   "tsserver.useLocalTsdk": true,
   "inlayHint.enable": false,
-  "suggest.invalidInsertCharacters": [
-    "\r",
-    "\n",
-    " "
-  ]
+  "suggest.invalidInsertCharacters": ["\r", "\n", " "],
+  "snippets.ultisnips.pythonPrompt": false,
+  "snippets.textmateSnippetsRoots": ["~/.vim/snippets"]
 }
