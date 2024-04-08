@@ -17,7 +17,6 @@ set splitbelow " default split on the below
 set laststatus=2 " Always show status line
 set list
 set listchars=tab:>-,space:·,extends:>,precedes:<,leadmultispace:\|\ 
-set tw=0
 
 let mapleader = " "
 
@@ -25,6 +24,7 @@ filetype indent plugin on
 syntax on
 
 autocmd BufNewFile,BufWinEnter * setlocal formatoptions=trc " Don't auto insert comment leader on return/hitting 'o'
+autocmd BufEnter * set tw=0
 
 " some useful map
 nnoremap Y y$
@@ -65,7 +65,8 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Plug: coc.nvim
-let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd', 'coc-go', 'coc-vimlsp', 'coc-snippets']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd', 'coc-go', 
+      \'coc-vimlsp', 'coc-snippets', 'coc-json', 'coc-rust-analyzer']
 
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "<TAB>"
 inoremap <silent><expr> <c-space> coc#refresh()
