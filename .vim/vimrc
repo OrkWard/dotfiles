@@ -18,6 +18,8 @@ set laststatus=2 " Always show status line
 set list
 set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·
 
+let mapleader = " "
+
 function SwitchListchars()
   if &listchars == ''
     let &listchars = 'tab:| ,space:·,extends:>,precedes:<,leadmultispace:|·'
@@ -26,8 +28,6 @@ function SwitchListchars()
   endif
 endfunction
 vnoremap <leader>l :<C-u>call SwitchListchars()<CR>gv
-
-let mapleader = " "
 
 filetype indent plugin on
 syntax on
