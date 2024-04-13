@@ -20,6 +20,6 @@ fileviewer .*/ eza --color=always
 fileviewer * highlight --out-format=ansi --force -qWJ %pw -t 2 %c
 
 nnoremap <c-n> :touch<space>
-" nnoremap <c-m> :mkdir<space>
+nnoremap <c-m> :mkdir<space>
 
 
