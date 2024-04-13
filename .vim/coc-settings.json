@@ -5,5 +5,10 @@
   "inlayHint.enable": false,
   "suggest.invalidInsertCharacters": ["\r", "\n", " "],
   "snippets.ultisnips.pythonPrompt": false,
-  "snippets.textmateSnippetsRoots": ["~/.vim/snippets"]
+  "snippets.textmateSnippetsRoots": [
+    "~/.vim/snippets"
+  ],
+  "cSpell.userWords": [
+    "clangd"
+  ]
 }
