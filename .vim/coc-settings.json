@@ -9,6 +9,8 @@
     "~/.vim/snippets"
   ],
   "cSpell.userWords": [
-    "clangd"
+    "clangd",
+    "napi",
+    "wasmpack"
   ]
 }
