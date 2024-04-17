@@ -197,7 +197,6 @@ alias gp='git push'
 
 # yadm alias
 alias y='yadm'
-alias ya='yadm add -u'
 alias yac='yadm add -u && yadm commit -m "$(date)"'
 alias ys='yadm status'
 alias yd='yadm diff'
