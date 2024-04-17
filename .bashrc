@@ -21,10 +21,6 @@ esac
 config_dir=~/.config/bash
 
 # --------------------- Basic ------------------------
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
 # language
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -39,9 +35,14 @@ shopt -s extglob
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+# don't put duplicate lines or lines starting with space in the history.
+# remove duplicated lines
+export HISTCONTROL=ignoredups:erasedups:ignoreboth
+export HISTSIZE=10000
+export HISTFILESIZE=20000
+
+# sync history
+export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 
 # make less more friendly for non-text input files, see lesspipe(1)
 #[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -50,9 +51,6 @@ HISTFILESIZE=2000
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 	debian_chroot=$(cat /etc/debian_chroot)
 fi
-
-# sync history
-export PROMPT_COMMAND="history -a; history -n"
 
 # --------------------- color & prompt ---------------------
 if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
