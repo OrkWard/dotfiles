@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -l
+#!/usr/bin/env -S bash -l
 set -e
 backup_dir=
 
