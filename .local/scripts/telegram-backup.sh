@@ -32,17 +32,17 @@ while [ -n "$1" ]; do
   if [ -f $chat_export ]; then
     max_id=$(cat $chat_export | jq '.messages[].id' | sort -nr | head -n 1)
     tmp_json=$(mktemp)
-    tmp_json2=$(mktemp)
+    tmp_result=$(mktemp)
 
     # new message
     tdl chat export -c $1 -T id -i $((max_id + 1)) -o "$tmp_json"
     tdl dl -f $tmp_json -d "$backup_dir/$1"
-    jq -s '{id: .[0].id, messages: [.[] | .messages[]]}' $tmp_json $chat_export > "$tmp_json2"
-    mv "$tmp_json2" $chat_export
+    jq -s '{id: .[0].id, messages: [.[] | .messages[]]}' $tmp_json $chat_export > "$tmp_result"
+    mv "$tmp_result" $chat_export
 
     # rm tmp
     [ -f $tmp_json ] && rm $tmp_json
-    [ -f $tmp_json2 ] && rm $tmp_json2
+    [ -f $tmp_result ] && rm $tmp_result
   else
     tdl chat export -c $1 -o $chat_export 
     tdl dl -f $chat_export -d $chat_dir
