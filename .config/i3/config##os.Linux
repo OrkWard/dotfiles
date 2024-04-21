@@ -168,6 +168,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # assign windows
 assign [class="^Alacritty$"] 1
 assign [class="^Google-chrome$"] 2
+assign [class="^code$"] 3
 for_window [title="^iCloud Notes$"] move container to workspace 3
 
 # resize window (you can also use the mouse for that)
