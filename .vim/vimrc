@@ -8,9 +8,9 @@ set autoindent
 set relativenumber number
 set hidden " Allow buffer to be hidden without save change
 set encoding=utf-8
-set timeoutlen=300
 set ttimeout
-set ttimeoutlen=50
+set timeoutlen=100
+set ttimeoutlen=100
 " set cursorcolumn
 set cursorline
 set splitbelow " default split on the below
@@ -75,8 +75,7 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Plug: coc.nvim
-let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd', 'coc-go', 
-      \'coc-vimlsp', 'coc-snippets', 'coc-json', 'coc-rust-analyzer']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd', 'coc-go', 'coc-snippets', 'coc-json', 'coc-rust-analyzer']
 
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "<TAB>"
 inoremap <silent><expr> <c-space> coc#refresh()

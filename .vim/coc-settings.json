@@ -9,9 +9,19 @@
     "~/.vim/snippets"
   ],
   "cSpell.userWords": [
+    "alacritty",
     "clangd",
+    "jiangmiao",
+    "junegunn",
+    "justinmk",
+    "liuchengxu",
     "napi",
+    "neoclide",
+    "riscv",
+    "tpope",
+    "vifm",
     "wakatime",
-    "wasmpack"
+    "wasmpack",
+    "zivyangll"
   ]
 }
