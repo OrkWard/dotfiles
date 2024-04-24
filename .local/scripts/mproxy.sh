@@ -9,8 +9,8 @@ fi
 echo "Set Wi-Fi proxy to localhost:${port}"
 
 networksetup -setwebproxystate "Wi-Fi" on
-networksetup -setwebproxy "Wi-Fi" "localhost" 7890
+networksetup -setwebproxy "Wi-Fi" "localhost" $port
 networksetup -setsecurewebproxystate "Wi-Fi" on
-networksetup -setsecurewebproxy "Wi-Fi" "localhost" 7890
+networksetup -setsecurewebproxy "Wi-Fi" "localhost" $port
 networksetup -setsocksfirewallproxystate "Wi-Fi" on
-networksetup -setsocksfirewallproxy "Wi-Fi" "localhost" 7890
+networksetup -setsocksfirewallproxy "Wi-Fi" "localhost" $port
