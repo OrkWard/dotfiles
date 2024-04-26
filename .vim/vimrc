@@ -9,8 +9,8 @@ set relativenumber number
 set hidden " Allow buffer to be hidden without save change
 set encoding=utf-8
 set ttimeout
-set timeoutlen=100
-set ttimeoutlen=100
+set timeoutlen=300
+set ttimeoutlen=300
 " set cursorcolumn
 set cursorline
 set splitbelow " default split on the below
