@@ -18,5 +18,6 @@
 	d = diff
 	sw = switch
 	m = merge
+	adog = log --all --decorate --oneline --graph
 [init]
 	defaultBranch = master
