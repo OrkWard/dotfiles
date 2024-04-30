@@ -8,9 +8,6 @@ set autoindent
 set relativenumber number
 set hidden " Allow buffer to be hidden without save change
 set encoding=utf-8
-set ttimeout
-set timeoutlen=200
-set ttimeoutlen=200
 " set cursorcolumn
 set cursorline
 set splitbelow " default split on the below
@@ -41,9 +38,9 @@ nnoremap j gj
 nnoremap k gk
 
 " set cursor
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
+" let &t_SI = "\<Esc>[6 q"
+" let &t_SR = "\<Esc>[4 q"
+" let &t_EI = "\<Esc>[2 q"
 
 " ------------------------------ Plugins ------------------------------
 
