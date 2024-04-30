@@ -152,22 +152,13 @@ noremap T <Plug>Sneak_T
 nnoremap <c-f> :Rg<CR>
 nnoremap <c-k> :Files<CR>
 
-" " Plug: nerdtree
-" nnoremap <leader>n :NERDTreeFocus<CR>
-" nnoremap <C-t> :NERDTreeToggle<CR>
-" nnoremap <leader>f :NERDTreeFind<CR>
-" " Exit Vim if NERDTree is the only window remaining in the only tab.
-" autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" " Relative line number
-" let g:NERDTreeShowLineNumbers=1
-" autocmd FileType nerdtree setlocal relativenumber
-
 " Plug: Vifm
 nnoremap <c-l> :Vifm<CR>
 
 " Plug: which-key
 " nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
+" ------------------------------ Theme ------------------------------
 " set code scheme
 set background=light
 if $TERM =~# 'xterm-color\|.*-256color\|alacritty'
@@ -175,4 +166,10 @@ if $TERM =~# 'xterm-color\|.*-256color\|alacritty'
   highlight CocFloatDividingLine ctermfg=4
   highlight CocFloatActive ctermfg=4
   highlight ErrorMsg ctermfg=0
+endif
+
+" ------------------------------ Gui ------------------------------
+if has("gui_running")
+  " disable toolbar
+  set guioptions-=T
 endif
