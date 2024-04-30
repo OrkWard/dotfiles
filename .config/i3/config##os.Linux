@@ -61,7 +61,7 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+d exec "rofi -show combi -combi-modi run,drun"
 
-bindsym $mod+v exec "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'"
+bindsym $mod+v exec "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'; sleep 0.1; xdotool key --clearmodifiers ctrl+shift+v"
 
 # change focus
 bindsym $mod+h focus left
