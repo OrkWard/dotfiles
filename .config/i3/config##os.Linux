@@ -38,7 +38,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xset r rate 200 35
 
 # set background
-exec --no-startup-id feh --no-fehbg --bg-fill '/home/orks/Pictures/Evil Bubble_Crop.png'
+exec --no-startup-id feh --no-fehbg --bg-fill '/home/orks/Pictures/Evil-Bubble.jpg'
 
 # greenclip daemon
 exec --no-startup-id greenclip daemon>/dev/null
