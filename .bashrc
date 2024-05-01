@@ -61,6 +61,7 @@ fi
 
 # ------------------------- environments -------------------------
 export EDITOR=vim
+# add local bin, local scripts to PATH
 export PATH=~/.local/bin:~/.local/scripts:$PATH
 
 # colored GCC warnings and errors
@@ -69,6 +70,10 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # go
 export PATH=$PATH:~/.gopath/bin
 export GOPATH=~/.gopath
+
+# deno
+export DENO_INSTALL="/home/orks/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
 # remove mail check
 unset MAILCHECK
