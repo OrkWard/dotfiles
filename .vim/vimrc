@@ -145,12 +145,12 @@ noremap t <Plug>Sneak_t
 noremap T <Plug>Sneak_T
 
 " Plug: fzf
-nnoremap gf :Rg<CR>
+nnoremap <leader>f :Rg<CR>
 nnoremap g* :Rg<space><c-r><c-w><cr>
-nnoremap gt :Files<CR>
+nnoremap <leader>t :Files<CR>
 
 " Plug: Vifm
-nnoremap gv :Vifm<CR>
+nnoremap <c-f> :Vifm<CR>
 
 " Plug: which-key
 " nnoremap <silent> <leader> :WhichKey '<Space>'<CR>

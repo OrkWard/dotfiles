@@ -21,3 +21,5 @@
 	adog = log --all --decorate --oneline --graph
 [init]
 	defaultBranch = master
+[credential]
+	helper = cache
