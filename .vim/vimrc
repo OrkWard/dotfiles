@@ -76,7 +76,6 @@ let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd', 'coc-go', 'coc-snip
 
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "<TAB>"
 inoremap <silent><expr> <c-space> coc#refresh()
-inoremap <silent> <c-c> <ESC>:call coc#pum#cancel()<CR>
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
@@ -146,11 +145,12 @@ noremap t <Plug>Sneak_t
 noremap T <Plug>Sneak_T
 
 " Plug: fzf
-nnoremap <c-f> :Rg<CR>
-nnoremap <c-k> :Files<CR>
+nnoremap gf :Rg<CR>
+nnoremap g* :Rg<space><c-r><c-w><cr>
+nnoremap gt :Files<CR>
 
 " Plug: Vifm
-nnoremap <c-l> :Vifm<CR>
+nnoremap gv :Vifm<CR>
 
 " Plug: which-key
 " nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
