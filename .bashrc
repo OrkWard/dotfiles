@@ -122,6 +122,12 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 command -v pyenv >/dev/null && eval "$(pyenv init -)"
 
+# fnm
+if command -v fnm >/dev/null; then
+	eval "$(fnm env)"
+	eval "$(fnm completion)"
+fi
+
 # less
 export LESS_TERMCAP_mb=$'\e[1;31m'     # begin bold
 export LESS_TERMCAP_md=$'\e[1;33m'     # begin blink
