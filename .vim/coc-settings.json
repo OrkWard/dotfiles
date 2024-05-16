@@ -10,6 +10,7 @@
   ],
   "cSpell.userWords": [
     "alacritty",
+    "caniusenode",
     "clangd",
     "covariates",
     "jiangmiao",
@@ -20,9 +21,11 @@
     "neoclide",
     "pyright",
     "riscv",
+    "tailwindcss",
     "tpope",
     "vifm",
     "wakatime",
+    "waku",
     "wasmpack",
     "zivyangll"
   ]

@@ -117,15 +117,16 @@ fi
 # z.sh
 . $config_dir/z.sh
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 command -v pyenv >/dev/null && eval "$(pyenv init -)"
+
+# fnm
+if command -v fnm >/dev/null; then
+	eval "$(fnm env)"
+	eval "$(fnm completions)"
+fi
 
 # less
 export LESS_TERMCAP_mb=$'\e[1;31m'     # begin bold
