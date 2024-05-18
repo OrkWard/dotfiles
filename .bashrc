@@ -41,9 +41,6 @@ export HISTCONTROL=ignoredups:erasedups:ignoreboth
 export HISTSIZE=10000
 export HISTFILESIZE=20000
 
-# sync history
-export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
-
 # make less more friendly for non-text input files, see lesspipe(1)
 #[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -114,9 +111,6 @@ if [ $machine = "Mac" ]; then
 	eval "$(/usr/local/bin/brew shellenv)"
 fi
 
-# z.sh
-. $config_dir/z.sh
-
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -172,10 +166,12 @@ export FZF_PREVIEW_COMMAND="bat -n --color=always --theme=GitHub {}"
 _fzf_setup_completion dir tree
 _fzf_setup_completion path rm yadm y bat code
 
-# alias completion
-. $config_dir/complete_alias.sh
-complete -F _complete_alias g
-complete -F _complete_alias y
+# autojump
+. /usr/share/autojump/autojump.sh
+
+# atuin
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
 
 # --------------------- alias --------------------
 # basic
@@ -237,6 +233,11 @@ alias bat='bat --theme=GitHub'
 
 # ripgrep
 alias rg='rg --no-heading --column'
+
+# alias completion
+. $config_dir/complete_alias.sh
+complete -F _complete_alias g
+complete -F _complete_alias y
 
 #------------------------ Clean ----------------------------
 unset machine

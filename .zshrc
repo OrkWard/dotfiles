@@ -1,1 +1,3 @@
 
+
+eval "$(atuin init zsh)"
