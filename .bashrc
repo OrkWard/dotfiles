@@ -167,7 +167,7 @@ _fzf_setup_completion dir tree
 _fzf_setup_completion path rm yadm y bat code
 
 # autojump
-. /usr/share/autojump/autojump.sh
+. /usr/share/autojump/autojump.bash
 
 # atuin
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
