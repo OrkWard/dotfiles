@@ -170,7 +170,7 @@ _fzf_setup_completion path rm yadm y bat code
 . /usr/share/autojump/autojump.bash
 
 # atuin
-[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+source $config_dir/bash-preexec.sh
 eval "$(atuin init bash)"
 
 # --------------------- alias --------------------
