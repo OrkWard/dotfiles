@@ -114,13 +114,11 @@ fi
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-command -v pyenv >/dev/null && eval "$(pyenv init -)"
+eval "$(pyenv init -)"
 
 # fnm
-if command -v fnm >/dev/null; then
-	eval "$(fnm env)"
-	eval "$(fnm completions)"
-fi
+eval "$(fnm env)"
+eval "$(fnm completions)"
 
 # less
 export LESS_TERMCAP_mb=$'\e[1;31m'     # begin bold
