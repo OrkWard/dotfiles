@@ -10,12 +10,17 @@ set encoding=utf-8
 set cursorline
 set splitbelow " default split on the below
 set laststatus=2 " Always show status line
+
+" Display blank characters
 set list
 set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·
 
+" <Leader> key
 let mapleader = " "
 
-autocmd BufNewFile,BufWinEnter * setlocal formatoptions=trc " Don't auto insert comment leader on return/hitting 'o'
+" Don't auto insert comment leader on return/hitting 'o'
+autocmd BufNewFile,BufWinEnter * setlocal formatoptions=trc
+" Don't limit line length
 autocmd BufEnter * set tw=0
 
 " vim-plug
@@ -28,19 +33,19 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'vim-airline/vim-airline'    " airline
-Plug 'vim-airline/vim-airline-themes' " airline theme
-Plug 'NLKNguyen/papercolor-theme' " White Theme
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'NLKNguyen/papercolor-theme'
 " Plug 'lambdalisue/fern.vim'
 " Plug 'lambdalisue/fern-git-status.vim'
 Plug 'zivyangll/git-blame.vim'
 Plug 'vifm/vifm.vim'
-Plug 'pangloss/vim-javascript'    " JavaScript support
-Plug 'leafgarland/typescript-vim' " TypeScript syntax
-Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
-Plug 'kylelaker/riscv.vim'        " RISC-V highlight
-Plug 'tpope/vim-commentary'       " comment
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'kylelaker/riscv.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 call plug#end()
