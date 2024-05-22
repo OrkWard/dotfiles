@@ -1,4 +1,3 @@
-
 " Plug: coc.nvim
 let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd', 'coc-go', 'coc-snippets', 'coc-json', 'coc-rust-analyzer', 'coc-pyright']
 
