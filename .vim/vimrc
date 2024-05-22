@@ -1,167 +1,31 @@
-" map candidate: H L M
-" ------------------------------ Basics ------------------------------
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab
-set autoindent
-set relativenumber number
-set hidden " Allow buffer to be hidden without save change
-set encoding=utf-8
-" set cursorcolumn
-set cursorline
-set splitbelow " default split on the below
-set laststatus=2 " Always show status line
-set list
-set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·
-
-let mapleader = " "
-
-function SwitchListchars()
-  if &listchars == ''
-    let &listchars = 'tab:| ,space:·,extends:>,precedes:<,leadmultispace:|·'
-  else
-    let &listchars = ''
-  endif
-endfunction
-vnoremap <leader>l :<C-u>call SwitchListchars()<CR>gv
-
-filetype indent plugin on
-syntax on
-
-autocmd BufNewFile,BufWinEnter * setlocal formatoptions=trc " Don't auto insert comment leader on return/hitting 'o'
-autocmd BufEnter * set tw=0
-
-" some useful map
-nnoremap Y y$
-nnoremap j gj
-nnoremap k gk
-
-" ------------------------------ Plugins ------------------------------
-
-" vim-plug
-call plug#begin()
-Plug 'editorconfig/editorconfig-vim'
-Plug 'wakatime/vim-wakatime'
-" Plug 'liuchengxu/vim-which-key'
-Plug 'justinmk/vim-sneak'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sleuth'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'vim-airline/vim-airline'    " airline
-Plug 'vim-airline/vim-airline-themes' " airline theme
-Plug 'NLKNguyen/papercolor-theme' " White Theme
-" Plug 'lambdalisue/fern.vim'
-" Plug 'lambdalisue/fern-git-status.vim'
-Plug 'zivyangll/git-blame.vim'
-Plug 'vifm/vifm.vim'
-Plug 'pangloss/vim-javascript'    " JavaScript support
-Plug 'leafgarland/typescript-vim' " TypeScript syntax
-Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
-Plug 'kylelaker/riscv.vim'        " RISC-V highlight
-Plug 'tpope/vim-commentary'       " comment
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-call plug#end()
-
-" Plug: coc.nvim
-let g:coc_global_extensions = ['coc-tsserver', 'coc-clangd', 'coc-go', 'coc-snippets', 'coc-json', 'coc-rust-analyzer', 'coc-pyright']
-
-inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "<TAB>"
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Applying code actions to the selected code block
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap keys for applying code actions at the cursor position
-nmap <leader>ac  <Plug>(coc-codeaction-cursor)
-" Remap keys for apply code actions affect whole buffer
-nmap <leader>as  <Plug>(coc-codeaction-source)
-" Apply the most preferred quickfix action to fix diagnostic on the current line
-nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call ShowDocumentation()<CR>
-
-function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
-endfunction
-
-" Symbol renaming
-nmap <leader>rn <Plug>(coc-rename)
-
-" Formatting selected code
-xmap <leader>f <Plug>(coc-format-selected)
-
-" Plug: git blame
-nnoremap <leader>b :<C-u>call gitblame#echo()<CR>
-
-" Plug: airline
-let g:airline_theme='papercolor'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_idx_mode = 1
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
-nmap <leader>0 <Plug>AirlineSelectTab0
-nmap <leader>- <Plug>AirlineSelectPrevTab
-nmap <leader>+ <Plug>AirlineSelectNextTab
-
-" Plug: vim-sneak
-let g:sneak#label = 1
-noremap f <Plug>Sneak_f
-noremap F <Plug>Sneak_F
-noremap t <Plug>Sneak_t
-noremap T <Plug>Sneak_T
-
-" Plug: fzf
-nnoremap <leader>f :Rg<CR>
-nnoremap g* :Rg<space><c-r><c-w><cr>
-nnoremap <leader>t :Files<CR>
-
-" Plug: Vifm
-nnoremap <c-f> :Vifm<CR>
-
-" Plug: which-key
-" nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-
-" ------------------------------ Theme ------------------------------
-" set code scheme
-set background=light
-if $TERM =~# 'xterm-color\|.*-256color\|alacritty'
-  colorscheme PaperColor
-  highlight CocFloatDividingLine ctermfg=4
-  highlight CocFloatActive ctermfg=4
-  highlight ErrorMsg ctermfg=0
+if !has('vim9script') ||  v:version < 900
+    " Needs Vim version 9.0 and above
+    finish
 endif
 
-" ------------------------------ Gui ------------------------------
-if has("gui_running")
-  " disable toolbar
-  set guioptions-=T
-endif
+vim9script
+
+g:mapleader = "\<Space>"
+g:maplocalleader = "\<Space>" # meant for certain file types
+map <BS> <Leader>
+
+# To make undercurl work in iterm2 (:h E436, :h t_Cs)
+&t_Cs = "\e[4:3m"
+&t_Ce = "\e[4:0m"
+
+# Disable bracketed paste (otherwise pasting does not work in popup)
+# https://github.com/vim/vim/issues/11766
+# &t_BE = ""
+# &t_BD = "\e[?2004l"
+# exec "set t_PS=\e[200~"
+# exec "set t_PE=\e[201~"
+
+# Cursor shape changes to show which mode you are in (:h t_SI)
+# 6=beam, 4=underline, 2=block
+&t_SI = "\e[6 q" #SI = INSERT mode
+&t_SR = "\e[4 q" #SR = REPLACE mode
+&t_EI = "\e[2 q" #EI = NORMAL mode (ALL ELSE)
+# reset the cursor on start
+autocmd VimEnter,VimResume * silent execute '!echo -ne "\e[2 q"' | redraw!
+
+
