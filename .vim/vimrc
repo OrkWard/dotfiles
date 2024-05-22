@@ -1,0 +1,24 @@
+
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set autoindent
+set relativenumber number
+set hidden " Allow buffer to be hidden without save change
+set encoding=utf-8
+" set cursorcolumn
+set cursorline
+set splitbelow " default split on the below
+set laststatus=2 " Always show status line
+set list
+set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·
+
+let mapleader = " "
+
+autocmd BufNewFile,BufWinEnter * setlocal formatoptions=trc " Don't auto insert comment leader on return/hitting 'o'
+autocmd BufEnter * set tw=0
+
+filetype indent plugin on
+syntax on
+
