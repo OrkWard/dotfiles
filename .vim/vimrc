@@ -18,9 +18,6 @@ let mapleader = " "
 autocmd BufNewFile,BufWinEnter * setlocal formatoptions=trc " Don't auto insert comment leader on return/hitting 'o'
 autocmd BufEnter * set tw=0
 
-filetype indent plugin on
-syntax on
-
 " vim-plug
 call plug#begin('~/.local/share/vim-plug')
 Plug 'editorconfig/editorconfig-vim'
