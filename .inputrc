@@ -1,9 +1,5 @@
 # visible ring
 set visible-stats on
 
-# word move
-"\e\e[C": forward-word   
-"\e\e[D": backward-word 
-
-# Ignore case when completing, very nice!
+set show-all-if-ambiguous on
 set completion-ignore-case on
