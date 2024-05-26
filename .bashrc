@@ -95,7 +95,7 @@ if [ $machine = "Linux" ]; then
 		. /etc/bash_completion
 	fi
 
-	. /usr/share/git/completion/git-prompt.sh
+	. $config_dir/git-prompt.sh
 fi
 
 # MaxOS
