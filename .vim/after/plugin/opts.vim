@@ -49,7 +49,7 @@ if exists('g:loaded_gitblame')
   nnoremap <leader>b :<C-u>call gitblame#echo()<CR>
 endif
 
-if exists('g:loaded_airline') && exists('g:loaded_airline_theme')
+if exists('g:loaded_airline') && exists('g:loaded_airline_themes')
   let g:airline_theme='papercolor'
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#tabline#buffer_idx_mode = 1
@@ -67,7 +67,7 @@ if exists('g:loaded_airline') && exists('g:loaded_airline_theme')
   nmap <leader>+ <Plug>AirlineSelectNextTab
 endif
 
-if exists('g:loaded_sneak')
+if exists('g:loaded_sneak_plugin')
   let g:sneak#label = 1
   noremap f <Plug>Sneak_f
   noremap F <Plug>Sneak_F
