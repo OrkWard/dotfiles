@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything
 case $- in
-*i*) ;;
-*) return ;;
+	*i*) ;;
+	*) return ;;
 esac
 
 # exit on error
@@ -9,12 +9,12 @@ esac
 
 # detect machine type
 case "$(uname -s)" in
-Linux*) machine=Linux ;;
-Darwin*) machine=Mac ;;
-CYGWIN*) machine=Cygwin ;;
-MINGW*) machine=MinGw ;;
-MSYS_NT*) machine=Git ;;
-*) machine="UNKNOWN:${unameOut}" ;;
+	Linux*) machine=Linux ;;
+	Darwin*) machine=Mac ;;
+	CYGWIN*) machine=Cygwin ;;
+	MINGW*) machine=MinGw ;;
+	MSYS_NT*) machine=Git ;;
+	*) machine="UNKNOWN:${unameOut}" ;;
 esac
 
 export EDITOR=vim
@@ -57,13 +57,13 @@ unset MAILCHECK
 
 # --------------------- color & prompt ---------------------
 if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-  PS1='($?) '
-  PS1+='\[\033[01;32m\]\u '
-  PS1+='\[\033[01;34m\]\w '
-  PS1+='\[\033[01;33m\]$(__git_ps1 "(%s) ")'
-  PS1+='\[\033[00m\]\$ '
+	PS1='($?) '
+	PS1+='\[\033[01;32m\]\u '
+	PS1+='\[\033[01;34m\]\w '
+	PS1+='\[\033[01;33m\]$(__git_ps1 "(%s) ")'
+	PS1+='\[\033[00m\]\$ '
 else
-  PS1='($?) \u@ \w\$ '
+	PS1='($?) \u@ \w\$ '
 fi
 
 # --------------------- Completion -------------------------
@@ -88,17 +88,23 @@ fi
 config_dir=~/.config/bash
 
 for plugin in "$config_dir"/*; do
-  if [ -f "$plugin" ]; then
-    . "$plugin"
-  elif [ -d "$plugin" ]; then
-    if [ ! -f "$plugin/disabled" ]; then
-      for plug_component in "$plugin"/*; do
-        if [ -f "$plug_component" ]; then
-          . "$plug_component"
-        fi
-      done
-    fi
-  fi
+	if [ -f "$plugin" ]; then
+		. "$plugin"
+	elif [ -d "$plugin" ]; then
+		# use disabled file to disable plugin
+		if [ ! -f "$plugin/disabled" ]; then
+			for plug_component in "$plugin"/*; do
+				if [ -f "$plug_component" ] && [ "$plug_component" != "$plugin/config.sh" ]; then
+					. "$plug_component"
+				fi
+			done
+
+			# always source config.sh last
+			if [ -f "$plugin/config.sh" ]; then
+				. "$plugin/config.sh"
+			fi
+		fi
+	fi
 done
 
 # homebrew
