@@ -238,6 +238,11 @@ alias rg='rg --no-heading --column'
 complete -F _complete_alias g
 complete -F _complete_alias y
 
+# baz plugin manager
+export BAZ_LOADER_ENABLED=true
+_baz_loader="$HOME/.local/share/baz/loader.sh"
+[ -f "$_baz_loader" ] && . "$_baz_loader"
+
 #------------------------ Clean ----------------------------
 unset machine
 unset config_dir
