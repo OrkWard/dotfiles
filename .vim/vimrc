@@ -44,6 +44,7 @@ Plug 'zivyangll/git-blame.vim'
 Plug 'vifm/vifm.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'girishji/vimcomplete'
 
 " highlight
 Plug 'kylelaker/riscv.vim'
