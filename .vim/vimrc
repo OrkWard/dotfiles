@@ -42,13 +42,13 @@ Plug 'NLKNguyen/papercolor-theme'
 " Plug 'lambdalisue/fern-git-status.vim'
 Plug 'zivyangll/git-blame.vim'
 Plug 'vifm/vifm.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'maxmellon/vim-jsx-pretty'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
-" language
+" highlight
 Plug 'kylelaker/riscv.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
