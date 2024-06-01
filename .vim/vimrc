@@ -45,8 +45,10 @@ Plug 'vifm/vifm.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'kylelaker/riscv.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+
+" language
+Plug 'kylelaker/riscv.vim'
 call plug#end()
 
