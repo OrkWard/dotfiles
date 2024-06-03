@@ -82,7 +82,11 @@ if exists('g:loaded_fzf') && exists('g:loaded_fzf_vim')
 endif
 
 if exists('g:loaded_vifm')
-nnoremap <c-f> :Vifm<CR>
+  nnoremap <c-f> :Vifm<CR>
+endif
+
+if exists('g:loaded_lexima')
+  let g:lexima_enable_newline_rules = 0
 endif
 
 " Plug: which-key
