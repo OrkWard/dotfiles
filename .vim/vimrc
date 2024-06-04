@@ -10,6 +10,9 @@ set cursorline
 set splitbelow " default split on the below
 set laststatus=2 " Always show status line
 
+set wildmenu
+set wildmode=longest:full,full
+
 " Display blank characters
 set list
 set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·,trail:~

@@ -100,15 +100,5 @@ if exists('g:loaded_lsp')
   nnoremap <silent> gd :LspGotoDefinition
   nnoremap <silent> gi :LspGotoImpl
   nnoremap <silent> gy :LspGotoTypeDef
-  nnoremap <silent> K :call ShowDocumentation()<CR>
-
-  function! ShowDocumentation()
-    if lsp#capacities#GetClientCapacity()
-    try
-      :LspHover
-    catch
-      call feedkeys('K', 'in')
-    endtry
-  endfunction
-
+  set keywordprg=:LspHover
 endif
