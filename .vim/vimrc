@@ -6,14 +6,19 @@ set autoindent
 set relativenumber number
 set hidden " Allow buffer to be hidden without save change
 set encoding=utf-8
-" set cursorcolumn
 set cursorline
 set splitbelow " default split on the below
 set laststatus=2 " Always show status line
 
 " Display blank characters
 set list
-set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·
+set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·,trail:~
+
+" set cursor
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+set ttimeoutlen=100
 
 " <Leader> key
 let mapleader = " "
@@ -27,19 +32,14 @@ autocmd BufEnter * set tw=0
 call plug#begin('~/.local/share/vim-plug')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'wakatime/vim-wakatime'
-" Plug 'liuchengxu/vim-which-key'
 Plug 'justinmk/vim-sneak'
-" Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-commentary'
-" Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'NLKNguyen/papercolor-theme'
-" Plug 'lambdalisue/fern.vim'
-" Plug 'lambdalisue/fern-git-status.vim'
 Plug 'zivyangll/git-blame.vim'
 Plug 'vifm/vifm.vim'
 Plug 'junegunn/fzf'
@@ -52,5 +52,10 @@ Plug 'kylelaker/riscv.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
+
+" disable now
+" Plug 'liuchengxu/vim-which-key'
+" Plug 'jiangmiao/auto-pairs'
+" Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 call plug#end()
 

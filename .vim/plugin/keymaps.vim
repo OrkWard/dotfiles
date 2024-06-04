@@ -1,9 +1,9 @@
 " map candidate: H L M
 function SwitchListchars()
-  if &listchars == ''
-    let &listchars = 'tab:| ,space:·,extends:>,precedes:<,leadmultispace:|·'
+  if &list
+    set nolist
   else
-    let &listchars = ''
+    set list
   endif
 endfunction
 vnoremap <leader>l :<C-u>call SwitchListchars()<CR>gv
