@@ -96,4 +96,19 @@ if exists('g:loaded_lsp')
         \ path: '/run/user/1000/fnm_multishells/28397_1717474660334/bin/typescript-language-server',
         \ args: ['--stdio'],
         \ }])
+
+  nnoremap <silent> gd :LspGotoDefinition
+  nnoremap <silent> gi :LspGotoImpl
+  nnoremap <silent> gy :LspGotoTypeDef
+  nnoremap <silent> K :call ShowDocumentation()<CR>
+
+  function! ShowDocumentation()
+    if lsp#capacities#GetClientCapacity()
+    try
+      :LspHover
+    catch
+      call feedkeys('K', 'in')
+    endtry
+  endfunction
+
 endif
