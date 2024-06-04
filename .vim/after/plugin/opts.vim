@@ -100,5 +100,9 @@ if exists('g:loaded_lsp')
   nnoremap <silent> gd :LspGotoDefinition
   nnoremap <silent> gi :LspGotoImpl
   nnoremap <silent> gy :LspGotoTypeDef
+  nnoremap <silent> [g :LspDiag prev
+  nnoremap <silent> ]g :LspDiag next
   set keywordprg=:LspHover
+
+  nnoremap <silent> <leader>rn :LspRename
 endif
