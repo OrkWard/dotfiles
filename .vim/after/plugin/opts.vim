@@ -89,5 +89,11 @@ if exists('g:loaded_lexima')
   let g:lexima_enable_newline_rules = 0
 endif
 
-" Plug: which-key
-" nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+if exists('g:loaded_lsp')
+  autocmd User LspSetup call LspAddServer([#{
+        \ name: 'typescriptlang',
+        \ filetype: ['javascript', 'typescript', 'javascriptreact', 'typescriptreact'],
+        \ path: 'tsserver',
+        \ args: ['--stdio'],
+        \ }])
+endif

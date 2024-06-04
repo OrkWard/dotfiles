@@ -46,6 +46,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'girishji/vimcomplete'
 Plug 'cohama/lexima.vim'
+Plug 'yegappan/lsp'
 
 " highlight
 Plug 'kylelaker/riscv.vim'
