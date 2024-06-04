@@ -18,7 +18,7 @@ set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·,trail:~
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
-set ttimeoutlen=100
+set ttimeoutlen=50
 
 " <Leader> key
 let mapleader = " "
