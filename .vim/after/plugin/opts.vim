@@ -90,7 +90,7 @@ if exists('g:loaded_lexima')
 endif
 
 if exists('g:loaded_lsp')
-  autocmd User LspSetup call LspAddServer([#{
+  call LspAddServer([#{
         \ name: 'typescriptlang',
         \ filetype: ['javascript', 'typescript', 'javascriptreact', 'typescriptreact'],
         \ path: '/run/user/1000/fnm_multishells/28397_1717474660334/bin/typescript-language-server',
