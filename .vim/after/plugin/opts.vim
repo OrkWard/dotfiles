@@ -93,7 +93,7 @@ if exists('g:loaded_lsp')
   call LspAddServer([#{
         \ name: 'typescriptlang',
         \ filetype: ['javascript', 'typescript', 'javascriptreact', 'typescriptreact'],
-        \ path: '/run/user/1000/fnm_multishells/28397_1717474660334/bin/typescript-language-server',
+        \ path: 'typescript-language-server',
         \ args: ['--stdio'],
         \ }])
 
