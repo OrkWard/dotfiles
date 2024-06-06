@@ -97,6 +97,8 @@ if exists('g:loaded_lsp')
         \ args: ['--stdio'],
         \ }])
 
+  call LspOptionsSet({'showSignature': v:false})
+
   nnoremap <silent> gd :LspGotoDefinition
   nnoremap <silent> gi :LspGotoImpl
   nnoremap <silent> gy :LspGotoTypeDef
