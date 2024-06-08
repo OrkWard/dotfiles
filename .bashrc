@@ -7,16 +7,6 @@ esac
 # exit on error
 #set -e
 
-# detect machine type
-case "$(uname -s)" in
-	Linux*) machine=Linux ;;
-	Darwin*) machine=Mac ;;
-	CYGWIN*) machine=Cygwin ;;
-	MINGW*) machine=MinGw ;;
-	MSYS_NT*) machine=Git ;;
-	*) machine="UNKNOWN:${unameOut}" ;;
-esac
-
 export EDITOR=vim
 # add local bin, local scripts to PATH
 export PATH=~/.local/scripts:~/.local/bin:$PATH
@@ -66,24 +56,6 @@ else
 	PS1='($?) \u@ \w\$ '
 fi
 
-# --------------------- Completion -------------------------
-# Linux
-if [ $machine = "Linux" ]; then
-	if [ -f /usr/share/bash-completion/bash_completion ]; then
-		. /usr/share/bash-completion/bash_completion
-	elif [ -f /etc/bash_completion ]; then
-		. /etc/bash_completion
-	fi
-fi
-
-# MaxOS
-if [ $machine = "Mac" ]; then
-	# completion
-	export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
-	complete -cf sudo
-	. "/usr/local/etc/profile.d/bash_completion.sh"
-fi
-
 # ---------------------- Applications ----------------------------
 config_dir=~/.config/bash
 
@@ -106,11 +78,6 @@ for plugin in "$config_dir"/*; do
 		fi
 	fi
 done
-
-# homebrew
-if [ $machine = "Mac" ]; then
-	eval "$(/usr/local/bin/brew shellenv)"
-fi
 
 # autojump
 . /usr/share/autojump/autojump.bash
