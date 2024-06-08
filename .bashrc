@@ -66,7 +66,7 @@ for plugin in "$config_dir"/*; do
 		# use disabled file to disable plugin
 		if [ ! -f "$plugin/disabled" ]; then
 			for plug_component in "$plugin"/*; do
-				if [ -f "$plug_component" ] && [ "$plug_component" != "$plugin/config.sh" ]; then
+				if [ -f "$plug_component" ] && [[ "$plug_component" =~ \.sh$ ]] && [ "$plug_component" != "$plugin/config.sh" ]; then
 					. "$plug_component"
 				fi
 			done
