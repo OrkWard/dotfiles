@@ -16,11 +16,6 @@ if [ -f ~/.secrets.env ]; then
 	. ~/.secrets.env
 fi
 
-# load machine-specific config
-if [ -f ~/.bashrc.local ]; then
-	. ~/.bashrc.local
-fi
-
 # --------------------- Basic ------------------------
 # language
 export LC_ALL=en_US.UTF-8
@@ -59,14 +54,19 @@ fi
 # ---------------------- Applications ----------------------------
 config_dir=~/.config/bash
 
+# load machine-specific config
+if [ -f $config_dir/.bashrc.local ]; then
+	. $config_dir/.bashrc.local
+fi
+
 for plugin in "$config_dir"/*; do
 	if [ -f "$plugin" ]; then
 		. "$plugin"
 	elif [ -d "$plugin" ]; then
 		# use disabled file to disable plugin
 		if [ ! -f "$plugin/disabled" ]; then
-			for plug_component in "$plugin"/*; do
-				if [ -f "$plug_component" ] && [[ "$plug_component" =~ \.sh$ ]] && [ "$plug_component" != "$plugin/config.sh" ]; then
+			for plug_component in "$plugin"/*.sh; do
+				if [ -f "$plug_component" ] && [ "$plug_component" != "$plugin/config.sh" ]; then
 					. "$plug_component"
 				fi
 			done
