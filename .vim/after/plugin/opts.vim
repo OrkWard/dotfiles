@@ -89,6 +89,10 @@ if exists('g:loaded_lexima')
   let g:lexima_enable_newline_rules = 0
 endif
 
+if exists('g:loaded_vimcomplete') && exists ('g:loaded_vimcomplete')
+  inoremap
+endif
+
 if exists('g:loaded_lsp')
   call LspAddServer([#{
         \ name: 'typescriptlang',
