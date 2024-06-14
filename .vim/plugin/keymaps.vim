@@ -13,3 +13,10 @@ nnoremap Y y$
 nnoremap j gj
 nnoremap k gk
 
+" auto pair
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
