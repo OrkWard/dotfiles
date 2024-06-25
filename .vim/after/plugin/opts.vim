@@ -86,7 +86,7 @@ if exists('g:loaded_vifm')
 endif
 
 if exists('g:loaded_lexima')
-  let g:lexima_enable_newline_rules = 1
+  let g:lexima_enable_newline_rules = 0
 endif
 
 if exists('g:loaded_lsp')

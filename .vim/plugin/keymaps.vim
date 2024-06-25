@@ -14,5 +14,5 @@ nnoremap j gj
 nnoremap k gk
 
 " auto pair
-" inoremap {<CR> {<CR>}<ESC>O
-" inoremap [<CR> [<CR>]<ESC>O
+inoremap {<CR> {<CR>}<ESC>O
+inoremap [<CR> [<CR>]<ESC>O
