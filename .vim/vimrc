@@ -49,6 +49,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'yegappan/lsp'
 Plug 'girishji/vimcomplete'
+Plug 'cohama/lexima.vim'
 
 " highlight
 Plug 'kylelaker/riscv.vim'
@@ -57,7 +58,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 
 " disable now
-" Plug 'cohama/lexima.vim'
 " Plug 'liuchengxu/vim-which-key'
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'neoclide/coc.nvim', { 'branch': 'release' }

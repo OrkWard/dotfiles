@@ -86,7 +86,7 @@ if exists('g:loaded_vifm')
 endif
 
 if exists('g:loaded_lexima')
-  let g:lexima_enable_newline_rules = 0
+  let g:lexima_enable_newline_rules = 1
 endif
 
 if exists('g:loaded_lsp')
@@ -95,6 +95,14 @@ if exists('g:loaded_lsp')
         \ filetype: ['javascript', 'typescript', 'javascriptreact', 'typescriptreact'],
         \ path: 'typescript-language-server',
         \ args: ['--stdio'],
+        \ }])
+
+  call LspAddServer([#{
+        \ name: 'rustlang',
+        \ filetype: ['rust'],
+        \ path: 'rust-analyzer',
+        \ args: [],
+        \ syncInit: v:true
         \ }])
 
   call LspOptionsSet({'showSignature': v:false})
