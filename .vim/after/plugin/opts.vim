@@ -79,6 +79,7 @@ if exists('g:loaded_fzf') && exists('g:loaded_fzf_vim')
   nnoremap <leader>f :Rg<CR>
   nnoremap g* :Rg<space><c-r><c-w><cr>
   nnoremap <leader>t :Files<CR>
+  nnoremap <c-b> :Buffers<CR>
 endif
 
 if exists('g:loaded_vifm')
