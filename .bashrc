@@ -9,7 +9,7 @@ esac
 
 export EDITOR=vim
 # add local bin, local scripts to PATH
-export PATH=~/.local/scripts:~/.local/bin:$PATH
+export PATH=~/.local/scripts:$PATH
 
 # secrets
 if [ -f ~/.secrets.env ]; then
@@ -78,9 +78,6 @@ for plugin in "$config_dir"/*; do
 		fi
 	fi
 done
-
-# autojump
-. /usr/share/autojump/autojump.bash
 
 # atuin
 eval "$(atuin init bash)"

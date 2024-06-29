@@ -8,11 +8,7 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-# local executable
-export PATH="$HOME/.local/bin:$PATH"
-
-# rust bin
-[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 if [ -n $BASH_VERSION ]; then
   . $HOME/.bashrc
