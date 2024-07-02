@@ -10,6 +10,7 @@ set cursorline
 set splitbelow " default split on the below
 set laststatus=2 " Always show status line
 set backspace=2 " Ensure backspace working
+set scrolloff=3 " Always 3 lines before bottom & after top
 
 set wildmenu
 set wildmode=longest:full,full
