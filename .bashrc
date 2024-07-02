@@ -11,6 +11,10 @@ export EDITOR=vim
 # add local bin, local scripts to PATH
 export PATH=~/.local/scripts:$PATH
 
+if [ $(uname -s) == "Darwin" ]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # secrets
 if [ -f ~/.secrets.env ]; then
 	. ~/.secrets.env
@@ -65,15 +69,15 @@ for plugin in "$config_dir"/*; do
 	elif [ -d "$plugin" ]; then
 		# use disabled file to disable plugin
 		if [ ! -f "$plugin/disabled" ]; then
-			for plug_component in "$plugin"/*.sh; do
-				if [ -f "$plug_component" ] && [ "$plug_component" != "$plugin/config.sh" ]; then
+			for plug_component in "$plugin"/*.bash; do
+				if [ -f "$plug_component" ] && [ "$plug_component" != "$plugin/config.bash" ]; then
 					. "$plug_component"
 				fi
 			done
 
 			# always source config.sh last
-			if [ -f "$plugin/config.sh" ]; then
-				. "$plugin/config.sh"
+			if [ -f "$plugin/config.bash" ]; then
+				. "$plugin/config.bash"
 			fi
 		fi
 	fi
@@ -143,3 +147,4 @@ export PATH=$GOPATH/bin:$PATH
 export DENO_INSTALL=~/.deno
 export PATH=$DENO_INSTALL/bin:$PATH
 
+. "$HOME/.cargo/env"

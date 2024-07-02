@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/usr/bin/env bash
 
 port="${1:-7890}"
 if ! [[ $port -ge 1024 && $port -le 65535 ]]; then

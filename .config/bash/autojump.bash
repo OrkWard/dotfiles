@@ -23,4 +23,8 @@ elif [ -s ~/.autojump/share/autojump/autojump.${shell} ]; then
 # check global install
 elif [ -s /usr/share/autojump/autojump.${shell} ]; then
     source /usr/share/autojump/autojump.${shell}
+
+# check global install
+elif [ -s /opt/homebrew/share/autojump/autojump.${shell} ]; then
+    source /opt/homebrew/share/autojump/autojump.${shell}
 fi

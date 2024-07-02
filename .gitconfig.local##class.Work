@@ -1,5 +1,5 @@
 [user]
 	name = caizelun
-	email = caizelun.1@bytedance.com
+	email = caizelun.2@bytedance.com
 [gpg]
-	program = /usr/local/bin/gpg
+	program = /opt/homebrew/bin/gpg
