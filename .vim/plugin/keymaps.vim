@@ -13,6 +13,33 @@ nnoremap Y y$
 nnoremap j gj
 nnoremap k gk
 
+" Use arrow keys to scroll in popup window
+function! ScrollPopup(down)
+    let winids = popup_list()
+    if empty(winids)
+        return 0
+    else
+        let winid = winids[0]
+    endif
+
+    " if the popup window is hidden, then bypass the keystrokes
+    let pp = popup_getpos(winid)
+    if pp.visible != 1 | return 0 | endif
+
+    let firstline = pp.firstline + a:down
+    let buf_lastline = str2nr(trim(win_execute(winid, "echo line('$')")))
+    if firstline < 1
+        let firstline = 1
+    elseif pp.lastline + a:down > buf_lastline
+        let firstline = firstline - a:down + buf_lastline - pp.lastline
+    endif
+
+    " if a scrollbar is shown, then the height changes
+    call popup_setoptions( winid, {'scrollbar': 0, 'resize': 0, 'fixed': 1, 'firstline' : firstline } )
+
+    return 1
+endfunction
+
 " auto pair
 " inoremap {<CR> {<CR>}<ESC>O
 " inoremap [<CR> [<CR>]<ESC>O
