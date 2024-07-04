@@ -5,6 +5,7 @@ enable-normalization-opposite-orientation-for-nested-containers = false
 
 [mode.main.binding]
 alt-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
+alt-c = 'exec-and-forget open -n /Applications/CotEditor.app'
 
 alt-h = 'focus left'
 alt-j = 'focus down'
@@ -59,7 +60,7 @@ alt-shift-0 = 'move-node-to-workspace 10'
 
 alt-shift-c = 'reload-config'
 
-alt-r = 'mode resize'
+# alt-r = 'mode resize'
 
 [mode.resize.binding]
 h = 'resize width -50'
