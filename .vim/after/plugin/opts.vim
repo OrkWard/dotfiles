@@ -108,10 +108,10 @@ if exists('g:loaded_lsp')
 
   call LspOptionsSet({'showSignature': v:false})
 
-  nnoremap <silent> gd :<C-U>LspGotoDefinition<CR>
-  nnoremap <silent> gi :<C-U>LspGotoImpl<CR>
-  nnoremap <silent> gy :<C-U>LspGotoTypeDef<CR>
-  nnoremap <silent> gr :<C-U>LspShowReferences<CR>
+  nnoremap <silent> gd :<C-U>LspPeekDefinition<CR>
+  nnoremap <silent> gi :<C-U>LspPeekImpl<CR>
+  nnoremap <silent> gy :<C-U>LspPeekTypeDef<CR>
+  nnoremap <silent> gr :<C-U>LspPeekReferences<CR>
   nnoremap <silent> [g :<C-U>LspDiag prev<CR>
   nnoremap <silent> ]g :<C-U>LspDiag next<CR>
   set keywordprg=:LspHover
