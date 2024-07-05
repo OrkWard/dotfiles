@@ -4,6 +4,6 @@ set visible-stats on
 set show-all-if-ambiguous on
 set completion-ignore-case on
 
-TAB:menu-complete
-# shift-tab
-"\e[Z":menu-complete-backward
+# TAB:menu-complete
+## shift-tab
+# "\e[Z":menu-complete-backward
