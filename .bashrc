@@ -146,5 +146,3 @@ export PATH=$GOPATH/bin:$PATH
 # deno
 export DENO_INSTALL=~/.deno
 export PATH=$DENO_INSTALL/bin:$PATH
-
-. "$HOME/.cargo/env"
