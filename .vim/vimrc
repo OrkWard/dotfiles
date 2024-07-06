@@ -1,3 +1,5 @@
+source $VIMRUNTIME/defaults.vim
+
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -8,12 +10,12 @@ set hidden " Allow buffer to be hidden without save change
 set encoding=utf-8
 set cursorline
 set splitbelow " default split on the below
+set splitright
 set laststatus=2 " Always show status line
 set backspace=2 " Ensure backspace working
-set scrolloff=3 " Always 3 lines before bottom & after top
 set incsearch " Highlight search work on the fly
+set linebreak
 
-set wildmenu
 set wildmode=longest:full,full
 
 " Display blank characters
@@ -28,9 +30,6 @@ set ttimeoutlen=50
 
 " <Leader> key
 let mapleader = " "
-
-" Don't limit line length
-autocmd BufEnter * set tw=0
 
 " vim-plug
 call plug#begin('~/.local/share/vim-plug')
