@@ -7,3 +7,4 @@ set completion-ignore-case on
 # TAB:menu-complete
 ## shift-tab
 # "\e[Z":menu-complete-backward
+C-g: menu-complete

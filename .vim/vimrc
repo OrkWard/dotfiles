@@ -29,8 +29,6 @@ set ttimeoutlen=50
 " <Leader> key
 let mapleader = " "
 
-" Don't auto insert comment leader on return/hitting 'o'
-autocmd BufNewFile,BufWinEnter * setlocal formatoptions=trc
 " Don't limit line length
 autocmd BufEnter * set tw=0
 
