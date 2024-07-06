@@ -1,1 +1,1 @@
-local.bash##class.Wsl
+local.bash##os.Linux
