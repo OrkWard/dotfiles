@@ -1,1 +1,1 @@
-local.bash##os.Darwin
+local.bash##os.Linux
