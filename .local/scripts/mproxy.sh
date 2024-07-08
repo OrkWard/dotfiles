@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-port="${1:-7890}"
+port="${1:-9090}"
 if ! [[ $port -ge 1024 && $port -le 65535 ]]; then
   echo "Error: $port is not a valid port number"
   exit 1
