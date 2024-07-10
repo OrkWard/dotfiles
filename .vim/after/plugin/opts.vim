@@ -91,20 +91,24 @@ if exists('g:loaded_lexima')
 endif
 
 if exists('g:loaded_lsp')
-  call LspAddServer([#{
-        \ name: 'typescriptlang',
-        \ filetype: ['javascript', 'typescript', 'javascriptreact', 'typescriptreact'],
-        \ path: 'typescript-language-server',
-        \ args: ['--stdio'],
-        \ }])
+  if executable('typescript-language-server')
+    call LspAddServer([#{
+          \ name: 'typescriptlang',
+          \ filetype: ['javascript', 'typescript', 'javascriptreact', 'typescriptreact'],
+          \ path: 'typescript-language-server',
+          \ args: ['--stdio'],
+          \ }])
+  endif
 
-  call LspAddServer([#{
-        \ name: 'rustlang',
-        \ filetype: ['rust'],
-        \ path: 'rust-analyzer',
-        \ args: [],
-        \ syncInit: v:true
-        \ }])
+  if executable('rust-analyzer')
+    call LspAddServer([#{
+          \ name: 'rustlang',
+          \ filetype: ['rust'],
+          \ path: 'rust-analyzer',
+          \ args: [],
+          \ syncInit: v:true
+          \ }])
+  endif
 
   call LspOptionsSet({'showSignature': v:false})
 
