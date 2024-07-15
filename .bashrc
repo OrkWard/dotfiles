@@ -49,46 +49,33 @@ fi
 config_dir=~/.config/bash
 
 loadModule() {
-	plugin=$config_dir/$1
+	plugin="$config_dir/$1"
 	if [ -f "$plugin.bash" ]; then
 		. $plugin.bash
 	elif [ -d $plugin ]; then
-		if [ -f "$plugin/disabled" ]; then
-			return
-		fi
-
 		for plug_component in "$plugin"/*.bash; do
 			if [ -f "$plug_component" ] && [ "$plug_component" != "$plugin/config.bash" ]; then
 				. "$plug_component"
 			fi
 		done
 
-		# always source config.sh last
+		# always source config last
 		if [ -f "$plugin/config.bash" ]; then
 			. "$plugin/config.bash"
 		fi
 	fi
 }
 
-for plugin in "$config_dir"/*; do
-	if [ -f "$plugin" ]; then
-		. "$plugin"
-	elif [ -d "$plugin" ]; then
-		# use disabled file to disable plugin
-		if [ ! -f "$plugin/disabled" ]; then
-			for plug_component in "$plugin"/*.bash; do
-				if [ -f "$plug_component" ] && [ "$plug_component" != "$plugin/config.bash" ]; then
-					. "$plug_component"
-				fi
-			done
-
-			# always source config.sh last
-			if [ -f "$plugin/config.bash" ]; then
-				. "$plugin/config.bash"
-			fi
-		fi
-	fi
-done
+loadModule local
+loadModule node
+loadModule complete-alias
+loadModule fzf
+loadModule git
+loadModule less
+loadModule fnm
+loadModule pyenv
+loadModule autojump
+loadModule bash-preexec
 
 # atuin
 eval "$(atuin init bash)"
