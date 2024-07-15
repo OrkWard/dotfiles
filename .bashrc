@@ -67,12 +67,11 @@ loadModule() {
 }
 
 loadModule local
-loadModule node
-loadModule complete-alias
-loadModule fzf
-loadModule git
 loadModule less
-loadModule fnm
+loadModule node
+loadModule git
+loadModule fzf
+loadModule complete-alias
 loadModule pyenv
 loadModule autojump
 loadModule bash-preexec
