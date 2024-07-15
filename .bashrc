@@ -48,6 +48,28 @@ fi
 # ---------------------- Applications ----------------------------
 config_dir=~/.config/bash
 
+loadModule() {
+	plugin=$config_dir/$1
+	if [ -f "$plugin.bash" ]; then
+		. $plugin.bash
+	elif [ -d $plugin ]; then
+		if [ -f "$plugin/disabled" ]; then
+			return
+		fi
+
+		for plug_component in "$plugin"/*.bash; do
+			if [ -f "$plug_component" ] && [ "$plug_component" != "$plugin/config.bash" ]; then
+				. "$plug_component"
+			fi
+		done
+
+		# always source config.sh last
+		if [ -f "$plugin/config.bash" ]; then
+			. "$plugin/config.bash"
+		fi
+	fi
+}
+
 for plugin in "$config_dir"/*; do
 	if [ -f "$plugin" ]; then
 		. "$plugin"
