@@ -42,7 +42,7 @@ if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 	PS1+='\[\033[01;33m\]$(__git_ps1 "(%s) ")'
 	PS1+='\[\033[00m\]\$\033]133;A\033\\ '
 else
-	PS1='($?) \u@ \w\$ '
+	PS1='($?) \u@ \w\$\033]133;A\033\\ '
 fi
 
 # ---------------------- Applications ----------------------------
@@ -99,14 +99,12 @@ alias yp='yadm push'
 alias e='eza'
 alias ea='eza -a'
 alias el='eza -l'
+alias eg='eza -gl'
 
 # ls
 alias ls='ls -F --color=auto'
 alias ll='ls -al'
 alias la='ls -A'
-
-# dust
-alias d='dust'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
