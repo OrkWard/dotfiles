@@ -121,9 +121,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # bat
 alias bat='bat --theme=GitHub'
 
-# ripgrep
-alias rg='rg --no-heading --column'
-
 # vscode
 if [ "$TERM_PROGRAM" = 'vscode' ]; then
 	alias c='code'
