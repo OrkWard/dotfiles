@@ -1,0 +1,11 @@
+# completion
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+  . /usr/share/bash-completion/bash_completion
+elif [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
+
+# proxy
+export https_proxy="http://localhost:7890"
+export http_proxy="http://localhost:7890"
+export all_proxy="socks5://localhost:7890"
