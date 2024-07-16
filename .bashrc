@@ -4,23 +4,13 @@ case $- in
 	*) return ;;
 esac
 
-# exit on error
-#set -e
-
+# --------------------- Basic ------------------------
 export EDITOR=vim
-# add local bin, local scripts to PATH
-export PATH=~/.local/scripts:$PATH
 
 if [ $(uname -s) == "Darwin" ]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# secrets
-if [ -f ~/.secrets.env ]; then
-	. ~/.secrets.env
-fi
-
-# --------------------- Basic ------------------------
 # language
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -50,38 +40,41 @@ if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 	PS1+='\[\033[01;32m\]\u '
 	PS1+='\[\033[01;34m\]\w '
 	PS1+='\[\033[01;33m\]$(__git_ps1 "(%s) ")'
-	PS1+='\[\033[00m\]\$ '
+	PS1+='\[\033[00m\]\$\033]133;A\033\\ '
 else
-	PS1='($?) \u@ \w\$ '
+	PS1='($?) \u@ \w\$\033]133;A\033\\ '
 fi
 
 # ---------------------- Applications ----------------------------
 config_dir=~/.config/bash
 
-# load machine-specific config
-if [ -f $config_dir/.bashrc.local ]; then
-	. $config_dir/.bashrc.local
-fi
-
-for plugin in "$config_dir"/*; do
-	if [ -f "$plugin" ]; then
-		. "$plugin"
-	elif [ -d "$plugin" ]; then
-		# use disabled file to disable plugin
-		if [ ! -f "$plugin/disabled" ]; then
-			for plug_component in "$plugin"/*.bash; do
-				if [ -f "$plug_component" ] && [ "$plug_component" != "$plugin/config.bash" ]; then
-					. "$plug_component"
-				fi
-			done
-
-			# always source config.sh last
-			if [ -f "$plugin/config.bash" ]; then
-				. "$plugin/config.bash"
+loadModule() {
+	plugin="$config_dir/$1"
+	if [ -f "$plugin.bash" ]; then
+		. $plugin.bash
+	elif [ -d $plugin ]; then
+		for plug_component in "$plugin"/*.bash; do
+			if [ -f "$plug_component" ] && [ "$plug_component" != "$plugin/config.bash" ]; then
+				. "$plug_component"
 			fi
+		done
+
+		# always source config last
+		if [ -f "$plugin/config.bash" ]; then
+			. "$plugin/config.bash"
 		fi
 	fi
-done
+}
+
+loadModule local
+loadModule less
+loadModule node
+loadModule git
+loadModule fzf
+loadModule complete-alias
+loadModule pyenv
+loadModule autojump
+loadModule bash-preexec
 
 # atuin
 eval "$(atuin init bash)"
@@ -99,12 +92,6 @@ alias vn="nvim ~/.config/nvim/init.lua"
 alias vt="vim ~/.tmux.conf"
 alias v3="vim ~/.config/i3/config"
 
-# code
-if [ "$TERM_PROGRAM" = 'vscode' ]; then
-	alias c='code'
-	_fzf_setup_completion path c
-fi
-
 # gcc
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
@@ -120,14 +107,12 @@ alias yp='yadm push'
 alias e='eza'
 alias ea='eza -a'
 alias el='eza -l'
+alias eg='eza -gl'
 
 # ls
 alias ls='ls -F --color=auto'
 alias ll='ls -al'
 alias la='ls -A'
-
-# dust
-alias d='dust'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -136,13 +121,9 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # bat
 alias bat='bat --theme=GitHub'
 
-# ripgrep
-alias rg='rg --no-heading --column'
-
-# go
-export GOPATH=~/.gopath
-export PATH=$GOPATH/bin:$PATH
-
-# deno
-export DENO_INSTALL=~/.deno
-export PATH=$DENO_INSTALL/bin:$PATH
+# vscode
+if [ "$TERM_PROGRAM" = 'vscode' ]; then
+	alias c='code'
+	_fzf_setup_completion path c
+	. "$(code --locate-shell-integration-path bash)"
+fi

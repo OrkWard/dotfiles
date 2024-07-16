@@ -91,20 +91,24 @@ if exists('g:loaded_lexima')
 endif
 
 if exists('g:loaded_lsp')
-  call LspAddServer([#{
-        \ name: 'typescriptlang',
-        \ filetype: ['javascript', 'typescript', 'javascriptreact', 'typescriptreact'],
-        \ path: 'typescript-language-server',
-        \ args: ['--stdio'],
-        \ }])
+  if executable('typescript-language-server')
+    call LspAddServer([#{
+          \ name: 'typescriptlang',
+          \ filetype: ['javascript', 'typescript', 'javascriptreact', 'typescriptreact'],
+          \ path: 'typescript-language-server',
+          \ args: ['--stdio'],
+          \ }])
+  endif
 
-  call LspAddServer([#{
-        \ name: 'rustlang',
-        \ filetype: ['rust'],
-        \ path: 'rust-analyzer',
-        \ args: [],
-        \ syncInit: v:true
-        \ }])
+  if executable('rust-analyzer')
+    call LspAddServer([#{
+          \ name: 'rustlang',
+          \ filetype: ['rust'],
+          \ path: 'rust-analyzer',
+          \ args: [],
+          \ syncInit: v:true
+          \ }])
+  endif
 
   call LspOptionsSet({'showSignature': v:false})
 
@@ -112,10 +116,6 @@ if exists('g:loaded_lsp')
   nnoremap <silent> gi :<C-U>LspPeekImpl<CR>
   nnoremap <silent> gy :<C-U>LspPeekTypeDef<CR>
   nnoremap <silent> gr :<C-U>LspPeekReferences<CR>
-  nnoremap <silent> gD :<C-U>LspGotoDefinition<CR>
-  nnoremap <silent> gI :<C-U>LspGotoImpl<CR>
-  nnoremap <silent> gY :<C-U>LspGotoTypeDef<CR>
-  nnoremap <silent> gR :<C-U>LspShowReferences<CR>
   nnoremap <silent> [g :<C-U>LspDiag prev<CR>
   nnoremap <silent> ]g :<C-U>LspDiag next<CR>
   set keywordprg=:LspHover

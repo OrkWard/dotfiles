@@ -11,7 +11,9 @@ mark h ~/
 mark d ~/Downloads/
 mark c ~/.config/
 mark r ~/Repos/
-mark s /home/rslsync/Share/
+mark v ~/.vim/after
+mark b ~/.config/bash
+
 
 colorscheme Paper
 
