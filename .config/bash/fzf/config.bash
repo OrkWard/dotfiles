@@ -1,6 +1,3 @@
-export FZF_DEFAULT_COMMAND="fd -tf -H"
-export FZF_CTRL_T_COMMAND="fd -H"
-
 _fzf_compgen_path() {
 	fd -tf -HLE".git" -E".wine" . "$1"
 }
