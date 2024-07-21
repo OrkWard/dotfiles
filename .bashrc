@@ -46,7 +46,7 @@ else
 fi
 
 # ---------------------- Applications ----------------------------
-config_dir=~/.config/bash
+config_dir=$XDG_CONFIG_HOME/bash
 
 loadModule() {
 	plugin="$config_dir/$1"
