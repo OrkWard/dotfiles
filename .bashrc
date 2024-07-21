@@ -127,6 +127,3 @@ if [ "$TERM_PROGRAM" = 'vscode' ]; then
 	_fzf_setup_completion path c
 	. "$(code --locate-shell-integration-path bash)"
 fi
-
-# systemd
-alias ss="sudo systemd status"
