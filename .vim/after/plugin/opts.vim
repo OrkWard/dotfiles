@@ -53,18 +53,6 @@ if exists('g:loaded_airline') && exists('g:loaded_airline_themes')
   let g:airline_theme='papercolor'
   " let g:airline#extensions#tabline#enabled = 1
   " let g:airline#extensions#tabline#buffer_idx_mode = 1
-  " nmap <leader>1 <Plug>AirlineSelectTab1
-  " nmap <leader>2 <Plug>AirlineSelectTab2
-  " nmap <leader>3 <Plug>AirlineSelectTab3
-  " nmap <leader>4 <Plug>AirlineSelectTab4
-  " nmap <leader>5 <Plug>AirlineSelectTab5
-  " nmap <leader>6 <Plug>AirlineSelectTab6
-  " nmap <leader>7 <Plug>AirlineSelectTab7
-  " nmap <leader>8 <Plug>AirlineSelectTab8
-  " nmap <leader>9 <Plug>AirlineSelectTab9
-  " nmap <leader>0 <Plug>AirlineSelectTab0
-  " nmap <leader>- <Plug>AirlineSelectPrevTab
-  " nmap <leader>+ <Plug>AirlineSelectNextTab
 endif
 
 if exists('g:loaded_sneak_plugin')
@@ -108,6 +96,16 @@ if exists('g:loaded_lsp')
           \ args: [],
           \ syncInit: v:true
           \ }])
+  endif
+
+  if executable('gopls')
+    call LspAddServer([#{
+         \ name: 'golang',
+         \ filetype: ['go', 'gomod'],
+         \ path: 'gopls',
+         \ args: ['serve'],
+         \ syncInit: v:true
+         \ }])
   endif
 
   call LspOptionsSet({'showSignature': v:false})
