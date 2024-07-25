@@ -60,6 +60,7 @@ Plug 'kylelaker/riscv.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'neoclide/jsonc.vim'
 
 " disable now
 " Plug 'liuchengxu/vim-which-key'
