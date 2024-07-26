@@ -3,7 +3,7 @@ export XDG_DATA_HOME=$HOME/.local/share
 export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache
 
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.local/scripts:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"
 
 # rust
 export PATH=$HOME/.cargo/bin:$PATH
