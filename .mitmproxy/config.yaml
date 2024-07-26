@@ -5,4 +5,4 @@ allow_hosts:
 - bytedance
 - zijieapi
 map_remote:
-- /fund-control/https://localhost:8084
+- /fund-control/localhost:8084
