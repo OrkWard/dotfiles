@@ -1,9 +1,6 @@
----
 scripts:
-  - "~/.mitmproxy/main.py"
+- /Users/bytedance/.mitmproxy/main.py
 ignore_hosts:
-  - "icloud\\.com"
-  - "apple\\.com"
-  - "mzstatic\\.com"
-  - "zws5.web.telegram.org"
-
+- .*
+allow_hosts:
+- boe
