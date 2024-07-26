@@ -5,4 +5,5 @@ ignore_hosts:
   - "icloud\\.com"
   - "apple\\.com"
   - "mzstatic\\.com"
+  - "zws5.web.telegram.org"
 
