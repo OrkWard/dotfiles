@@ -1,3 +1,8 @@
+# Profile start
+PS4='+ $EPOCHREALTIME\011 '
+exec 3>&2 2>/tmp/bashstart.$$.log
+set -x
+
 # If not running interactively, don't do anything
 case $- in
 	*i*) ;;
@@ -127,3 +132,7 @@ if [ "$TERM_PROGRAM" = 'vscode' ]; then
 	_fzf_setup_completion path c
 	. "$(code --locate-shell-integration-path bash)"
 fi
+
+# Profile end
+set +x
+exec 2>&3 3>&-
