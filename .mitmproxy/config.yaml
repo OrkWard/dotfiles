@@ -1,0 +1,8 @@
+---
+scripts:
+  - "~/.mitmproxy/main.py"
+ignore_hosts:
+  - "icloud\\.com"
+  - "apple\\.com"
+  - "mzstatic\\.com"
+
