@@ -108,6 +108,15 @@ if exists('g:loaded_lsp')
          \ }])
   endif
 
+  if executable('pylsp')
+    call LspAddServer([#{
+        \ name: 'python',
+        \ filetype: 'python',
+        \ path: 'pylsp',
+        \ args: []
+        \ }])
+  endif
+
   call LspOptionsSet({'showSignature': v:false})
 
   nnoremap <silent> gd :<C-U>LspPeekDefinition<CR>
