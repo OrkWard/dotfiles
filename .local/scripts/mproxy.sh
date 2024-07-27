@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+while getopts 's' OPTION; do
+  case "$OPTION" in
+    s)
+      socks="true"
+      ;;
+  esac
+done
+shift "$(($OPTION - 1))"
+
 port="${1:-9090}"
 if ! [[ $port -ge 1024 && $port -le 65535 ]]; then
   echo "Error: $port is not a valid port number"

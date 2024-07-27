@@ -108,12 +108,12 @@ if exists('g:loaded_lsp')
          \ }])
   endif
 
-  if executable('pylsp')
+  if executable('pyright')
     call LspAddServer([#{
         \ name: 'python',
         \ filetype: 'python',
-        \ path: 'pylsp',
-        \ args: []
+        \ path: 'pyright-langserver',
+        \ args: ['--stdio']
         \ }])
   endif
 
