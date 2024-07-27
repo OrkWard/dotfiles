@@ -73,7 +73,6 @@ loadModule node
 loadModule git
 loadModule fzf
 loadModule complete-alias
-loadModule pyenv
 loadModule autojump
 loadModule bash-preexec
 
