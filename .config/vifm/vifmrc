@@ -3,6 +3,7 @@ nnoremap s :sync<cr>
 nnoremap K :!code %c<cr>
 
 set relativenumber
+set number
 set statusline="%t %20s %= %-30d %a"
 set timefmt='%b %d, %Y @ %H:%M'
 set ignorecase smartcase nohlsearch incsearch

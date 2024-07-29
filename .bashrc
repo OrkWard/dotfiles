@@ -76,6 +76,9 @@ loadModule complete-alias
 loadModule autojump
 loadModule bash-preexec
 
+# mise
+eval "$(mise activate bash)"
+
 # atuin
 eval "$(atuin init bash)"
 
