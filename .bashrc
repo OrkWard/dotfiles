@@ -76,6 +76,20 @@ loadModule complete-alias
 loadModule autojump
 loadModule bash-preexec
 
+# custom path for local bin and local script
+export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"
+
+# rust
+export PATH=$HOME/.cargo/bin:$PATH
+
+# go
+export GOPATH=~/.gopath
+export PATH=$GOPATH/bin:$PATH
+
+# deno
+export DENO_INSTALL=~/.deno
+export PATH=$DENO_INSTALL/bin:$PATH
+
 # mise
 eval "$(mise activate bash)"
 
