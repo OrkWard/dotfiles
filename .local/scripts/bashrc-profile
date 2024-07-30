@@ -14,7 +14,7 @@ async function profile() {
     }
   }
 
-  console.log(newestFile);
+  console.log('File: /tmp/' + newestFile);
 
   assert(newestFile !== null);
 
@@ -35,7 +35,7 @@ async function profile() {
   })
 
   commandsWithInterval.sort(([a, _], [b, __]) => b - a)
-  console.log(commandsWithInterval.slice(0, 10))
+  console.log(commandsWithInterval.slice(0, 10).map(([time, command]) => `Time: ${time}, Command: ${command}`).join('\n'))
 }
 
 profile();
