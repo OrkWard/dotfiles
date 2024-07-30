@@ -1,10 +1,10 @@
 _fzf_compgen_path() {
-	fd -tf -HLE".git" -E".wine" . "$1"
+	fd -tf -HILE".git" -E".wine" . "$1"
 }
 
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
-	fd -td -HLE".git" . "$1"
+	fd -td -HILE".git" . "$1"
 }
 
 # Advanced customization of fzf options via _fzf_comprun function
