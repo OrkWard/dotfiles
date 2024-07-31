@@ -7,7 +7,7 @@ async function profile() {
   let max = 0, newestFile = null;
   for (const file of files) {
     if (file.startsWith('bashstart')) {
-      const [ _, pid ] = file.match(/bashstart\.(\d+)/);
+      const [_, pid] = file.match(/bashstart\.(\d+)/);
       assert(pid !== undefined)
       max = Math.max(max, Number(pid));
       (max === Number(pid)) && (newestFile = file);
