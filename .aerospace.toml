@@ -85,5 +85,9 @@ if.app-id = 'com.coteditor.CotEditor'
 run = 'move-node-to-workspace 9'
 
 [[on-window-detected]]
+if.app-id = 'com.proxyman.NSProxy'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'NextChat'
 run = 'move-node-to-workspace 10'
