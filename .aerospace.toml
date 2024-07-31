@@ -67,3 +67,23 @@ esc = 'mode main'
 3 = '1'
 2 = '2'
 4 = '2'
+
+[[on-window-detected]]
+if.app-id = 'org.alacritty'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'net.electron.lark'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-id = 'com.coteditor.CotEditor'
+run = 'move-node-to-workspace 9'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'NextChat'
+run = 'move-node-to-workspace 10'
