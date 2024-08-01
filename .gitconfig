@@ -1,5 +1,6 @@
 [core]
 	ignorecase = false
+	excludesFile = ~/.config/git/ignore
 [pull]
 	rebase = false
 [commit]
