@@ -81,7 +81,6 @@ endif
 if exists('g:loaded_lsp')
   if executable('typescript-language-server')
     call LspAddServer([#{
-          \ name: 'typescriptlang',
           \ filetype: ['javascript', 'typescript', 'javascriptreact', 'typescriptreact'],
           \ path: 'typescript-language-server',
           \ args: ['--stdio'],
@@ -90,7 +89,6 @@ if exists('g:loaded_lsp')
 
   if executable('rust-analyzer')
     call LspAddServer([#{
-          \ name: 'rustlang',
           \ filetype: ['rust'],
           \ path: 'rust-analyzer',
           \ args: [],
@@ -100,7 +98,6 @@ if exists('g:loaded_lsp')
 
   if executable('gopls')
     call LspAddServer([#{
-         \ name: 'golang',
          \ filetype: ['go', 'gomod'],
          \ path: 'gopls',
          \ args: ['serve'],
@@ -110,9 +107,16 @@ if exists('g:loaded_lsp')
 
   if executable('pylsp')
     call LspAddServer([#{
-        \ name: 'python',
         \ filetype: 'python',
         \ path: 'pylsp',
+        \ }])
+  endif
+
+  if executable('vscode-json-language-server')
+    call LspAddServer([#{
+        \ filetype: 'json',
+        \ path: 'vscode-json-language-server',
+        \ args: ['--stdio']
         \ }])
   endif
 
