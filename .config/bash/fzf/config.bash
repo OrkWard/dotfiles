@@ -1,10 +1,11 @@
+# generate file path
 _fzf_compgen_path() {
-	fd -tf -HILE".git" -E".wine" . "$1"
+	fd -tf -HILE".git" -E".wine" -E"node_modules" . "$1"
 }
 
-# Use fd to generate the list for directory completion
+# generate dir path
 _fzf_compgen_dir() {
-	fd -td -HILE".git" . "$1"
+	fd -td -HILE".git" -E"node_modules" . "$1"
 }
 
 # Advanced customization of fzf options via _fzf_comprun function
@@ -25,4 +26,4 @@ _fzf_comprun() {
 export FZF_PREVIEW_COMMAND="bat -n --color=always --theme=GitHub {}"
 
 _fzf_setup_completion dir tree
-_fzf_setup_completion path rm yadm bat code
+_fzf_setup_completion path bat code
