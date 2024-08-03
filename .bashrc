@@ -1,13 +1,13 @@
-# Profile start
-PS4='+ $EPOCHREALTIME\011 '
-exec 3>&2 2>/tmp/bashstart.$$.log
-set -x
-
 # If not running interactively, don't do anything
 case $- in
 	*i*) ;;
 	*) return ;;
 esac
+
+# Profile start
+PS4='+ $EPOCHREALTIME\011 '
+exec 3>&2 2>/tmp/bashstart.$$.log
+set -x
 
 # --------------------- Basic ------------------------
 export EDITOR=vim
@@ -127,9 +127,9 @@ alias el='eza -l'
 alias eg='eza -gl'
 
 # ls
-alias ls='ls -F --color=auto'
-alias ll='ls -al'
-alias la='ls -A'
+alias l='ls --color=auto'
+alias ll='ls -al --color=auto'
+alias la='ls -A --color=auto'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
