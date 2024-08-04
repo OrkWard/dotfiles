@@ -120,12 +120,6 @@ alias yd='yadm diff'
 alias yl='yadm pull'
 alias yp='yadm push'
 
-# eza
-alias e='eza'
-alias ea='eza -a'
-alias el='eza -l'
-alias eg='eza -gl'
-
 # ls
 alias l='ls --color=auto'
 alias ll='ls -al --color=auto'
