@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-const assert = require('node:assert/strict');
-const fs = require('node:fs/promises');
+import assert from 'node:assert/strict';
+import { readdir, readFile } from 'node:fs/promises';
 
 async function profile() {
-  const files = await fs.readdir('/tmp');
+  const files = await readdir('/tmp');
   let max = 0, newestFile = null;
   for (const file of files) {
     if (file.startsWith('bashstart')) {
@@ -18,7 +18,7 @@ async function profile() {
 
   assert(newestFile !== null);
 
-  const content = await fs.readFile('/tmp/' + newestFile, 'utf8');
+  const content = await readFile('/tmp/' + newestFile, 'utf8');
   /** @type [number, string][] */
   const commands = content.split('\n').filter((v) => v.startsWith('+')).map((command) => {
     const [_, sec, nanoSec] = command.match(/(\d+)\.(\d+)/);
