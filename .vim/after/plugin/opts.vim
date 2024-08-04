@@ -32,6 +32,8 @@ if exists('g:loaded_lexima')
 endif
 
 if exists('g:loaded_lsp')
+  nnoremap <leader>s :LspFormat<CR>
+
   if executable('typescript-language-server')
     call LspAddServer([#{
           \ filetype: ['javascript', 'typescript', 'javascriptreact', 'typescriptreact'],

@@ -43,3 +43,22 @@ endfunction
 " auto pair
 " inoremap {<CR> {<CR>}<ESC>O
 " inoremap [<CR> [<CR>]<ESC>O
+
+function! EditFtplugin(after)
+    let l:filetype = &filetype
+
+    if l:filetype == ''
+        return
+    endif
+
+    if a:after == v:true
+        let l:ftplugin_path = '~/.vim/after/ftplugin/' . l:filetype . '.vim'
+    else
+        let l:ftplugin_path = '~/.vim/ftplugin/' . l:filetype . '.vim'
+    endif
+
+    execute 'edit ' . l:ftplugin_path
+endfunction
+
+command C call EditFtplugin(v:false)
+command Ca call EditFtplugin(v:true)
