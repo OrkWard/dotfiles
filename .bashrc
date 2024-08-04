@@ -113,7 +113,6 @@ alias v3="vim ~/.config/i3/config"
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # yadm
-alias y='yadm'
 alias yac='yadm add -u && yadm commit -m "$(date)"'
 alias ys='yadm status'
 alias yd='yadm diff'
