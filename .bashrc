@@ -109,6 +109,9 @@ alias vn="nvim ~/.config/nvim/init.lua"
 alias vt="vim ~/.tmux.conf"
 alias v3="vim ~/.config/i3/config"
 
+# biome
+alias biome='biome format --write --indent-style=space --indent-size=2'
+
 # gcc
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
