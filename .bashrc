@@ -41,20 +41,21 @@ unset MAILCHECK
 
 # --------------------- color & prompt ---------------------
 end_of_row() {
+	local exit_status=$?
+	local text="[$?] $(date +"%H:%M:%S")"
 	local term_width=$(tput cols)
-	local text="[$?] $(date)"
 	local text_length=${#text}
 	local start_pos=$(( term_width - text_length ))
 
-	printf "\033[${start_pos}C%s" "$text"
+	printf "\033[${start_pos}G${text}"
 }
 
-PS1='\[\033]133;A\033\\\]($?) '
-PS1+='\[\033[01;32m\]\u '
+PS1='\[\033[01;32m\]\u '
 PS1+='\[\033[01;34m\]\w '
 PS1+='\[\033[01;33m\]$(__git_ps1 "(%s) ")'
-PS1+='$(end_of_row)\$'
+PS1+='$(end_of_row)'
 PS1+='\[\033[00m\]\'\n'$ '
+PS1+='\[\033]133;A\033\\\]'
 
 # ---------------------- Applications ----------------------------
 config_dir=$XDG_CONFIG_HOME/bash
