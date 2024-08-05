@@ -40,20 +40,11 @@ export HISTFILESIZE=20000
 unset MAILCHECK
 
 # --------------------- color & prompt ---------------------
-end_of_row() {
-	local text="[$?] $(date +"%H:%M:%S")"
-	printf "~~~$?~~~"
-	local term_width=$(tput cols)
-	local text_length=${#text}
-	local start_pos=$(( term_width - text_length ))
-
-	printf "\033[${start_pos}G${text}"
-}
-
-PS1='\[\033[01;32m\]\u '
+PS1=''
+PS1+='\[\033[01;32m\]\u '
 PS1+='\[\033[01;34m\]\w '
 PS1+='\[\033[01;33m\]$(__git_ps1 "(%s) ")'
-PS1+='\[\033[01;94m\]$(end_of_row)'
+PS1+='\[\033[01;94m\][$?] $(date +"%H:%M:%S")'
 PS1+='\[\033[0m\]'
 PS1+="\n"
 PS1+='\[\033]133;A\033\\\]$ '
@@ -139,16 +130,12 @@ alias l='ls --color=auto'
 alias ll='ls -al --color=auto'
 alias la='ls -A --color=auto'
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # bat
 alias bat='bat --theme=GitHub'
 
 # vscode
+alias c='code'
 if [ "$TERM_PROGRAM" = 'vscode' ]; then
-	alias c='code'
 	_fzf_setup_completion path c
 	. "$(code --locate-shell-integration-path bash)"
 fi
