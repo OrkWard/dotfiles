@@ -40,16 +40,26 @@ export HISTFILESIZE=20000
 unset MAILCHECK
 
 # --------------------- color & prompt ---------------------
+end_of_row() {
+	local term_width=$(tput cols)
+	local text="[$?] $(date)"
+	local text_length=${#text}
+	local start_pos=$(( term_width - text_length ))
+
+	printf "\033[${start_pos}C%s" "$text"
+}
+
 PS1='\[\033]133;A\033\\\]($?) '
 PS1+='\[\033[01;32m\]\u '
 PS1+='\[\033[01;34m\]\w '
 PS1+='\[\033[01;33m\]$(__git_ps1 "(%s) ")'
-PS1+='\[\033[00m\]\$ '
+PS1+='$(end_of_row)\$'
+PS1+='\[\033[00m\]\'\n'$ '
 
 # ---------------------- Applications ----------------------------
 config_dir=$XDG_CONFIG_HOME/bash
 
-loadModule() {
+load_module() {
 	plugin="$config_dir/$1"
 	if [ -f "$plugin.bash" ]; then
 		. $plugin.bash
@@ -67,14 +77,14 @@ loadModule() {
 	fi
 }
 
-loadModule local
-loadModule less
-loadModule node
-loadModule git
-loadModule fzf
-loadModule complete-alias
-loadModule autojump
-loadModule bash-preexec
+load_module local
+load_module less
+load_module node
+load_module git
+load_module fzf
+load_module complete-alias
+load_module autojump
+load_module bash-preexec
 
 # custom path for local bin and local script
 export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"
