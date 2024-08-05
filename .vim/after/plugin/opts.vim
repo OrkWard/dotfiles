@@ -34,46 +34,36 @@ endif
 if exists('g:loaded_lsp')
   nnoremap <leader>s :LspFormat<CR>
 
-  if executable('typescript-language-server')
-    call LspAddServer([#{
-          \ filetype: ['javascript', 'typescript', 'javascriptreact', 'typescriptreact'],
-          \ path: 'typescript-language-server',
-          \ args: ['--stdio'],
-          \ }])
-  endif
-
-  if executable('rust-analyzer')
-    call LspAddServer([#{
-          \ filetype: ['rust'],
-          \ path: 'rust-analyzer',
-          \ args: [],
-          \ syncInit: v:true
-          \ }])
-  endif
-
-  if executable('gopls')
-    call LspAddServer([#{
-         \ filetype: ['go', 'gomod'],
-         \ path: 'gopls',
-         \ args: ['serve'],
-         \ syncInit: v:true
-         \ }])
-  endif
-
-  if executable('pylsp')
-    call LspAddServer([#{
-        \ filetype: 'python',
-        \ path: 'pylsp',
+  call LspAddServer([#{
+        \ filetype: ['javascript', 'typescript', 'javascriptreact', 'typescriptreact'],
+        \ path: 'typescript-language-server',
+        \ args: ['--stdio'],
         \ }])
-  endif
 
-  if executable('vscode-json-language-server')
-    call LspAddServer([#{
-        \ filetype: 'json',
-        \ path: 'vscode-json-language-server',
-        \ args: ['--stdio']
+  call LspAddServer([#{
+        \ filetype: ['rust'],
+        \ path: 'rust-analyzer',
+        \ args: [],
+        \ syncInit: v:true
         \ }])
-  endif
+
+  call LspAddServer([#{
+       \ filetype: ['go', 'gomod'],
+       \ path: 'gopls',
+       \ args: ['serve'],
+       \ syncInit: v:true
+       \ }])
+
+  call LspAddServer([#{
+      \ filetype: 'python',
+      \ path: 'pylsp',
+      \ }])
+
+  call LspAddServer([#{
+      \ filetype: 'json',
+      \ path: 'vscode-json-language-server',
+      \ args: ['--stdio']
+      \ }])
 
   call LspOptionsSet({'showSignature': v:false})
 
