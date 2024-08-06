@@ -1,6 +1,5 @@
 alias ga='git add .'
-alias gc='git cz'
-alias gcm='git commit -m'
+alias gc='git commit'
 alias gac='git add . && git commit -m "$(date)"'
 alias gs='git status'
 alias gd='git diff'
