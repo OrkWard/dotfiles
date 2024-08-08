@@ -7,7 +7,8 @@ default-root-container-orientation = 'vertical'
 
 [mode.main.binding]
 alt-shift-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
-alt-shift-c = 'exec-and-forget open -n /Applications/CotEditor.app'
+alt-shift-c = 'exec-and-forget open /Applications/CotEditor.app'
+alt-shift-p = 'exec-and-forget open /Applications/Proxyman.app'
 
 alt-shift-h = 'focus left'
 alt-shift-j = 'focus down'
@@ -86,7 +87,7 @@ run = 'move-node-to-workspace 9'
 
 [[on-window-detected]]
 if.app-id = 'com.proxyman.NSProxy'
-run = ['layout floating' ,'move-node-to-workspace 3']
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'NextChat'
