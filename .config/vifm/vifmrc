@@ -18,8 +18,8 @@ mark b ~/.config/bash
 
 colorscheme Paper
 
-fileviewer */ eza --color=always
-fileviewer .*/ eza --color=always
+fileviewer */ ls --color=always
+fileviewer .*/ ls --color=always
 fileviewer *.png viu
 fileviewer *.jpeg viu
 fileviewer *.jpg viu
