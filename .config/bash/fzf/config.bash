@@ -26,4 +26,4 @@ _fzf_comprun() {
 export FZF_PREVIEW_COMMAND="bat -n --color=always --theme=GitHub {}"
 
 _fzf_setup_completion dir tree
-_fzf_setup_completion path bat code
+_fzf_setup_completion path bat code glow
