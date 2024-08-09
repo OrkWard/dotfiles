@@ -79,6 +79,10 @@ load_module complete-alias
 load_module autojump
 load_module bash-preexec
 
+
+# ---------------------------- Misc ------------------------------
+alias t="tree -I \"node_modules\""
+
 # custom path for local bin and local script
 export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"
 
@@ -126,9 +130,9 @@ alias yl='yadm pull'
 alias yp='yadm push'
 
 # ls
-alias l='ls --color=auto'
-alias ll='ls -al --color=auto'
-alias la='ls -A --color=auto'
+alias l='lsd'
+alias ll='lsd -al'
+alias la='lsd -A'
 
 # bat
 alias bat='bat --theme=GitHub'
