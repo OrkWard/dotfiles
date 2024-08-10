@@ -81,8 +81,6 @@ load_module bash-preexec
 
 
 # ---------------------------- Misc ------------------------------
-alias t="tree -I \"node_modules\""
-
 # custom path for local bin and local script
 export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"
 
@@ -133,6 +131,7 @@ alias yp='yadm push'
 alias l='lsd'
 alias ll='lsd -al'
 alias la='lsd -A'
+alias lt="lsd --tree -I \"node_modules\""
 
 # bat
 alias bat='bat --theme=GitHub'
