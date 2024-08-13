@@ -1,7 +1,6 @@
 [core]
 	ignorecase = false
 	excludesFile = ~/.config/git/ignore
-	hooksPath = /Users/bytedance/.config/git/hooks
 [pull]
 	rebase = false
 [commit]
@@ -23,7 +22,9 @@
 	m = merge
 	adog = log --all --decorate --oneline --graph
 	dog = log --decorate --oneline --graph
+	a = add
 [init]
+	templateDir = ~/.config/git/template-dir
 	defaultBranch = master
 [credential]
 	helper = cache
