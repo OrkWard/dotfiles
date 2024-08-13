@@ -1,14 +1,16 @@
 [core]
 	ignorecase = false
 	excludesFile = ~/.config/git/ignore
+	hooksPath = /Users/bytedance/.config/git/hooks
 [pull]
 	rebase = false
 [commit]
 	gpgsign = true
+	template = ~/.config/git/commit.template
 [merge]
 	conflictstyle = diff3
 [include]
-  path = .gitconfig.local
+	path = .gitconfig.local
 [alias]
 	co = checkout
 	b = branch
@@ -20,6 +22,7 @@
 	sw = switch
 	m = merge
 	adog = log --all --decorate --oneline --graph
+	dog = log --decorate --oneline --graph
 [init]
 	defaultBranch = master
 [credential]
