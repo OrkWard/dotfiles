@@ -24,7 +24,6 @@
 	dog = log --decorate --oneline --graph
 	a = add
 [init]
-	templateDir = ~/.config/git/template-dir
 	defaultBranch = master
 [credential]
 	helper = cache
