@@ -1,11 +1,11 @@
 [core]
 	ignorecase = false
 	excludesFile = ~/.config/git/ignore
+	hooksPath = ~/.config/git/hooks
 [pull]
 	rebase = false
 [commit]
 	gpgsign = true
-	template = ~/.config/git/commit.template
 [merge]
 	conflictstyle = diff3
 [include]
