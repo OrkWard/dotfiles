@@ -140,6 +140,7 @@ alias bat='bat --theme=GitHub'
 alias c='code'
 if [ "$TERM_PROGRAM" = 'vscode' ]; then
 	_fzf_setup_completion path c
+	export EDITOR="gvim -f"
 	. "$(code --locate-shell-integration-path bash)"
 fi
 

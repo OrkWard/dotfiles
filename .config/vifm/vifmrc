@@ -28,3 +28,6 @@ fileviewer * highlight --out-format=ansi --force -qWJ %pw -t 2 %c
 nnoremap <c-n> :touch<space>
 nnoremap <c-k> :mkdir<space>
 
+command config edit ~/.config/vifm/vifmrc
+command diff !vimdiff %c %C
+

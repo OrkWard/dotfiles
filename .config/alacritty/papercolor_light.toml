@@ -1,22 +1,22 @@
 [colors.normal]
-black = "0xeeeeee"   #30
-red = "0xaf0000"     #31
-green = "0x008700"   #32
-yellow = "0x5f8700"  #33
-blue = "0x0087af"    #34
-magenta = "0x878787" #35
-cyan = "0x005f87"    #36
-white = "0x444444"   #37
+black = "0x444444"   #30
+red = "0xBC1c1c"     #31
+green = "0x388e3c"   #32
+yellow = "0xf57f17"  #33
+blue = "0x1565c0"    #34
+magenta = "0xd81b60" #35
+cyan = "0x00838f"    #36
+white = "0xeeeeee"   #37
 
 [colors.bright]
-black = "0xbcbcbc"   #90
-red = "0xd70000"     #91
-green = "0xd70087"   #92
-yellow = "0x8700af"  #93
-blue = "0xd75f00"    #94
-magenta = "0xd75f00" #95
-cyan = "0x005faf"    #96
-white = "0x005f87"   #97
+black = "0x212121"   #90
+red = "0xF44336"     #91
+green = "0x8bc34a"   #92
+yellow = "0xfbc02d"  #93
+blue = "0x1e88e5"    #94
+magenta = "0xf06292" #95
+cyan = "0x00acc1"    #96
+white = "0x616161"   #97
 
 [colors.cursor]
 cursor = "0x444444"

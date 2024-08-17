@@ -1,6 +1,7 @@
 [core]
 	ignorecase = false
 	excludesFile = ~/.config/git/ignore
+	hooksPath = ~/.config/git/hooks
 [pull]
 	rebase = false
 [commit]
@@ -8,7 +9,7 @@
 [merge]
 	conflictstyle = diff3
 [include]
-  path = .gitconfig.local
+	path = .gitconfig.local
 [alias]
 	co = checkout
 	b = branch
@@ -20,6 +21,8 @@
 	sw = switch
 	m = merge
 	adog = log --all --decorate --oneline --graph
+	dog = log --decorate --oneline --graph
+	a = add
 [init]
 	defaultBranch = master
 [credential]
