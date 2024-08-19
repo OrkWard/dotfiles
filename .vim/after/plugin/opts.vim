@@ -34,37 +34,55 @@ endif
 if exists('g:loaded_lsp')
   nnoremap <leader>s :LspFormat<CR>
 
-  call LspAddServer([#{
-        \ filetype: ['javascript', 'typescript', 'javascriptreact', 'typescriptreact'],
-        \ path: 'typescript-language-server',
-        \ args: ['--stdio'],
+  let lsps = []
+
+  if executable('typescript-language-server')
+    call add(lsps, 'ts')
+    call LspAddServer([#{
+          \ filetype: ['javascript', 'typescript', 'javascriptreact', 'typescriptreact'],
+          \ path: 'typescript-language-server',
+          \ args: ['--stdio'],
+          \ }])
+  endif
+
+  if executable('rust-analyzer')
+    call add(lsps, 'rust')
+    call LspAddServer([#{
+          \ filetype: ['rust'],
+          \ path: 'rust-analyzer',
+          \ args: [],
+          \ syncInit: v:true
+          \ }])
+  endif
+
+  if executable('gopls')
+    call add(lsps, 'go')
+    call LspAddServer([#{
+         \ filetype: ['go', 'gomod'],
+         \ path: 'gopls',
+         \ args: ['serve'],
+         \ syncInit: v:true
+         \ }])
+  endif
+
+  if executable('pylsp')
+    call add(lsps, 'py')
+    call LspAddServer([#{
+        \ filetype: 'python',
+        \ path: 'pylsp',
         \ }])
+  endif
 
-  call LspAddServer([#{
-        \ filetype: ['rust'],
-        \ path: 'rust-analyzer',
-        \ args: [],
-        \ syncInit: v:true
+  if executable('vscode-json-language-server')
+    call add(lsps, 'json')
+    call LspAddServer([#{
+        \ filetype: 'json',
+        \ path: 'vscode-json-language-server',
+        \ args: ['--stdio']
         \ }])
+  endif
 
-  call LspAddServer([#{
-       \ filetype: ['go', 'gomod'],
-       \ path: 'gopls',
-       \ args: ['serve'],
-       \ syncInit: v:true
-       \ }])
-
-  call LspAddServer([#{
-      \ filetype: 'python',
-      \ path: 'pylsp',
-      \ }])
-
-  call LspAddServer([#{
-      \ filetype: 'json',
-      \ path: 'vscode-json-language-server',
-      \ args: ['--stdio']
-      \ }])
-
+  au VimEnter * echo 'Activate Lsp: ' . join(lsps, ' ')
   call LspOptionsSet({'showSignature': v:false})
 
   nnoremap <silent> gd :<C-U>LspPeekDefinition<CR>
