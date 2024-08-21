@@ -11,6 +11,7 @@ set -x
 
 # --------------------- Basic ------------------------
 export EDITOR=vim
+export LS_COLORS=
 
 if [ $(uname -s) == "Darwin" ]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
