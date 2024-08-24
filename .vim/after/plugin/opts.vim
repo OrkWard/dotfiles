@@ -17,14 +17,14 @@ if exists('g:loaded_sneak_plugin')
 endif
 
 if exists('g:loaded_fzf') && exists('g:loaded_fzf_vim')
-  nnoremap <leader>f :Rg<CR>
+  nnoremap <leader>F :Rg<CR>
   nnoremap g* :Rg<space><c-r><c-w><cr>
-  nnoremap <leader>t :Files<CR>
+  nnoremap <c-f> :Files<CR>
   nnoremap <c-b> :Buffers<CR>
 endif
 
 if exists('g:loaded_vifm')
-  nnoremap <c-f> :Vifm<CR>
+  nnoremap <leader>f :Vifm<CR>
 endif
 
 if exists('g:loaded_lexima')
