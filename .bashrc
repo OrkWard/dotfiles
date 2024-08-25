@@ -134,6 +134,9 @@ alias ll='lsd -al'
 alias la='lsd -A'
 alias lt="lsd --tree -I \"node_modules\""
 
+# info
+alias info='info --vi-keys'
+
 # bat
 alias bat='bat --theme=GitHub'
 
