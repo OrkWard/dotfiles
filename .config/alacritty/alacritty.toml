@@ -1,2 +1,7 @@
 import = ["~/.config/alacritty/papercolor_light.toml", "~/.config/alacritty/local.toml"]
 
+[keyboard]
+bindings = [
+  { key = "`", mods = "Command", chars = '\033[`' }
+]
+
