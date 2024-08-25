@@ -2,6 +2,8 @@ import = ["~/.config/alacritty/papercolor_light.toml", "~/.config/alacritty/loca
 
 [keyboard]
 bindings = [
-  { key = "`", mods = "Command", chars = '\033[`' }
+  { key = "`", mods = "Command", chars = "\u001B`" },
+  { key = "f", mods = "Command", chars = "\u001Bf" },
+  { key = "b", mods = "Command", chars = "\u001Bb" },
 ]
 
