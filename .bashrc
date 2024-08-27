@@ -15,7 +15,6 @@ export LS_COLORS=
 
 if [ $(uname -s) == "Darwin" ]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
-	export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 fi
 
 # language
