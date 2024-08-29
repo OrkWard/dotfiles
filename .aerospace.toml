@@ -9,7 +9,7 @@ default-root-container-orientation = 'vertical'
 alt-shift-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
 alt-shift-c = 'exec-and-forget open /Applications/CotEditor.app'
 alt-shift-p = 'exec-and-forget open /Applications/Proxyman.app'
-alt-shift-o = 'exec-and-forget open /Applications/Httpie.app'
+alt-shift-i = 'exec-and-forget open /Applications/Httpie.app'
 
 alt-shift-h = 'focus left'
 alt-shift-j = 'focus down'
