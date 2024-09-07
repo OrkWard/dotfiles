@@ -84,7 +84,7 @@ run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
 if.app-id = 'com.coteditor.CotEditor'
-run = 'move-node-to-workspace 9'
+run = ['layout floating']
 
 [[on-window-detected]]
 if.app-id = 'com.proxyman.NSProxy'
