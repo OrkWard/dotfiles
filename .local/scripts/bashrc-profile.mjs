@@ -4,8 +4,7 @@ import { readdir, readFile } from "node:fs/promises";
 
 async function profile() {
   const files = await readdir("/tmp");
-  let max = 0,
-    newestFile = null;
+  let max = 0, newestFile = null;
   for (const file of files) {
     if (file.startsWith("bashstart")) {
       const [_, pid] = file.match(/bashstart\.(\d+)/);
