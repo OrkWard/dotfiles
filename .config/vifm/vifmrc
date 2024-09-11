@@ -28,6 +28,8 @@ fileviewer * highlight --out-format=ansi --force -qWJ %pw -t 2 %c
 nnoremap <c-n> :touch<space>
 nnoremap <c-k> :mkdir<space>
 
-command config edit ~/.config/vifm/vifmrc
-command diff !vimdiff %c %C
+command Config edit ~/.config/vifm/vifmrc
+command Diff !vimdiff %c %C
 
+command Sh !tmux split-window -h -c %d
+command Sv !tmux split-window -v -c %d
