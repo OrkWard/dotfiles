@@ -1,8 +1,0 @@
-scripts:
-- /Users/bytedance/.mitmproxy/main.py
-allow_hosts:
-- boe
-- bytedance
-- zijieapi
-map_remote:
-- /fund-control/localhost:8084
