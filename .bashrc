@@ -129,7 +129,7 @@ alias yl='yadm pull'
 alias yp='yadm push'
 
 # ls
-alias l='lsd'
+alias l='ls --color'
 alias ll='lsd -al'
 alias la='lsd -A'
 alias lt="lsd --tree -I \"node_modules\""
