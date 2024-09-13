@@ -3,3 +3,5 @@
 	email = caizelun.2@bytedance.com
 [gpg]
 	program = /opt/homebrew/bin/gpg
+[url "ssh://git@code.byted.org/"]
+  insteadOf = https://code.byted.org/
