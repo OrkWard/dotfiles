@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/bytedance/Projects/web-starter/packages/rollup-app'
 let g:netrw_dirhist_6='/Users/bytedance/.wakatime'
 let g:netrw_dirhist_5='/Users/bytedance'
 let g:netrw_dirhist_4='/Users/bytedance/.local'
