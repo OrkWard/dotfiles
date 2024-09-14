@@ -36,15 +36,6 @@ if exists('g:loaded_lsp')
 
   let lsps = []
 
-  if executable('typescript-language-server')
-    call add(lsps, 'ts')
-    call LspAddServer([#{
-          \ filetype: ['javascript', 'typescript', 'javascriptreact', 'typescriptreact'],
-          \ path: 'typescript-language-server',
-          \ args: ['--stdio'],
-          \ }])
-  endif
-
   if executable('rust-analyzer')
     call add(lsps, 'rust')
     call LspAddServer([#{
@@ -70,15 +61,6 @@ if exists('g:loaded_lsp')
     call LspAddServer([#{
         \ filetype: 'python',
         \ path: 'pylsp',
-        \ }])
-  endif
-
-  if executable('vscode-json-language-server')
-    call add(lsps, 'json')
-    call LspAddServer([#{
-        \ filetype: 'json',
-        \ path: 'vscode-json-language-server',
-        \ args: ['--stdio']
         \ }])
   endif
 
