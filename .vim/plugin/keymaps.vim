@@ -60,8 +60,10 @@ function! EditFtplugin(after)
     execute 'edit ' . l:ftplugin_path
 endfunction
 
-command C call EditFtplugin(v:false)
-command Ca call EditFtplugin(v:true)
+command Ft call EditFtplugin(v:false)
+command Fta call EditFtplugin(v:true)
+
+command Opt :edit ~/.vim/after/plugin/opts.vim
 
 " Emacs-keys
 " start of line

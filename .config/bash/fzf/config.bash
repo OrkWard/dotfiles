@@ -1,11 +1,14 @@
+export FZF_DEFAULT_COMMAND='fd -tf -H -L -E".git" -E".wine" -E"node_modules"'
+export FZF_PREVIEW_COMMAND="bat -n --color=always --theme=GitHub {}"
+
 # generate file path
 _fzf_compgen_path() {
-	fd -tf -HILE".git" -E".wine" -E"node_modules" . "$1"
+	fd -tf -H -L -E".git" -E".wine" -E"node_modules" . "$1"
 }
 
 # generate dir path
 _fzf_compgen_dir() {
-	fd -td -HILE".git" -E"node_modules" . "$1"
+	fd -td -HLE".git" -E"node_modules" . "$1"
 }
 
 # Advanced customization of fzf options via _fzf_comprun function
@@ -22,8 +25,6 @@ _fzf_comprun() {
 	*) fzf --preview 'bat -n --color=always --theme=GitHub {}' "$@" ;;
 	esac
 }
-
-export FZF_PREVIEW_COMMAND="bat -n --color=always --theme=GitHub {}"
 
 _fzf_setup_completion dir tree
 _fzf_setup_completion path bat code glow
