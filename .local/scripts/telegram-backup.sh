@@ -3,11 +3,15 @@ set -e
 backup_dir=
 
 # get backup dir
-while getopts 'd:' OPTION; do
+while getopts 'd:p:' OPTION; do
   case "$OPTION" in
     d)
       backup_dir=$(realpath $OPTARG)
       echo "Backup dir: $backup_dir"
+      ;;
+    p)
+      proxy=$OPTARG
+      echo "Use proxy: $proxy"
       ;;
     ?)
       echo "usage: telegram-backup.sh -d <backup_dir> chat_id..."
@@ -22,6 +26,12 @@ if [ $backup_dir == "" ]; then
 fi
 shift "$(($OPTIND - 1))"
 
+if [ ${proxy:-} == "" ]; then
+  proxy_opt=""
+else
+  proxy_opt="--proxy $proxy"
+fi
+
 # loop process each chat id
 while [ -n "$1" ]; do
   # if directory not exist, create it
@@ -35,8 +45,8 @@ while [ -n "$1" ]; do
     tmp_result=$(mktemp)
 
     # new message
-    tdl chat export -c $1 -T id -i $((max_id + 1)) -o "$tmp_json"
-    tdl dl -f $tmp_json -d "$backup_dir/$1"
+    tdl $proxy_opt chat export -c $1 -T id -i $((max_id + 1)) -o "$tmp_json"
+    tdl $proxy_opt dl -f $tmp_json -d "$backup_dir/$1"
     jq -s '{id: .[0].id, messages: [.[] | .messages[]]}' $tmp_json $chat_export > "$tmp_result"
     mv "$tmp_result" $chat_export
 
@@ -44,8 +54,8 @@ while [ -n "$1" ]; do
     [ -f $tmp_json ] && rm $tmp_json
     [ -f $tmp_result ] && rm $tmp_result
   else
-    tdl chat export -c $1 -o $chat_export 
-    tdl dl -f $chat_export -d $chat_dir
+    tdl $proxy_opt chat export -c $1 -o $chat_export 
+    tdl $proxy_opt dl -f $chat_export -d $chat_dir
   fi
   shift
 done
