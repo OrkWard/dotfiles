@@ -92,10 +92,6 @@ export PATH=$HOME/.cargo/bin:$PATH
 export GOPATH=~/.gopath
 export PATH=$GOPATH/bin:$PATH
 
-# deno
-export DENO_INSTALL=~/.deno
-export PATH=$DENO_INSTALL/bin:$PATH
-
 # mise
 eval "$(mise activate bash)"
 
