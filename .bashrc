@@ -85,6 +85,9 @@ load_module bash-preexec
 # custom path for local bin and local script
 export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"
 
+# openai
+alias ??="openai"
+
 # rust
 export PATH=$HOME/.cargo/bin:$PATH
 
