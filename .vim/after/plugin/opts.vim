@@ -24,7 +24,7 @@ if exists('g:loaded_fzf') && exists('g:loaded_fzf_vim')
 endif
 
 if exists('g:loaded_vifm')
-  nnoremap <leader>f :Vifm<CR>
+  nnoremap <leader>v :Vifm<CR>
 endif
 
 if exists('g:loaded_lexima')

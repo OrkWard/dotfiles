@@ -51,10 +51,8 @@ Plug 'zivyangll/git-blame.vim'
 Plug 'vifm/vifm.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-" Plug 'cohama/lexima.vim'
 Plug 'OrkWard/lsp'
 Plug 'girishji/vimcomplete'
-" Plug 'jiangmiao/auto-pairs'
 
 " highlight
 Plug 'kylelaker/riscv.vim'
