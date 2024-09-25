@@ -3,11 +3,12 @@ function! PackageJsonExists()
 
   while l:current_dir !=# '/'
     if filereadable(l:current_dir . '/package.json')
-      return true
+      return v:true
     endif
-    l:current_dir = fnamemodify(l:current_dir, ':h')
+    let l:current_dir = fnamemodify(l:current_dir, ':h')
   endwhile
-  return false
+
+  return v:false
 endfunction
 
 if exists(g:loaded_lsp)
@@ -19,7 +20,6 @@ if exists(g:loaded_lsp)
         \   filetype: ['javascript', 'typescript'],
         \   path: 'deno',
         \   args: ['lsp'],
-        \   debug: v:true,
         \   initializationOptions: #{
         \        enable: v:true,
         \        lint: v:true
