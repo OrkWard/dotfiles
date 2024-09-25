@@ -64,15 +64,14 @@ if exists('g:loaded_lsp')
         \ }])
   endif
 
-  au VimEnter * echo 'Activate Lsp: ' . join(lsps, ' ')
   call LspOptionsSet({'showSignature': v:false})
 
   nnoremap <silent> gd :<C-U>LspPeekDefinition<CR>
   nnoremap <silent> gi :<C-U>LspPeekImpl<CR>
   nnoremap <silent> gy :<C-U>LspPeekTypeDef<CR>
-  nnoremap <silent> gr :<C-U>LspPeekReferences<CR>
-  nnoremap <silent> [g :<C-U>LspDiag prev<CR>
-  nnoremap <silent> ]g :<C-U>LspDiag next<CR>
+  nnoremap <silent> gA :<C-U>LspPeekReferences<CR>
+  nnoremap <silent> g[ :<C-U>LspDiag prev<CR>
+  nnoremap <silent> g] :<C-U>LspDiag next<CR>
   set keywordprg=:LspHover
 
   nnoremap <silent> <leader>rn :<C-U>LspRename<CR>
