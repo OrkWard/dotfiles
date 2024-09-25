@@ -22,7 +22,8 @@ if exists(g:loaded_lsp)
         \   args: ['lsp'],
         \   initializationOptions: #{
         \        enable: v:true,
-        \        lint: v:true
+        \        lint: v:true,
+        \        unstable: v:true
         \   }
         \ }])
   elseif executable('typescript-language-server')
