@@ -69,7 +69,7 @@ if exists('g:loaded_lsp')
   nnoremap <silent> gd :<C-U>LspPeekDefinition<CR>
   nnoremap <silent> gi :<C-U>LspPeekImpl<CR>
   nnoremap <silent> gy :<C-U>LspPeekTypeDef<CR>
-  nnoremap <silent> gA :<C-U>LspPeekReferences<CR>
+  nnoremap <silent> gr :<C-U>LspPeekReferences<CR>
   nnoremap <silent> g[ :<C-U>LspDiag prev<CR>
   nnoremap <silent> g] :<C-U>LspDiag next<CR>
   set keywordprg=:LspHover
