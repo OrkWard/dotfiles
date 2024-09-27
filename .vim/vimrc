@@ -39,11 +39,12 @@ set mouse=
 call plug#begin('~/.local/share/vim-plug')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'wakatime/vim-wakatime'
-Plug 'justinmk/vim-sneak'
+" Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'NLKNguyen/papercolor-theme'
