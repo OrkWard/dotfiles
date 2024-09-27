@@ -16,6 +16,9 @@ if exists('g:loaded_sneak_plugin')
   noremap T <Plug>Sneak_T
 endif
 
+if exists('g:EasyMotion_loaded')
+endif
+
 if exists('g:loaded_fzf') && exists('g:loaded_fzf_vim')
   nnoremap <leader>F :Rg<CR>
   nnoremap g* :Rg<space><c-r><c-w><cr>
