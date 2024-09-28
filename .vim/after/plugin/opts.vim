@@ -17,8 +17,12 @@ if exists('g:loaded_sneak_plugin')
 endif
 
 if exists('g:EasyMotion_loaded')
-  map f <Plug>(easymotion-bd-f)
-  map F <Plug>(easymotion-bd-F)
+  map f <Plug>(easymotion-f)
+  map F <Plug>(easymotion-F)
+  nmap , <Plug>(easymotion-next)
+  nmap ; <Plug>(easymotion-prev)
+
+  let g:EasyMotion_keys='asdfghjkl;'
 endif
 
 if exists('g:loaded_incsearch')
