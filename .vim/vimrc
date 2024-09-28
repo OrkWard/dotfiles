@@ -39,7 +39,6 @@ set mouse=
 call plug#begin('~/.local/share/vim-plug')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'wakatime/vim-wakatime'
-" Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
@@ -48,7 +47,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'zivyangll/git-blame.vim'
+Plug 'othree/xml.vim'
 Plug 'vifm/vifm.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -65,5 +64,6 @@ Plug 'neoclide/jsonc.vim'
 " disable now
 " Plug 'liuchengxu/vim-which-key'
 " Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+" Plug 'justinmk/vim-sneak'
 call plug#end()
 
