@@ -17,6 +17,13 @@ if exists('g:loaded_sneak_plugin')
 endif
 
 if exists('g:EasyMotion_loaded')
+  map f <Plug>(easymotion-bd-f)
+  map F <Plug>(easymotion-bd-F)
+endif
+
+if exists('g:loaded_incsearch')
+  map / <Plug>(incsearch-forward)
+  map ? <Plug>(incsearch-backward)
 endif
 
 if exists('g:loaded_fzf') && exists('g:loaded_fzf_vim')
