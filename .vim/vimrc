@@ -16,6 +16,7 @@ set backspace=2 " Ensure backspace working
 set incsearch " Highlight search work on the fly
 set linebreak
 set virtualedit=block
+set autoread
 
 set wildmode=longest:full,full
 
