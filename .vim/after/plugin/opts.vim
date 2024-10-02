@@ -88,5 +88,6 @@ if exists('g:loaded_lsp')
   nnoremap <silent> g] :<C-U>LspDiag next<CR>
   set keywordprg=:LspHover
 
-  nnoremap <silent> <leader>rn :<C-U>LspRename<CR>
+  nnoremap <silent> <leader>r :<C-U>LspRename<CR>
+  nnoremap <silent> <leader>a :<C-U>LspCodeAction<CR>
 endif

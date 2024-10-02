@@ -10,8 +10,8 @@ vnoremap <leader>l :<C-u>call SwitchListchars()<CR>gv
 
 " some useful map
 nnoremap Y y$
-nnoremap j gj
-nnoremap k gk
+" nnoremap j gj
+" nnoremap k gk
 
 " Use arrow keys to scroll in popup window
 function! ScrollPopup(down)
