@@ -11,7 +11,7 @@ function! PackageJsonExists()
   return v:false
 endfunction
 
-if exists(g:loaded_lsp)
+if exists('g:loaded_lsp') && !exists('g:ts_init')
   map gq :LspFormat<CR>
 
   if executable('deno') && !PackageJsonExists()
@@ -34,5 +34,7 @@ if exists(g:loaded_lsp)
     \ args: ['--stdio'],
     \ }])
   endif
+
+  let g:ts_init = v:true
 
 endif
