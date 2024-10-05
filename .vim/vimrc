@@ -1,3 +1,4 @@
+vim9script
 source $VIMRUNTIME/defaults.vim
 
 set tabstop=2
@@ -6,46 +7,45 @@ set shiftwidth=2
 set expandtab
 set autoindent
 set relativenumber number
-set hidden " Allow buffer to be hidden without save change
+set hidden # Allow buffer to be hidden without save change
 set encoding=utf-8
 set cursorline
-set splitbelow " default split on the below
+set splitbelow # default split on the below
 set splitright
-set laststatus=2 " Always show status line
-set backspace=2 " Ensure backspace working
-set incsearch " Highlight search work on the fly
+set laststatus=2 # Always show status line
+set backspace=2 # Ensure backspace working
+set incsearch # Highlight search work on the fly
 set linebreak
 set virtualedit=block
 set autoread
 
 set wildmode=longest:full,full
 
-" Display blank characters
+# Display blank characters
 set list
 set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·,trail:~
 
-" set cursor
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
+# set cursor
+&t_SI = "\<Esc>[6 q"
+&t_SR = "\<Esc>[4 q"
+&t_EI = "\<Esc>[2 q"
 set ttimeoutlen=50
 
-" <Leader> key
-let mapleader = " "
+# <Leader> key
+g:mapleader = " "
 
-" disable mouse
+# disable mouse
 set mouse=
 
-" vim-plug
+# vim-plug
 call plug#begin('~/.local/share/vim-plug')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'wakatime/vim-wakatime'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-commentary'
 Plug 'haya14busa/incsearch.vim'
-Plug 'easymotion/vim-easymotion'
+Plug 'justinmk/vim-sneak'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'NLKNguyen/papercolor-theme'
@@ -56,14 +56,15 @@ Plug 'junegunn/fzf.vim'
 Plug 'OrkWard/lsp'
 Plug 'girishji/vimcomplete'
 
-" highlight
+# highlight
 Plug 'kylelaker/riscv.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neoclide/jsonc.vim'
 
-" disable now
-" Plug 'liuchengxu/vim-which-key'
-" Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-" Plug 'justinmk/vim-sneak'
+# disable now
+# Plug 'liuchengxu/vim-which-key'
+# Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 call plug#end()
+
+packadd comment
 

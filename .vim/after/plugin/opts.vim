@@ -14,6 +14,8 @@ if exists('g:loaded_sneak_plugin')
   noremap F <Plug>Sneak_F
   noremap t <Plug>Sneak_t
   noremap T <Plug>Sneak_T
+  noremap s <Plug>SneakLabel_s
+  noremap S <Plug>SneakLabel_S
 endif
 
 if exists('g:EasyMotion_loaded')
