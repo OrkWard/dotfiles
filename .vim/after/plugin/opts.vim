@@ -50,10 +50,7 @@ endif
 if exists('g:loaded_lsp')
   nnoremap <leader>s :LspFormat<CR>
 
-  let lsps = []
-
   if executable('rust-analyzer')
-    call add(lsps, 'rust')
     call LspAddServer([#{
           \ filetype: ['rust'],
           \ path: 'rust-analyzer',
@@ -63,7 +60,6 @@ if exists('g:loaded_lsp')
   endif
 
   if executable('gopls')
-    call add(lsps, 'go')
     call LspAddServer([#{
          \ filetype: ['go', 'gomod'],
          \ path: 'gopls',
@@ -73,7 +69,6 @@ if exists('g:loaded_lsp')
   endif
 
   if executable('pylsp')
-    call add(lsps, 'py')
     call LspAddServer([#{
         \ filetype: 'python',
         \ path: 'pylsp',

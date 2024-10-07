@@ -60,8 +60,8 @@ function! EditFtplugin(after)
     execute 'edit ' . l:ftplugin_path
 endfunction
 
-command Ft call EditFtplugin(v:false)
-command Fta call EditFtplugin(v:true)
+command Ed call EditFtplugin(v:false)
+command Eda call EditFtplugin(v:true)
 
 command Opt :edit ~/.vim/after/plugin/opts.vim
 
