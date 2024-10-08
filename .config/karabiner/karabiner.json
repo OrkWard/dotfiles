@@ -6,6 +6,7 @@
                 "rules": [
                     {
                         "description": "map caps_lock to control if pressed with other keys, to escape if pressed alone.",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -88,6 +89,10 @@
                         {
                             "from": { "key_code": "left_control" },
                             "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
+                        },
+                        {
+                            "from": { "key_code": "caps_lock" },
+                            "to": [{ "key_code": "left_control" }]
                         }
                     ]
                 },
