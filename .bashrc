@@ -5,9 +5,9 @@ case $- in
 esac
 
 # Profile start
-PS4='+ $EPOCHREALTIME\011 '
-exec 3>&2 2>/tmp/bashstart.$$.log
-set -x
+# PS4='+ $EPOCHREALTIME\011 '
+# exec 3>&2 2>/tmp/bashstart.$$.log
+# set -x
 
 # --------------------- Basic ------------------------
 export EDITOR=vim
@@ -76,7 +76,7 @@ load_module less
 load_module node
 load_module git
 load_module fzf
-load_module complete-alias
+# load_module complete-alias
 load_module autojump
 load_module bash-preexec
 
@@ -129,9 +129,10 @@ alias yp='yadm push'
 
 # ls
 alias l='ls --color'
+alias ls='ls --color'
 alias ll='ls --color -al'
 alias la='ls --color -a'
-alias lt="lsd --tree -I \"node_modules\""
+alias lt="tree -C -I \"node_modules\""
 
 # info
 alias info='info --vi-keys'
@@ -148,5 +149,5 @@ if [ "$TERM_PROGRAM" = 'vscode' ]; then
 fi
 
 # Profile end
-set +x
-exec 2>&3 3>&-
+# set +x
+# exec 2>&3 3>&-
