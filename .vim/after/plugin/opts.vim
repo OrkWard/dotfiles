@@ -9,7 +9,7 @@ if exists('g:loaded_airline') && exists('g:loaded_airline_themes')
 endif
 
 if exists('g:loaded_sneak_plugin')
-  let g:sneak#label = 1
+  " let g:sneak#label = 1
   noremap f <Plug>Sneak_f
   noremap F <Plug>Sneak_F
   noremap t <Plug>Sneak_t
