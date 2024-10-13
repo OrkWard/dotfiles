@@ -30,7 +30,7 @@ if exists('g:loaded_lsp') && !exists('g:ts_init')
   if executable('deno') && DenoJsonExists()
     call LspAddServer([#{
       \   name: 'deno',
-      \   filetype: ['javascript', 'typescript'],
+      \   filetype: ['javascript', 'typescript', 'typescriptreact', 'javascriptreact'],
       \   path: 'deno',
       \   args: ['lsp'],
       \   initializationOptions: #{
@@ -42,7 +42,7 @@ if exists('g:loaded_lsp') && !exists('g:ts_init')
   elseif executable('typescript-language-server')
     call LspAddServer([#{
     \ name: 'typescript',
-    \ filetype: ['javascript', 'typescript' ],
+    \ filetype: ['javascript', 'typescript', 'typescriptreact', 'javascriptreact'],
     \ path: 'typescript-language-server',
     \ args: ['--stdio'],
     \ }])
