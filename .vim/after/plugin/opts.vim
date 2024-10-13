@@ -1,7 +1,3 @@
-if exists('g:loaded_gitblame')
-  nnoremap <leader>b :<C-u>call gitblame#echo()<CR>
-endif
-
 if exists('g:loaded_airline') && exists('g:loaded_airline_themes')
   let g:airline_theme='papercolor'
   " let g:airline#extensions#tabline#enabled = 1
@@ -88,3 +84,8 @@ if exists('g:loaded_lsp')
   nnoremap <silent> <leader>r :<C-U>LspRename<CR>
   nnoremap <silent> <leader>a :<C-U>LspCodeAction<CR>
 endif
+
+let g:closetag_filenames = "*.html,*.phtml,*.php"
+let g:closetag_xhtml_filenames = "*.xhtml,*.jsx,*.tsx"
+let g:closetag_filetypes = "html,phtml,php"
+let g:closetag_xhtml_filetypes = "xhtml,jsx,tsx"
