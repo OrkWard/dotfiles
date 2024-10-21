@@ -6,6 +6,6 @@ elif [ -f /etc/bash_completion ]; then
 fi
 
 # proxy
-export https_proxy="http://localhost:7890"
-export http_proxy="http://localhost:7890"
-export all_proxy="socks5://localhost:7890"
+export https_proxy="http://asus:7890"
+export http_proxy="http://asus:7890"
+export all_proxy="socks5://asus:7890"
