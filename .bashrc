@@ -101,9 +101,6 @@ eval "$(mise activate bash)"
 # atuin
 eval "$(atuin init bash)"
 
-# zoxide
-# eval "$(zoxide init bash --cmd j)"
-
 # cd
 alias ..="cd .."
 alias ...="cd ../.."
