@@ -6,16 +6,16 @@ bg_colors=(40 41 42 43 44 45 46 47 100 101 102 103 104 105 106 107)
 
 # Header
 printf "    "
-for fg in ${colors[@]}; do
-    printf "%-4s" $fg
+for fg in "${colors[@]}"; do
+    printf "%-4s" "$fg"
 done
 printf "\n"
 
 # Table
-for bg in ${bg_colors[@]}; do
-    printf "%-4s" $bg
+for bg in "${bg_colors[@]}"; do
+    printf "%-4s" "$bg"
     for fg in "${colors[@]}"; do
-        printf "\e[${fg};${bg}m A \e[0m "
+        printf "\e[%s;%sm A \e[0m " "$fg" "$bg"
     done
     printf "\n"
 done
