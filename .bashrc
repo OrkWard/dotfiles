@@ -127,7 +127,7 @@ alias yp='yadm push'
 # ls
 alias l='ls --color'
 alias ls='ls --color'
-alias ll='ls --color -al'
+alias ll='ls --color -alh'
 alias la='ls --color -a'
 alias lt="tree -C -I \"node_modules\""
 
