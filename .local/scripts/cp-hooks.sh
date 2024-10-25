@@ -14,8 +14,8 @@ function get_global_hooks_path {
 }
 
 if is_git_directory; then
-    local_hooks_path=$(get_local_hooks_path)
-    eval global_hooks_path=$(get_global_hooks_path)
+    local_hooks_path="$(get_local_hooks_path)"
+    eval global_hooks_path="$(get_global_hooks_path)"
 
     if [ -z "$local_hooks_path" ]; then
         local_hooks_path=".git/hooks"
@@ -30,8 +30,8 @@ if is_git_directory; then
 
     for hook in "$global_hooks_path"/*; do
         if [ -f "$hook" ]; then
-            cp "$hook" "$local_hooks_path" 2>/dev/null
-            if [ $? -ne 0 ]; then
+            if ! cp "$hook" "$local_hooks_path" 2>/dev/null
+            then
                 echo "Warning: Failed to copy $hook. Ignoring this file for now."
                 exit_code=1
             fi

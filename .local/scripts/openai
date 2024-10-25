@@ -6,7 +6,7 @@
 
 set -eo pipefail
 
-. $HOME/.env
+. "$HOME"/.env
 
 declare _config_dir="${OPENAI_DATA_DIR:-$XDG_CONFIG_HOME}"
 OPENAI_DATA_DIR="${_config_dir:-$HOME/.openai}"
