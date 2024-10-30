@@ -4,6 +4,7 @@ import = ["~/.config/alacritty/papercolor_light.toml", "~/.config/alacritty/loca
 bindings = [
   { key = "`", mods = "Command", chars = "\u001B`" },
   { key = "f", mods = "Command", chars = "\u001Bf" },
+  { key = "g", mods = "Command", chars = "\u001Bg" },
   { key = ".", mods = "Command", chars = "\u001B." },
   { key = "b", mods = "Command", chars = "\u001Bb" },
   { key = "1", mods = "Command", chars = "\u001B1" },

@@ -134,9 +134,6 @@ alias ll='ls --color -alh'
 alias la='ls --color -a'
 alias lt="tree -C -I \"node_modules\""
 
-# info
-alias info='info --vi-keys'
-
 # bat
 alias bat='bat --theme=GitHub'
 
