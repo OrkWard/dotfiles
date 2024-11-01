@@ -1,4 +1,4 @@
-export FZF_DEFAULT_COMMAND='fd -tf -H -L -E".git" -E".wine" -E"node_modules"'
+export FZF_DEFAULT_COMMAND='fd -tf -H -L -E".git" -E".wine" -E"node_modules" -E"*.swp"'
 export FZF_PREVIEW_COMMAND="bat -n --color=always --theme=GitHub {}"
 
 # generate file path
