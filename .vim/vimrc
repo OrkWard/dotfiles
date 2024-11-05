@@ -45,7 +45,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'wakatime/vim-wakatime'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sleuth'
+# Plug 'tpope/vim-sleuth'
 Plug 'haya14busa/incsearch.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'vim-airline/vim-airline'
@@ -91,7 +91,7 @@ endif
 
 # --------------------- keymap --------------------
 # map candidate: H L M
-def SwitchListchars(): void
+def g:SwitchListchars(): void
   if &list
     set nolist
   else
@@ -99,7 +99,7 @@ def SwitchListchars(): void
   endif
 enddef
 
-nnoremap <F12> :call SwitchListchars()<CR>
+nnoremap <F12> :<C-u>call SwitchListchars()<CR>
 vnoremap <F12> :<C-u>call SwitchListchars()<CR>gv
 
 # some useful map
@@ -109,29 +109,29 @@ nnoremap Y y$
 
 # Use arrow keys to scroll in popup window
 def ScrollPopup(down: number): number
-    var winids = popup_list()
-    if empty(winids)
-        return 0
-    else
-        let winid = winids[0]
-    endif
+  var winids = popup_list()
+  if empty(winids)
+    return 0
+  else
+    let winid = winids[0]
+  endif
 
-    # if the popup window is hidden, then bypass the keystrokes
-    var pp = popup_getpos(winid)
-    if pp.visible != 1 | return 0 | endif
+  # if the popup window is hidden, then bypass the keystrokes
+  var pp = popup_getpos(winid)
+  if pp.visible != 1 | return 0 | endif
 
-    var firstline = pp.firstline + a:down
-    var buf_lastline = str2nr(trim(win_execute(winid, "echo line('$')")))
-    if firstline < 1
-        let firstline = 1
-    elseif pp.lastline + a:down > buf_lastline
-        let firstline = firstline - down + buf_lastline - pp.lastline
-    endif
+  var firstline = pp.firstline + a:down
+  var buf_lastline = str2nr(trim(win_execute(winid, "echo line('$')")))
+  if firstline < 1
+    let firstline = 1
+  elseif pp.lastline + a:down > buf_lastline
+    let firstline = firstline - down + buf_lastline - pp.lastline
+  endif
 
-    # if a scrollbar is shown, then the height changes
-    call popup_setoptions( winid, {'scrollbar': 0, 'resize': 0, 'fixed': 1, 'firstline' : firstline } )
+  # if a scrollbar is shown, then the height changes
+  call popup_setoptions( winid, {'scrollbar': 0, 'resize': 0, 'fixed': 1, 'firstline' : firstline } )
 
-    return 1
+  return 1
 enddef
 
 # auto pair
@@ -139,20 +139,20 @@ enddef
 # inoremap [<CR> [<CR>]<ESC>O
 
 def EditFtplugin(after: bool)
-    var filetype = &filetype
+  var filetype = &filetype
 
-    if filetype == ''
-        return
-    endif
+  if filetype == ''
+    return
+  endif
 
-    var ftplugin_path = ''
-    if after == true
-        ftplugin_path = '~/.vim/after/ftplugin/' .. filetype .. '.vim'
-    else
-        ftplugin_path = '~/.vim/ftplugin/' .. filetype .. '.vim'
-    endif
+  var ftplugin_path = ''
+  if after == true
+    ftplugin_path = '~/.vim/after/ftplugin/' .. filetype .. '.vim'
+  else
+    ftplugin_path = '~/.vim/ftplugin/' .. filetype .. '.vim'
+  endif
 
-    execute 'edit ' .. ftplugin_path
+  execute 'edit ' .. ftplugin_path
 enddef
 
 command Ed call EditFtplugin(false)
