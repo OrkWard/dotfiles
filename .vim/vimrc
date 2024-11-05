@@ -59,6 +59,7 @@ Plug 'OrkWard/lsp'
 Plug 'girishji/vimcomplete'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
+
 # highlight
 Plug 'kylelaker/riscv.vim'
 Plug 'maxmellon/vim-jsx-pretty'

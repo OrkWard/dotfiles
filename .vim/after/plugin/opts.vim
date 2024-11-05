@@ -91,6 +91,7 @@ let g:closetag_filetypes = "html,phtml,php"
 let g:closetag_xhtml_filetypes = "xhtml,jsx,tsx"
 
 let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 
 " Don't add comment with o
 set formatoptions-=o
