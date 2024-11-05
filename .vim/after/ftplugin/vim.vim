@@ -1,1 +1,1 @@
-set formatoptions-=or
+set formatoptions=rl

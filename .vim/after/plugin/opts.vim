@@ -92,3 +92,8 @@ let g:closetag_xhtml_filetypes = "xhtml,jsx,tsx"
 
 let g:prettier#autoformat = 1
 
+" Don't add comment with o
+set formatoptions-=o
+" Don't limit line width
+set tw=0
+
