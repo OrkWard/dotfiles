@@ -21,6 +21,8 @@ set autoread
 
 set wildmode=longest:full,full
 
+set colorcolumn=80,120
+
 # Display blank characters
 set list
 set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·,trail:~
@@ -72,7 +74,7 @@ call plug#end()
 
 packadd comment
 
-# -------------------- theme ---------------------
+# ================================== theme ====================================
 set background=light
 
 def ColorschemeExists(name: string): bool
@@ -90,8 +92,7 @@ if $TERM =~# 'xterm-color\|.*-256color\|alacritty'
   highlight ErrorMsg ctermfg=0
 endif
 
-# --------------------- keymap --------------------
-# map candidate: H L M
+# =================================== keymap ==================================
 def g:SwitchListchars(): void
   if &list
     set nolist
@@ -173,7 +174,7 @@ command Rc :edit $MYVIMRC
 :cnoremap <Esc>b <S-Left>
 :cnoremap <Esc>f <S-Right>
 
-# ---------------------- gui ---------------
+# ================================== gui ======================================
 if has("gui_running")
   # disable toolbar
   set guioptions-=T
