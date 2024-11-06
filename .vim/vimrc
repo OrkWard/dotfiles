@@ -160,19 +160,19 @@ enddef
 command Ed call EditFtplugin(false)
 command Eda call EditFtplugin(true)
 
-command Opt :edit ~/.vim/after/plugin/opts.vim
-command Rc :edit $MYVIMRC
+command Opt edit ~/.vim/after/plugin/opts.vim
+command Rc edit $MYVIMRC
 
 # Emacs-keys
-:cnoremap <C-A> <Home>
-:cnoremap <C-B> <Left>
-:cnoremap <C-D> <Del>
-:cnoremap <C-E> <End>
-:cnoremap <C-F> <Right>
-:cnoremap <C-N> <Down>
-:cnoremap <C-P> <Up>
-:cnoremap <Esc>b <S-Left>
-:cnoremap <Esc>f <S-Right>
+cnoremap <C-A> <Home>
+cnoremap <C-B> <Left>
+cnoremap <C-D> <Del>
+cnoremap <C-E> <End>
+cnoremap <C-F> <Right>
+cnoremap <C-N> <Down>
+cnoremap <C-P> <Up>
+cnoremap <Esc>b <S-Left>
+cnoremap <Esc>f <S-Right>
 
 # ================================== gui ======================================
 if has("gui_running")
