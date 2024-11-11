@@ -21,7 +21,7 @@ set autoread
 
 set wildmode=longest:full,full
 
-set colorcolumn=80,120
+set colorcolumn=81,121
 
 # Display blank characters
 set list
@@ -74,7 +74,7 @@ call plug#end()
 
 packadd comment
 
-# ================================== theme ====================================
+# ================================== theme =====================================
 set background=light
 
 def ColorschemeExists(name: string): bool
@@ -92,7 +92,7 @@ if $TERM =~# 'xterm-color\|.*-256color\|alacritty'
   highlight ErrorMsg ctermfg=0
 endif
 
-# =================================== keymap ==================================
+# =================================== keymap ===================================
 def g:SwitchListchars(): void
   if &list
     set nolist
@@ -174,7 +174,7 @@ cnoremap <C-P> <Up>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 
-# ================================== gui ======================================
+# =================================== gui ======================================
 if has("gui_running")
   # disable toolbar
   set guioptions-=T
