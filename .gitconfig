@@ -27,5 +27,3 @@
 	defaultBranch = master
 [credential]
 	helper = cache
-[http]
-	postBuffer = 1048576000
