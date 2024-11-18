@@ -91,6 +91,9 @@ bind -x '"\C-t":vifm'
 # openai
 alias ??="openai"
 
+# caddy
+alias server="caddy file-server . --port 8080"
+
 # rust
 export PATH=$HOME/.cargo/bin:$PATH
 
