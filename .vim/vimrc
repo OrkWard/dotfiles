@@ -70,7 +70,7 @@ Plug 'neoclide/jsonc.vim'
 # disable now
 # Plug 'liuchengxu/vim-which-key'
 # Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'jiangmiao/auto-pairs'
+# Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 packadd comment
