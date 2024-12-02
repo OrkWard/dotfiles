@@ -5,6 +5,20 @@
                 "parameters": { "basic.to_if_alone_timeout_milliseconds": 400 },
                 "rules": [
                     {
+                        "description": "Omit left_shift if press alone",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_shift",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to_if_alone": [],
+                                "to_if_held_down": [{ "key_code": "left_shift" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "map caps_lock to control if pressed with other keys, to escape if pressed alone.",
                         "enabled": false,
                         "manipulators": [
