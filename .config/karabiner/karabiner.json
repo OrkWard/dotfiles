@@ -5,7 +5,8 @@
                 "parameters": { "basic.to_if_alone_timeout_milliseconds": 400 },
                 "rules": [
                     {
-                        "description": "Omit left_shift if press alone",
+                        "description": "New Rule (change left_shift+caps_lock to page_down, right_shift+caps_lock to left_command+mission_control)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
