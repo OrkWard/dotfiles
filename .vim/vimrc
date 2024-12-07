@@ -18,12 +18,9 @@ set incsearch # Highlight search work on the fly
 set linebreak
 set virtualedit=block
 set autoread
-
+set ttimeoutlen=50
 set wildmode=longest:full,full
-
 set colorcolumn=81,121
-
-# Display blank characters
 set list
 set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·,trail:~
 
@@ -31,15 +28,9 @@ set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·,trail:~
 &t_SI = "\<Esc>[6 q"
 &t_SR = "\<Esc>[4 q"
 &t_EI = "\<Esc>[2 q"
-set ttimeoutlen=50
-
-# <Leader> key
-g:mapleader = " "
 
 # disable mouse
 set mouse=
-
-set pastetoggle=<F11>
 
 # vim-plug
 call plug#begin('~/.local/share/vim-plug')
@@ -60,7 +51,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'OrkWard/lsp'
 Plug 'girishji/vimcomplete'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
-
 
 # highlight
 Plug 'kylelaker/riscv.vim'
@@ -94,6 +84,11 @@ if $TERM =~# 'xterm-color\|.*-256color\|alacritty'
 endif
 
 # =================================== keymap ===================================
+g:mapleader = " "
+set pastetoggle=<F11>
+nnoremap <F12> :<C-u>call SwitchListchars()<CR>
+vnoremap <F12> :<C-u>call SwitchListchars()<CR>gv
+
 def g:SwitchListchars(): void
   if &list
     set nolist
@@ -101,9 +96,6 @@ def g:SwitchListchars(): void
     set list
   endif
 enddef
-
-nnoremap <F12> :<C-u>call SwitchListchars()<CR>
-vnoremap <F12> :<C-u>call SwitchListchars()<CR>gv
 
 # some useful map
 nnoremap Y y$
