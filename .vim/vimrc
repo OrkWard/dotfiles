@@ -21,8 +21,8 @@ set autoread
 set ttimeoutlen=50
 set wildmode=longest:full,full
 set colorcolumn=81,121
-set list
-set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·,trail:~
+# set list
+# set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·,trail:~
 
 # set cursor
 &t_SI = "\<Esc>[6 q"
@@ -87,19 +87,21 @@ def g:SynGroup()
     echo synIDattr(s, 'name') .. ' -> ' .. synIDattr(synIDtrans(s), 'name')
 enddef
 
+# def g:SwitchListchars(): void
+#   if &list
+#     set nolist
+#   else
+#     set list
+#   endif
+# enddef
+
 # =================================== keymap ===================================
 g:mapleader = " "
 set pastetoggle=<F11>
-nnoremap <F12> :<C-u>call SwitchListchars()<CR>
-vnoremap <F12> :<C-u>call SwitchListchars()<CR>gv
+# using F12 to switch listchars
+# nnoremap <F12> :<C-u>call SwitchListchars()<CR>
+# vnoremap <F12> :<C-u>call SwitchListchars()<CR>gv
 
-def g:SwitchListchars(): void
-  if &list
-    set nolist
-  else
-    set list
-  endif
-enddef
 
 # some useful map
 nnoremap Y y$
