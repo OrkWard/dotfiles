@@ -2,4 +2,4 @@
   name = OrkWard
   email = orkward_o@outlook.com
 [gpg]
-	program = /usr/bin/gpg
+  program = /usr/bin/gpg
