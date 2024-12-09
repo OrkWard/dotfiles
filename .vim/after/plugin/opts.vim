@@ -29,18 +29,14 @@ if exists('g:loaded_incsearch')
 endif
 
 if exists('g:loaded_fzf') && exists('g:loaded_fzf_vim')
-  nnoremap <leader>F :Rg<CR>
+  nnoremap <leader>f :Rg<CR>
   nnoremap g* :Rg<space><c-r><c-w><cr>
   nnoremap <c-f> :Files<CR>
   nnoremap <c-p> :Buffers<CR>
 endif
 
 if exists('g:loaded_vifm')
-  nnoremap <leader>v :Vifm<CR>
-endif
-
-if exists('g:loaded_lexima')
-  " let g:lexima_enable_newline_rules = 1
+  nnoremap <leader>1 :Vifm<CR>
 endif
 
 if exists('g:loaded_lsp')
@@ -75,7 +71,7 @@ if exists('g:loaded_lsp')
 
   nnoremap <silent> gd :<C-U>LspPeekDefinition<CR>
   nnoremap <silent> gi :<C-U>LspPeekImpl<CR>
-  nnoremap <silent> gy :<C-U>LspPeekTypeDef<CR>
+  nnoremap <silent> <c-]> :<C-U>LspPeekTypeDef<CR>
   nnoremap <silent> gr :<C-U>LspPeekReferences<CR>
   nnoremap <silent> g[ :<C-U>LspDiag prev<CR>
   nnoremap <silent> g] :<C-U>LspDiag next<CR>
@@ -85,6 +81,7 @@ if exists('g:loaded_lsp')
   nnoremap <silent> <leader>a :<C-U>LspCodeAction<CR>
 endif
 
+" vim-closetag
 let g:closetag_filenames = "*.html,*.phtml,*.php"
 let g:closetag_xhtml_filenames = "*.xhtml,*.jsx,*.tsx"
 let g:closetag_filetypes = "html,phtml,php"
