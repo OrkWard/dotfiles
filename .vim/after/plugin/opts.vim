@@ -71,7 +71,7 @@ if exists('g:loaded_lsp')
 
   nnoremap <silent> gd :<C-U>LspPeekDefinition<CR>
   nnoremap <silent> gi :<C-U>LspPeekImpl<CR>
-  nnoremap <silent> <c-]> :<C-U>LspPeekTypeDef<CR>
+  nnoremap <silent> gy :<C-U>LspPeekTypeDef<CR>
   nnoremap <silent> gr :<C-U>LspPeekReferences<CR>
   nnoremap <silent> g[ :<C-U>LspDiag prev<CR>
   nnoremap <silent> g] :<C-U>LspDiag next<CR>
