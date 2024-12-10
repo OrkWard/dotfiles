@@ -43,7 +43,6 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'alvan/vim-closetag'
 Plug 'vifm/vifm.vim'
 Plug 'junegunn/fzf'
@@ -67,14 +66,7 @@ packadd comment
 
 # ================================== theme =====================================
 set background=light
-
-def ColorschemeExists(name: string): bool
-  return !empty(globpath(&rtp, 'colors/' .. name .. '.vim'))
-enddef
-
-if ColorschemeExists('PaperColor')
-  colorscheme PaperColor
-endif
+colorscheme PaperColor
 
 highlight CocFloatDividingLine ctermfg=4
 highlight CocFloatActive ctermfg=4
@@ -158,9 +150,9 @@ enddef
 
 command Ed call EditFtplugin(false)
 command Eda call EditFtplugin(true)
-
 command Opt edit ~/.vim/after/plugin/opts.vim
 command Rc edit $MYVIMRC
+command Co edit ~/.vim/colors/PaperColor.vim
 
 # Emacs-keys
 cnoremap <C-A> <Home>
