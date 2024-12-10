@@ -20,9 +20,9 @@ set virtualedit=block
 set autoread
 set ttimeoutlen=50
 set wildmode=longest:full,full
-set colorcolumn=81,121
-# set list
-# set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·,trail:~
+set colorcolumn=121
+set list
+set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·,trail:~
 
 # set cursor
 &t_SI = "\<Esc>[6 q"
@@ -50,16 +50,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'OrkWard/lsp'
 Plug 'girishji/vimcomplete'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
-
-# highlight
 Plug 'kylelaker/riscv.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neoclide/jsonc.vim'
-
-# disable now
-# Plug 'liuchengxu/vim-which-key'
-# Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-# Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 packadd comment
