@@ -59,6 +59,14 @@ packadd comment
 
 # ================================== theme =====================================
 set background=light
+g:PaperColor_Theme_Options = {
+  'theme': {
+    'default': {
+      'transparent_background': 0
+    }
+  }
+}
+
 colorscheme PaperColor
 
 highlight CocFloatDividingLine ctermfg=4
