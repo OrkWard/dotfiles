@@ -114,7 +114,7 @@ alias ....="cd ../../.."
 
 # vim
 alias vb="vim ~/.bashrc"
-alias vv="vim ~/.vim/vimrc"
+alias vv="cd ~/.config/vim && vim vimrc"
 alias va="vim ~/.config/alacritty/alacritty.toml"
 alias vn="nvim ~/.config/nvim/init.lua"
 alias vt="vim ~/.tmux.conf"
