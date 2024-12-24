@@ -35,7 +35,6 @@ set mouse=
 # vim-plug
 call plug#begin('~/.local/share/vim-plug')
 Plug 'editorconfig/editorconfig-vim'
-Plug 'wakatime/vim-wakatime'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 # Plug 'tpope/vim-sleuth'
