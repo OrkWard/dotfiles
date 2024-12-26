@@ -140,9 +140,9 @@ def EditFtplugin(after: bool)
 
   var ftplugin_path = ''
   if after == true
-    ftplugin_path = '~/.vim/after/ftplugin/' .. filetype .. '.vim'
+    ftplugin_path = '~/.config/vim/after/ftplugin/' .. filetype .. '.vim'
   else
-    ftplugin_path = '~/.vim/ftplugin/' .. filetype .. '.vim'
+    ftplugin_path = '~/.config/vim/ftplugin/' .. filetype .. '.vim'
   endif
 
   execute 'edit ' .. ftplugin_path
@@ -150,9 +150,9 @@ enddef
 
 command Ed call EditFtplugin(false)
 command Eda call EditFtplugin(true)
-command Opt edit ~/.vim/after/plugin/opts.vim
+command Opt edit ~/.config/vim/after/plugin/opts.vim
 command Rc edit $MYVIMRC
-command Co edit ~/.vim/colors/PaperColor.vim
+command Co edit ~/.config/vim/colors/PaperColor.vim
 
 # Emacs-keys
 cnoremap <C-A> <Home>
