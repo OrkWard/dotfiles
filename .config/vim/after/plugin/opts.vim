@@ -96,7 +96,3 @@ set formatoptions-=o
 " Don't limit line width
 set tw=0
 
-" vimcomplete
-imap <c-l> <Plug>(vimcomplete-do-complete)
-
-
