@@ -12,7 +12,7 @@ mark h ~/
 mark d ~/Downloads/
 mark c ~/.config/
 mark r ~/Repos/
-mark v ~/.vim/after
+mark v ~/.local/share/vim-plug/
 mark b ~/.config/bash
 
 
