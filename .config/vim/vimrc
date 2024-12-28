@@ -165,6 +165,12 @@ cnoremap <C-P> <Up>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 
+# =============================== autocommand ==================================
+augroup MyGroup
+  autocmd!
+  autocmd BufWritePost $MYVIMRC :source $MYVIMRC
+augroup END
+
 # =================================== gui ======================================
 if has("gui_running")
   # disable toolbar
