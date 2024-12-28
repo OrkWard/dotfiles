@@ -56,6 +56,9 @@ call plug#end()
 
 packadd comment
 
+# global unique session id
+g:session_id = strftime("%Y%m%d%H%M%S") .. "_" .. string(rand())
+
 # ================================== theme =====================================
 set background=light
 g:PaperColor_Theme_Options = {
