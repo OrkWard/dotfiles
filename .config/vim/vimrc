@@ -37,6 +37,7 @@ call plug#begin('~/.local/share/vim-plug')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/scriptease.vim'
 # Plug 'tpope/vim-sleuth'
 Plug 'haya14busa/incsearch.vim'
 Plug 'justinmk/vim-sneak'
