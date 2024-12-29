@@ -21,8 +21,8 @@ set autoread
 set ttimeoutlen=50
 set wildmode=longest:full,full
 set colorcolumn=121
-set list
-set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·,trail:~
+# set list
+# set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·,trail:~
 
 # set cursor
 &t_SI = "\<Esc>[6 q"
@@ -37,12 +37,14 @@ call plug#begin('~/.local/share/vim-plug')
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/scriptease.vim'
+Plug 'tpope/vim-scriptease'
+Plug 'rose-pine/vim'
 # Plug 'tpope/vim-sleuth'
 Plug 'haya14busa/incsearch.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'sonph/onehalf'
 Plug 'alvan/vim-closetag'
 Plug 'vifm/vifm.vim'
 Plug 'junegunn/fzf'
@@ -70,12 +72,12 @@ g:PaperColor_Theme_Options = {
   }
 }
 
-colorscheme PaperColor
+colorscheme onehalflight
 
-highlight CocFloatDividingLine ctermfg=4
-highlight CocFloatActive ctermfg=4
-highlight ErrorMsg ctermfg=0
-highlight Visual term=reverse ctermfg=none ctermbg=252
+# highlight CocFloatDividingLine ctermfg=4
+# highlight CocFloatActive ctermfg=4
+# highlight ErrorMsg ctermfg=0
+# highlight Visual term=reverse ctermfg=none ctermbg=252
 
 # ================================== function ==================================
 def g:SynGroup()
@@ -91,20 +93,20 @@ enddef
 #   endif
 # enddef
 
-def TabMessage(cmd)
-  redir => message
-  silent execute a:cmd
-  redir END
-  if empty(message)
-    echoerr "no output"
-  else
-    # use "new" instead of "tabnew" below if you prefer split windows instead of tabs
-    tabnew
-    setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
-    silent put=message
-  endif
-endfunction
-command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
+# def TabMessage(cmd)
+#   redir => message
+#   silent execute a:cmd
+#   redir END
+#   if empty(message)
+#     echoerr "no output"
+#   else
+#     # use "new" instead of "tabnew" below if you prefer split windows instead of tabs
+#     tabnew
+#     setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
+#     silent put=message
+#   endif
+# endfunction
+# command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
 
 # =================================== keymap ===================================
 g:mapleader = " "
