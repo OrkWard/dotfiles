@@ -44,7 +44,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'sonph/onehalf'
+Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 Plug 'alvan/vim-closetag'
 Plug 'vifm/vifm.vim'
 Plug 'junegunn/fzf'

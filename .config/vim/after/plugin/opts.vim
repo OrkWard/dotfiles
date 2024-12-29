@@ -1,5 +1,5 @@
 if exists('g:loaded_airline') && exists('g:loaded_airline_themes')
-  let g:airline_theme='papercolor'
+  let g:airline_theme='onehalflight'
   " let g:airline#extensions#tabline#enabled = 1
   " let g:airline#extensions#tabline#buffer_idx_mode = 1
 endif
