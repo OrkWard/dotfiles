@@ -20,7 +20,7 @@ set virtualedit=block
 set autoread
 set ttimeoutlen=50
 set wildmode=longest:full,full
-set colorcolumn=121
+# set colorcolumn=121
 # set list
 # set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·,trail:~
 
@@ -38,7 +38,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-scriptease'
-Plug 'rose-pine/vim'
+# Plug 'rose-pine/vim'
 # Plug 'tpope/vim-sleuth'
 Plug 'haya14busa/incsearch.vim'
 Plug 'justinmk/vim-sneak'
@@ -171,7 +171,8 @@ enddef
 
 command Ed call EditFtplugin(false)
 command Eda call EditFtplugin(true)
-command Opt edit ~/.config/vim/after/plugin/opts.vim
+command Opt edit ~/.config/vim/plugin/opts.vim
+command Aopt edit ~/.config/vim/after/plugin/opts.vim
 command Rc edit $MYVIMRC
 command Co edit ~/.config/vim/colors/PaperColor.vim
 
@@ -189,7 +190,7 @@ cnoremap <Esc>f <S-Right>
 # =============================== autocommand ==================================
 augroup MyGroup
   autocmd!
-  autocmd BufWritePost $MYVIMRC :source $MYVIMRC
+  autocmd BufWritePost ~/.config/vim/vimrc,~/.config/vim/*.vim :source %
 augroup END
 
 # =================================== gui ======================================
