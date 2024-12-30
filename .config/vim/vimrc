@@ -64,20 +64,22 @@ g:session_id = strftime("%Y%m%d%H%M%S") .. "_" .. string(rand())
 
 # ================================== theme =====================================
 set background=light
-g:PaperColor_Theme_Options = {
-  'theme': {
-    'default': {
-      'transparent_background': 0
-    }
-  }
-}
-
 colorscheme onehalflight
+# {{{ Options for PaperColor
+# g:PaperColor_Theme_Options = {
+#   'theme': {
+#     'default': {
+#       'transparent_background': 0
+#     }
+#   }
+# }
+
 
 # highlight CocFloatDividingLine ctermfg=4
 # highlight CocFloatActive ctermfg=4
 # highlight ErrorMsg ctermfg=0
 # highlight Visual term=reverse ctermfg=none ctermbg=252
+# }}}
 
 # ================================== function ==================================
 def g:SynGroup()
@@ -93,20 +95,21 @@ enddef
 #   endif
 # enddef
 
-# def TabMessage(cmd)
-#   redir => message
-#   silent execute a:cmd
-#   redir END
-#   if empty(message)
-#     echoerr "no output"
-#   else
-#     # use "new" instead of "tabnew" below if you prefer split windows instead of tabs
-#     tabnew
-#     setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
-#     silent put=message
-#   endif
-# endfunction
-# command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
+def TabMessage(cmd: string)
+  var message: string = ""
+  redir => message
+  silent execute cmd
+  redir END
+  if empty(message)
+    echoerr "no output"
+  else
+    # use "new" instead of "tabnew" below if you prefer split windows instead of tabs
+    tabnew
+    setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
+    silent put = message
+  endif
+enddef
+command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
 
 # =================================== keymap ===================================
 g:mapleader = " "
