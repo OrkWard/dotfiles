@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/papercolor_light.toml", "~/.config/alacritty/local.toml"]
+import = ["~/.config/alacritty/onehalflight.toml", "~/.config/alacritty/local.toml"]
 
 [keyboard]
 bindings = [

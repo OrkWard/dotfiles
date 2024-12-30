@@ -117,7 +117,7 @@ alias vb="vim ~/.bashrc"
 alias vv="cd ~/.config/vim && vim vimrc"
 alias va="vim ~/.config/alacritty/alacritty.toml"
 alias vn="nvim ~/.config/nvim/init.lua"
-alias vt="vim ~/.tmux.conf"
+alias vt="vim ~/.config/tmux/tmux.conf"
 alias v3="vim ~/.config/i3/config"
 
 # gcc
