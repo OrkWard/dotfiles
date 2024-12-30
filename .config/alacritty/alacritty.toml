@@ -3,8 +3,8 @@ import = ["~/.config/alacritty/onehalflight.toml", "~/.config/alacritty/local.to
 [keyboard]
 bindings = [
   { key = "`", mods = "Command", chars = "\u001B`" },
-  { key = "f", mods = "Command", chars = "\u001Bf" },
-  { key = "g", mods = "Command", chars = "\u001Bg" },
+  { key = "f", mods = "Command", chars = "\u001Bf" }, # for readline
+  { key = "g", mods = "Command", chars = "\u001Bg" }, # for readline
   { key = ".", mods = "Command", chars = "\u001B." },
   { key = "b", mods = "Command", chars = "\u001Bb" },
   { key = "1", mods = "Command", chars = "\u001B1" },

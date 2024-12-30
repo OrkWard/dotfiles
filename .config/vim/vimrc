@@ -175,9 +175,8 @@ enddef
 command Ed call EditFtplugin(false)
 command Eda call EditFtplugin(true)
 command Opt edit ~/.config/vim/plugin/opts.vim
-command Aopt edit ~/.config/vim/after/plugin/opts.vim
+command Opta edit ~/.config/vim/after/plugin/opts.vim
 command Rc edit $MYVIMRC
-command Co edit ~/.config/vim/colors/PaperColor.vim
 
 # Emacs-keys
 cnoremap <C-A> <Home>
