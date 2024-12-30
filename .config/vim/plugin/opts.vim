@@ -31,6 +31,7 @@ nnoremap <c-f> :Files<CR>
 nnoremap <c-p> :Buffers<CR>
 
 # vifm
+g:vifm_exec_args = '-c ''session ' .. g:session_id ..  ''''
 nnoremap <leader>1 :Vifm<CR>
 
 # Plug easymotion
