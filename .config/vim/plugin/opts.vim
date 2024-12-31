@@ -32,6 +32,7 @@ nnoremap <c-p> :Buffers<CR>
 
 # vifm
 g:vifm_exec_args = '-c ''session ' .. g:session_id ..  ''''
+$FZF_DEFAULT_COMMAND = 'fd -tf -td -H -L -E".git" -E".wine" -E"node_modules" -E"*.swp"'
 nnoremap <leader>1 :Vifm<CR>
 augroup MyVifm
   autocmd!

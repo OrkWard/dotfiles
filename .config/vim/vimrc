@@ -111,6 +111,16 @@ def TabMessage(cmd: string)
 enddef
 command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
 
+def SaveMessage(cmd: string)
+  redir @"
+  silent execute cmd
+  redir END
+  if empty(@")
+    echoerr "no output"
+  endif
+enddef
+command! -nargs=+ -complete=command SaveMessage call SaveMessage(<q-args>)
+
 # =================================== keymap ===================================
 g:mapleader = " "
 set pastetoggle=<F11>
