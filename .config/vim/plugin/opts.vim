@@ -33,6 +33,10 @@ nnoremap <c-p> :Buffers<CR>
 # vifm
 g:vifm_exec_args = '-c ''session ' .. g:session_id ..  ''''
 nnoremap <leader>1 :Vifm<CR>
+augroup MyVifm
+  autocmd!
+  autocmd VimLeave * :exe '!rm ~/.config/vifm/sessions/' .. g:session_id .. '.json'
+augroup END
 
 # Plug easymotion
 # map f <Plug>(easymotion-f)
