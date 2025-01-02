@@ -17,6 +17,8 @@ bindings = [
   { key = "8", mods = "Command", chars = "\u001B8" },
   { key = "9", mods = "Command", chars = "\u001B9" },
   { key = "0", mods = "Command", chars = "\u001B0" },
+  { key = "9", mods = "Command | Shift", chars = "\u001B(" },
+  { key = "0", mods = "Command | Shift", chars = "\u001B)" },
   { key = "n", mods = "Command", action = "CreateNewWindow" },
 ]
 
