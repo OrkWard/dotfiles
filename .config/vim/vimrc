@@ -87,6 +87,19 @@ def g:SynGroup()
     echo synIDattr(s, 'name') .. ' -> ' .. synIDattr(synIDtrans(s), 'name')
 enddef
 
+# cd to root of git repository
+def g:AutoChdir()
+  var dir = expand('%:p:h')
+  if dir =~# '\.config\/vim'
+
+  while dir !=# "/" 
+    if isdirectory(dir .. '/.git/')
+      cd `=dir`
+    endif
+    dir = fnamemodify(dir, ':h')
+  endwhile
+enddef
+
 # def g:SwitchListchars(): void
 #   if &list
 #     set nolist
@@ -203,6 +216,7 @@ cnoremap <Esc>f <S-Right>
 augroup MyGroup
   autocmd!
   autocmd BufWritePost ~/.config/vim/vimrc,~/.config/vim/*.vim :source %
+  autocmd BufEnter * :call AutoChdir()
 augroup END
 
 # =================================== gui ======================================
