@@ -90,7 +90,11 @@ enddef
 # cd to root of git repository
 def g:AutoChdir()
   var dir = expand('%:p:h')
+
+  # somehow under ~/.config/vim, just goto here
   if dir =~# '\.config\/vim'
+    cd ~/.config/vim
+  endif
 
   while dir !=# "/" 
     if isdirectory(dir .. '/.git/')

@@ -11,12 +11,14 @@ set ignorecase smartcase nohlsearch incsearch
 mark h ~/
 mark d ~/Downloads/
 mark c ~/.config/
+mark l ~/.local
 mark r ~/Repos/
 mark v ~/.local/share/vim-plug/
 mark b ~/.config/bash
 
-
 colorscheme Paper
+
+set mouse=a
 
 fileviewer */ ls --color=always
 fileviewer .*/ ls --color=always
