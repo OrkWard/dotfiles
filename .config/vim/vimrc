@@ -29,9 +29,6 @@ set wildmode=longest:full,full
 &t_SR = "\<Esc>[4 q"
 &t_EI = "\<Esc>[2 q"
 
-# disable mouse
-set mouse=
-
 # vim-plug
 call plug#begin('~/.local/share/vim-plug')
 Plug 'editorconfig/editorconfig-vim'
@@ -96,7 +93,7 @@ def g:AutoChdir()
     cd ~/.config/vim
   endif
 
-  while dir !=# "/" 
+  while dir !=# "/"
     if isdirectory(dir .. '/.git/')
       cd `=dir`
     endif
