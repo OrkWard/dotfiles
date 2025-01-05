@@ -146,12 +146,13 @@ set pastetoggle=<F11>
 inoremap <C-B>( ()<Left>
 inoremap <C-B>) (<CR>)<ESC>O
 inoremap <C-B>[ []<Left>
+inoremap <C-B>] [<CR>]<Left>
 inoremap <C-B>{ {}<Left>
+inoremap <C-B>} {<CR>}<ESC>O
 inoremap <C-B>< <><Left>
 inoremap <C-B>" ""<Left>
 inoremap <C-B>' ''<Left>
 inoremap <C-B>` ``<Left>
-
 
 # some useful map
 nnoremap Y y$
