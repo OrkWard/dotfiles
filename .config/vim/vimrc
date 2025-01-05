@@ -144,7 +144,13 @@ set pastetoggle=<F11>
 
 # pair
 inoremap <C-B>( ()<Left>
+inoremap <C-B>) (<CR>)<ESC>O
 inoremap <C-B>[ []<Left>
+inoremap <C-B>{ {}<Left>
+inoremap <C-B>< <><Left>
+inoremap <C-B>" ""<Left>
+inoremap <C-B>' ''<Left>
+inoremap <C-B>` ``<Left>
 
 
 # some useful map
