@@ -1,3 +1,5 @@
+export GIT_EXTERNAL_DIFF=difft
+
 alias ga='git add -u'
 alias gc='git commit'
 alias gac='git add . && git commit -m "$(date)"'
