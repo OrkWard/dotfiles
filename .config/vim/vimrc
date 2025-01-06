@@ -97,7 +97,7 @@ def g:AutoChdir()
     cd ~/.config/vim
   endif
 
-  while dir !=# "/" 
+  while dir !=# "/"
     if isdirectory(dir .. '/.git/')
       cd `=dir`
     endif
