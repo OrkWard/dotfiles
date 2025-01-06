@@ -1,4 +1,3 @@
-" vim: foldmethod=marker
 vim9script
 source $VIMRUNTIME/defaults.vim
 
@@ -230,3 +229,5 @@ if has("gui_running")
   set guioptions-=T
   set guifont=JetBrains\ Mono\ 20,JetBrainsMono-Regular:h14
 endif
+
+# vim: foldmethod=marker
