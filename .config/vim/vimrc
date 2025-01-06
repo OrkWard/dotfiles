@@ -47,8 +47,8 @@ Plug 'vifm/vifm.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'OrkWard/lsp'
+Plug 'sbdchd/neoformat'
 Plug 'girishji/vimcomplete'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'kylelaker/riscv.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neoclide/jsonc.vim'
@@ -80,8 +80,8 @@ colorscheme onehalflight
 
 # ================================== function ==================================
 def g:SynGroup()
-    var s = synID(line('.'), col('.'), 1)
-    echo synIDattr(s, 'name') .. ' -> ' .. synIDattr(synIDtrans(s), 'name')
+  var s = synID(line('.'), col('.'), 1)
+  echo synIDattr(s, 'name') .. ' -> ' .. synIDattr(synIDtrans(s), 'name')
 enddef
 
 # cd to root of git repository
@@ -224,6 +224,11 @@ cnoremap <C-P> <Up>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 
+inoremap <C-A> <Home>
+inoremap <C-B> <Left>
+inoremap <C-E> <End>
+inoremap <C-F> <Right>
+
 # =============================== autocommand ==================================
 augroup MyGroup
   autocmd!
@@ -237,3 +242,5 @@ if has("gui_running")
   set guioptions-=T
   set guifont=JetBrains\ Mono\ 20,JetBrainsMono-Regular:h14
 endif
+
+# vim: foldmethod=marker

@@ -8,6 +8,8 @@
 	gpgsign = true
 [merge]
 	conflictstyle = diff3
+[diff]
+  external = difft
 [include]
 	path = .gitconfig.local
 [alias]
