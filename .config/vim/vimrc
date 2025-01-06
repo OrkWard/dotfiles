@@ -216,6 +216,11 @@ cnoremap <C-P> <Up>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 
+inoremap <C-A> <Home>
+inoremap <C-B> <Left>
+inoremap <C-E> <End>
+inoremap <C-F> <Right>
+
 # =============================== autocommand ==================================
 augroup MyGroup
   autocmd!
