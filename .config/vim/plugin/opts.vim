@@ -39,6 +39,12 @@ augroup MyVifm
   autocmd VimLeave * :exe '!rm ~/.config/vifm/sessions/' .. g:session_id .. '.json'
 augroup END
 
+# neoformatter
+g:neoformat_basic_format_align = 1
+g:neoformat_basic_format_retab = 1
+g:neoformat_basic_format_trim = 1
+
+
 # Plug easymotion
 # map f <Plug>(easymotion-f)
 # map F <Plug>(easymotion-F)
