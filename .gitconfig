@@ -1,31 +1,31 @@
 [core]
-	ignorecase = false
-	excludesFile = ~/.config/git/ignore
-	hooksPath = ~/.config/git/hooks
+  ignorecase = false
+  excludesFile = ~/.config/git/ignore
+  hooksPath = ~/.config/git/hooks
 [pull]
-	rebase = false
+  rebase = false
 [commit]
-	gpgsign = true
+  gpgsign = true
 [merge]
-	conflictstyle = diff3
+  conflictstyle = diff3
 [diff]
   external = difft
 [include]
-	path = .gitconfig.local
+  path = .gitconfig.local
 [alias]
-	co = checkout
-	b = branch
-	c = commit
-	s = status
-	p = pull
-	ps = push
-	d = diff
-	sw = switch
-	m = merge
-	adog = log --all --decorate --oneline --graph
-	dog = log --decorate --oneline --graph
-	a = add
+  co = checkout
+  b = branch
+  c = commit
+  s = status
+  p = pull
+  ps = push
+  d = diff
+  sw = switch
+  m = merge
+  adog = log --all --decorate --oneline --graph
+  dog = log --decorate --oneline --graph
+  a = add
 [init]
-	defaultBranch = master
+  defaultBranch = master
 [credential]
-	helper = cache
+  helper = cache
