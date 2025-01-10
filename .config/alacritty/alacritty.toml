@@ -1,4 +1,3 @@
-import = ["~/.config/alacritty/onehalflight.toml", "~/.config/alacritty/local.toml"]
 
 [keyboard]
 bindings = [
@@ -21,4 +20,7 @@ bindings = [
   { key = ")", mods = "Command|Shift", chars = "\u001B)" },
   { key = "n", mods = "Command", action = "CreateNewWindow" },
 ]
+
+[general]
+import = ["~/.config/alacritty/onehalflight.toml", "~/.config/alacritty/local.toml"]
 

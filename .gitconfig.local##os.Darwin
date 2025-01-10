@@ -1,0 +1,5 @@
+[user]
+	name = orkward
+	email = orkward_o@outlook.com
+[gpg]
+	program = /opt/homebrew/bin/gpg
