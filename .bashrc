@@ -140,12 +140,11 @@ alias lt="tree -C -I \"node_modules\""
 # bat
 alias bat='bat --theme=GitHub'
 
-# vscode
-alias c='code'
-if [ "$TERM_PROGRAM" = 'vscode' ]; then
-	_fzf_setup_completion path c
+# zed
+alias z='zed'
+if [ "$TERM_PROGRAM" = 'zed' ]; then
+	_fzf_setup_completion path z
 	export EDITOR="gvim -f"
-	. "$(code --locate-shell-integration-path bash)"
 fi
 
 # Profile end
