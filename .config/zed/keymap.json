@@ -34,5 +34,11 @@
     "bindings": {
       "ctrl-l": "editor::ShowCompletions"
     }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "g r": "editor::FindAllReferences"
+    }
   }
 ]
