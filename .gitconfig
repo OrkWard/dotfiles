@@ -1,5 +1,5 @@
 [core]
-  ignorecase = false
+	ignorecase = false
   excludesFile = ~/.config/git/ignore
   hooksPath = ~/.config/git/hooks
 [pull]
