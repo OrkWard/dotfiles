@@ -39,3 +39,4 @@ hs.hotkey.bind({"alt", "shift"}, "G", function ()
   hs.application.launchOrFocus("Google Chrome Canary")
 end)
 
+inspect = require 'lib.inspect'
