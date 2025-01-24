@@ -20,7 +20,7 @@ set virtualedit=block
 set autoread
 set ttimeoutlen=50
 set wildmode=longest:full,full
-set mouse=a
+set mouse=
 set ttymouse=xterm2
 # set colorcolumn=121
 # set list

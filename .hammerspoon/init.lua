@@ -46,7 +46,3 @@ hs.hotkey.bind({"alt", "shift"}, "R", function ()
 end)
 hs.alert.show("Config Reload")
 
-hs.hotkey.bind({"alt", "shift"}, "I", function ()
-  hs.application.launchOrFocus("Settings")
-end)
-
