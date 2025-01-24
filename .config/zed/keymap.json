@@ -8,7 +8,7 @@
 [
   {
     "bindings": {
-      "cmd-`": "terminal_panel::ToggleFocus"
+      // "cmd-`": "terminal_panel::ToggleFocus"
     }
   },
   {
@@ -20,7 +20,11 @@
   },
   {
     "context": "Terminal",
-    "bindings": {}
+    "bindings": {
+      "cmd-`": ["terminal::SendText", "\u001b`"],
+      "cmd-b": ["terminal::SendText", "\u001bb"],
+      "cmd-f": ["terminal::SendText", "\u001bf"]
+    }
   },
   {
     "context": "Editor",
