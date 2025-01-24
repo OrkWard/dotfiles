@@ -2,6 +2,8 @@
 --   hs.notify.new({title="Hammerspoon", informativeText="Hello World"}):send()
 -- end)
 
+inspect = require 'lib.inspect'
+
 ---------------- Appliction -----------------
 hs.hotkey.bind({"alt"}, "1", function ()
   hs.application.launchOrFocus("Alacritty")
@@ -48,17 +50,3 @@ hs.hotkey.bind({"alt", "shift"}, "I", function ()
   hs.application.launchOrFocus("Settings")
 end)
 
-hs.hotkey.bind({"ctrl"}, "Up", function()
-  local win = hs.window.focusedWindow()
-  local f = win:frame()
-  local screen = win:screen()
-  local max = screen:frame()
-
-  f.x = max.x
-  f.y = max.y
-  f.w = max.w
-  f.h = max.h
-  win:setFrame(f)
-end)
-
-inspect = require 'lib.inspect'
