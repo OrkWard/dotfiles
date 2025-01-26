@@ -2,7 +2,7 @@
 --   hs.notify.new({title="Hammerspoon", informativeText="Hello World"}):send()
 -- end)
 
-inspect = require 'lib.inspect'
+require('hs.ipc')
 
 ---------------- Appliction -----------------
 hs.hotkey.bind({"alt"}, "1", function ()
