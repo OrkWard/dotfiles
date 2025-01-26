@@ -24,8 +24,8 @@
   },
   "assistant": {
     "default_model": {
-      "provider": "google",
-      "model": "gemini-1.5-flash"
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
     },
     "version": "2"
   },
