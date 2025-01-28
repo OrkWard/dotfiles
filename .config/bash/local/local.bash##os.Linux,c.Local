@@ -9,3 +9,4 @@ fi
 export https_proxy="http://asus:7890"
 export http_proxy="http://asus:7890"
 export all_proxy="socks5://asus:7890"
+export no_proxy="localhost,127.0.0.1,::1"
