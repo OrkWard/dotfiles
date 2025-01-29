@@ -12,6 +12,7 @@
   "features": {
     "inline_completion_provider": "none"
   },
+  "use_autoclose": false,
   "languages": {
     "JavaScript": {
       // "formatter": {
