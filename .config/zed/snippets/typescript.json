@@ -1,0 +1,11 @@
+{
+  "Log to the console": {
+    "prefix": "c",
+    "body": ["console.log($1)$0"],
+    "description": "Log to the console"
+  },
+  "Log to the console with OOO": {
+    "prefix": "co",
+    "body": ["console.log(\"OOO\", $1)$0"]
+  }
+}

@@ -36,7 +36,9 @@
   {
     "context": "vim_mode == insert",
     "bindings": {
-      "ctrl-l": "editor::ShowCompletions"
+      "ctrl-l": "editor::ShowCompletions",
+      "ctrl-b }": ["workspace::SendKeystrokes", "{ enter enter } up right"],
+      "ctrl-b ]": ["workspace::SendKeystrokes", "[ enter enter ] up right"]
     }
   },
   {
