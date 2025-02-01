@@ -24,15 +24,15 @@
   },
   "assistant": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4o"
+      "provider": "google",
+      "model": "gemini-2.0-flash-exp"
     },
     "version": "2"
   },
   "format_on_save": "on",
   "vim_mode": true,
   "ui_font_size": 14,
-  "buffer_font_size": 14,
+  "buffer_font_size": 14.0,
   "relative_line_numbers": true,
   "theme": {
     "mode": "system",
