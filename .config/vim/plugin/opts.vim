@@ -36,7 +36,7 @@ $FZF_DEFAULT_COMMAND = 'fd -tf -td -H -L -E".git" -E".wine" -E"node_modules" -E"
 nnoremap <leader>1 :Vifm<CR>
 augroup MyVifm
   autocmd!
-  autocmd VimLeave * :exe '!rm ~/.config/vifm/sessions/' .. g:session_id .. '.json'
+  autocmd VimLeave * :exe '!rm -f ~/.config/vifm/sessions/' .. g:session_id .. '.json'
 augroup END
 
 # neoformatter
