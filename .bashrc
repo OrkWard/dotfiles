@@ -148,7 +148,7 @@ if [ "$TERM_PROGRAM" = 'zed' ]; then
 fi
 
 # acme.sh
-. ~/.acme.sh/acme.sh.env
+# . ~/.acme.sh/acme.sh.env
 
 # Profile end
 # set +x
