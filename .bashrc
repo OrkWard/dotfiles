@@ -19,6 +19,7 @@ fi
 
 # language
 export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8 # for mosh on MacOS
 export LANG=en_US.UTF-8
 
 # append to the history file, don't overwrite it
