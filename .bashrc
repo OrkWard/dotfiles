@@ -147,6 +147,9 @@ if [ "$TERM_PROGRAM" = 'zed' ]; then
 	export EDITOR="gvim -f"
 fi
 
+# acme.sh
+. ~/.acme.sh/acme.sh.env
+
 # Profile end
 # set +x
 # exec 2>&3 3>&-
