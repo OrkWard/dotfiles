@@ -77,6 +77,7 @@ load_module less
 load_module node
 load_module git
 load_module fzf
+load_module acme.sh
 # load_module complete-alias
 load_module autojump
 load_module bash-preexec
