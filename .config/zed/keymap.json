@@ -37,9 +37,12 @@
     "context": "vim_mode == insert",
     "bindings": {
       "ctrl-l": "editor::ShowCompletions",
+      "ctrl-b \"": ["workspace::SendKeystrokes", "\" \" left"],
+      "ctrl-b '": ["workspace::SendKeystrokes", "' ' left"],
       "ctrl-b (": ["workspace::SendKeystrokes", "( ) left"],
       "ctrl-b {": ["workspace::SendKeystrokes", "{ } left"],
       "ctrl-b }": ["workspace::SendKeystrokes", "{ enter enter } up tab"],
+      "ctrl-b [": ["workspace::SendKeystrokes", "[ ] left"],
       "ctrl-b ]": ["workspace::SendKeystrokes", "[ enter enter ] up tab"]
     }
   },
