@@ -41,9 +41,9 @@
       "ctrl-s '": ["workspace::SendKeystrokes", "' ' left"],
       "ctrl-s (": ["workspace::SendKeystrokes", "( ) left"],
       "ctrl-s {": ["workspace::SendKeystrokes", "{ } left"],
-      "ctrl-s }": ["workspace::SendKeystrokes", "{ enter enter } up tab"],
+      "ctrl-s }": ["workspace::SendKeystrokes", "{ } left enter"],
       "ctrl-s [": ["workspace::SendKeystrokes", "[ ] left"],
-      "ctrl-s ]": ["workspace::SendKeystrokes", "[ enter enter ] up tab"]
+      "ctrl-s ]": ["workspace::SendKeystrokes", "[ ] left enter"]
     }
   },
   {
