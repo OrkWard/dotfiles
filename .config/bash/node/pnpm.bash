@@ -30,3 +30,8 @@ if type complete &>/dev/null; then
 fi
 ###-end-pnpm-completion-###
 
+export PNPM_HOME="/Users/orkward/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
