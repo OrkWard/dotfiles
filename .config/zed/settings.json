@@ -12,7 +12,8 @@
   "features": {
     "inline_completion_provider": "none"
   },
-  "use_autoclose": false,
+  "use_autoclose": true,
+  "always_treat_brackets_as_autoclosed": true,
   "languages": {
     "JavaScript": {
       // "formatter": {
