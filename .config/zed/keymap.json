@@ -47,6 +47,13 @@
     }
   },
   {
+    "context": "vim_mode == insert && !showing_completions",
+    "bindings": {
+      "ctrl-p": ["workspace::SendKeystrokes", "up"],
+      "ctrl-n": ["workspace::SendKeystrokes", "down"]
+    }
+  },
+  {
     "context": "VimControl && !menu",
     "bindings": {
       "g r": "editor::FindAllReferences"
