@@ -8,7 +8,6 @@
 // command palette
 {
   "proxy": "http://localhost:9090",
-  "base_keymap": null,
   "features": {
     "inline_completion_provider": "none"
   },
