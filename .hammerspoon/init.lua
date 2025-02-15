@@ -45,7 +45,3 @@ hs.hotkey.bind({ "alt", "shift" }, "R", function()
     hs.reload()
 end)
 hs.alert.show("Config Reload")
-
-hs.hotkey.bind({ "alt", "shift" }, "D", function()
-    hs.appfinder
-end)
