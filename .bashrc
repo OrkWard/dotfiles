@@ -51,7 +51,7 @@ PS1+='\[\033[0m\]'
 PS1+="\n"
 PS1+='\[\033]133;A\033\\\]$ '
 
-# ---------------------- Applications ----------------------------
+# ---------------------- Applications ----------------------
 config_dir=$XDG_CONFIG_HOME/bash
 
 load_module() {
@@ -73,6 +73,7 @@ load_module() {
 }
 
 load_module local
+# load_module node
 load_module less
 load_module git
 load_module fzf
