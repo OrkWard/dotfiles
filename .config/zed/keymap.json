@@ -9,6 +9,8 @@
   {
     "bindings": {
       // "cmd-`": "terminal_panel::ToggleFocus"
+      "cmd-=": "workspace::ToggleZoom",
+      "cmd--": "terminal_panel::ToggleFocus"
     }
   },
   {

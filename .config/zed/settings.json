@@ -9,7 +9,7 @@
 {
   "proxy": "http://localhost:9090",
   "features": {
-    "inline_completion_provider": "none"
+    "edit_prediction_provider": "none"
   },
   "use_autoclose": true,
   "always_treat_brackets_as_autoclosed": true,
@@ -33,7 +33,7 @@
   "format_on_save": "on",
   "vim_mode": true,
   "ui_font_size": 14,
-  "buffer_font_size": 14.0,
+  "buffer_font_size": 15.0,
   "relative_line_numbers": true,
   "theme": {
     "mode": "system",
