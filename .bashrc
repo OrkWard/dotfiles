@@ -74,7 +74,6 @@ load_module() {
 
 load_module local
 load_module less
-load_module node
 load_module git
 load_module fzf
 # load_module complete-alias
