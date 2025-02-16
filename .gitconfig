@@ -6,7 +6,9 @@
   ; diffFilter = delta --color-only
 [delta]
   navigate = true
+  line-number = true
   light = true
+  side-by-side = true
 [pull]
   rebase = false
 [commit]
