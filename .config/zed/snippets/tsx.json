@@ -6,6 +6,12 @@
   },
   "Log to the console with OOO": {
     "prefix": "co",
-    "body": ["console.log(\"OOO\", $1)$0"]
+    "body": ["console.log(\"OOO\", $1)$0"],
+    "description": "Log to console with OOO"
+  },
+  "Classname": {
+    "prefix": "cl",
+    "body": ["className={clsx(\"$0\")}"],
+    "description": "Classname with clsx wrap"
   }
 }
