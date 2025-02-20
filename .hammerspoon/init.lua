@@ -37,10 +37,6 @@ hs.hotkey.bind({ "alt", "shift" }, "C", function()
     hs.application.launchOrFocus("CotEditor")
 end)
 
-hs.hotkey.bind({ "alt", "shift" }, "G", function()
-    hs.application.launchOrFocus("Google Chrome Canary")
-end)
-
 hs.hotkey.bind({ "alt", "shift" }, "R", function()
     hs.reload()
 end)
