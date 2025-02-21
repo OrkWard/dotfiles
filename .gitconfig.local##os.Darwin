@@ -3,3 +3,8 @@
 	email = orkward_o@outlook.com
 [gpg]
 	program = /opt/homebrew/bin/gpg
+[http]
+  proxy = http://localhost:9090
+[https]
+  proxy = http://localhost:9090
+
