@@ -26,7 +26,7 @@
   "assistant": {
     "default_model": {
       "provider": "google",
-      "model": "gemini-2.0-flash-exp"
+      "model": "gemini-2.0-flash"
     },
     "version": "2"
   },
