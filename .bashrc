@@ -73,7 +73,7 @@ load_module() {
 }
 
 load_module local
-# load_module node
+load_module ni
 load_module less
 load_module git
 load_module fzf
