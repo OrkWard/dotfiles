@@ -144,18 +144,6 @@ set pastetoggle=<F11>
 # nnoremap <F12> :<C-u>call SwitchListchars()<CR>
 # vnoremap <F12> :<C-u>call SwitchListchars()<CR>gv
 
-# pair
-inoremap <C-B>( ()<Left>
-inoremap <C-B>) (<CR>)<ESC>O
-inoremap <C-B>[ []<Left>
-inoremap <C-B>] [<CR>]<Left>
-inoremap <C-B>{ {}<Left>
-inoremap <C-B>} {<CR>}<ESC>O
-inoremap <C-B>< <><Left>
-inoremap <C-B>" ""<Left>
-inoremap <C-B>' ''<Left>
-inoremap <C-B>` ``<Left>
-
 # some useful map
 nnoremap Y y$
 # nnoremap j gj
