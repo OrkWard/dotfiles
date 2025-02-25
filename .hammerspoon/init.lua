@@ -37,6 +37,14 @@ hs.hotkey.bind({ "alt", "shift" }, "C", function()
     hs.application.launchOrFocus("CotEditor")
 end)
 
+-- hs.hotkey.bind({"ctrl"}, "G", function()
+--   local win = hs.window.focusedWindow()
+--   local screen = win:screen()
+--   local max = screen:frame()
+
+--   win:setFrame(max, 0)
+-- end)
+
 -- hs.hotkey.bind({ "alt", "shift" }, "R", function()
 --     hs.reload()
 -- end)
