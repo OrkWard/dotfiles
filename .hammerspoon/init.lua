@@ -1,7 +1,3 @@
--- hs.hotkey.bind({"shift", "alt"}, "W", function()
---   hs.notify.new({title="Hammerspoon", informativeText="Hello World"}):send()
--- end)
-
 require('hs.ipc')
 
 ---------------- Appliction -----------------
@@ -37,7 +33,7 @@ hs.hotkey.bind({ "alt", "shift" }, "C", function()
     hs.application.launchOrFocus("CotEditor")
 end)
 
--- hs.hotkey.bind({"ctrl"}, "G", function()
+-- hs.hotkey.bind({"ctrl"}, "=", function()
 --   local win = hs.window.focusedWindow()
 --   local screen = win:screen()
 --   local max = screen:frame()
