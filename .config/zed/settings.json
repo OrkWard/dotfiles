@@ -13,16 +13,6 @@
   },
   "use_autoclose": true,
   "always_treat_brackets_as_autoclosed": true,
-  "languages": {
-    "JavaScript": {
-      // "formatter": {
-      //   "external": {
-      //     "command": "prettier",
-      //     "arguments": ["--stdin-filepath", "{buffer_path}"]
-      //   }
-      // }
-    }
-  },
   "assistant": {
     "default_model": {
       "provider": "google",
