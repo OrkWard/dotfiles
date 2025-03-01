@@ -32,5 +32,15 @@
   },
   "vim": {
     "use_system_clipboard": "never"
+  },
+  "languages": {
+    "Python": {
+      "formatter": {
+        "external": {
+          "command": "black",
+          "arguments": ["-"]
+        }
+      }
+    }
   }
 }
