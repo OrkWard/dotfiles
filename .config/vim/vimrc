@@ -12,7 +12,7 @@ set relativenumber number
 set hidden # Allow buffer to be hidden without save change
 set encoding=utf-8
 set cursorline
-set splitbelow # default split on the below
+set splitbelow
 set splitright
 set laststatus=2 # Always show status line
 set backspace=2 # Ensure backspace working
@@ -66,21 +66,6 @@ g:session_id = strftime("%Y%m%d%H%M%S") .. "_" .. string(rand())
 # ================================== theme =====================================
 set background=light
 colorscheme onehalflight
-# {{{ Options for PaperColor
-# g:PaperColor_Theme_Options = {
-#   'theme': {
-#     'default': {
-#       'transparent_background': 0
-#     }
-#   }
-# }
-
-
-# highlight CocFloatDividingLine ctermfg=4
-# highlight CocFloatActive ctermfg=4
-# highlight ErrorMsg ctermfg=0
-# highlight Visual term=reverse ctermfg=none ctermbg=252
-# }}}
 
 # ================================== function ==================================
 def g:SynGroup()
