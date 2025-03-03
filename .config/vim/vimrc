@@ -1,11 +1,13 @@
 vim9script
 source $VIMRUNTIME/defaults.vim
 
+# indent
+set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set expandtab
-set autoindent
+set smartindent
+
 set relativenumber number
 set hidden # Allow buffer to be hidden without save change
 set encoding=utf-8
@@ -148,6 +150,9 @@ set pastetoggle=<F11>
 nnoremap Y y$
 # nnoremap j gj
 # nnoremap k gk
+
+vnoremap > >gv
+vnoremap < <gv
 
 # Use arrow keys to scroll in popup window
 def ScrollPopup(down: number): number
