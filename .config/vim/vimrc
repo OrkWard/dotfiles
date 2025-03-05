@@ -205,7 +205,7 @@ inoremap <C-F> <Right>
 augroup MyGroup
   autocmd!
   autocmd BufWritePost ~/.config/vim/vimrc,~/.config/vim/*.vim :source %
-  autocmd BufEnter * :call AutoChdir()
+  # autocmd BufEnter * :call AutoChdir()
 augroup END
 
 # =================================== gui ======================================
