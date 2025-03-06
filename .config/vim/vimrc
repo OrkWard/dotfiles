@@ -125,9 +125,6 @@ set pastetoggle=<F11>
 
 # some useful map
 nnoremap Y y$
-# nnoremap j gj
-# nnoremap k gk
-
 vnoremap > >gv
 vnoremap < <gv
 
