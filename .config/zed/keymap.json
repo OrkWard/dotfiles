@@ -39,7 +39,6 @@
   {
     "context": "vim_mode == insert",
     "bindings": {
-      "ctrl-l": "editor::ShowCompletions"
       // "ctrl-s \"": ["workspace::SendKeystrokes", "\" \" left"],
       // "ctrl-s '": ["workspace::SendKeystrokes", "' ' left"],
       // "ctrl-s (": ["workspace::SendKeystrokes", "( ) left"],
