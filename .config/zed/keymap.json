@@ -39,6 +39,8 @@
   {
     "context": "vim_mode == insert",
     "bindings": {
+      "ctrl-h": "editor::TabPrev",
+      "ctrl-l": "vim::Indent"
       // "ctrl-s \"": ["workspace::SendKeystrokes", "\" \" left"],
       // "ctrl-s '": ["workspace::SendKeystrokes", "' ' left"],
       // "ctrl-s (": ["workspace::SendKeystrokes", "( ) left"],
