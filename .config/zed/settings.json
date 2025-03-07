@@ -8,6 +8,7 @@
 // command palette
 {
   "proxy": "http://localhost:9090",
+  "auto_update": false,
   "features": {
     "edit_prediction_provider": "none"
   },
