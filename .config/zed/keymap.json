@@ -18,7 +18,8 @@
     "context": "Workspace",
     "bindings": {
       // "shift shift": "file_finder::Toggle"
-      "f1": "command_palette::Toggle"
+      "f1": "command_palette::Toggle",
+      "cmd-?": null
     }
   },
   {
