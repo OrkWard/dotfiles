@@ -33,15 +33,23 @@ hs.hotkey.bind({ "alt", "shift" }, "C", function()
     hs.application.launchOrFocus("CotEditor")
 end)
 
--- hs.hotkey.bind({"ctrl"}, "=", function()
---   local win = hs.window.focusedWindow()
---   local screen = win:screen()
---   local max = screen:frame()
+hs.hotkey.bind({"ctrl"}, "=", function()
+  local win = hs.window.focusedWindow()
+  local screen = win:screen()
+  local max = screen:frame()
 
---   win:setFrame(max, 0)
--- end)
+  win:setFrame(max, 0)
+end)
 
 -- hs.hotkey.bind({ "alt", "shift" }, "R", function()
 --     hs.reload()
 -- end)
 hs.alert.show("Config Reload")
+
+hs.loadSpoon("InputSourceSwitch")
+spoon.InputSourceSwitch:setApplications({
+    ["Mail"] = "ABC",
+    ["Zed"] = "ABC"
+})
+
+spoon.InputSourceSwitch:start()
