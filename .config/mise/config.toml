@@ -4,7 +4,7 @@ node = "20"
 java = "17"
 deno = "latest"
 emsdk = "latest"
-go = "1.23"
+go = "1.24"
 
 [settings]
 experimental = true
