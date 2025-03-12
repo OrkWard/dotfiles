@@ -99,7 +99,7 @@ alias server="caddy file-server . --listen localhost:8080"
 export PATH=$HOME/.cargo/bin:$PATH
 
 # go
-export GOPATH=~/.gopath
+export GOPATH=~/.go
 export PATH=$GOPATH/bin:$PATH
 
 # mise
