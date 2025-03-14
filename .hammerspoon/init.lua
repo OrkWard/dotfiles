@@ -48,7 +48,7 @@ hs.alert.show("Config Reload")
 
 hs.loadSpoon("InputSourceSwitch")
 spoon.InputSourceSwitch:setApplications({
-    ["Mail"] = "ABC",
+    ["Alacritty"] = "ABC",
     ["Zed"] = "ABC"
 })
 
