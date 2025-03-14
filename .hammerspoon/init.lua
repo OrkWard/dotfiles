@@ -49,7 +49,8 @@ hs.alert.show("Config Reload")
 hs.loadSpoon("InputSourceSwitch")
 spoon.InputSourceSwitch:setApplications({
     ["Alacritty"] = "ABC",
-    ["Zed"] = "ABC"
+    ["Zed"] = "ABC",
+    ["CotEditor"] = "微信输入法"
 })
 
 spoon.InputSourceSwitch:start()
