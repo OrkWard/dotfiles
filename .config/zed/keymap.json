@@ -8,11 +8,11 @@
 [
   {
     "bindings": {
-      // "cmd-`": "terminal_panel::ToggleFocus"
       "cmd-=": "workspace::ToggleZoom",
       "cmd--": "terminal_panel::ToggleFocus",
       "cmd-_": "zed::DecreaseBufferFontSize",
-      "cmd-shift-g": "git_panel::ToggleFocus"
+      "cmd-shift-g": "git_panel::ToggleFocus",
+      "cmd-h": "assistant::DeployHistory"
     }
   },
   {
@@ -35,7 +35,8 @@
     "context": "Editor",
     "bindings": {
       // "j k": ["workspace::SendKeystrokes", "escape"]
-      "cmd-k cmd-t": "editor::RestartLanguageServer"
+      "cmd-k cmd-t": "editor::RestartLanguageServer",
+      "cmd-h": "search::ToggleReplace"
     }
   },
   {
