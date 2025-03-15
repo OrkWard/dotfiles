@@ -66,5 +66,11 @@
     "bindings": {
       "g r": "editor::FindAllReferences"
     }
+  },
+  {
+    "context": "FileFinder || (FileFinder > Picker > Editor) || (FileFinder > Picker > menu)",
+    "bindings": {
+      "cmd-h": "pane::SplitLeft"
+    }
   }
 ]
