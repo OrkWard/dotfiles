@@ -147,7 +147,6 @@ alias bat='bat --theme=GitHub'
 # zed
 alias z='zed'
 if [ "$TERM_PROGRAM" = 'zed' ]; then
-	_fzf_setup_completion path z
 	export EDITOR="gvim -f"
 fi
 
