@@ -1,7 +1,6 @@
 [tools]
 python = "3.11.9"
 node = "20"
-java = "17"
 deno = "latest"
 emsdk = "latest"
 go = "1.24"
