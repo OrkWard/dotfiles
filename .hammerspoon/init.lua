@@ -33,6 +33,10 @@ hs.hotkey.bind({ "alt", "shift" }, "C", function()
     hs.application.launchOrFocus("CotEditor")
 end)
 
+hs.hotkey.bind({ "alt", "shift" }, "N", function()
+    hs.application.launchOrFocus("UlyssesMac")
+end)
+
 hs.hotkey.bind({"ctrl"}, "=", function()
   local win = hs.window.focusedWindow()
   local screen = win:screen()
@@ -50,6 +54,7 @@ hs.loadSpoon("InputSourceSwitch")
 spoon.InputSourceSwitch:setApplications({
     ["Alacritty"] = "ABC",
     ["Zed"] = "ABC",
+    ["MacVim"] = "ABC",
     ["CotEditor"] = "微信输入法"
 })
 
