@@ -34,7 +34,7 @@ hs.hotkey.bind({ "alt", "shift" }, "C", function()
 end)
 
 hs.hotkey.bind({ "alt", "shift" }, "N", function()
-    hs.application.launchOrFocus("UlyssesMac")
+    hs.application.launchOrFocus("iA Writer")
 end)
 
 hs.hotkey.bind({"ctrl"}, "=", function()
