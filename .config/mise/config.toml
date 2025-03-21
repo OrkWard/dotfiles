@@ -6,6 +6,7 @@ emsdk = "latest"
 go = "1.24"
 usage = "2.0.0"
 "npm:prettier" = "latest"
+rust = "1.85.0"
 
 [settings]
 experimental = true
