@@ -37,6 +37,10 @@ hs.hotkey.bind({ "alt", "shift" }, "N", function()
     hs.application.launchOrFocus("iA Writer")
 end)
 
+hs.hotkey.bind({ "alt", "shift" }, "E", function()
+    hs.application.launchOrFocus("Finder")
+end)
+
 hs.hotkey.bind({"ctrl"}, "=", function()
   local win = hs.window.focusedWindow()
   local screen = win:screen()
