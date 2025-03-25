@@ -59,7 +59,8 @@ spoon.InputSourceSwitch:setApplications({
     ["Alacritty"] = "ABC",
     ["Zed"] = "ABC",
     ["MacVim"] = "ABC",
-    ["CotEditor"] = "微信输入法"
+    ["CotEditor"] = "微信输入法",
+    ["飞书"] = "微信输入法",
 })
 
 spoon.InputSourceSwitch:start()
