@@ -1,0 +1,46 @@
+## 初始化
+activate                 输出初始化 shell
+bin-paths                列出所有当前激活工具的路径
+deactivate               反激活当前 shell
+completion               输出补全 shell
+env                      仅输出需要初始化的 env
+exec                     在激活状态下执行命令
+## mise 本体管理
+doctor                   排障
+implode                  完全卸载
+self-update              更新
+settings                 管理设置
+version                  版本号
+## 配置文件管理
+config                   配置管理
+trust                    信任配置
+fmt                      格式化配置
+sync                     同步其他版本管理配置到 mise
+set                      设置配置中环境变量
+unset                    移除配置中环境变量
+use                      安装工具，添加到配置
+unuse                    从配置中移除工具
+## 工具安装、升级、卸载
+install                  安装工具
+install-into             安装工具到指定位置
+cache                    安装缓存管理
+link                     符号链接一个工具到 mise
+prune                    删除未使用的工具
+upgrade                  升级非最新工具
+test-tool                测试工具安装过程
+reshims                  在 .local/share/mise/shims/ 目录下重建所有工具、所有版本暴露出的可执行文件
+## 各种信息查看
+ls                       列出已安装
+ls-remote                列出远程列表
+outdated                 列出本地非最新
+lastest                  列出最新
+plugins                  列出已安装插件（部分工具需要额外插件才能安装）
+backends                 列出所有 backend
+registry                 对于一个工具，展示其完整 name（使用的 backend、plugin）
+tool                     列出一个工具的完整信息
+where                    列出一个工具的安装位置
+which                    列出一个工具的 bin 位置
+## task
+run                      执行 task
+tasks                    task 管理
+watch                    监听执行
