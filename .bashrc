@@ -87,7 +87,7 @@ load_module bash-preexec
 export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"
 
 # keybinding
-bind -x '"\C-t":vifm'
+bind -x '"\C-t":lf'
 
 # openai
 alias ??="openai"
