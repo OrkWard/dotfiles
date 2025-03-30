@@ -39,7 +39,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 Plug 'alvan/vim-closetag'
-Plug 'vifm/vifm.vim'
+# Plug 'vifm/vifm.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'OrkWard/lsp'
