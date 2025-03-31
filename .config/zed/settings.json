@@ -31,6 +31,7 @@
     },
     "version": "2"
   },
+  "buffer_font_fallbacks": ["JetBrainsMono Nerd Font"],
   "format_on_save": "on",
   "vim_mode": true,
   "ui_font_size": 14.0,
