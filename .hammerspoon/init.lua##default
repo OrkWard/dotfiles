@@ -63,4 +63,4 @@ spoon.InputSourceSwitch:setApplications({
     ["飞书"] = "微信输入法",
 })
 
-spoon.InputSourceSwitch:start()
+-- spoon.InputSourceSwitch:start()
