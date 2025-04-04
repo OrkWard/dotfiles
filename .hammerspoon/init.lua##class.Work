@@ -6,7 +6,7 @@ hs.hotkey.bind({ "alt" }, "1", function()
 end)
 
 hs.hotkey.bind({ "alt" }, "2", function()
-    hs.application.launchOrFocus("Google Chrome")
+    hs.application.launchOrFocus("Google Chrome Canary")
 end)
 
 hs.hotkey.bind({ "alt" }, "3", function()
