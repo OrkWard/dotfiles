@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything
 case $- in
-	*i*) ;;
-	*) return ;;
+  *i*) ;;
+  *) return ;;
 esac
 
 # Profile start
@@ -14,7 +14,7 @@ export EDITOR=vim
 export LS_COLORS=
 
 if [ $(uname -s) == "Darwin" ]; then
-	eval "$(/opt/homebrew/bin/brew shellenv)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # language
@@ -55,21 +55,21 @@ PS1+='\[\033]133;A\033\\\]$ '
 config_dir=$XDG_CONFIG_HOME/bash
 
 load_module() {
-	plugin="$config_dir/$1"
-	if [ -f "$plugin.bash" ]; then
-		. $plugin.bash
-	elif [ -d $plugin ]; then
-		for plug_component in "$plugin"/*.bash; do
-			if [ -f "$plug_component" ] && [ "$plug_component" != "$plugin/config.bash" ]; then
-				. "$plug_component"
-			fi
-		done
+  plugin="$config_dir/$1"
+  if [ -f "$plugin.bash" ]; then
+    . $plugin.bash
+  elif [ -d $plugin ]; then
+    for plug_component in "$plugin"/*.bash; do
+      if [ -f "$plug_component" ] && [ "$plug_component" != "$plugin/config.bash" ]; then
+        . "$plug_component"
+      fi
+    done
 
-		# always source config last
-		if [ -f "$plugin/config.bash" ]; then
-			. "$plugin/config.bash"
-		fi
-	fi
+    # always source config last
+    if [ -f "$plugin/config.bash" ]; then
+      . "$plugin/config.bash"
+    fi
+  fi
 }
 
 load_module local
@@ -104,6 +104,7 @@ export PATH=$GOPATH/bin:$PATH
 
 # mise
 eval "$(mise activate bash)"
+unset -f command_not_found_handle
 
 # atuin
 eval "$(atuin init bash)"
@@ -148,7 +149,7 @@ alias bat='bat --theme=GitHub'
 # zed
 alias z='zed'
 if [ "$TERM_PROGRAM" = 'zed' ]; then
-	export EDITOR="gvim -f"
+  export EDITOR="gvim -f"
 fi
 
 # Profile end
