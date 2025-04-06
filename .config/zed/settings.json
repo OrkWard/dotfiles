@@ -53,6 +53,9 @@
           "arguments": ["-"]
         }
       }
+    },
+    "Lua": {
+      "language_servers": ["lua", "..."]
     }
   }
 }
