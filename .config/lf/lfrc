@@ -1,0 +1,15 @@
+map gl %{{
+    if ! [ -L "$f" ]; then
+        lf -remote "send $id echoerr 'Not a symlink: $f'"
+        exit 1
+    fi
+
+    target_dir=$(dirname "$(readlink -f "$f")")
+
+    if [ -n "$target_dir" ] && [ -d "$target_dir" ]; then
+        lf -remote "send $id cd \"$target_dir\""
+    else
+        lf -remote "send $id echoerr 'Failed to resolve symlink target directory for: $f'"
+        exit 1
+    fi
+}}
