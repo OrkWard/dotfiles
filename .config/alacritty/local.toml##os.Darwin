@@ -2,13 +2,5 @@
 family = "iMWritingMono Nerd Font"
 style = "Regular"
 
-# MinStepsMap:    {key, value}[]                
-# HourMinRangeMap:  │      │      {key, value}[]
-#                   │      │        │     │     
-#                   │      │        │     │     
-#                   ├──────┼────────┘     │     
-#                   │      │              │     
-# 									▼      ▼              ▼     
-#                Period  Interval[]     Range[] 
 [font]
 size = 14
