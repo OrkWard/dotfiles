@@ -29,9 +29,9 @@
   {
     "context": "Terminal",
     "bindings": {
-      "cmd-`": ["terminal::SendText", "\u001b`"],
-      "cmd-b": ["terminal::SendText", "\u001bb"],
-      "cmd-f": ["terminal::SendText", "\u001bf"]
+      "alt-`": ["terminal::SendText", "\u001b`"],
+      "alt-b": ["terminal::SendText", "\u001bb"],
+      "alt-f": ["terminal::SendText", "\u001bf"]
     }
   },
   {
@@ -52,8 +52,8 @@
   {
     "context": "vim_mode == insert",
     "bindings": {
-      "cmd-b": "vim::PreviousWordStart",
-      "cmd-f": "vim::NextWordStart"
+      "alt-b": "vim::PreviousWordStart",
+      "alt-f": "vim::NextWordStart"
     }
   },
   {
