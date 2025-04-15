@@ -148,9 +148,9 @@ alias bat='bat --theme=GitHub'
 
 # zed
 alias z='zed'
-if [ "$TERM_PROGRAM" = 'zed' ]; then
-  export EDITOR="zed"
-fi
+# if [ "$TERM_PROGRAM" = 'zed' ]; then
+#   export EDITOR="zed"
+# fi
 
 # Profile end
 # set +x
