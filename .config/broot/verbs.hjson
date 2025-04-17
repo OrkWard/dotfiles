@@ -80,8 +80,6 @@ verbs: [
     #     execution: ":focus {git-root}"
     # }
 
-    # A popular set of shortcuts for going up and down:
-    #
     {
         key: ctrl-p
         execution: ":line_up"
