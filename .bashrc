@@ -89,11 +89,12 @@ export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"
 # keybinding
 bind -x '"\C-t":lf'
 
-# openai
-alias ??="openai"
-
 # caddy
-alias server="caddy file-server . --listen localhost:8080"
+alias serve="caddy file-server . --listen localhost:8080"
+
+# handy
+alias rm="rm -r"
+alias mkdir="mkdir -p"
 
 # rust
 export PATH=$HOME/.cargo/bin:$PATH
@@ -121,7 +122,6 @@ alias vh="vim ~/.hammerspoon/init.lua"
 alias va="vim ~/.config/alacritty/alacritty.toml"
 alias vn="nvim ~/.config/nvim/init.lua"
 alias vt="vim ~/.config/tmux/tmux.conf"
-alias v3="vim ~/.config/i3/config"
 
 # gcc
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -138,7 +138,6 @@ alias l='ls --color'
 alias ls='ls --color'
 alias ll='ls --color -alh'
 alias la='ls --color -a'
-alias lt="tree -C -I \"node_modules\""
 
 # bat
 alias bat='bat --theme=GitHub'
