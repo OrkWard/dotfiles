@@ -1,6 +1,3 @@
-require('hs.ipc')
-
----------------- Appliction -----------------
 hs.hotkey.bind({ "alt" }, "1", function()
     hs.application.launchOrFocus("Alacritty")
 end)
@@ -33,34 +30,7 @@ hs.hotkey.bind({ "alt", "shift" }, "C", function()
     hs.application.launchOrFocus("CotEditor")
 end)
 
-hs.hotkey.bind({ "alt", "shift" }, "N", function()
-    hs.application.launchOrFocus("iA Writer")
-end)
-
 hs.hotkey.bind({ "alt", "shift" }, "E", function()
     hs.application.launchOrFocus("Finder")
 end)
 
-hs.hotkey.bind({"ctrl"}, "=", function()
-  local win = hs.window.focusedWindow()
-  local screen = win:screen()
-  local max = screen:frame()
-
-  win:setFrame(max, 0)
-end)
-
-hs.hotkey.bind({ "alt", "shift" }, "R", function()
-    hs.reload()
-end)
-hs.alert.show("Config Reload")
-
-hs.loadSpoon("InputSourceSwitch")
-spoon.InputSourceSwitch:setApplications({
-    ["Alacritty"] = "ABC",
-    ["Zed"] = "ABC",
-    ["MacVim"] = "ABC",
-    ["CotEditor"] = "微信输入法",
-    ["飞书"] = "微信输入法",
-})
-
--- spoon.InputSourceSwitch:start()
