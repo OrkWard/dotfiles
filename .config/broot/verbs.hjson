@@ -74,11 +74,10 @@ verbs: [
     #     execution: ":focus ~"
     # }
 
-    # Here's going to the work-dir root of the current git repository
-    # {
-    #     invocation: gtr
-    #     execution: ":focus {git-root}"
-    # }
+    {
+        invocation: gtr
+        execution: ":focus {git-root}"
+    }
 
     {
         key: ctrl-p
