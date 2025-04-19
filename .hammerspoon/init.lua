@@ -1,6 +1,6 @@
 require('hs.ipc')
 require('keymaps')
-local inspect = require('lib.inspect')
+local inspect = require('inspect')
 
 local inputSourceMap = {
     ["Alacritty"] = "ABC",
