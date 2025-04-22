@@ -36,3 +36,5 @@
   defaultBranch = master
 [credential]
   helper = cache
+[push]
+	autoSetupRemote = true
