@@ -34,3 +34,7 @@ hs.hotkey.bind({ "alt", "shift" }, "E", function()
     hs.application.launchOrFocus("Finder")
 end)
 
+hs.hotkey.bind({ "alt", "shift" }, "N", function()
+    hs.application.launchOrFocus("Notes")
+end)
+
