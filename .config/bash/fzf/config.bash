@@ -30,12 +30,10 @@ _fzf_comprun() {
 __fzf_cd__() {
   local dir
   dir=$(
-    FZF_DEFAULT_COMMAND="fd -td -HLE'.git' -E'node_modules'" \
-    FZF_DEFAULT_OPTS="--reverse --walker=dir,follow,hidden --scheme=path $FZF_DEFAULT_OPTS" \
-    fzf
+    fd -td -HLE".git" -E"node_modules" | fzf --reverse --scheme=path $FZF_DEFAULT_OPTS
   ) && printf 'builtin cd -- %q' "$(builtin unset CDPATH && builtin cd -- "$dir" && builtin pwd)"
 }
-bind -m emacs-standard '"\ec": " \C-b\C-k \C-u`__fzf_cd__`\e\C-e\er\C-m\C-y\C-h\e \C-y\ey\C-x\C-x\C-d"'
+bind -m emacs-standard '"\ec": "\C-a\C-k`__fzf_cd__`\C-m\C-y"'
 
 _fzf_setup_completion dir tree
 _fzf_setup_completion path bat code glow
