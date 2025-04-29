@@ -1,6 +1,6 @@
 export FZF_DEFAULT_COMMAND='fd -tf -H -L -E".git" -E".wine" -E"node_modules" -E"*.swp"'
 export FZF_PREVIEW_COMMAND="bat -n --color=always --theme=GitHub {}"
-export FZF_DEFAULT_OPTS='--tmux'
+export FZF_DEFAULT_OPTS='--tmux --layout=reverse'
 
 # generate file path
 _fzf_compgen_path() {
@@ -30,10 +30,10 @@ _fzf_comprun() {
 __fzf_cd__() {
   local dir
   dir=$(
-    fd -td -HLE".git" -E"node_modules" | fzf --reverse --scheme=path $FZF_DEFAULT_OPTS
+    fd -td -HLE".git" -E"node_modules" | fzf --scheme=path $FZF_DEFAULT_OPTS
   ) && printf 'builtin cd -- %q' "$(builtin unset CDPATH && builtin cd -- "$dir" && builtin pwd)"
 }
-bind -m emacs-standard '"\ec": "\C-a\C-k`__fzf_cd__`\C-m\C-y"'
+bind -m emacs-standard '"\ec": "\C-u \C-h\C-k`__fzf_cd__`\C-m\C-y\C-a\C-y\ey"'
 
 _fzf_setup_completion dir tree
 _fzf_setup_completion path bat code glow
