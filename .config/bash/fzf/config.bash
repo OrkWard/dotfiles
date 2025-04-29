@@ -1,5 +1,6 @@
 export FZF_DEFAULT_COMMAND='fd -tf -H -L -E".git" -E".wine" -E"node_modules" -E"*.swp"'
 export FZF_PREVIEW_COMMAND="bat -n --color=always --theme=GitHub {}"
+export FZF_DEFAULT_OPTS='--tmux'
 
 # generate file path
 _fzf_compgen_path() {
@@ -26,24 +27,12 @@ _fzf_comprun() {
   esac
 }
 
-__fzfcmd() {
-  [[ -n "${TMUX_PANE-}" ]] && { [[ "${FZF_TMUX:-0}" != 0 ]] || [[ -n "${FZF_TMUX_OPTS-}" ]]; } &&
-    echo "fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} -- " || echo "fzf"
-}
-
-__fzf_defaults() {
-  # $1: Prepend to FZF_DEFAULT_OPTS_FILE and FZF_DEFAULT_OPTS
-  # $2: Append to FZF_DEFAULT_OPTS_FILE and FZF_DEFAULT_OPTS
-  echo "--height ${FZF_TMUX_HEIGHT:-40%} --min-height 20+ --bind=ctrl-z:ignore $1"
-  command cat "${FZF_DEFAULT_OPTS_FILE-}" 2> /dev/null
-  echo "${FZF_DEFAULT_OPTS-} $2"
-}
 __fzf_cd__() {
   local dir
   dir=$(
-    FZF_DEFAULT_COMMAND=${FZF_ALT_C_COMMAND:-}
-    FZF_DEFAULT_OPTS=$(__fzf_defaults "--reverse --walker=dir,follow,hidden --scheme=path" "${FZF_ALT_C_OPTS-}  m")
-    FZF_DEFAULT_OPTS_FILE='' $(__fzfcmd)
+    FZF_DEFAULT_COMMAND="fd -td -HLE'.git' -E'node_modules'" \
+    FZF_DEFAULT_OPTS="--reverse --walker=dir,follow,hidden --scheme=path $FZF_DEFAULT_OPTS" \
+    fzf
   ) && printf 'builtin cd -- %q' "$(builtin unset CDPATH && builtin cd -- "$dir" && builtin pwd)"
 }
 bind -m emacs-standard '"\ec": " \C-b\C-k \C-u`__fzf_cd__`\e\C-e\er\C-m\C-y\C-h\e \C-y\ey\C-x\C-x\C-d"'
