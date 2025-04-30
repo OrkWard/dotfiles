@@ -25,13 +25,14 @@ g:closetag_filetypes = "html,phtml,php"
 g:closetag_xhtml_filetypes = "xhtml,jsx,tsx"
 
 # Plug fzf
+$FZF_DEFAULT_COMMAND = 'fd -tf -td -H -L -E".git" -E".wine" -E"node_modules" -E"*.swp"'
+$FZF_DEFAULT_OPT = ''
 nnoremap <leader>f :Rg<CR>
 nnoremap g* :Rg<space><c-r><c-w><cr>
 nnoremap <c-f> :Files<CR>
 nnoremap <c-p> :Buffers<CR>
 
 # vifm
-# $FZF_DEFAULT_COMMAND = 'fd -tf -td -H -L -E".git" -E".wine" -E"node_modules" -E"*.swp"'
 # nnoremap <leader>1 :Vifm<CR>
 # augroup MyVifm
 #     autocmd!
