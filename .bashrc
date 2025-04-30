@@ -110,6 +110,9 @@ unset -f command_not_found_handle
 # atuin
 eval "$(atuin init bash)"
 
+# tldr 
+export TLDR_AUTO_UPDATE_DISABLED=1
+
 # cd
 alias ..="cd .."
 alias ...="cd ../.."

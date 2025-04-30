@@ -5,13 +5,22 @@ cmd edit-config ${{
 }}
 
 cmd mkdir %mkdir "$@"
+cmd mkselect %{{
+    IFS=" "
+    file="$*"
+    mkdir -p -- "$file"
+    if [ -n "$fs" ]; then
+        mv -- $fs "$file"
+        lf -remote "send $id unselect"
+    fi
+}}
 cmd touch %touch "$@"
-
-cmd usage !dua $PWD
+cmd unar %unar $f
+cmd usage !dua $f
 
 ### custom map
-map a push %mkdir<space>
-map <c-n> push %touch<space>
+map D push %mkdir<space>
+map A push %touch<space>
 map C edit-config
 map gl %{{
     if ! [ -L "$f" ]; then
@@ -31,4 +40,5 @@ map gl %{{
 
 ### settings
 set hidden
+set relativenumber
 
