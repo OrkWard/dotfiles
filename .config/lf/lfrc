@@ -40,5 +40,4 @@ map gl %{{
 
 ### settings
 set hidden
-set relativenumber
 

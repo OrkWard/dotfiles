@@ -81,6 +81,7 @@ load_module fzf
 load_module autojump
 load_module bash-preexec
 load_module broot
+load_module lf
 
 # ---------------------------- Misc ------------------------------
 # custom path for local bin and local script
