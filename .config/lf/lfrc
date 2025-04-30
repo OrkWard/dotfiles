@@ -1,3 +1,18 @@
+### custom command
+cmd edit-config ${{
+      $EDITOR ~/.config/lf/lfrc
+      lf -remote "send $id source ~/.config/lf/lfrc"
+}}
+
+cmd mkdir %mkdir "$@"
+cmd touch %touch "$@"
+
+cmd usage !dua $PWD
+
+### custom map
+map a push %mkdir<space>
+map <c-n> push %touch<space>
+map C edit-config
 map gl %{{
     if ! [ -L "$f" ]; then
         lf -remote "send $id echoerr 'Not a symlink: $f'"
@@ -13,4 +28,7 @@ map gl %{{
         exit 1
     fi
 }}
+
+### settings
+set hidden
 
