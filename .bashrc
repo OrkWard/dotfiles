@@ -82,6 +82,7 @@ load_module autojump
 load_module bash-preexec
 load_module broot
 load_module lf
+load_module tailscale
 
 # ---------------------------- Misc ------------------------------
 # custom path for local bin and local script
