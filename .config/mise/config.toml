@@ -8,6 +8,7 @@ usage = "2.0.0"
 rust = "1.85.0"
 "npm:@antfu/ni" = "latest"
 java = "21"
+dotnet = "latest"
 
 [settings]
 experimental = true
