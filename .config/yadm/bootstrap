@@ -21,4 +21,6 @@ if [ "$system_type" = "Linux" ]; then
     sudo pacman -Syu --noconfirm
     sudo pacman -S bash-completion base-devel difftastic gdb caddy mise atuin tldr tealdeer vim bat ripgrep fzf glow broot lf tmux fd --noconfirm
   fi
+
+  mise install
 fi
