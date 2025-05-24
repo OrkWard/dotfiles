@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 while getopts 's' OPTION; do
   case "$OPTION" in

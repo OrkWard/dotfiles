@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 echo "Pick a config to switch:"
 cfiles="$(ls /opt/homebrew/etc/mihomo/*.yaml | grep -v "config.yaml")"
 
