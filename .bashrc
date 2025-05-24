@@ -91,8 +91,6 @@ export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"
 # keybinding
 bind -x '"\C-t":lf'
 
-# caddy
-alias serve="caddy file-server . --listen localhost:8080"
 
 # handy
 alias rm="rm -r"
@@ -144,8 +142,9 @@ alias ls='ls --color'
 alias ll='ls --color -alh'
 alias la='ls --color -a'
 
-# bat
 alias bat='bat --theme=GitHub'
+alias serve="caddy file-server . --listen localhost:8080"
+alias tree="broot --cmd ':pt'"
 
 # acme.sh
 [ -f ~/.acme.sh/acme.sh.env ] && . ~/.acme.sh/acme.sh.env
