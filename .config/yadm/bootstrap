@@ -10,7 +10,7 @@ system_type=$(uname -s)
 if [ "$system_type" = "Darwin" ]; then
   # install homebrew if it's missing
   if ! command -v brew >/dev/null 2>&1; then
-    echo "Installing homebrew"
+    echo "Install homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 fi
@@ -24,3 +24,14 @@ if [ "$system_type" = "Linux" ]; then
 
   mise install
 fi
+
+if command -v vim >/dev/null 2>&1; then
+  echo "Install vim plugins"
+  vim '+PlugUpdate' '+qall'
+fi
+
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+  echo "Install tmux"
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
