@@ -32,6 +32,6 @@ fi
 
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
   echo "Install tmux"
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  git clone https://github.com/OrkWard/tpm ~/.config/tmux/plugins/tpm
 fi
 
