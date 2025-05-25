@@ -1,4 +1,4 @@
-alias ga='git add -u'
+alias ga='git add -A'
 alias gc='git commit'
 alias gac='git add . && git commit -m "$(date)"'
 alias gs='git status'
