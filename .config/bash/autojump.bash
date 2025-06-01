@@ -16,15 +16,14 @@ fi
 if [ "${shell}" = "sh" ]; then
     return 0
 
-# check local install
-elif [ -s ~/.autojump/share/autojump/autojump.${shell} ]; then
-    source ~/.autojump/share/autojump/autojump.${shell}
+# arch
+elif [ -s /etc/profile.d/autojump.bash.${shell} ]; then
+    source /etc/profile.d/autojump.bash.${shell}
 
-# check global install
 elif [ -s /usr/share/autojump/autojump.${shell} ]; then
     source /usr/share/autojump/autojump.${shell}
 
-# check global install
+# osx
 elif [ -s /opt/homebrew/share/autojump/autojump.${shell} ]; then
     source /opt/homebrew/share/autojump/autojump.${shell}
 fi

@@ -37,4 +37,4 @@
 [credential]
   helper = cache
 [push]
-	autoSetupRemote = true
+  autoSetupRemote = true

@@ -52,3 +52,7 @@ g:neoformat_basic_format_trim = 1
 # nmap , <Plug>(easymotion-next)
 # nmap ; <Plug>(easymotion-prev)
 # g:EasyMotion_keys = 'asdfghjkl;'
+
+# vimcomplete
+autocmd VimEnter * g:VimCompleteOptionsSet({'completor': {'alwaysOn': false}})
+
