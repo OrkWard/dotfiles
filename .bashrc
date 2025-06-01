@@ -89,7 +89,7 @@ load_module tailscale
 export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"
 
 # keybinding
-bind -x '"\C-t":lf'
+bind -x '"\C-t":vifm'
 
 
 # handy
