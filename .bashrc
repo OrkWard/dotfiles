@@ -89,7 +89,7 @@ load_module tailscale
 export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"
 
 # keybinding
-bind -x '"\C-t":lf'
+bind -x '"\C-t":vifm'
 
 
 # handy
@@ -110,7 +110,7 @@ unset -f command_not_found_handle
 # atuin
 eval "$(atuin init bash)"
 
-# tldr 
+# tldr
 export TLDR_AUTO_UPDATE_DISABLED=1
 
 # cd
@@ -119,12 +119,13 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 
 # vim
-alias vb="cd ~/.config/bash && vim ~/.bashrc"
+alias vb="cd ~/.config/bash && vim ~/.bashrc && cd -"
 alias vv="vim ~/.config/vim/vimrc"
 alias vh="nvim ~/.hammerspoon/init.lua"
 alias va="vim ~/.config/alacritty/alacritty.toml"
 alias vn="nvim ~/.config/nvim/init.lua"
 alias vt="vim ~/.config/tmux/tmux.conf"
+alias v3="vim ~/.config/i3/config"
 
 # gcc
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'

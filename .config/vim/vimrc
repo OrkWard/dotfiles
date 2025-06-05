@@ -214,5 +214,4 @@ if has("gui_running")
   set guifont=JetBrains\ Mono\ 20,JetBrainsMono-Regular:h14
 endif
 
-
 # vim: foldmethod=marker
