@@ -15,15 +15,14 @@
       "cmd-b": null,
       "cmd-h": null,
       "cmd-shift-g": "git_panel::ToggleFocus",
-      "cmd-alt-n": "workspace::NewWindow",
-      "cmd-shift-n": null
+      "cmd-alt-n": "workspace::NewWindow"
     }
   },
   {
     "context": "Workspace",
     "bindings": {
-      "f1": "command_palette::Toggle",
-      "cmd-?": null
+      "f1": "command_palette::Toggle"
+      // "cmd-?": null
     }
   },
   {
@@ -39,9 +38,7 @@
     "context": "Editor",
     "bindings": {
       "cmd-k cmd-t": "editor::RestartLanguageServer",
-      "cmd-h": "search::ToggleReplace",
-      "cmd-e": null,
-      "cmd-d": null
+      "cmd-h": "search::ToggleReplace"
     }
   },
   {
