@@ -24,7 +24,7 @@
   },
   "use_autoclose": true,
   "always_treat_brackets_as_autoclosed": true,
-  "wrap_guides": [20, 40, 60, 80],
+  "wrap_guides": [19, 39, 59, 79],
   "agent": {
     "default_model": {
       "provider": "google",
