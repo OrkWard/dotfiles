@@ -26,9 +26,10 @@
   "always_treat_brackets_as_autoclosed": true,
   "wrap_guides": [19, 39, 59, 79],
   "agent": {
+    "default_profile": "ask",
     "default_model": {
       "provider": "google",
-      "model": "gemini-2.0-flash"
+      "model": "gemini-2.5-flash-preview-04-17"
     },
     "version": "2"
   },
