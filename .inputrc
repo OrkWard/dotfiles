@@ -3,6 +3,8 @@ set visible-stats on
 
 set show-all-if-ambiguous on
 set completion-ignore-case on
+set colored-completion-prefix on
+set colored-stats on
 
 # TAB:menu-complete
 ## shift-tab
