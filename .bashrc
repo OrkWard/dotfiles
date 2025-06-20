@@ -104,8 +104,11 @@ export GOPATH=~/.go
 export PATH=$GOPATH/bin:$PATH
 
 # mise
-eval "$(mise activate bash)"
-unset -f command_not_found_handle
+# eval "$(mise activate bash)"
+# unset -f command_not_found_handle
+
+# vfox
+eval "$(vfox activate bash)"
 
 # atuin
 eval "$(atuin init bash)"
