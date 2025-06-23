@@ -104,13 +104,13 @@ export GOPATH=~/.go
 export PATH=$GOPATH/bin:$PATH
 
 # asdf
-export ASDF_DATA_DIR="$HOME/.local/share/asdf"
-export ASDF_CONFIG_FILE="$HOME/.config/asdf/asdfrc"
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-eval "$(asdf completion bash)"
+# export ASDF_DATA_DIR="$HOME/.local/share/asdf"
+# export ASDF_CONFIG_FILE="$HOME/.config/asdf/asdfrc"
+# export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# eval "$(asdf completion bash)"
 
 # vfox
-# eval "$(vfox activate bash)"
+eval "$(vfox activate bash)"
 
 # atuin
 eval "$(atuin init bash)"
