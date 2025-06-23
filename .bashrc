@@ -109,6 +109,9 @@ export ASDF_CONFIG_FILE="$HOME/.config/asdf/asdfrc"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 eval "$(asdf completion bash)"
 
+# vfox
+# eval "$(vfox activate bash)"
+
 # atuin
 eval "$(atuin init bash)"
 
