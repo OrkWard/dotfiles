@@ -6,6 +6,6 @@ storage:
 registry:
     address: ""
 legacyVersionFile:
-    enable: false
+    enable: true
 cache:
     availableHookDuration: 12h
