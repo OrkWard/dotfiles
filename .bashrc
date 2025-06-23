@@ -103,12 +103,11 @@ export PATH=$HOME/.cargo/bin:$PATH
 export GOPATH=~/.go
 export PATH=$GOPATH/bin:$PATH
 
-# mise
-# eval "$(mise activate bash)"
-# unset -f command_not_found_handle
-
-# vfox
-eval "$(vfox activate bash)"
+# asdf
+export ASDF_DATA_DIR="$HOME/.local/share/asdf"
+export ASDF_CONFIG_FILE="$HOME/.config/asdf/asdfrc"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+eval "$(asdf completion bash)"
 
 # atuin
 eval "$(atuin init bash)"
