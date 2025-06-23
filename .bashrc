@@ -100,7 +100,7 @@ alias mkdir="mkdir -p"
 export PATH=$HOME/.cargo/bin:$PATH
 
 # go
-export GOPATH=~/.go
+export GOPATH="$HOME/.go"
 export PATH=$GOPATH/bin:$PATH
 
 # asdf
