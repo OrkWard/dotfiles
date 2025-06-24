@@ -38,3 +38,7 @@ hs.hotkey.bind({ "alt", "shift" }, "N", function()
     hs.application.launchOrFocus("Notes")
 end)
 
+hs.hotkey.bind({ "alt", "shift" }, "K", function()
+    hs.application.launchOrFocus("Google Chrome Canary")
+end)
+
