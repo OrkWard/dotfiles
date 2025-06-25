@@ -25,9 +25,6 @@ set ttymouse=xterm2
 &t_SR = "\<Esc>[4 q"
 &t_EI = "\<Esc>[2 q"
 
-execute "set <F13>=\<Esc>" .. &t_kb
-inoremap <F13> <C-W>
-
 # vim-plug
 call plug#begin('~/.local/share/vim-plug')
 Plug 'editorconfig/editorconfig-vim'
@@ -215,6 +212,9 @@ if has("gui_running")
   # disable toolbar
   set guioptions-=T
   set guifont=JetBrains\ Mono\ 20,JetBrainsMono-Regular:h14
+else
+  execute "set <F13>=\<Esc>" .. &t_kb
+  inoremap <F13> <C-W>
 endif
 
 # vim: foldmethod=marker
