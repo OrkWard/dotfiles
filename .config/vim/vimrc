@@ -25,6 +25,9 @@ set ttymouse=xterm2
 &t_SR = "\<Esc>[4 q"
 &t_EI = "\<Esc>[2 q"
 
+execute "set <F13>=\<Esc>" .. &t_kb
+inoremap <F13> <C-W>
+
 # vim-plug
 call plug#begin('~/.local/share/vim-plug')
 Plug 'editorconfig/editorconfig-vim'
