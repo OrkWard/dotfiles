@@ -26,7 +26,7 @@
   "always_treat_brackets_as_autoclosed": true,
   "wrap_guides": [19, 39, 59, 79],
   "agent": {
-    "default_profile": "ask",
+    "default_profile": "write",
     "default_view": "text_thread",
     "default_model": {
       "provider": "google",
