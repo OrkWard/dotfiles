@@ -26,11 +26,15 @@
   "always_treat_brackets_as_autoclosed": true,
   "wrap_guides": [19, 39, 59, 79],
   "agent": {
+    "inline_assistant_model": {
+      "provider": "google",
+      "model": "gemini-2.5-flash"
+    },
     "default_profile": "write",
     "default_view": "text_thread",
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "provider": "google",
+      "model": "gemini-2.5-flash"
     },
     "version": "2"
   },
