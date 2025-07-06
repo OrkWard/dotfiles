@@ -91,6 +91,8 @@ export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"
 # keybinding
 bind -x '"\C-t":vifm'
 
+# local secret
+[ -f "$HOME/.env" ] && source "$HOME/.env"
 
 # handy
 alias rm="rm -r"
@@ -102,12 +104,6 @@ export PATH=$HOME/.cargo/bin:$PATH
 # go
 export GOPATH="$HOME/.go"
 export PATH=$GOPATH/bin:$PATH
-
-# asdf
-# export ASDF_DATA_DIR="$HOME/.local/share/asdf"
-# export ASDF_CONFIG_FILE="$HOME/.config/asdf/asdfrc"
-# export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-# eval "$(asdf completion bash)"
 
 # vfox
 eval "$(vfox activate bash)"
