@@ -30,7 +30,7 @@
       "provider": "google",
       "model": "gemini-2.0-flash"
     },
-    "default_profile": "ask",
+    "default_profile": "write",
     "default_view": "text_thread",
     "default_model": {
       "provider": "zed.dev",
