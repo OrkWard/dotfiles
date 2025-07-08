@@ -106,6 +106,8 @@ export GOPATH="$HOME/.go"
 export PATH=$GOPATH/bin:$PATH
 
 # vfox
+unset __VFOX_CURTMPPATH
+unset __VFOX_PID
 eval "$(vfox activate bash)"
 
 # atuin
