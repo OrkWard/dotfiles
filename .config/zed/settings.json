@@ -26,7 +26,6 @@
   "always_treat_brackets_as_autoclosed": true,
   "wrap_guides": [19, 39, 59, 79],
   "agent": {
-    "always_allow_tool_actions": true,
     "inline_assistant_model": {
       "provider": "google",
       "model": "gemini-2.0-flash"
