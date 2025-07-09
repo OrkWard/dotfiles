@@ -98,12 +98,8 @@ bind -x '"\C-t":vifm'
 alias rm="rm -r"
 alias mkdir="mkdir -p"
 
-# rust
-export PATH=$HOME/.cargo/bin:$PATH
-
 # go
 export GOPATH="$HOME/.go"
-export PATH=$GOPATH/bin:$PATH
 
 # vfox
 unset __VFOX_CURTMPPATH
