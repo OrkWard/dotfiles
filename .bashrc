@@ -142,9 +142,9 @@ alias ls='ls --color'
 alias ll='ls --color -alh'
 alias la='ls --color -a'
 
-alias bat='bat --theme=GitHub'
+alias bat="bat --theme=GitHub"
 alias serve="caddy file-server . --listen localhost:8080"
-alias tree="broot --cmd ':pt'"
+alias tree="lsd --tree --depth 2"
 
 # acme.sh
 [ -f ~/.acme.sh/acme.sh.env ] && . ~/.acme.sh/acme.sh.env
