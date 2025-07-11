@@ -98,6 +98,9 @@ bind -x '"\C-t":vifm'
 alias rm="rm -r"
 alias mkdir="mkdir -p"
 
+# default workdir
+export D="$HOME/Desktop"
+
 # go
 export GOPATH="$HOME/.go"
 
