@@ -59,6 +59,14 @@
           "arguments": ["-"]
         }
       }
+    },
+    "JavaScript": {
+      "formatter": {
+        "external": {
+          "command": "dprint",
+          "arguments": ["fmt", "--stdin", "js"]
+        }
+      }
     }
   },
   "language_models": {
