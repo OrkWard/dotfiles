@@ -33,10 +33,9 @@
     "default_profile": "write",
     "default_view": "text_thread",
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
-    },
-    "version": "2"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-latest"
+    }
   },
   "buffer_font_fallbacks": ["JetBrainsMono Nerd Font"],
   "format_on_save": "on",
@@ -60,6 +59,11 @@
           "arguments": ["-"]
         }
       }
+    }
+  },
+  "language_models": {
+    "anthropic": {
+      "api_url": "https://api.tu-zi.com"
     }
   },
   "snippet_sort_order": "top"
