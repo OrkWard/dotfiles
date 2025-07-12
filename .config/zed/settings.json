@@ -7,72 +7,71 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
-  "ssh_connections": [
-    {
-      "host": "sur4",
-      "username": "orkward",
-      "projects": [
-        {
-          "paths": ["~/temp"]
-        }
-      ]
-    }
-  ],
-  "proxy": "http://localhost:9090",
-  "features": {
-    "edit_prediction_provider": "none"
-  },
-  "use_autoclose": true,
-  "always_treat_brackets_as_autoclosed": true,
-  "wrap_guides": [19, 39, 59, 79],
   "agent": {
-    "inline_assistant_model": {
-      "provider": "google",
-      "model": "gemini-2.0-flash"
+    "default_model": {
+      "model": "claude-sonnet-4-latest",
+      "provider": "anthropic"
     },
     "default_profile": "write",
     "default_view": "text_thread",
-    "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-latest"
+    "inline_assistant_model": {
+      "model": "gemini-2.0-flash",
+      "provider": "google"
     }
   },
+  "always_treat_brackets_as_autoclosed": true,
   "buffer_font_fallbacks": ["JetBrainsMono Nerd Font"],
-  "format_on_save": "on",
-  "vim_mode": true,
-  "ui_font_size": 14.0,
   "buffer_font_size": 14.0,
-  "relative_line_numbers": true,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
+  "features": {
+    "edit_prediction_provider": "none"
   },
-  "vim": {
-    "use_system_clipboard": "never"
-  },
-  "languages": {
-    "Python": {
-      "formatter": {
-        "external": {
-          "command": "black",
-          "arguments": ["-"]
-        }
-      }
-    },
-    "JavaScript": {
-      "formatter": {
-        "external": {
-          "command": "dprint",
-          "arguments": ["fmt", "--stdin", "js"]
-        }
-      }
-    }
-  },
+  "format_on_save": "on",
   "language_models": {
     "anthropic": {
       "api_url": "https://api.tu-zi.com"
     }
   },
-  "snippet_sort_order": "top"
+  "languages": {
+    "JSONC": {
+      "prettier": {
+        "allowed": true,
+        "jsonRecursiveSort": true,
+        "plugins": ["prettier-plugin-sort-json"]
+      }
+    },
+    "Python": {
+      "formatter": {
+        "external": {
+          "arguments": ["-"],
+          "command": "black"
+        }
+      }
+    }
+  },
+  "proxy": "http://localhost:9090",
+  "relative_line_numbers": true,
+  "snippet_sort_order": "top",
+  "ssh_connections": [
+    {
+      "host": "sur4",
+      "projects": [
+        {
+          "paths": ["~/temp"]
+        }
+      ],
+      "username": "orkward"
+    }
+  ],
+  "theme": {
+    "dark": "One Dark",
+    "light": "One Light",
+    "mode": "system"
+  },
+  "ui_font_size": 14.0,
+  "use_autoclose": true,
+  "vim": {
+    "use_system_clipboard": "never"
+  },
+  "vim_mode": true,
+  "wrap_guides": [19, 39, 59, 79]
 }
