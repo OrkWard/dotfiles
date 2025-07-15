@@ -105,9 +105,13 @@ export D="$HOME/Desktop"
 export GOPATH="$HOME/.go"
 
 # vfox
-unset __VFOX_CURTMPPATH
-unset __VFOX_PID
-eval "$(vfox activate bash)"
+# unset __VFOX_CURTMPPATH
+# unset __VFOX_PID
+# eval "$(vfox activate bash)"
+
+# asdf
+export ASDF_DATA_DIR="$HOME/.local/state/asdf"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # atuin
 eval "$(atuin init bash)"
