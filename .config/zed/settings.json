@@ -34,9 +34,9 @@
   "languages": {
     "JSONC": {
       "prettier": {
-        "allowed": true,
-        "jsonRecursiveSort": true,
-        "plugins": ["prettier-plugin-sort-json"]
+        "allowed": true
+        // "jsonRecursiveSort": true,
+        // "plugins": ["prettier-plugin-sort-json"]
       }
     },
     "Python": {
