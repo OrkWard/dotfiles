@@ -9,14 +9,14 @@
 {
   "agent": {
     "default_model": {
-      "model": "gemini-2.5-pro",
+      "model": "gemini-2.5-flash",
       "provider": "google"
     },
     "default_profile": "write",
     "default_view": "text_thread",
     "inline_assistant_model": {
-      "model": "gemini-2.0-flash",
-      "provider": "google"
+      "model": "claude-3-7-sonnet",
+      "provider": "zed.dev"
     }
   },
   "always_treat_brackets_as_autoclosed": true,
