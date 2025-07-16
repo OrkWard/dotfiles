@@ -110,6 +110,7 @@ export GOPATH="$HOME/.go"
 # eval "$(vfox activate bash)"
 
 # asdf
+export ASDF_CONFIG_FILE="$HOME/.config/asdf/asdfrc"
 export ASDF_DATA_DIR="$HOME/.local/state/asdf"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
