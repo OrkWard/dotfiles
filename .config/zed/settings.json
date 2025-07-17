@@ -15,8 +15,8 @@
     "default_profile": "write",
     "default_view": "text_thread",
     "inline_assistant_model": {
-      "model": "claude-3-7-sonnet",
-      "provider": "zed.dev"
+      "model": "gemini-2.5-flash",
+      "provider": "google"
     }
   },
   "always_treat_brackets_as_autoclosed": true,
