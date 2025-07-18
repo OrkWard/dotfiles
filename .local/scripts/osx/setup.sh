@@ -434,6 +434,10 @@ sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 # Set Simplified Chinese as primary language in Maps
 defaults write com.apple.Maps AppleLanguages -array "zh-Hans" "en-US"
 
+# Set iterm2 to use custom folder as preference store place
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.config/iterm2"
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
