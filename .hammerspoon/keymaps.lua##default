@@ -1,5 +1,5 @@
 hs.hotkey.bind({ "alt" }, "1", function()
-	hs.application.launchOrFocus("Terminal")
+	hs.application.launchOrFocus("iTerm")
 end)
 
 hs.hotkey.bind({ "alt" }, "2", function()
