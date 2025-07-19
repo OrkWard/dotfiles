@@ -6,7 +6,7 @@ elif [ -f /etc/bash_completion ]; then
 fi
 
 # proxy
-export https_proxy="http://sur4:7890"
-export http_proxy="http://sur4:7890"
-export all_proxy="socks5://sur4:7891"
+export https_proxy="http://acer:7890"
+export http_proxy="http://acer:7890"
+export all_proxy="socks5://acer:7891"
 export no_proxy="localhost,127.0.0.1,::1"
