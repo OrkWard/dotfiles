@@ -1363,6 +1363,19 @@
 			</array>
 			<key>Keyboard Map</key>
 			<dict>
+				<key>0x2e-0x80000-0x2f</key>
+				<dict>
+					<key>Action</key>
+					<integer>10</integer>
+					<key>Apply Mode</key>
+					<integer>0</integer>
+					<key>Escaping</key>
+					<integer>2</integer>
+					<key>Text</key>
+					<string>.</string>
+					<key>Version</key>
+					<integer>2</integer>
+				</dict>
 				<key>0x30-0x100000-0x1d</key>
 				<dict>
 					<key>Action</key>
@@ -1458,6 +1471,32 @@
 					<integer>2</integer>
 					<key>Text</key>
 					<string>`</string>
+					<key>Version</key>
+					<integer>2</integer>
+				</dict>
+				<key>0x62-0x80000-0xb</key>
+				<dict>
+					<key>Action</key>
+					<integer>10</integer>
+					<key>Apply Mode</key>
+					<integer>0</integer>
+					<key>Escaping</key>
+					<integer>2</integer>
+					<key>Text</key>
+					<string>b</string>
+					<key>Version</key>
+					<integer>2</integer>
+				</dict>
+				<key>0x66-0x80000-0x3</key>
+				<dict>
+					<key>Action</key>
+					<integer>10</integer>
+					<key>Apply Mode</key>
+					<integer>0</integer>
+					<key>Escaping</key>
+					<integer>2</integer>
+					<key>Text</key>
+					<string>f</string>
 					<key>Version</key>
 					<integer>2</integer>
 				</dict>
