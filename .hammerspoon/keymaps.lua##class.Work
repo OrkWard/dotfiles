@@ -1,44 +1,43 @@
 hs.hotkey.bind({ "alt" }, "1", function()
-    hs.application.launchOrFocus("Alacritty")
+	hs.application.launchOrFocus("iTerm")
 end)
 
 hs.hotkey.bind({ "alt" }, "2", function()
-    hs.application.launchOrFocus("Google Chrome")
+	hs.application.launchOrFocus("Google Chrome")
 end)
 
 hs.hotkey.bind({ "alt" }, "3", function()
-    hs.application.launchOrFocus("Zed")
+	hs.application.launchOrFocus("Zed")
 end)
 
 hs.hotkey.bind({ "alt" }, "4", function()
-    hs.application.launchOrFocus("Lark")
+	hs.application.launchOrFocus("Lark")
 end)
 
 hs.hotkey.bind({ "alt" }, "0", function()
-    hs.application.launchOrFocus("Reminders")
+	hs.application.launchOrFocus("Reminders")
 end)
 
 hs.hotkey.bind({ "alt" }, "9", function()
-    hs.application.launchOrFocus("Proxyman")
+	hs.application.launchOrFocus("Proxyman")
 end)
 
 hs.hotkey.bind({ "alt" }, "8", function()
-    hs.application.launchOrFocus("Figma")
+	hs.application.launchOrFocus("Figma")
 end)
 
 hs.hotkey.bind({ "alt", "shift" }, "C", function()
-    hs.application.launchOrFocus("CotEditor")
+	hs.application.launchOrFocus("CotEditor")
 end)
 
 hs.hotkey.bind({ "alt", "shift" }, "E", function()
-    hs.application.launchOrFocus("Finder")
+	hs.application.launchOrFocus("Finder")
 end)
 
 hs.hotkey.bind({ "alt", "shift" }, "N", function()
-    hs.application.launchOrFocus("Notes")
+	hs.application.launchOrFocus("Notes")
 end)
 
 hs.hotkey.bind({ "alt", "shift" }, "K", function()
-    hs.application.launchOrFocus("Google Chrome Canary")
+	hs.application.launchOrFocus("Google Chrome Canary")
 end)
-
