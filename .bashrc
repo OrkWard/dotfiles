@@ -104,10 +104,10 @@ export D="$HOME/Desktop"
 # go
 export GOPATH="$HOME/.go"
 
-# vfox
-# unset __VFOX_CURTMPPATH
-# unset __VFOX_PID
-# eval "$(vfox activate bash)"
+# rustup
+if [ $(uname -s) == "Darwin" ]; then
+  export PATH="$(brew --prefix rustup)/bin:$PATH"
+fi
 
 # asdf
 export ASDF_CONFIG_FILE="$HOME/.config/asdf/asdfrc"
