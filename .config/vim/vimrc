@@ -62,6 +62,8 @@ g:session_id = strftime("%Y%m%d%H%M%S") .. "_" .. string(rand())
 # ================================== theme =====================================
 set background=light
 colorscheme onehalflight
+highlight Visual ctermfg=NONE ctermbg=153
+highlight SpecialKey ctermfg=252
 
 # ================================== function ==================================
 def g:SynGroup()
@@ -209,6 +211,8 @@ inoremap <C-P> <Up>
 augroup MyGroup
   autocmd!
   autocmd BufWritePost ~/.config/vim/vimrc,~/.config/vim/*.vim :source %
+  autocmd BufNewFile,BufRead * call matchadd('SpecialKey', '\s\+')
+  autocmd BufNewFile,BufRead * call matchadd('NonText', '\n\+')
   # autocmd BufEnter * :call AutoChdir()
 augroup END
 
