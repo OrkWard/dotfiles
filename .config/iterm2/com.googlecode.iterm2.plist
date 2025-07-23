@@ -364,6 +364,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>8CE159F5-0ACC-448A-8918-924BA1DB1B58</string>
+	<key>EnableAPIServer</key>
+	<true/>
 	<key>EnableDivisionView</key>
 	<false/>
 	<key>EnableProxyIcon</key>
@@ -1918,6 +1920,17 @@
 			<real>0.0</real>
 			<key>Treat Option as Alt</key>
 			<true/>
+			<key>Triggers</key>
+			<array>
+				<dict>
+					<key>action</key>
+					<string>MuteCoprocessTrigger</string>
+					<key>parameter</key>
+					<string>/opt/homebrew/bin/trzsz-iterm2 \1</string>
+					<key>regex</key>
+					<string>:(:TRZSZ:TRANSFER:[SRD]:\d+\.\d+\.\d+:\d+)</string>
+				</dict>
+			</array>
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
 			<key>Unlimited Scrollback</key>
@@ -2011,6 +2024,8 @@
 	<true/>
 	<key>SeparateStatusBarsPerPane</key>
 	<false/>
+	<key>SetCookie</key>
+	<true/>
 	<key>ShowFullScreenTabBar</key>
 	<true/>
 	<key>ShowNewOutputIndicator</key>
