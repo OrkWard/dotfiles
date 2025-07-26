@@ -11,7 +11,7 @@ hs.hotkey.bind({ "alt" }, "3", function()
 end)
 
 hs.hotkey.bind({ "alt" }, "4", function()
-	hs.application.launchOrFocus("Lark")
+	hs.application.launchOrFocus("Telegram")
 end)
 
 hs.hotkey.bind({ "alt" }, "0", function()
