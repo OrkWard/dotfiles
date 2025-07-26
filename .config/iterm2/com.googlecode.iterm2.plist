@@ -1926,7 +1926,7 @@
 					<key>action</key>
 					<string>MuteCoprocessTrigger</string>
 					<key>parameter</key>
-					<string>/opt/homebrew/bin/trzsz-iterm2 \1</string>
+					<string>/opt/homebrew/bin/trzsz-iterm2 -p text \1</string>
 					<key>regex</key>
 					<string>:(:TRZSZ:TRANSFER:[SRD]:\d+\.\d+\.\d+:\d+)</string>
 				</dict>
