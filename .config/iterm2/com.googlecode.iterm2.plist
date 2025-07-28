@@ -1459,6 +1459,19 @@
 					<key>Text</key>
 					<string>0x1e</string>
 				</dict>
+				<key>0x60-0x100000-0x32</key>
+				<dict>
+					<key>Action</key>
+					<integer>10</integer>
+					<key>Apply Mode</key>
+					<integer>0</integer>
+					<key>Escaping</key>
+					<integer>2</integer>
+					<key>Text</key>
+					<string>`</string>
+					<key>Version</key>
+					<integer>2</integer>
+				</dict>
 				<key>0x60-0x80000-0x32</key>
 				<dict>
 					<key>Action</key>
@@ -1495,6 +1508,19 @@
 					<integer>2</integer>
 					<key>Text</key>
 					<string>f</string>
+					<key>Version</key>
+					<integer>2</integer>
+				</dict>
+				<key>0x6e-0x80000-0x2d</key>
+				<dict>
+					<key>Action</key>
+					<integer>10</integer>
+					<key>Apply Mode</key>
+					<integer>0</integer>
+					<key>Escaping</key>
+					<integer>2</integer>
+					<key>Text</key>
+					<string>n</string>
 					<key>Version</key>
 					<integer>2</integer>
 				</dict>
@@ -1592,7 +1618,7 @@
 					<key>Version</key>
 					<integer>2</integer>
 				</dict>
-				<key>0xf702-0x260000</key>
+				<key>0xf702-0x280000</key>
 				<dict>
 					<key>Action</key>
 					<integer>10</integer>
@@ -1604,13 +1630,6 @@
 					<string>[D</string>
 					<key>Version</key>
 					<integer>2</integer>
-				</dict>
-				<key>0xf702-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>b</string>
 				</dict>
 				<key>0xf703-0x240000</key>
 				<dict>
@@ -1625,19 +1644,18 @@
 					<key>Version</key>
 					<integer>2</integer>
 				</dict>
-				<key>0xf703-0x260000</key>
-				<dict>
-					<key>Action</key>
-					<integer>10</integer>
-					<key>Text</key>
-					<string>[C</string>
-				</dict>
 				<key>0xf703-0x280000</key>
 				<dict>
 					<key>Action</key>
 					<integer>10</integer>
+					<key>Apply Mode</key>
+					<integer>0</integer>
+					<key>Escaping</key>
+					<integer>1</integer>
 					<key>Text</key>
-					<string>f</string>
+					<string>[C</string>
+					<key>Version</key>
+					<integer>2</integer>
 				</dict>
 				<key>0xf708-0x20000</key>
 				<dict>
