@@ -117,9 +117,6 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 # atuin
 eval "$(atuin init bash)"
 
-# tldr
-export TLDR_AUTO_UPDATE_DISABLED=1
-
 # cd
 alias ..="cd .."
 alias ...="cd ../.."
