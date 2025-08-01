@@ -202,6 +202,9 @@ inoremap <C-F> <Right>
 inoremap <C-N> <Down>
 inoremap <C-P> <Up>
 
+# For some mysteries reason, <ESC><BS> don't work properly in terminal
+# First set it to <F13>, then map <F13> to <C-W>
+# Unfortunately, there are still problems to solve in :term mode
 if !has("gui_running")
   execute "set <F13>=\<Esc>" .. &t_kb
   cnoremap <F13> <C-W>
