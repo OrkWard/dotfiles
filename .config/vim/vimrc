@@ -63,7 +63,7 @@ g:session_id = strftime("%Y%m%d%H%M%S") .. "_" .. string(rand())
 set background=light
 colorscheme onehalflight
 highlight Visual ctermfg=NONE ctermbg=153 guifg=NONE
-highlight SpecialKey term=bold ctermfg=252 guifg=#e5e5e5
+highlight SpecialKey term=bold ctermfg=252 guifg=#d7d7d7
 
 # ================================== function ==================================
 def g:SynGroup()
