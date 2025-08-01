@@ -22,6 +22,9 @@
   "always_treat_brackets_as_autoclosed": true,
   "buffer_font_fallbacks": ["JetBrainsMono Nerd Font"],
   "buffer_font_size": 14.0,
+  "collaboration_panel": {
+    "button": false
+  },
   "features": {
     "edit_prediction_provider": "none"
   },
@@ -62,6 +65,9 @@
       "username": "orkward"
     }
   ],
+  "title_bar": {
+    "show_sign_in": false
+  },
   "theme": {
     "dark": "One Dark",
     "light": "One Light",
