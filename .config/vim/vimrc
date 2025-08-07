@@ -61,36 +61,11 @@ highlight Visual cterm=NONE ctermfg=NONE ctermbg=153 guifg=NONE
 highlight SpecialKey cterm=nocombine ctermfg=252 guifg=#d7d7d7
 
 # ================================== function ==================================
+# get current syntax highlight group under cursor
 def g:SynGroup()
   var s = synID(line('.'), col('.'), 1)
   echo synIDattr(s, 'name') .. ' -> ' .. synIDattr(synIDtrans(s), 'name')
 enddef
-
-
-# cd to root of git repository
-def g:AutoChdir()
-  var dir = expand('%:p:h')
-
-  # somehow under ~/.config/vim, just goto here
-  if dir =~# '\.config\/vim'
-    cd ~/.config/vim
-  endif
-
-  while dir !=# "/"
-    if isdirectory(dir .. '/.git/')
-      cd `=dir`
-    endif
-    dir = fnamemodify(dir, ':h')
-  endwhile
-enddef
-
-# def g:SwitchListchars(): void
-#   if &list
-#     set nolist
-#   else
-#     set list
-#   endif
-# enddef
 
 def TabMessage(cmd: string)
   var message: string = ""
@@ -121,9 +96,6 @@ command! -nargs=+ -complete=command SaveMessage call SaveMessage(<q-args>)
 # =================================== keymap ===================================
 g:mapleader = " "
 set pastetoggle=<F11>
-# using F12 to switch listchars
-# nnoremap <F12> :<C-u>call SwitchListchars()<CR>
-# vnoremap <F12> :<C-u>call SwitchListchars()<CR>gv
 
 # some useful map
 nnoremap Y y$
@@ -217,7 +189,6 @@ augroup MyGroup
   autocmd BufWritePost ~/.config/vim/vimrc,~/.config/vim/*.vim :source %
   autocmd BufNewFile,BufRead * call matchadd('SpecialKey', '\s\+')
   autocmd BufNewFile,BufRead * call matchadd('NonText', '\n\+')
-  # autocmd BufEnter * :call AutoChdir()
 augroup END
 
 # =================================== gui ======================================
