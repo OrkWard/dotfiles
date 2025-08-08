@@ -73,5 +73,12 @@
     "bindings": {
       "cmd-h": "pane::SplitLeft"
     }
+  },
+  {
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      "s": "vim::PushSneak",
+      "shift-s": "vim::PushSneakBackward"
+    }
   }
 ]
