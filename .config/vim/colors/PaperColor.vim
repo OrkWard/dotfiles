@@ -1751,7 +1751,7 @@ fun! s:apply_syntax_highlightings()
   " Haskell Highlighting
   if s:langOpt_haskell__no_bold_types == 1
     exec 'hi haskellType' . s:fg_aqua
-  else 
+  else
     exec 'hi haskellType' . s:fg_aqua . s:ft_bold
   endif
   exec 'hi haskellIdentifier' . s:fg_orange . s:ft_bold
