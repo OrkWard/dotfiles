@@ -8,5 +8,5 @@ yq "load(\"${SOURCE_CONFIG}\").proxies as \$p | .proxies = \$p |
 (.proxy-groups.[] | select(.name == \"AI\").proxies) += \$n |
 (.proxy-groups.[] | select(.name == \"Telegram\").proxies) += \$n |
 (.proxy-groups.[] | select(.name == \"Download\").proxies) += \$n |
-(.proxy-groups.[] | select(.name == \"Google\").proxies) += \$n |
+(.proxy-groups.[] | select(.name == \"Microsoft\").proxies) += \$n |
 (.proxy-groups.[] | select(.name == \"Final\").proxies) += \$n"  ${TEMPLATE}
