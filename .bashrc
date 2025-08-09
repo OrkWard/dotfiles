@@ -83,6 +83,7 @@ load_module bash-preexec
 load_module broot
 load_module lf
 load_module tailscale
+load_module pnpm
 
 # ---------------------------- Misc ------------------------------
 # custom path for local bin and local script
