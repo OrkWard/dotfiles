@@ -5,6 +5,7 @@ local inspect = require("inspect")
 local inputSourceMap = {
 	["Alacritty"] = "ABC",
 	["iTerm2"] = "ABC",
+	["Ghostty"] = "ABC",
 	["Zed"] = "ABC",
 	["MacVim"] = "ABC",
 	["CotEditor"] = "微信输入法",
