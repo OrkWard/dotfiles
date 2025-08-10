@@ -1,4 +1,5 @@
 font-size = 14
-theme = "OneHalfLight"
-cursor-color = "#383a42"
-cursor-text = "#eeeeee"
+theme = OneHalfLight
+cursor-color = #383a42
+cursor-text = #eeeeee
+shell-integration-features = no-cursor
