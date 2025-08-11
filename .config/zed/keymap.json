@@ -80,5 +80,11 @@
       "s": "vim::PushSneak",
       "shift-s": "vim::PushSneakBackward"
     }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-k cmd-s": "zed::OpenKeymap"
+    }
   }
 ]

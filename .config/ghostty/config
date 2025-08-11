@@ -1,7 +1,11 @@
 font-size = 14
-# font-family = BlexMono Nerd Font
+font-family = iMWritingMono Nerd Font
+adjust-cell-width = -10%
+font-thicken = true
 theme = OneHalfLight
 cursor-color = #383a42
 cursor-text = #eeeeee
 shell-integration-features = no-cursor
+macos-option-as-alt = true
+
 
