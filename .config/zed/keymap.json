@@ -21,7 +21,8 @@
   {
     "context": "Workspace",
     "bindings": {
-      "f1": "command_palette::Toggle"
+      "f1": "command_palette::Toggle",
+      "cmd-k cmd-s": "zed::OpenKeymap"
       // "cmd-?": null
     }
   },
@@ -65,7 +66,11 @@
   {
     "context": "VimControl && !menu",
     "bindings": {
-      "g r": "editor::FindAllReferences"
+      "g r": "editor::FindAllReferences",
+      "w": "vim::NextSubwordStart",
+      "b": "vim::PreviousSubwordStart",
+      "e": "vim::NextSubwordEnd",
+      "g e": "vim::PreviousSubwordEnd"
     }
   },
   {
@@ -82,9 +87,9 @@
     }
   },
   {
-    "context": "Workspace",
+    "context": "vim_mode == visual",
     "bindings": {
-      "cmd-k cmd-s": "zed::OpenKeymap"
+      "shift-x": "vim::Exchange"
     }
   }
 ]
