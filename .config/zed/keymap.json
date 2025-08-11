@@ -66,24 +66,13 @@
   {
     "context": "VimControl && !menu",
     "bindings": {
-      "g r": "editor::FindAllReferences",
-      "w": "vim::NextSubwordStart",
-      "b": "vim::PreviousSubwordStart",
-      "e": "vim::NextSubwordEnd",
-      "g e": "vim::PreviousSubwordEnd"
+      "g r": "editor::FindAllReferences"
     }
   },
   {
     "context": "FileFinder || (FileFinder > Picker > Editor) || (FileFinder > Picker > menu)",
     "bindings": {
       "cmd-h": "pane::SplitLeft"
-    }
-  },
-  {
-    "context": "vim_mode == normal || vim_mode == visual",
-    "bindings": {
-      "s": "vim::PushSneak",
-      "shift-s": "vim::PushSneakBackward"
     }
   },
   {
