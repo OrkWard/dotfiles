@@ -1,3 +1,5 @@
+config-file = keybind
+
 font-size = 14
 font-family = iMWritingMono Nerd Font
 adjust-cell-width = -10%
