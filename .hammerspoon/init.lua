@@ -19,6 +19,14 @@ local inputSourceType = {
 	["微信输入法"] = "method",
 }
 
+-- hs.hotkey.bind({ "fn" }, "1", function()
+-- 	hs.keycodes.setLayout("ABC")
+-- end)
+
+-- hs.hotkey.bind({ "fn" }, "2", function()
+-- 	hs.keycodes.setMethod("微信输入法")
+-- end)
+
 local function startInputSourceSwitch()
 	local appsToWatch = {}
 	for k in pairs(inputSourceMap) do
