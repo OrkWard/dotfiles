@@ -1,5 +1,7 @@
 font-size = 14
+# font-family = BlexMono Nerd Font
 theme = OneHalfLight
 cursor-color = #383a42
 cursor-text = #eeeeee
 shell-integration-features = no-cursor
+
