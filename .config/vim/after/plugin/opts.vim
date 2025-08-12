@@ -40,8 +40,3 @@ if exists('g:loaded_lsp')
   nnoremap <silent> <leader>a :<C-U>LspCodeAction<CR>
 endif
 
-" Don't add comment with or
-set formatoptions-=or
-" Don't limit line width
-set tw=0
-

@@ -1,7 +1,8 @@
 vim9script
 source $VIMRUNTIME/defaults.vim
 
-set expandtab tabstop=2 shiftwidth=2 softtabstop=-1 smartindent # indent
+set expandtab tabstop=2 shiftwidth=2 softtabstop=-1
+set smartindent
 set relativenumber number
 set hidden
 set encoding=utf-8
@@ -55,10 +56,14 @@ packadd comment
 g:session_id = strftime("%Y%m%d%H%M%S") .. "_" .. string(rand())
 
 # ================================== theme =====================================
-set background=light
 colorscheme onehalflight
 highlight Visual cterm=NONE ctermfg=NONE ctermbg=153 guifg=NONE
 highlight SpecialKey cterm=nocombine ctermfg=252 guifg=#d7d7d7
+augroup MyTheme
+  autocmd!
+  autocmd BufNewFile,BufRead * call matchadd('SpecialKey', '\s\+')
+  autocmd BufNewFile,BufRead * call matchadd('NonText', '\n\+')
+augroup END
 
 # ================================== function ==================================
 # get current syntax highlight group under cursor
@@ -152,8 +157,8 @@ enddef
 
 command EditFiletype call EditFtplugin(false)
 command EditFiletypeAfter call EditFtplugin(true)
-command EditOption edit ~/.config/vim/plugin/opts.vim
-command EditOptionAfter edit ~/.config/vim/after/plugin/opts.vim
+command EditCustomOption edit ~/.config/vim/plugin/custom-plugin-options.vim
+command EditCustomOptionAfter edit ~/.config/vim/after/plugin/opts.vim
 command EditRc edit $MYVIMRC
 command ViewPluginFile :Files ~/.local/share/vim-plug
 
@@ -188,8 +193,6 @@ endif
 augroup MyGroup
   autocmd!
   autocmd BufWritePost ~/.config/vim/vimrc,~/.config/vim/*.vim :source %
-  autocmd BufNewFile,BufRead * call matchadd('SpecialKey', '\s\+')
-  autocmd BufNewFile,BufRead * call matchadd('NonText', '\n\+')
 augroup END
 
 # =================================== gui ======================================
