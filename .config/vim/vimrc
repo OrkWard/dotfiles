@@ -155,6 +155,7 @@ command EditFiletypeAfter call EditFtplugin(true)
 command EditOption edit ~/.config/vim/plugin/opts.vim
 command EditOptionAfter edit ~/.config/vim/after/plugin/opts.vim
 command EditRc edit $MYVIMRC
+command ViewPluginFile :Files ~/.local/share/vim-plug
 
 # Emacs-keys
 cnoremap <C-A> <Home>

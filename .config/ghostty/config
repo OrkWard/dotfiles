@@ -2,6 +2,7 @@ config-file = keybind
 
 font-size = 14
 font-family = BlexMono Nerd Font Mono
+font-family = IBM Plex Sans SC
 # adjust-cell-width = -15%
 font-thicken = true
 theme = OneHalfLight
