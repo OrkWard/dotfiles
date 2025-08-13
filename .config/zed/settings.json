@@ -9,8 +9,8 @@
 {
   "agent": {
     "default_model": {
-      "model": "claude-sonnet-4-latest",
-      "provider": "anthropic"
+      "model": "z-ai/glm-4.5v",
+      "provider": "openrouter"
     },
     "default_profile": "write",
     "default_view": "text_thread",
