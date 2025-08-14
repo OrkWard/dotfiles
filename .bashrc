@@ -100,7 +100,7 @@ alias rm="rm -r"
 alias mkdir="mkdir -p"
 
 # default workdir
-export D="$HOME/Desktop"
+export T="$HOME/Temp"
 
 # go
 export GOPATH="$HOME/.go"
