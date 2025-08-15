@@ -31,7 +31,7 @@ hs.hotkey.bind({ "alt", "shift" }, "C", function()
 end)
 
 hs.hotkey.bind({ "alt", "shift" }, "N", function()
-	hs.application.launchOrFocus("iA Writer")
+	hs.application.launchOrFocus("Notes")
 end)
 
 hs.hotkey.bind({ "alt", "shift" }, "E", function()
