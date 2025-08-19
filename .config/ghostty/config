@@ -11,4 +11,5 @@ cursor-text = #eeeeee
 cursor-style-blink = false
 shell-integration-features = no-cursor
 macos-option-as-alt = true
+confirm-close-surface = false
 
