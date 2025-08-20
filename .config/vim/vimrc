@@ -40,6 +40,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'alvan/vim-closetag'
 Plug 'sbdchd/neoformat'
 Plug 'kylelaker/riscv.vim'
@@ -68,35 +69,13 @@ def g:SynGroup()
   echo synIDattr(s, 'name') .. ' -> ' .. synIDattr(synIDtrans(s), 'name')
 enddef
 
-def TabMessage(cmd: string)
-  var message: string = ""
-  redir => message
-  silent execute cmd
-  redir END
-  if empty(message)
-    echoerr "no output"
-  else
-    # use "new" instead of "tabnew" below if you prefer split windows instead of tabs
-    tabnew
-    setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
-    silent put = message
-  endif
-enddef
-command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
-
-def SaveMessage(cmd: string)
-  redir @"
-  silent execute cmd
-  redir END
-  if empty(@")
-    echoerr "no output"
-  endif
-enddef
-command! -nargs=+ -complete=command SaveMessage call SaveMessage(<q-args>)
-
 # =================================== keymap ===================================
 g:mapleader = " "
-set pastetoggle=<F11>
+
+def Nohighlight()
+  nohl
+  return ''
+enddef
 
 # some useful map
 nnoremap Y y$
@@ -129,10 +108,6 @@ def ScrollPopup(down: number): number
 
   return 1
 enddef
-
-# auto pair
-# inoremap {<CR> {<CR>}<ESC>O
-# inoremap [<CR> [<CR>]<ESC>O
 
 def EditFtplugin()
   var filetype = &filetype
