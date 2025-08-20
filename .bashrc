@@ -78,10 +78,9 @@ load_module less
 load_module git
 load_module fzf
 # load_module complete-alias
-load_module autojump
 load_module bash-preexec
-load_module broot
-load_module lf
+# load_module broot
+# load_module lf
 load_module tailscale
 load_module pnpm
 
@@ -151,6 +150,9 @@ alias la='ls --color -a'
 alias bat="bat --theme=GitHub"
 alias serve="caddy file-server . --listen localhost:8080"
 alias tree="lsd --tree --depth 2"
+
+# zoxide
+eval "$(zoxide init bash --cmd j)"
 
 # acme.sh
 [ -f ~/.acme.sh/acme.sh.env ] && . ~/.acme.sh/acme.sh.env
