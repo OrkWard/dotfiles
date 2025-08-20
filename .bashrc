@@ -147,6 +147,7 @@ alias l='ls --color'
 alias ls='ls --color'
 alias ll='ls --color -alh'
 alias la='ls --color -a'
+alias recent='ls --color -tlh | head'
 
 alias bat="bat --theme=GitHub"
 alias serve="caddy file-server . --listen localhost:8080"
