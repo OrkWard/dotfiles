@@ -1,6 +1,7 @@
 vim9script
 source $VIMRUNTIME/defaults.vim
 
+# ================================== option =====================================
 set expandtab tabstop=2 shiftwidth=2 softtabstop=-1
 set smartindent
 set relativenumber number
@@ -32,20 +33,16 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-scriptease'
-# Plug 'rose-pine/vim'
-# Plug 'tpope/vim-sleuth'
 Plug 'haya14busa/incsearch.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'alvan/vim-closetag'
-# Plug 'vifm/vifm.vim'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'OrkWard/lsp'
 Plug 'sbdchd/neoformat'
-Plug 'girishji/vimcomplete'
 Plug 'kylelaker/riscv.vim'
 Plug 'neoclide/jsonc.vim'
 call plug#end()
@@ -72,35 +69,13 @@ def g:SynGroup()
   echo synIDattr(s, 'name') .. ' -> ' .. synIDattr(synIDtrans(s), 'name')
 enddef
 
-def TabMessage(cmd: string)
-  var message: string = ""
-  redir => message
-  silent execute cmd
-  redir END
-  if empty(message)
-    echoerr "no output"
-  else
-    # use "new" instead of "tabnew" below if you prefer split windows instead of tabs
-    tabnew
-    setlocal buftype=nofile bufhidden=wipe noswapfile nobuflisted nomodified
-    silent put = message
-  endif
-enddef
-command! -nargs=+ -complete=command TabMessage call TabMessage(<q-args>)
-
-def SaveMessage(cmd: string)
-  redir @"
-  silent execute cmd
-  redir END
-  if empty(@")
-    echoerr "no output"
-  endif
-enddef
-command! -nargs=+ -complete=command SaveMessage call SaveMessage(<q-args>)
-
 # =================================== keymap ===================================
 g:mapleader = " "
-set pastetoggle=<F11>
+
+def Nohighlight()
+  nohl
+  return ''
+enddef
 
 # some useful map
 nnoremap Y y$
@@ -134,31 +109,18 @@ def ScrollPopup(down: number): number
   return 1
 enddef
 
-# auto pair
-# inoremap {<CR> {<CR>}<ESC>O
-# inoremap [<CR> [<CR>]<ESC>O
-
-def EditFtplugin(after: bool)
+def EditFtplugin()
   var filetype = &filetype
 
   if filetype == ''
     return
   endif
 
-  var ftplugin_path = ''
-  if after == true
-    ftplugin_path = '~/.config/vim/after/ftplugin/' .. filetype .. '.vim'
-  else
-    ftplugin_path = '~/.config/vim/ftplugin/' .. filetype .. '.vim'
-  endif
-
-  execute 'edit ' .. ftplugin_path
+  execute 'edit ~/.config/vim/after/ftplugin/' .. filetype .. '.vim'
 enddef
 
-command EditFiletype call EditFtplugin(false)
-command EditFiletypeAfter call EditFtplugin(true)
-command EditCustomOption edit ~/.config/vim/plugin/custom-plugin-options.vim
-command EditCustomOptionAfter edit ~/.config/vim/after/plugin/opts.vim
+command EditFiletype call EditFtplugin()
+command EditPluginOption edit ~/.config/vim/after/plugin/plugin-options.vim
 command EditRc edit $MYVIMRC
 command ViewPluginFile :Files ~/.local/share/vim-plug
 

@@ -9,8 +9,8 @@
 {
   "agent": {
     "default_model": {
-      "model": "anthropic/claude-3.7-sonnet",
-      "provider": "openrouter"
+      "model": "gemini-2.5-flash",
+      "provider": "google"
     },
     "default_profile": "write",
     "default_view": "text_thread",
