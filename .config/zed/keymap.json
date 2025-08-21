@@ -53,7 +53,8 @@
     "context": "vim_mode == insert",
     "bindings": {
       "alt-b": "vim::PreviousWordStart",
-      "alt-f": "vim::NextWordStart"
+      "alt-f": "vim::NextWordStart",
+      "ctrl-e": "editor::MoveToEndOfLine"
     }
   },
   {
