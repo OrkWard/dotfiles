@@ -8,8 +8,6 @@ local inputSourceMap = {
 	["Ghostty"] = "ABC",
 	["Zed"] = "ABC",
 	["MacVim"] = "ABC",
-	["CotEditor"] = "微信输入法",
-	["飞书"] = "微信输入法",
 	["Android Studio"] = "ABC",
 	["qutebrowser"] = "ABC",
 }
