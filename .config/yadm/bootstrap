@@ -19,10 +19,8 @@ if [ "$system_type" = "Linux" ]; then
   if command -v pacman >/dev/null 2>&1; then
     echo "Update pacman"
     sudo pacman -Syu --noconfirm
-    sudo pacman -S bash-completion base-devel difftastic gdb caddy mise atuin tldr tealdeer vim bat ripgrep fzf glow broot lf tmux fd --noconfirm
+    sudo pacman -S bash-completion base-devel difftastic gdb caddy atuin tealdeer vim bat ripgrep fzf glow tmux fd --noconfirm
   fi
-
-  mise install
 fi
 
 if command -v vim >/dev/null 2>&1; then
