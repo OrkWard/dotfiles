@@ -88,5 +88,11 @@
     "bindings": {
       "shift-x": "vim::Exchange"
     }
+  },
+  {
+    "context": "AgentPanel && external_agent_thread",
+    "bindings": {
+      "alt-cmd-t": "agent::NewTextThread"
+    }
   }
 ]
