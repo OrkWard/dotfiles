@@ -92,7 +92,8 @@
   {
     "context": "AgentPanel && external_agent_thread",
     "bindings": {
-      "alt-cmd-t": "agent::NewTextThread"
+      "alt-cmd-t": "agent::NewTextThread",
+      "cmd-n": "agent::NewThread"
     }
   }
 ]
