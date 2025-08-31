@@ -49,6 +49,13 @@
           "command": "black"
         }
       }
+    },
+    "Elm": {
+      "formatter": "prettier",
+      "prettier": {
+        "allowed": true,
+        "plugins": ["prettier-plugin-elm"]
+      }
     }
   },
   "proxy": "http://localhost:9090",
