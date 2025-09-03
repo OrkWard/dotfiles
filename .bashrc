@@ -14,7 +14,7 @@ esac
 export EDITOR=vim
 export LS_COLORS=
 
-if [ $(uname -s) == "Darwin" ]; then
+if [ "$(uname -s)" == "Darwin" ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
   export HOMEBREW_NO_ENV_HINTS=1
 fi
@@ -59,8 +59,8 @@ config_dir=$XDG_CONFIG_HOME/bash
 load_module() {
   plugin="$config_dir/$1"
   if [ -f "$plugin.bash" ]; then
-    . $plugin.bash
-  elif [ -d $plugin ]; then
+    . "$plugin.bash"
+  elif [ -d "$plugin" ]; then
     for plug_component in "$plugin"/*.bash; do
       if [ -f "$plug_component" ] && [ "$plug_component" != "$plugin/config.bash" ]; then
         . "$plug_component"
@@ -120,7 +120,7 @@ export T="$HOME/Temp"
 export GOPATH="$HOME/.go"
 
 # rustup
-if [ $(uname -s) == "Darwin" ]; then
+if [ "$(uname -s)" == "Darwin" ]; then
   prepand_path "$(brew --prefix rustup)/bin"
 fi
 
