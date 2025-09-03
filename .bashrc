@@ -15,6 +15,7 @@ export LS_COLORS=
 
 if [ $(uname -s) == "Darwin" ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
+  export HOMEBREW_NO_ENV_HINTS=1
 fi
 
 # language
