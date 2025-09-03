@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 # If not running interactively, don't do anything
 case $- in
   *i*) ;;
@@ -86,8 +87,21 @@ load_module tailscale
 load_module pnpm
 
 # ---------------------------- Misc ------------------------------
+prepand_path() {
+  new_path=$1
+
+  case ":${PATH}:" in
+    *:"$new_path":*)
+      ;;
+    *)
+      export PATH="$new_path:$PATH"
+      ;;
+  esac
+}
+
 # custom path for local bin and local script
-export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"
+prepand_path "$HOME/.local/bin"
+prepand_path "$HOME/.local/scripts"
 
 # keybinding
 bind -x '"\C-t":vifm'
@@ -107,13 +121,13 @@ export GOPATH="$HOME/.go"
 
 # rustup
 if [ $(uname -s) == "Darwin" ]; then
-  export PATH="$(brew --prefix rustup)/bin:$PATH"
+  prepand_path "$(brew --prefix rustup)/bin"
 fi
 
 # asdf
 export ASDF_CONFIG_FILE="$HOME/.config/asdf/asdfrc"
 export ASDF_DATA_DIR="$HOME/.local/state/asdf"
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+prepand_path "${ASDF_DATA_DIR}/shims"
 
 # atuin
 eval "$(atuin init bash)"
