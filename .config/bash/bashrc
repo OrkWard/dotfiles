@@ -53,7 +53,7 @@ PS1+='\[\033[0m\]'
 PS1+="\n"
 PS1+='\[\033]133;A\033\\\]$ '
 
-# ---------------------- Applications ----------------------
+# ---------------------- Modules ----------------------
 config_dir=$XDG_CONFIG_HOME/bash
 
 load_module() {
@@ -79,14 +79,14 @@ load_module ni
 load_module less
 load_module git
 load_module fzf
+load_module autojump
 # load_module complete-alias
 load_module bash-preexec
-# load_module broot
 # load_module lf
 load_module tailscale
 load_module pnpm
 
-# ---------------------------- Misc ------------------------------
+# ---------------------------- Misc ----------------------------
 prepand_path() {
   new_path=$1
 
@@ -162,9 +162,6 @@ alias recent='ls --color -tlh | head'
 alias bat="bat --theme=GitHub"
 alias serve="caddy file-server . --listen localhost:8080"
 alias tree="lsd --tree --depth 2"
-
-# zoxide
-eval "$(zoxide init bash --cmd j)"
 
 # acme.sh
 [ -f ~/.acme.sh/acme.sh.env ] && . ~/.acme.sh/acme.sh.env
