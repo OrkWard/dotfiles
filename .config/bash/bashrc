@@ -74,6 +74,7 @@ load_module() {
   fi
 }
 
+load_module utils # utils first
 load_module local
 load_module ni
 load_module less
@@ -87,18 +88,6 @@ load_module tailscale
 load_module pnpm
 
 # ---------------------------- Misc ----------------------------
-prepand_path() {
-  new_path=$1
-
-  case ":${PATH}:" in
-    *:"$new_path":*)
-      ;;
-    *)
-      export PATH="$new_path:$PATH"
-      ;;
-  esac
-}
-
 # custom path for local bin and local script
 prepand_path "$HOME/.local/bin"
 prepand_path "$HOME/.local/scripts"
