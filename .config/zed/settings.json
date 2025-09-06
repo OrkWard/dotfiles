@@ -9,8 +9,8 @@
 {
   "agent": {
     "default_model": {
-      "model": "gemini-2.5-flash",
-      "provider": "google"
+      "model": "anthropic/claude-3.7-sonnet",
+      "provider": "openrouter"
     },
     "default_profile": "write",
     "default_view": "text_thread",
@@ -29,11 +29,6 @@
     "edit_prediction_provider": "none"
   },
   "format_on_save": "on",
-  "language_models": {
-    "anthropic": {
-      "api_url": "https://api.tu-zi.com"
-    }
-  },
   "languages": {
     "JSONC": {
       "prettier": {
@@ -61,17 +56,6 @@
   "proxy": "http://localhost:9090",
   "relative_line_numbers": true,
   "snippet_sort_order": "top",
-  "ssh_connections": [
-    {
-      "host": "sur4",
-      "projects": [
-        {
-          "paths": ["~/temp"]
-        }
-      ],
-      "username": "orkward"
-    }
-  ],
   "title_bar": {
     "show_sign_in": false
   },
