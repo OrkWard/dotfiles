@@ -128,6 +128,8 @@ alias ....="cd ../../.."
 
 # vim
 alias vn="nvim ~/.config/nvim/init.lua"
+alias vb="tmuxinator bash"
+alias vb="tmuxinator vim-plug"
 alias vt="vim ~/.config/tmux/tmux.conf"
 alias v3="vim ~/.config/i3/config"
 
