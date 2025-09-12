@@ -9,7 +9,7 @@
 {
   "agent": {
     "default_model": {
-      "model": "anthropic/claude-3.7-sonnet",
+      "model": "x-ai/grok-4",
       "provider": "openrouter"
     },
     "default_profile": "write",
