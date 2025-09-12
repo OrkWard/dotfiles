@@ -40,9 +40,6 @@ export HISTCONTROL=ignoredups:erasedups:ignoreboth
 export HISTSIZE=10000
 export HISTFILESIZE=20000
 
-# remove mail check
-unset MAILCHECK
-
 # --------------------- color & prompt ---------------------
 PS1=''
 PS1+='\[\033[32m\]\u '
@@ -129,7 +126,7 @@ alias ....="cd ../../.."
 # vim
 alias vn="nvim ~/.config/nvim/init.lua"
 alias vb="tmuxinator bash"
-alias vb="tmuxinator vim-plug"
+alias vv="tmuxinator vim-plug"
 alias vt="vim ~/.config/tmux/tmux.conf"
 alias v3="vim ~/.config/i3/config"
 
