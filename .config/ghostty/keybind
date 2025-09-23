@@ -6,6 +6,10 @@ keybind = cmd+3=esc:3
 keybind = cmd+4=esc:4
 keybind = cmd+5=esc:5
 keybind = cmd+d=esc:d
+keybind = cmd+h=esc:h
+keybind = cmd+l=esc:l
+keybind = cmd+j=esc:j
+keybind = cmd+k=esc:k
 keybind = shift+cmd+d=esc:D
 keybind = cmd+grave_accent=esc:`
 keybind = alt+grave_accent=esc:`
