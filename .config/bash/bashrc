@@ -80,7 +80,7 @@ load_module local
 load_module less
 load_module git
 load_module fzf
-# load_module autojump
+load_module autojump
 # load_module complete-alias
 load_module tailscale
 load_module ni
@@ -119,6 +119,9 @@ eval "$(atuin init bash)"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+
+# direnv
+eval "$(direnv hook bash)"
 
 # vim
 alias vn="nvim ~/.config/nvim/init.lua"
