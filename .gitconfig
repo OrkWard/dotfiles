@@ -1,40 +1,39 @@
+# vim: noexpandtab
 [core]
-  ignorecase = false
-  excludesFile = ~/.config/git/ignore
-  ; pager = delta
+	ignorecase = false
+	excludesFile = ~/.config/git/ignore
+	; pager = delta
 [interactive]
-  ; diffFilter = delta --color-only
+	; diffFilter = delta --color-only
 [delta]
-  navigate = true
-  line-number = true
-  light = true
-  side-by-side = true
+	navigate = true
+	line-number = true
+	light = true
+	side-by-side = true
 [pull]
-  rebase = false
+	rebase = false
 [commit]
-  gpgsign = true
+	gpgsign = true
 [merge]
-  conflictstyle = zdiff3
+	conflictstyle = zdiff3
 [diff]
-  external = difft
+	external = difft
 [include]
-  path = .gitconfig.local
+	path = .gitconfig.local
 [alias]
-  co = checkout
-  b = branch
-  c = commit
-  s = status
-  p = pull
-  ps = push
-  d = diff
-  sw = switch
-  m = merge
-  adog = log --all --decorate --oneline --graph
-  dog = log --decorate --oneline --graph
-  a = add
+	co = checkout
+	b = branch
+	c = commit
+	s = status
+	p = pull
+	ps = push
+	d = diff
+	sw = switch
+	m = merge
+	adog = log --all --decorate --oneline --graph
+	dog = log --decorate --oneline --graph
+	a = add
 [init]
-  defaultBranch = master
-[credential]
-  helper = cache
+	defaultBranch = master
 [push]
-  autoSetupRemote = true
+	autoSetupRemote = true

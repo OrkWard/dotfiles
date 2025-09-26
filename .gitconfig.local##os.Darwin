@@ -1,10 +1,17 @@
+# vim: ft=gitconfig noexpandtab
 [user]
 	name = orkward
 	email = orkward_o@outlook.com
 [gpg]
 	program = /opt/homebrew/bin/gpg
 [http]
-  proxy = http://localhost:9090
+	proxy = http://localhost:9090
 [https]
-  proxy = http://localhost:9090
+	proxy = http://localhost:9090
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
 

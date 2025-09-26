@@ -1,7 +1,15 @@
+# vim: ft=gitconfig noexpandtab
 [user]
 	name = caizelun
 	email = caizelun.2@bytedance.com
 [gpg]
 	program = /opt/homebrew/bin/gpg
 [url "ssh://git@code.byted.org/"]
-  insteadOf = https://code.byted.org/
+	insteadOf = https://code.byted.org/
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+
