@@ -35,5 +35,9 @@
 	a = add
 [init]
 	defaultBranch = master
+[url "https://github.com/"]
+	insteadOf = git@github.com:
+[credential]
+	helper = cache
 [push]
 	autoSetupRemote = true
