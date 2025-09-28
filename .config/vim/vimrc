@@ -45,6 +45,7 @@ Plug 'alvan/vim-closetag'
 Plug 'sbdchd/neoformat'
 Plug 'kylelaker/riscv.vim'
 Plug 'neoclide/jsonc.vim'
+Plug 'skywind3000/asyncrun.vim'
 call plug#end()
 
 packadd comment
