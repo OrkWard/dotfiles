@@ -17,7 +17,9 @@ keybind = alt+b=esc:b
 keybind = alt+f=esc:f
 keybind = alt+n=esc:n
 keybind = alt+v=esc:v
+keybind = alt+shift+8=esc:*
 keybind = alt+backspace=text:\x1b\x7f
 keybind = shift+cmd+1=goto_tab:1
 keybind = shift+cmd+2=goto_tab:2
 keybind = shift+cmd+3=goto_tab:3
+
