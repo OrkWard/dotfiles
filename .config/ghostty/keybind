@@ -1,10 +1,10 @@
 keybind = alt+period=esc:.
-keybind = cmd+0=esc:0
-keybind = cmd+1=esc:1
-keybind = cmd+2=esc:2
-keybind = cmd+3=esc:3
-keybind = cmd+4=esc:4
-keybind = cmd+5=esc:5
+keybind = cmd+digit_0=esc:0
+keybind = cmd+digit_1=esc:1
+keybind = cmd+digit_2=esc:2
+keybind = cmd+digit_3=esc:3
+keybind = cmd+digit_4=esc:4
+keybind = cmd+digit_5=esc:5
 keybind = cmd+d=esc:d
 keybind = cmd+h=esc:h
 keybind = cmd+l=esc:l
