@@ -10,6 +10,7 @@ keybind = cmd+h=esc:h
 keybind = cmd+l=esc:l
 keybind = cmd+j=esc:j
 keybind = cmd+k=esc:k
+keybind = cmd+t=esc:t
 keybind = shift+cmd+d=esc:D
 keybind = cmd+grave_accent=esc:`
 keybind = alt+grave_accent=esc:`
@@ -18,7 +19,9 @@ keybind = alt+f=esc:f
 keybind = alt+n=esc:n
 keybind = alt+v=esc:v
 keybind = alt+backspace=text:\x1b\x7f
+
 keybind = shift+cmd+1=goto_tab:1
 keybind = shift+cmd+2=goto_tab:2
 keybind = shift+cmd+3=goto_tab:3
+keybind = cmd+n=new_tab
 
