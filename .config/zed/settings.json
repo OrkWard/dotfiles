@@ -10,13 +10,13 @@
   "agent": {
     "default_model": {
       "model": "anthropic/claude-sonnet-4",
-      "provider": "openrouter"
+      "provider": "anthropic"
     },
     "default_profile": "write",
     "default_view": "text_thread",
     "inline_assistant_model": {
-      "model": "anthropic/claude-3.7-sonnet",
-      "provider": "openrouter"
+      "model": "claude-3.7-sonnet",
+      "provider": "anthropic"
     }
   },
   "always_treat_brackets_as_autoclosed": true,
