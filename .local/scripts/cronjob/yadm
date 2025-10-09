@@ -1,0 +1,11 @@
+set -e
+
+echo "pulling..."
+yadm pull
+echo "adding updated files..."
+yadm add -u
+echo "commiting..."
+yadm commit -m "backup: $(date)"
+echo "pushing..."
+yadm push
+echo "done!"
