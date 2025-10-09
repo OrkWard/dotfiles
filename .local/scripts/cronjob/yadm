@@ -5,7 +5,7 @@ yadm pull
 echo "adding updated files..."
 yadm add -u
 echo "commiting..."
-yadm commit -m "backup: $(date)"
+yadm commit -m "backup: $(date)" || exit 0
 echo "pushing..."
 yadm push
 echo "done!"
