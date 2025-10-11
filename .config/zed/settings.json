@@ -15,7 +15,7 @@
     "default_profile": "write",
     "default_view": "text_thread",
     "inline_assistant_model": {
-      "model": "claude-3.7-sonnet",
+      "model": "claude-3-5-haiku-latest",
       "provider": "anthropic"
     }
   },
