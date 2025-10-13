@@ -25,13 +25,16 @@ g:closetag_filetypes = "html,phtml,php"
 g:closetag_xhtml_filetypes = "xhtml,jsx,tsx"
 
 # Plug fzf
-$FZF_DEFAULT_COMMAND = 'fd -tf -td -H -L -E".git" -E".wine" -E"node_modules" -E"*.swp"'
-$FZF_DEFAULT_OPT = ''
-nnoremap <leader>f :Rg<CR>
-nnoremap g* :Rg<space><c-r><c-w><cr>
-nnoremap <c-f> :Files<CR>
-nnoremap <c-b> :Buffers<CR>
-nnoremap <c-h> :History<CR>
+# nnoremap <leader>f :Rg<CR>
+# nnoremap g* :Rg<space><c-r><c-w><cr>
+# nnoremap <c-f> :Files<CR>
+# nnoremap <c-b> :Buffers<CR>
+# nnoremap <c-h> :History<CR>
+
+# Plug Leaderf
+g:Lf_WindowPosition = 'popup'
+nnoremap <c-b> :Leaderf --reverse buffer<CR>
+nnoremap <c-f> :Leaderf --reverse file<CR>
 
 # vifm
 # nnoremap <leader>1 :Vifm<CR>
