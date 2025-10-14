@@ -7,7 +7,6 @@ set smartindent
 set relativenumber number
 set hidden
 set encoding=utf-8
-set cursorline
 set splitbelow
 set splitright
 set laststatus=2 # Always show status line
