@@ -38,7 +38,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-Plug 'lambdalisue/vim-fern'
 Plug 'alvan/vim-closetag'
 Plug 'sbdchd/neoformat'
 Plug 'neoclide/jsonc.vim'
