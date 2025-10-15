@@ -29,7 +29,6 @@ set fillchars=vert:│,fold:-,eob:~,lastline:@
 
 # vim-plug
 call plug#begin('~/.local/share/vim-plug')
-Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-scriptease'
@@ -39,17 +38,15 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Plug 'lambdalisue/vim-fern'
 Plug 'alvan/vim-closetag'
 Plug 'sbdchd/neoformat'
-Plug 'kylelaker/riscv.vim'
 Plug 'neoclide/jsonc.vim'
 Plug 'skywind3000/asyncrun.vim'
 call plug#end()
 
-packadd comment
-
-# global unique session id
-g:session_id = strftime("%Y%m%d%H%M%S") .. "_" .. string(rand())
+packadd! comment
+packadd! editorconfig
 
 # ================================== theme =====================================
 colorscheme onehalflight
@@ -68,19 +65,6 @@ def g:SynGroup()
   var s = synID(line('.'), col('.'), 1)
   echo synIDattr(s, 'name') .. ' -> ' .. synIDattr(synIDtrans(s), 'name')
 enddef
-
-# =================================== keymap ===================================
-g:mapleader = " "
-
-def Nohighlight()
-  nohl
-  return ''
-enddef
-
-# some useful map
-nnoremap Y y$
-vnoremap > >gv
-vnoremap < <gv
 
 # Use arrow keys to scroll in popup window
 def ScrollPopup(down: number): number
@@ -119,10 +103,22 @@ def EditFtplugin()
   execute 'edit ~/.config/vim/after/ftplugin/' .. filetype .. '.vim'
 enddef
 
+
+# ================================== command ==================================
+command GetCurrentSyntaxGroup call SynGroup()
 command EditFiletype call EditFtplugin()
 command EditPluginOption edit ~/.config/vim/after/plugin/plugin-options.vim
 command EditRc edit $MYVIMRC
-command ViewPluginFile :Files ~/.local/share/vim-plug
+command PickMyPluginFile :LeaderfFile ~/.config/vim
+command PickPluginFile :LeaderfFile ~/.local/share/vim-plug
+
+# =================================== keymap ===================================
+g:mapleader = " "
+
+# some useful map
+nnoremap Y y$
+vnoremap > >gv
+vnoremap < <gv
 
 # Emacs-keys
 cnoremap <C-A> <Home>

@@ -24,17 +24,10 @@ g:closetag_xhtml_filenames = "*.xhtml,*.jsx,*.tsx"
 g:closetag_filetypes = "html,phtml,php"
 g:closetag_xhtml_filetypes = "xhtml,jsx,tsx"
 
-# Plug fzf
-# nnoremap <leader>f :Rg<CR>
-# nnoremap g* :Rg<space><c-r><c-w><cr>
-# nnoremap <c-f> :Files<CR>
-# nnoremap <c-b> :Buffers<CR>
-# nnoremap <c-h> :History<CR>
-
 # Plug Leaderf
 g:Lf_WindowPosition = 'popup'
-nnoremap <c-b> :Leaderf --reverse buffer<CR>
-nnoremap <c-f> :Leaderf --reverse file<CR>
+g:Lf_CommandMap = {'<C-J>': ['<C-N>'], '<C-K>': ['<C-P>']}
+g:Lf_StlColorScheme = 'one'
 
 # vifm
 # nnoremap <leader>1 :Vifm<CR>
