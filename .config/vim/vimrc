@@ -20,6 +20,7 @@ set ttymouse=xterm2
 # set colorcolumn=121
 set list
 set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·,trail:~
+set fillchars=vert:│,fold:-,eob:~,lastline:@
 
 # set cursor
 &t_SI = "\<Esc>[6 q"
@@ -54,6 +55,7 @@ g:session_id = strftime("%Y%m%d%H%M%S") .. "_" .. string(rand())
 colorscheme onehalflight
 highlight Visual cterm=NONE ctermfg=NONE ctermbg=153 guifg=NONE
 highlight SpecialKey cterm=nocombine ctermfg=252 guifg=#d7d7d7
+highlight VertSplit cterm=NONE ctermfg=255 ctermbg=NONE guifg=#f0f0f0 guibg=NONE
 augroup MyTheme
   autocmd!
   autocmd BufNewFile,BufRead * call matchadd('SpecialKey', '\s\+')
