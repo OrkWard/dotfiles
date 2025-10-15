@@ -10,5 +10,4 @@ set colored-stats on
 ## shift-tab
 # "\e[Z":menu-complete-backward
 C-g: menu-complete
-"\e\C-?": backward-kill-word
 
