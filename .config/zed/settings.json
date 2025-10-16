@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "auto_update_extensions": {
+    "cspell": false
+  },
   "agent": {
     "default_model": {
       "model": "claude-sonnet-4-5-latest",
@@ -50,6 +53,18 @@
       "prettier": {
         "allowed": true,
         "plugins": ["prettier-plugin-elm"]
+      }
+    }
+  },
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "preferGoToSourceDefinition": true,
+          "preferences": {
+            "jsxAttributeCompletionStyle": "none"
+          }
+        }
       }
     }
   },

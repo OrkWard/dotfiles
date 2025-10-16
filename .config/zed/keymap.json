@@ -21,8 +21,7 @@
   {
     "context": "Workspace",
     "bindings": {
-      "f1": "command_palette::Toggle",
-      "cmd-k cmd-s": "zed::OpenKeymap"
+      "f1": "command_palette::Toggle"
       // "cmd-?": null
     }
   },
