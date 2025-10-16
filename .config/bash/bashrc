@@ -126,6 +126,7 @@ eval "$(direnv hook bash)"
 alias vn="nvim ~/.config/nvim/init.lua"
 alias vb="tmuxinator bash"
 alias vv="tmuxinator vim-plug"
+alias vg="tmuxinator ghostty"
 alias vt="vim ~/.config/tmux/tmux.conf"
 alias v3="vim ~/.config/i3/config"
 
