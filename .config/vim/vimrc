@@ -35,6 +35,7 @@ Plug 'alvan/vim-closetag'
 Plug 'sbdchd/neoformat'
 Plug 'neoclide/jsonc.vim'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'drmikehenry/vim-fixkey'
 call plug#end()
 
 packadd! comment
@@ -120,8 +121,8 @@ cnoremap <C-E> <End>
 cnoremap <C-F> <Right>
 cnoremap <C-N> <Down>
 cnoremap <C-P> <Up>
-cnoremap <Esc>b <S-Left>
-cnoremap <Esc>f <S-Right>
+cnoremap <M-b> <S-Left>
+cnoremap <M-f> <S-Right>
 
 inoremap <C-A> <Home>
 inoremap <C-B> <Left>
@@ -129,6 +130,8 @@ inoremap <C-E> <End>
 inoremap <C-F> <Right>
 inoremap <C-N> <Down>
 inoremap <C-P> <Up>
+inoremap <M-b> <S-Left>
+inoremap <M-f> <S-Right>
 
 # For some mysteries reason, <ESC><BS> don't work properly in terminal
 # First set it to <F13>, then map <F13> to <C-W>
@@ -146,35 +149,38 @@ augroup MyGroup
 augroup END
 
 # =================================== term ======================================
-if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
+if !has('gui_running')
   # cursor style
   &t_SI = "\<Esc>[6 q"
   &t_SR = "\<Esc>[4 q"
   &t_EI = "\<Esc>[2 q"
 
-  # Better mouse support, see  :help 'ttymouse'
-  set ttymouse=sgr
-
   # true color
   &termguicolors = v:true
 
-  # Enable bracketed paste mode, see  :help xterm-bracketed-paste
-  &t_BE = "\<Esc>[?2004h"
-  &t_BD = "\<Esc>[?2004l"
-  &t_PS = "\<Esc>[200~"
-  &t_PE = "\<Esc>[201~"
+  if &term =~ '^\%(screen\|tmux\)'
+    # Better mouse support, see  :help 'ttymouse'
+    set ttymouse=sgr
 
-  # term focus events support, see :help xterm-focus-events
-  &t_fe = "\<Esc>[?1004h"
-  &t_fd = "\<Esc>[?1004l"
-  execute "set <FocusGained>=\<Esc>[I"
-  execute "set <FocusLost>=\<Esc>[O"
 
-  # Enable modified arrow keys, see  :help arrow_modifiers
-  execute "silent! set <xUp>=\<Esc>[@;*A"
-  execute "silent! set <xDown>=\<Esc>[@;*B"
-  execute "silent! set <xRight>=\<Esc>[@;*C"
-  execute "silent! set <xLeft>=\<Esc>[@;*D"
+    # Enable bracketed paste mode, see  :help xterm-bracketed-paste
+    &t_BE = "\<Esc>[?2004h"
+    &t_BD = "\<Esc>[?2004l"
+    &t_PS = "\<Esc>[200~"
+    &t_PE = "\<Esc>[201~"
+
+    # term focus events support, see :help xterm-focus-events
+    &t_fe = "\<Esc>[?1004h"
+    &t_fd = "\<Esc>[?1004l"
+    execute "set <FocusGained>=\<Esc>[I"
+    execute "set <FocusLost>=\<Esc>[O"
+
+    # Enable modified arrow keys, see  :help arrow_modifiers
+    execute "silent! set <xUp>=\<Esc>[@;*A"
+    execute "silent! set <xDown>=\<Esc>[@;*B"
+    execute "silent! set <xRight>=\<Esc>[@;*C"
+    execute "silent! set <xLeft>=\<Esc>[@;*D"
+  endif
 endif
 
 # =================================== gui ======================================
