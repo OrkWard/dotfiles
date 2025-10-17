@@ -13,6 +13,7 @@ keybind = cmd+j=esc:j
 keybind = cmd+k=esc:k
 keybind = cmd+t=esc:t
 keybind = cmd+p=esc:p
+keybind = shift+cmd+p=esc:P
 keybind = shift+cmd+d=esc:D
 keybind = cmd+grave_accent=esc:`
 keybind = alt+grave_accent=esc:`

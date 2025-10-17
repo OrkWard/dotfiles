@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# readarray -t projects < <(tmuxinator list -n 2>/dev/null | tail -n +2)
 projects=$(tmuxinator list -n 2>/dev/null | tail -n +2)
 
 if [ -z "$projects" ]; then
@@ -17,13 +16,11 @@ selected=$(echo "$projects" | fzf-tmux -p 80%,60% \
 if [ -n "$selected" ]; then
   current_session=$(tmux display-message -p '#S')
 
-  tmuxinator start "$selected" -n "$selected" &>/dev/null &
-
-  sleep 0.3
+  tmuxinator start "$selected" --no-attach &>/dev/null
 
   tmux switch-client -t "$selected" 2>/dev/null
 
-  if [ "$current_session" != "$selected" ]; then
+  if [[ "$current_session" != "$selected" && "$1" != "-n" ]]; then
     tmux kill-session -t "$current_session" 2>/dev/null
   fi
 fi

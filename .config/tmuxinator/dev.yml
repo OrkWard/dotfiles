@@ -1,0 +1,9 @@
+# /Users/orkward/.config/tmuxinator/dev.yml
+name: dev
+root: ~/
+
+windows:
+  - ~:
+      layout: main-vertical
+      panes:
+        - ~

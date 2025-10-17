@@ -37,3 +37,5 @@ bind -m emacs-standard '"\ec": "\C-u \C-h\C-k`__fzf_cd__`\C-m\C-y\C-a\C-y\ey"'
 
 _fzf_setup_completion dir tree
 _fzf_setup_completion path bat glow
+
+alias ftmux="tmux attach-session -t \$(tmux list-sessions -F '#S' | fzf)"
