@@ -54,6 +54,14 @@
         "allowed": true,
         "plugins": ["prettier-plugin-elm"]
       }
+    },
+    "SQL": {
+      "formatter": {
+        "external": {
+          "arguments": ["fix", "-"],
+          "command": "sqlfluff"
+        }
+      }
     }
   },
   "lsp": {
