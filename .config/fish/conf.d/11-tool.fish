@@ -18,3 +18,7 @@ end
 set -gx COREPACK_ENABLE_AUTO_PIN 0
 set -gx COREPACK_ENABLE_DOWNLOAD_PROMPT 1
 
+# pnpm
+set -gx PNPM_HOME $HOME/.local/share/pnpm
+fish_add_path $PNPM_HOME
+
