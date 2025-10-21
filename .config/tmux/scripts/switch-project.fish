@@ -14,7 +14,7 @@ end
 
 set selected $(string join \n $projects | fzf --tmux center,80%,60%,border-native \
   --prompt=$prompt \
-  --preview 'bat --color=always --theme=GitHub ~/.config/tmuxinator/{}.yml 2>/dev/null || echo "No config file"' \
+  --preview 'highlight -O ansi ~/.config/tmuxinator/{}.yml 2>/dev/null || echo "No config file"' \
   --preview-border=sharp \
   --preview-window=right:50%)
 

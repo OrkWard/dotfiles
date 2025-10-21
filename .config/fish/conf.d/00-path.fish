@@ -1,13 +1,12 @@
 # homebrew
-if [ $(uname -s) = "Darwin" ]
+if test $(uname -s) = "Darwin"
   eval $(/opt/homebrew/bin/brew shellenv)
-  set -x HOMEBREW_NO_ENV_HINTS 1
+  set -gx HOMEBREW_NO_ENV_HINTS 1
 end
 
-# local bin
-set -x PATH $HOME/.local/bin $PATH
+fish_add_path $HOME/.local/bin
 
 # rustup
-if [ $(uname -s) = "Darwin" ]
-  set -x PATH $(brew --prefix rustup)/bin $PATH
+if test $(uname -s) = "Darwin"
+  fish_add_path $(brew --prefix rustup)/bin
 end
