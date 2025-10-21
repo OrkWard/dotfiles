@@ -1,35 +1,51 @@
-#!/usr/bin/sh
+#!/usr/bin/env python3
+import os
+import subprocess
+import shutil
+from pathlib import Path
 
-cd "$HOME"
+def run_cmd(cmd, shell=True):
+    try:
+        subprocess.run(cmd, shell=shell, check=True)
+        return True
+    except subprocess.CalledProcessError:
+        return False
 
-echo "Init submodules"
-yadm submodule update --recursive --init
+def command_exists(cmd):
+    return shutil.which(cmd) is not None
 
-system_type=$(uname -s)
+def main():
+    os.chdir(Path.home())
 
-if [ "$system_type" = "Darwin" ]; then
-  # install homebrew if it's missing
-  if ! command -v brew >/dev/null 2>&1; then
-    echo "Install homebrew"
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  fi
-fi
+    print("Init submodules")
+    run_cmd("yadm submodule update --recursive --init")
 
-if [ "$system_type" = "Linux" ]; then
-  if command -v pacman >/dev/null 2>&1; then
-    echo "Update pacman"
-    sudo pacman -Syu --noconfirm
-    sudo pacman -S bash-completion base-devel difftastic gdb caddy atuin tealdeer vim bat ripgrep fzf glow tmux fd --noconfirm
-  fi
-fi
+    system_type = os.uname().sysname
 
-if command -v vim >/dev/null 2>&1; then
-  echo "Install vim plugins"
-  vim '+PlugUpdate' '+qall'
-fi
+    if system_type == "Darwin":
+        if not command_exists("brew"):
+            print("Install homebrew")
+            run_cmd('/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"')
 
-if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
-  echo "Install tmux"
-  git clone https://github.com/OrkWard/tpm ~/.config/tmux/plugins/tpm
-fi
+    if system_type == "Linux":
+        if command_exists("pacman"):
+            print("Update pacman")
+            packages = [
+                    "bash-completion", "base-devel", "difftastic", "gdb",
+                    "caddy", "atuin", "tealdeer", "vim", "bat", "ripgrep",
+                    "fzf", "glow", "tmux", "fd", "fish", "lsd"
+                    ]
+            run_cmd(f"sudo pacman -Syu --noconfirm")
+            run_cmd(f"sudo pacman -S {' '.join(packages)} --noconfirm")
 
+    if command_exists("vim"):
+        print("Install vim plugins")
+        run_cmd("vim +PlugUpdate +qall")
+
+    tpm_path = Path.home() / ".tmux/plugins/tpm"
+    if not tpm_path.exists():
+        print("Install tmux")
+        run_cmd(f"git clone https://github.com/OrkWard/tpm {Path.home()}/.config/tmux/plugins/tpm")
+
+if __name__ == "__main__":
+    main()
