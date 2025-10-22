@@ -27,7 +27,9 @@ g:closetag_xhtml_filetypes = "xhtml,jsx,tsx"
 # Plug Leaderf
 g:Lf_WindowPosition = 'popup'
 g:Lf_CommandMap = {'<C-J>': ['<C-N>'], '<C-K>': ['<C-P>']}
+g:Lf_PopupBorders = ["─", "│", "─", "│", "┌", "┐", "┘", "└"]
 g:Lf_StlColorScheme = 'one'
+highlight Lf_hl_popupBorder guifg=#555555
 
 # vifm
 # nnoremap <leader>1 :Vifm<CR>
