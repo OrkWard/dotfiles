@@ -49,10 +49,11 @@
       }
     },
     "Elm": {
-      "formatter": "prettier",
-      "prettier": {
-        "allowed": true,
-        "plugins": ["prettier-plugin-elm"]
+      "formatter": {
+        "external": {
+          "command": "elm-format",
+          "arguments": ["--stdin"]
+        }
       }
     },
     "SQL": {
