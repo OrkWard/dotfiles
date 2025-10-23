@@ -32,9 +32,8 @@ def main():
             print("Update pacman")
             packages = [
                     "bash-completion", "base-devel", "difftastic", "gdb",
-                    "tealdeer", "vim", "ripgrep", "gh", "vifm", "asdf",
-                    "fzf", "tmux", "fd", "fish", "lsd", "direnv", "tmuxinator",
-                    "atuin"
+                    "tealdeer", "vim", "ripgrep", "github-cli", "vifm",
+                    "fzf", "tmux", "fd", "fish", "lsd", "direnv", "atuin"
                     ]
             run_cmd(f"sudo pacman -Syu --noconfirm")
             run_cmd(f"sudo pacman -S {' '.join(packages)} --noconfirm")
