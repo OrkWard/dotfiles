@@ -137,7 +137,7 @@ inoremap <M-f> <S-Right>
 # First set it to <F13>, then map <F13> to <C-W>
 # Unfortunately, there are still problems to solve in :term mode
 if !has("gui_running")
-  execute "set <F13>=\<Esc>" .. &t_kb
+  # execute "set <F13>=\<Esc>" .. &t_kb
   cnoremap <F13> <C-W>
   inoremap <F13> <C-W>
 endif
