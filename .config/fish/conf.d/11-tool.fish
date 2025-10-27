@@ -1,10 +1,21 @@
 # atuin
-atuin init fish | sed 's/-k up/up/' | source
+if not type -q atuin
+  echo "atuin not found"
+else
+  atuin init fish | sed 's/-k up/up/' | source
+end
 
 # direnv
-direnv hook fish | source
+if not type -q direnv
+  echo "direnv not found"
+else
+  direnv hook fish | source
+end
 
 # asdf
+if not type -q asdf
+  echo "asdf not found"
+end
 set -gx ASDF_CONFIG_FILE $HOME/.config/asdf/asdfrc
 set -gx ASDF_DATA_DIR $HOME/.local/state/asdf
 fish_add_path $ASDF_DATA_DIR/shims
@@ -21,6 +32,9 @@ fish_add_path $PNPM_HOME
 set -xg _ZL_CMD j
 set -xg _ZL_DATA_DIR $HOME/.local/share/zlua/
 set -xg _ZL_DATA $HOME/.local/share/zlua/zlua.txt
-lua $HOME/.local/bin/z.lua --init fish | source
-
-abbr zb "z -b"
+if not type -q lua
+  echo "lua not found"
+else
+  lua $HOME/.local/bin/z.lua --init fish | source
+  abbr zb "z -b"
+end

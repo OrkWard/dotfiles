@@ -2,7 +2,7 @@ function fish_prompt
   set -l last_status $status
 
   set_color green
-  echo -n "$USER@$(hostname) "
+  echo -n "$USER@$(prompt_hostname) "
 
   set_color blue
   echo -n (prompt_pwd)' '
