@@ -25,7 +25,7 @@ if test -n "$selected"
 
   tmux switch-client -t $selected 2>/dev/null
 
-  if test $current_session != $selected -a $argv[1] != -n
+  if test $current_session != $selected -a "$argv[1]" != -n
     tmux kill-session -t $current_session 2>/dev/null
   end
 end
