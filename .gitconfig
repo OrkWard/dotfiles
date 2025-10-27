@@ -21,18 +21,12 @@
 [include]
 	path = .gitconfig.local
 [alias]
-	co = checkout
-	b = branch
-	c = commit
-	s = status
-	p = pull
-	ps = push
-	d = diff
 	sw = switch
-	m = merge
 	adog = log --all --decorate --oneline --graph
 	dog = log --decorate --oneline --graph
-	a = add
+	dl = -c diff.external=difft log --ext-diff
+	ds = -c diff.external=difft show --ext-diff
+	dd = -c diff.external=difft diff
 [init]
 	defaultBranch = master
 [credential]
