@@ -80,6 +80,11 @@
   "proxy": "http://localhost:9090",
   "relative_line_numbers": true,
   "snippet_sort_order": "top",
+  "terminal": {
+    "shell": {
+      "program": "fish"
+    }
+  },
   "title_bar": {
     "show_sign_in": false
   },
