@@ -92,7 +92,13 @@
     "context": "AgentPanel && external_agent_thread",
     "bindings": {
       "alt-cmd-t": "agent::NewTextThread",
-      "cmd-n": "agent::NewThread"
+      "cmd-n": ["agent::NewExternalAgentThread", { "agent": "claude_code" }]
+    }
+  },
+  {
+    "context": "AgentPanel && prompt_editor",
+    "bindings": {
+      "alt-cmd-t": ["agent::NewExternalAgentThread", { "agent": "claude_code" }]
     }
   }
 ]
