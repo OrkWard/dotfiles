@@ -11,7 +11,7 @@ keybind = cmd+h=esc:h
 keybind = cmd+l=esc:l
 keybind = cmd+j=esc:j
 keybind = cmd+k=esc:k
-keybind = cmd+t=esc:t
+keybind = cmd+n=esc:n
 keybind = cmd+p=esc:p
 keybind = shift+cmd+p=esc:P
 keybind = shift+cmd+d=esc:D
@@ -26,6 +26,5 @@ keybind = alt+backspace=text:\x1b\x7f
 keybind = shift+cmd+1=goto_tab:1
 keybind = shift+cmd+2=goto_tab:2
 keybind = shift+cmd+3=goto_tab:3
-keybind = cmd+n=new_tab
 keybind = f1=toggle_command_palette
 
