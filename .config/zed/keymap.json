@@ -89,7 +89,7 @@
     }
   },
   {
-    "context": "AgentPanel && external_agent_thread",
+    "context": "AgentPanel && acp_thread",
     "bindings": {
       "alt-cmd-t": "agent::NewTextThread",
       "cmd-n": ["agent::NewExternalAgentThread", { "agent": "claude_code" }]
