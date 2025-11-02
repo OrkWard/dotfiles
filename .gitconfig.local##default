@@ -1,5 +1,12 @@
+# vim: ft=gitconfig noexpandtab
 [user]
-  name = OrkWard
-  email = orkward_o@outlook.com
+	name = OrkWard
+	email = orkward_o@outlook.com
+	signingkey = ~/.ssh/sign.pub
 [gpg]
-  program = /usr/bin/gpg
+	format = ssh
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
+
