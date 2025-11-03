@@ -2,8 +2,9 @@
 [user]
 	name = orkward
 	email = orkward_o@outlook.com
+	signingkey = ~/.ssh/sign.pub
 [gpg]
-	program = /opt/homebrew/bin/gpg
+	format = ssh
 [credential "https://github.com"]
 	helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
