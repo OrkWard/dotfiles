@@ -36,5 +36,6 @@ if not type -q lua
   echo "lua not found"
 else
   lua $HOME/.local/bin/z.lua --init fish | source
-  abbr zb "z -b"
+  abbr jb "j -b"
 end
+
