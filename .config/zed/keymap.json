@@ -12,17 +12,23 @@
       "cmd-e": "workspace::ToggleLeftDock",
       "cmd-d": "workspace::ToggleBottomDock",
       "cmd-j": "terminal_panel::ToggleFocus",
+      "cmd-t": "task::Spawn",
+      "cmd-s": "project_symbols::Toggle",
       "cmd-b": null,
       "cmd-h": null,
       "cmd-shift-g": "git_panel::ToggleFocus",
-      "cmd-alt-n": "workspace::NewWindow"
+      "cmd-alt-n": "workspace::NewWindow",
+      "alt-cmd-,": "zed::OpenSettings",
+      "cmd-,": "zed::OpenSettingsFile",
+      "cmd-k cmd-s": "zed::OpenKeymapFile"
     }
   },
   {
     "context": "Workspace",
     "bindings": {
-      "f1": "command_palette::Toggle"
-      // "cmd-?": null
+      "f1": "command_palette::Toggle",
+      "cmd-k cmd-s": null,
+      "cmd-?": null
     }
   },
   {
@@ -57,6 +63,12 @@
     }
   },
   {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-x": "vim::Exchange"
+    }
+  },
+  {
     "context": "vim_mode == insert && !showing_completions",
     "bindings": {
       "ctrl-p": ["workspace::SendKeystrokes", "up"],
@@ -80,12 +92,6 @@
     "context": "FileFinder || (FileFinder > Picker > Editor) || (FileFinder > Picker > menu)",
     "bindings": {
       "cmd-h": "pane::SplitLeft"
-    }
-  },
-  {
-    "context": "vim_mode == visual",
-    "bindings": {
-      "shift-x": "vim::Exchange"
     }
   },
   {

@@ -17,8 +17,8 @@
   },
   "agent": {
     "default_model": {
-      "model": "claude-sonnet-4-5-latest",
-      "provider": "anthropic"
+      "model": "gemini-2.5-flash",
+      "provider": "google"
     },
     "default_profile": "write",
     "default_view": "text_thread",
