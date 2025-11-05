@@ -22,22 +22,27 @@ set fillchars=vert:│,fold:-,eob:~,lastline:@
 
 # vim-plug
 call plug#begin('~/.local/share/vim-plug')
+# edit
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-scriptease'
 Plug 'haya14busa/incsearch.vim'
 Plug 'justinmk/vim-sneak'
+Plug 'alvan/vim-closetag'
+# theme
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-Plug 'alvan/vim-closetag'
-Plug 'sbdchd/neoformat'
+# language
 Plug 'neoclide/jsonc.vim'
-Plug 'skywind3000/asyncrun.vim'
+# extend
+Plug 'sbdchd/neoformat'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+# misc
 Plug 'drmikehenry/vim-fixkey'
 call plug#end()
 
+# builtin plug
 packadd! comment
 packadd! editorconfig
 
@@ -145,6 +150,7 @@ endif
 # =============================== autocommand ==================================
 augroup MyGroup
   autocmd!
+  # reload config files when write
   autocmd BufWritePost ~/.config/vim/vimrc,~/.config/vim/*.vim :source %
 augroup END
 
