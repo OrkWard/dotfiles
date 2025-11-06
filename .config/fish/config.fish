@@ -1,3 +1,3 @@
 if status is-interactive
-    printf '\e[?12l'
+  printf '\e[?12l'
 end
