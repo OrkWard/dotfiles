@@ -22,6 +22,7 @@
 	path = .gitconfig.local
 [alias]
 	sw = switch
+	b = branch
 	adog = log --all --decorate --oneline --graph
 	dog = log --decorate --oneline --graph
 	dl = -c diff.external=difft log --ext-diff
