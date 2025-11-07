@@ -44,7 +44,6 @@ export HISTFILESIZE=20000
 PS1=''
 PS1+='\[\033[32m\]\u '
 PS1+='\[\033[34m\]\w '
-PS1+='\[\033[35m\]$(__git_ps1 "(%s) ")'
 PS1+='\[\033[33m\][$?] $(date +"%H:%M:%S")'
 PS1+='\[\033[0m\]'
 PS1+="\n"
@@ -52,20 +51,11 @@ PS1+='\[\033]133;A\033\\\]$ '
 
 # ---------------------------- Misc ----------------------------
 # custom path for local bin and local script
-prepand_path "$HOME/.local/bin"
-prepand_path "$HOME/.local/scripts"
+export PATH="$HOME/.local/bin:$PATH"
 
 # handy
 alias rm="rm -r"
 alias mkdir="mkdir -p"
-
-# go
-export GOPATH="$HOME/.go"
-
-# rustup
-if [ "$(uname -s)" == "Darwin" ]; then
-  prepand_path "$(brew --prefix rustup)/bin"
-fi
 
 # cd
 alias ..="cd .."
@@ -99,12 +89,6 @@ alias recent='ls --color -tlh | head'
 alias bat="bat --theme=GitHub"
 alias serve="caddy file-server . --listen localhost:8080"
 alias tree="lsd --tree --depth 2"
-
-# zed
-alias z='zed'
-if [ "$TERM_PROGRAM" = 'zed' ]; then
-  export EDITOR="zed -w"
-fi
 
 # Profile end
 # set +x
