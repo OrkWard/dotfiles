@@ -1,5 +1,6 @@
 # handy
 abbr rm "rm -r"
+abbr rmf "rm -rf"
 abbr mkdir "mkdir -p"
 
 # cd
@@ -13,7 +14,6 @@ abbr vf "tmuxinator fish"
 abbr vv "tmuxinator vim-plug"
 abbr vg "tmuxinator ghostty"
 abbr vt "vim ~/.config/tmux/tmux.conf"
-
 
 # yadm
 abbr yac "yadm add -u; and yadm commit -m (date)"
