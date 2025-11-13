@@ -84,7 +84,7 @@
   },
   "max_tabs": 12,
   "proxy": "http://localhost:9090",
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "snippet_sort_order": "top",
   "title_bar": {
     "show_sign_in": false
