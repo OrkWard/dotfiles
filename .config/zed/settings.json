@@ -74,6 +74,9 @@
     "vtsls": {
       "settings": {
         "typescript": {
+          "preferGoToSourceDefinition": true
+        },
+        "typescriptreact": {
           "preferGoToSourceDefinition": true,
           "preferences": {
             "jsxAttributeCompletionStyle": "none"
