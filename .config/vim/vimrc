@@ -138,15 +138,6 @@ inoremap <C-P> <Up>
 inoremap <M-b> <S-Left>
 inoremap <M-f> <S-Right>
 
-# For some mysteries reason, <ESC><BS> don't work properly in terminal
-# First set it to <F13>, then map <F13> to <C-W>
-# Unfortunately, there are still problems to solve in :term mode
-if !has("gui_running")
-  # execute "set <F13>=\<Esc>" .. &t_kb
-  cnoremap <F13> <C-W>
-  inoremap <F13> <C-W>
-endif
-
 # =============================== autocommand ==================================
 augroup MyGroup
   autocmd!

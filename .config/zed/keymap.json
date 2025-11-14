@@ -65,7 +65,8 @@
   {
     "context": "vim_mode == visual",
     "bindings": {
-      "shift-x": "vim::Exchange"
+      "shift-x": "vim::Exchange",
+      "g s": "vim::PushAddSurrounds"
     }
   },
   {
