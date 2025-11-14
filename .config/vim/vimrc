@@ -51,6 +51,8 @@ colorscheme onehalflight
 highlight Visual cterm=NONE ctermfg=NONE ctermbg=153 guifg=NONE
 highlight SpecialKey cterm=nocombine ctermfg=252 guifg=#d7d7d7
 highlight VertSplit cterm=NONE ctermfg=255 ctermbg=NONE guifg=#f0f0f0 guibg=NONE
+highlight IncSearch cterm=NONE ctermfg=NONE ctermbg=33 guifg=#fafafa guibg=#0184bc
+highlight Search cterm=NONE ctermfg=NONE ctermbg=75 guifg=#fafafa guibg=#61afef
 augroup MyTheme
   autocmd!
   autocmd BufNewFile,BufRead * call matchadd('SpecialKey', '\s\+')
@@ -58,33 +60,6 @@ augroup MyTheme
 augroup END
 
 # ================================== function ==================================
-# Use arrow keys to scroll in popup window
-def ScrollPopup(down: number): number
-  var winids = popup_list()
-  if empty(winids)
-    return 0
-  else
-    let winid = winids[0]
-  endif
-
-  # if the popup window is hidden, then bypass the keystrokes
-  var pp = popup_getpos(winid)
-  if pp.visible != 1 | return 0 | endif
-
-  var firstline = pp.firstline + a:down
-  var buf_lastline = str2nr(trim(win_execute(winid, "echo line('$')")))
-  if firstline < 1
-    let firstline = 1
-  elseif pp.lastline + a:down > buf_lastline
-    let firstline = firstline - down + buf_lastline - pp.lastline
-  endif
-
-  # if a scrollbar is shown, then the height changes
-  call popup_setoptions( winid, {'scrollbar': 0, 'resize': 0, 'fixed': 1, 'firstline' : firstline } )
-
-  return 1
-enddef
-
 def EditFtplugin()
   var filetype = &filetype
 
