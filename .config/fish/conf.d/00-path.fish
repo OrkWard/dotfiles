@@ -8,5 +8,5 @@ end
 
 # rustup
 if test $(uname -s) = "Darwin"
-  fish_add_path $(brew --prefix rustup)/bin
+  fish_add_path --move $(brew --prefix rustup)/bin
 end

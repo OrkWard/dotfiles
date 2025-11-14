@@ -58,12 +58,6 @@ augroup MyTheme
 augroup END
 
 # ================================== function ==================================
-# get current syntax highlight group under cursor
-def g:SynGroup()
-  var s = synID(line('.'), col('.'), 1)
-  echo synIDattr(s, 'name') .. ' -> ' .. synIDattr(synIDtrans(s), 'name')
-enddef
-
 # Use arrow keys to scroll in popup window
 def ScrollPopup(down: number): number
   var winids = popup_list()
@@ -101,9 +95,7 @@ def EditFtplugin()
   execute 'edit ~/.config/vim/after/ftplugin/' .. filetype .. '.vim'
 enddef
 
-
 # ================================== command ==================================
-command GetCurrentSyntaxGroup call SynGroup()
 command EditFiletype call EditFtplugin()
 command EditPluginOption edit ~/.config/vim/after/plugin/plugin-options.vim
 command EditRc edit $MYVIMRC
