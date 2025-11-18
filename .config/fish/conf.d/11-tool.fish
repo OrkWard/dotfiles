@@ -24,6 +24,9 @@ fish_add_path --move $ASDF_DATA_DIR/shims
 set -gx COREPACK_ENABLE_AUTO_PIN 0
 set -gx COREPACK_ENABLE_DOWNLOAD_PROMPT 1
 
+# bat
+set -gx BAT_THEME GitHub
+
 # pnpm
 set -gx PNPM_HOME $HOME/.local/share/pnpm
 fish_add_path --move $PNPM_HOME
