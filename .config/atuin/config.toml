@@ -101,6 +101,7 @@ ctrl_n_shortcuts = true
 history_filter = [
   "^nr ",
   "^curl",
+  "node_modules/",
 ]
 
 ## prevent commands run with cwd matching any of these regexes from being written
