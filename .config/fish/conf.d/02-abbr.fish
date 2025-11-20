@@ -40,6 +40,8 @@ abbr gc 'git commit'
 abbr gcm --set-cursor 'git commit -m "%"'
 abbr gac "git add .; git commit -m (date)"
 abbr gs "git status"
+abbr gsw "git sw"
+abbr gsm "git sw master"
 abbr gd "git diff"
 abbr gds "git diff --staged"
 abbr gl "git pull"
@@ -48,8 +50,8 @@ abbr gca "git commit --amend"
 abbr gpf "git push --force-with-lease"
 
 # pipe
-abbr p0 --position anywhere --set-cursor "% &> /dev/null"
-abbr pl --position anywhere --set-cursor "% | less"
+abbr p0 --position anywhere --set-cursor "%&> /dev/null"
+abbr pl --position anywhere --set-cursor "%| less"
 
 # zlua
 abbr jb "j -b"
