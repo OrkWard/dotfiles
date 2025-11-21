@@ -29,15 +29,14 @@ Plug 'tpope/vim-scriptease'
 Plug 'haya14busa/incsearch.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'alvan/vim-closetag'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Plug 'jiangmiao/auto-pairs'
 # theme
+Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 # language
 Plug 'neoclide/jsonc.vim'
-# extend
-Plug 'sbdchd/neoformat'
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 # misc
 Plug 'drmikehenry/vim-fixkey'
 call plug#end()
@@ -104,6 +103,9 @@ inoremap <C-N> <Down>
 inoremap <C-P> <Up>
 inoremap <M-b> <S-Left>
 inoremap <M-f> <S-Right>
+
+# completion
+
 
 # =============================== autocommand ==================================
 augroup MyGroup
