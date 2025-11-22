@@ -33,6 +33,7 @@
   "collaboration_panel": {
     "button": false
   },
+  "cursor_blink": false,
   "features": {
     "edit_prediction_provider": "none"
   },
