@@ -21,11 +21,7 @@
       "provider": "google"
     },
     "default_profile": "write",
-    "default_view": "text_thread",
-    "inline_assistant_model": {
-      "model": "claude-3-5-haiku-latest",
-      "provider": "anthropic"
-    }
+    "default_view": "text_thread"
   },
   "always_treat_brackets_as_autoclosed": true,
   "buffer_font_fallbacks": ["JetBrainsMono Nerd Font"],
