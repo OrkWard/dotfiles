@@ -20,10 +20,6 @@ set -gx ASDF_CONFIG_FILE $HOME/.config/asdf/asdfrc
 set -gx ASDF_DATA_DIR $HOME/.local/state/asdf
 fish_add_path --move $ASDF_DATA_DIR/shims
 
-# corepack
-set -gx COREPACK_ENABLE_AUTO_PIN 0
-set -gx COREPACK_ENABLE_DOWNLOAD_PROMPT 1
-
 # bat
 set -gx BAT_THEME GitHub
 
