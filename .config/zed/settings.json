@@ -29,6 +29,7 @@
   "collaboration_panel": {
     "button": false
   },
+  "colorize_brackets": true,
   "cursor_blink": false,
   "features": {
     "edit_prediction_provider": "none"
