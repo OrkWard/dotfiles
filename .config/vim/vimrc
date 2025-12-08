@@ -19,6 +19,9 @@ set wildmode=longest:full,full
 set list
 set listchars=tab:\|\ ,space:·,extends:>,precedes:<,leadmultispace:\|·,trail:~
 set fillchars=vert:│,fold:-,eob:~,lastline:@
+set sessionoptions=buffers,curdir,folds
+set ignorecase
+set smartcase
 
 # vim-plug
 call plug#begin('~/.local/share/vim-plug')
@@ -41,7 +44,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/jsonc.vim'
 Plug 'rescript-lang/vim-rescript'
 # misc
-Plug 'drmikehenry/vim-fixkey'
+# Plug 'drmikehenry/vim-fixkey'
 call plug#end()
 
 # builtin plug
@@ -74,7 +77,7 @@ enddef
 
 # ================================== command ==================================
 command EditFiletype call EditFtplugin()
-command EditPluginOption edit ~/.config/vim/after/plugin/plugin-options.vim
+command EditPluginOption edit ~/.config/vim/plugin/plug-config.vim
 command EditRc edit $MYVIMRC
 command PickMyPluginFile :LeaderfFile ~/.config/vim
 command PickPluginFile :LeaderfFile ~/.local/share/vim-plug
