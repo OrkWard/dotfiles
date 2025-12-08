@@ -31,6 +31,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'alvan/vim-closetag'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'jiangmiao/auto-pairs'
+Plug 'girishji/vimcomplete'
 Plug 'yegappan/lsp'
 # theme
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }

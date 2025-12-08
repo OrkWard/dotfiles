@@ -31,6 +31,8 @@ let g:Lf_CommandMap = {'<C-J>': ['<C-N>'], '<C-K>': ['<C-P>']}
 let g:Lf_PopupBorders = ["─", "│", "─", "│", "┌", "┐", "┘", "└"]
 let g:Lf_StlColorScheme = 'one'
 highlight Lf_hl_popupBorder guifg=#555555
+nnoremap <silent> <leader>F :<C-U>LeaderfRgInteractive<CR>
+nnoremap <silent> <leader>R :<C-U>LeaderfRgInteractive<CR>
 
 " neoformat
 let g:neoformat_basic_format_align = 1
@@ -65,3 +67,7 @@ nnoremap <silent> <leader>a :<C-U>LspCodeAction<CR>
 
 set keywordprg=:LspHover
 
+" complete
+autocmd VimEnter * call VimCompleteOptionsSet({
+      \ 'alwaysOn': v:false
+      \ })
