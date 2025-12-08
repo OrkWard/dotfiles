@@ -32,7 +32,7 @@ let g:Lf_PopupBorders = ["─", "│", "─", "│", "┌", "┐", "┘", "└"]
 let g:Lf_StlColorScheme = 'one'
 highlight Lf_hl_popupBorder guifg=#555555
 nnoremap <silent> <leader>F :<C-U>LeaderfRgInteractive<CR>
-nnoremap <silent> <leader>R :<C-U>LeaderfRgInteractive<CR>
+nnoremap <silent> <leader>R :<C-U>LeaderfRgRecall<CR>
 
 " neoformat
 let g:neoformat_basic_format_align = 1
@@ -69,5 +69,7 @@ set keywordprg=:LspHover
 
 " complete
 autocmd VimEnter * call VimCompleteOptionsSet({
-      \ 'alwaysOn': v:false
+      \   'completor': {
+      \     'alwaysOn': v:false
+      \   },
       \ })
