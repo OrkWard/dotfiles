@@ -31,12 +31,14 @@ Plug 'justinmk/vim-sneak'
 Plug 'alvan/vim-closetag'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'jiangmiao/auto-pairs'
+Plug 'yegappan/lsp'
 # theme
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 # language
 Plug 'neoclide/jsonc.vim'
+Plug 'rescript-lang/vim-rescript'
 # misc
 Plug 'drmikehenry/vim-fixkey'
 call plug#end()

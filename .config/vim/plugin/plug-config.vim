@@ -37,3 +37,31 @@ let g:neoformat_basic_format_align = 1
 let g:neoformat_basic_format_retab = 1
 let g:neoformat_basic_format_trim = 1
 
+" lsp
+au User LspSetup call LspAddServer([
+      \ {
+      \ 'name': 'rust-analyzer',
+      \ 'path': 'rust-analyzer',
+      \ 'filetype': ['rust'],
+      \ },
+      \ {
+      \ 'name': 'rescript',
+      \ 'path': 'rescript-language-server',
+      \ 'args': [ '--stdio'],
+      \ 'filetype': ['rescript'],
+      \ 'rootSearch': ['rescript.json']
+      \ }
+      \ ])
+au User LspSetup call LspOptionsSet({'showSignature': v:false})
+
+nnoremap <silent> gd :<C-U>LspPeekDefinition<CR>
+nnoremap <silent> gi :<C-U>LspPeekImpl<CR>
+nnoremap <silent> gy :<C-U>LspPeekTypeDef<CR>
+nnoremap <silent> gr :<C-U>LspPeekReferences<CR>
+nnoremap <silent> [d :<C-U>LspDiag prev<CR>
+nnoremap <silent> ]d :<C-U>LspDiag next<CR>
+nnoremap <silent> cd :<C-U>LspRename<CR>
+nnoremap <silent> <leader>a :<C-U>LspCodeAction<CR>
+
+set keywordprg=:LspHover
+
