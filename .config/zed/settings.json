@@ -85,6 +85,13 @@
           "preferGoToSourceDefinition": true
         }
       }
+    },
+    "rescript-language-server": {
+      "initialization_options": {
+        "extensionConfiguration": {
+          "askToStartBuild": false
+        }
+      }
     }
   },
   "max_tabs": 12,
