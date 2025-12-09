@@ -27,6 +27,13 @@ set -gx BAT_THEME GitHub
 set -gx PNPM_HOME $HOME/.local/share/pnpm
 fish_add_path --move $PNPM_HOME
 
+# fzf
+function _fzf_pick_file
+  set -l result (fzf --query=(commandline -t)); and commandline -rt -- "$result"
+  commandline -f repaint
+end
+bind \ct _fzf_pick_file
+
 # z.lua
 set -xg _ZL_CMD j
 set -xg _ZL_DATA_DIR $HOME/.local/share/zlua/

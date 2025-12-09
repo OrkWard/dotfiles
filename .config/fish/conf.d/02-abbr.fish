@@ -34,9 +34,6 @@ abbr tree "lsd --tree --depth 2"
 # zed
 abbr z 'zed -w'
 
-# fzf
-abbr ff --position anywhere '$(fzf)'
-
 # git
 abbr ga "git add -A"
 abbr gc 'git commit'
