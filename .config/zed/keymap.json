@@ -13,7 +13,6 @@
       "cmd-d": "workspace::ToggleBottomDock",
       "cmd-j": "terminal_panel::ToggleFocus",
       "cmd-t": "task::Spawn",
-      "cmd-alt-s": "project_symbols::Toggle",
       "cmd-b": null,
       "cmd-h": null,
       "cmd-shift-g": "git_panel::ToggleFocus",
