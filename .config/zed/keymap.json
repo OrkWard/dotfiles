@@ -93,18 +93,5 @@
     "bindings": {
       "cmd-h": "pane::SplitLeft"
     }
-  },
-  {
-    "context": "AgentPanel && acp_thread",
-    "bindings": {
-      "alt-cmd-t": "agent::NewTextThread",
-      "cmd-n": ["agent::NewExternalAgentThread", { "agent": "claude_code" }]
-    }
-  },
-  {
-    "context": "AgentPanel && prompt_editor",
-    "bindings": {
-      "alt-cmd-t": ["agent::NewExternalAgentThread", { "agent": "claude_code" }]
-    }
   }
 ]
