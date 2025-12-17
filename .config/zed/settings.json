@@ -11,87 +11,92 @@
   "buffer_font_fallbacks": ["JetBrainsMono Nerd Font"],
   "buffer_font_size": 14.0,
   "collaboration_panel": {
-    "button": false
+    "button": false,
   },
   "colorize_brackets": true,
   "cursor_blink": false,
   "disable_ai": true,
   "features": {
-    "edit_prediction_provider": "none"
+    "edit_prediction_provider": "none",
   },
   "format_on_save": "on",
   "languages": {
     "JSONC": {
       "prettier": {
-        "allowed": true
+        "allowed": true,
         // "jsonRecursiveSort": true,
         // "plugins": ["prettier-plugin-sort-json"]
-      }
+      },
     },
     "Python": {
       "formatter": {
         "external": {
           "arguments": ["-"],
-          "command": "black"
-        }
-      }
+          "command": "black",
+        },
+      },
     },
     "Elm": {
       "formatter": {
         "external": {
           "command": "elm-format",
-          "arguments": ["--stdin"]
-        }
-      }
+          "arguments": ["--stdin"],
+        },
+      },
     },
     "SQL": {
       "formatter": {
         "external": {
           "arguments": ["fix", "-"],
-          "command": "sqlfluff"
-        }
-      }
-    }
+          "command": "sqlfluff",
+        },
+      },
+    },
   },
   "lsp": {
     "vtsls": {
       "settings": {
+        "javascript": {
+          "suggestionActions": {
+            "enabled": false,
+          },
+        },
         "typescript": {
           "preferGoToSourceDefinition": true,
           "preferences": {
-            "jsxAttributeCompletionStyle": "none"
-          }
+            "jsxAttributeCompletionStyle": "none",
+          },
         },
         "typescriptreact": {
-          "preferGoToSourceDefinition": true
-        }
-      }
+          "preferGoToSourceDefinition": true,
+        },
+      },
     },
     "rescript-language-server": {
       "initialization_options": {
         "extensionConfiguration": {
-          "askToStartBuild": false
-        }
-      }
-    }
+          "askToStartBuild": false,
+        },
+      },
+    },
   },
   "max_tabs": 12,
   "proxy": "http://localhost:9090",
   "relative_line_numbers": "enabled",
   "snippet_sort_order": "top",
   "title_bar": {
-    "show_sign_in": false
+    "show_sign_in": false,
   },
   "theme": {
     "dark": "One Dark",
     "light": "One Light",
-    "mode": "system"
+    "mode": "system",
   },
   "ui_font_size": 14.0,
   "use_autoclose": true,
   "vim": {
-    "use_system_clipboard": "never"
+    "use_system_clipboard": "never",
   },
   "vim_mode": true,
-  "wrap_guides": [19, 39, 59, 79]
+  "wrap_guides": [19, 39, 59, 79],
 }
