@@ -1,7 +1,7 @@
 # vim: ft=gitconfig noexpandtab
 [user]
 	name = OrkWard
-	email = orkward_o@outlook.com
+	email = orkward@qq.com
 	signingkey = ~/.ssh/sign.pub
 [gpg]
 	format = ssh
