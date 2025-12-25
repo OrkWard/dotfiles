@@ -19,16 +19,17 @@
       "cmd-alt-n": "workspace::NewWindow",
       "cmd-alt-,": "zed::OpenSettings",
       "cmd-,": "zed::OpenSettingsFile",
-      "cmd-k cmd-s": "zed::OpenKeymapFile"
-    }
+      "cmd-k cmd-s": "zed::OpenKeymapFile",
+      "cmd-shift-s": "project_symbols::Toggle",
+    },
   },
   {
     "context": "Workspace",
     "bindings": {
       "f1": "command_palette::Toggle",
       "cmd-k cmd-s": null,
-      "cmd-?": null
-    }
+      "cmd-?": null,
+    },
   },
   {
     "context": "Terminal",
@@ -37,61 +38,61 @@
       "alt-b": ["terminal::SendText", "\u001bb"],
       "alt-f": ["terminal::SendText", "\u001bf"],
       "alt-c": ["terminal::SendText", "\u001bc"],
-      "alt-.": ["terminal::SendText", "\u001b."]
-    }
+      "alt-.": ["terminal::SendText", "\u001b."],
+    },
   },
   {
     "context": "Editor",
     "bindings": {
       "cmd-k cmd-t": "editor::RestartLanguageServer",
-      "cmd-h": "buffer_search::DeployReplace"
-    }
+      "cmd-h": "buffer_search::DeployReplace",
+    },
   },
   {
     "context": "vim_mode == normal",
     "bindings": {
-      "g *": "pane::DeploySearch"
-    }
+      "g *": "pane::DeploySearch",
+    },
   },
   {
     "context": "vim_mode == insert",
     "bindings": {
       "alt-b": "vim::PreviousWordStart",
       "alt-f": "vim::NextWordStart",
-      "ctrl-e": "editor::MoveToEndOfLine"
-    }
+      "ctrl-e": "editor::MoveToEndOfLine",
+    },
   },
   {
     "context": "vim_mode == visual",
     "bindings": {
       "shift-x": "vim::Exchange",
-      "g s": "vim::PushAddSurrounds"
-    }
+      "g s": "vim::PushAddSurrounds",
+    },
   },
   {
     "context": "vim_mode == insert && !showing_completions",
     "bindings": {
       "ctrl-p": ["workspace::SendKeystrokes", "up"],
-      "ctrl-n": ["workspace::SendKeystrokes", "down"]
-    }
+      "ctrl-n": ["workspace::SendKeystrokes", "down"],
+    },
   },
   {
     "context": "VimControl && !menu",
     "bindings": {
-      "g r": "editor::FindAllReferences"
-    }
+      "g r": "editor::FindAllReferences",
+    },
   },
   {
     "context": "vim_mode == normal || vim_mode == visual",
     "bindings": {
       "s": "vim::PushSneak",
-      "shift-s": "vim::PushSneakBackward"
-    }
+      "shift-s": "vim::PushSneakBackward",
+    },
   },
   {
     "context": "FileFinder || (FileFinder > Picker > Editor) || (FileFinder > Picker > menu)",
     "bindings": {
-      "cmd-h": "pane::SplitLeft"
-    }
-  }
+      "cmd-h": "pane::SplitLeft",
+    },
+  },
 ]
