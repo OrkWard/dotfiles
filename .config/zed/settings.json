@@ -51,6 +51,14 @@
         },
       },
     },
+    "OCaml": {
+      "formatter": {
+        "external": {
+          "command": "ocamlformat",
+          "arguments": ["--name=main.ml", "-"],
+        },
+      },
+    },
   },
   "lsp": {
     "vtsls": {
