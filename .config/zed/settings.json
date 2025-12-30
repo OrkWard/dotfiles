@@ -19,6 +19,13 @@
     "edit_prediction_provider": "none",
   },
   "format_on_save": "on",
+  "git_hosting_providers": [
+    {
+      "base_url": "https://code.byted.org",
+      "name": "Bytedance",
+      "provider": "github",
+    },
+  ],
   "languages": {
     "JSONC": {
       "prettier": {
