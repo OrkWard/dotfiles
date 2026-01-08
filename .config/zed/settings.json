@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "git_panel": {
+    "tree_view": true
+  },
   "buffer_font_fallbacks": ["JetBrainsMono Nerd Font"],
   "buffer_font_size": 14.0,
   "collaboration_panel": {
