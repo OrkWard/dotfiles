@@ -1,0 +1,7 @@
+[language-server]
+elm-language-server = { command = "elm-language-server", args = ["--stdio"] }
+
+[[language]]
+name = "elm"
+language-servers = [ "elm-language-server" ]
+
