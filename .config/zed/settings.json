@@ -98,6 +98,12 @@
     },
   },
   "max_tabs": 12,
+  "notification_panel": {
+    "button": false,
+  },
+  "outline_panel": {
+    "dock": "right",
+  },
   "proxy": "http://localhost:9090",
   "relative_line_numbers": "enabled",
   "snippet_sort_order": "top",
