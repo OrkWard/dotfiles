@@ -7,6 +7,15 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "agent": {
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "agent_servers": {
+    "opencode": {
+      "type": "registry",
+    },
+  },
   "git_panel": {
     "tree_view": true,
   },
@@ -17,7 +26,6 @@
   },
   "colorize_brackets": true,
   "cursor_blink": false,
-  "disable_ai": true,
   "features": {
     "edit_prediction_provider": "none",
   },
@@ -89,13 +97,6 @@
         },
         "typescriptreact": {
           "preferGoToSourceDefinition": true,
-        },
-      },
-    },
-    "rescript-language-server": {
-      "initialization_options": {
-        "extensionConfiguration": {
-          "askToStartBuild": false,
         },
       },
     },

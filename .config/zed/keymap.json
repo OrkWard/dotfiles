@@ -29,6 +29,7 @@
       "f1": "command_palette::Toggle",
       "cmd-k cmd-s": null,
       "cmd-?": null,
+      "cmd-shift-a": "agent::ToggleFocus",
     },
   },
   {
@@ -93,6 +94,13 @@
     "context": "FileFinder || (FileFinder > Picker > Editor) || (FileFinder > Picker > menu)",
     "bindings": {
       "cmd-h": "pane::SplitLeft",
+    },
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "cmd-n": "agent::NewExternalAgentThread",
+      "cmd-shift-n": "agent::NewTextThread",
     },
   },
 ]
