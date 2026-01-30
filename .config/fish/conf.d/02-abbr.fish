@@ -21,6 +21,7 @@ abbr yl "yadm pull"
 abbr yp "yadm push"
 
 # ls
+abbr l ls
 abbr ll "ls -alh"
 abbr la "ls -a"
 
