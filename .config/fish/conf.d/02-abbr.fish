@@ -21,10 +21,8 @@ abbr yl "yadm pull"
 abbr yp "yadm push"
 
 # ls
-abbr l "ls --color"
-abbr ls "ls --color"
-abbr ll "ls --color -alh"
-abbr la "ls --color -a"
+abbr ll "ls -alh"
+abbr la "ls -a"
 
 abbr serve "caddy file-server . --listen localhost:8080"
 abbr tree "lsd --tree --depth 2"
