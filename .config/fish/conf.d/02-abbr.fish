@@ -52,3 +52,6 @@ abbr pl --position anywhere --set-cursor "%| less"
 
 # zlua
 abbr jb "j -b"
+
+# docker
+abbr dc "docker compose"
