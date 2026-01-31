@@ -7,6 +7,19 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "ssh_connections": [
+    {
+      "host": "devbox",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/caizelun.2/Repos/fund_scene"
+          ]
+        }
+      ]
+    }
+  ],
   "agent": {
     "favorite_models": [],
     "model_parameters": [],
