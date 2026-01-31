@@ -93,3 +93,4 @@ alias tree="lsd --tree --depth 2"
 # Profile end
 # set +x
 # exec 2>&3 3>&-
+export PATH=$HOME/.local/bin:$PATH
