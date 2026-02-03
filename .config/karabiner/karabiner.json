@@ -1,7 +1,38 @@
 {
     "profiles": [
         {
-            "complex_modifications": { "parameters": { "basic.to_if_alone_timeout_milliseconds": 400 } },
+            "complex_modifications": {
+                "parameters": { "basic.to_if_alone_timeout_milliseconds": 400 },
+                "rules": [
+                    {
+                        "description": "Use option+1/2/3/4 to switch language to English, Chinese, Japanese(Hirakana), Japanese(Katakana), respectively.",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": {
+                                        "mandatory": ["option"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "select_input_source": { "language": "en" } }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "z",
+                                    "modifiers": {
+                                        "mandatory": ["option"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "select_input_source": { "language": "zh-Hans" } }],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
             "devices": [
                 {
                     "identifiers": {
