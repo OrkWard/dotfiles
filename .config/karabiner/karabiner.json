@@ -6,6 +6,7 @@
                 "rules": [
                     {
                         "description": "Use option+1/2/3/4 to switch language to English, Chinese, Japanese(Hirakana), Japanese(Katakana), respectively.",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
