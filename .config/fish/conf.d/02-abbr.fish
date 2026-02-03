@@ -33,6 +33,7 @@ abbr z 'zed -w'
 
 # git
 abbr ga "git add -A"
+abbr gau "git add -u"
 abbr gc 'git commit'
 abbr gcm --set-cursor 'git commit -m "%"'
 abbr gac "git add .; git commit -m (date)"
