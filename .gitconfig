@@ -32,3 +32,5 @@
 	autocorrect = 20
 [push]
 	autoSetupRemote = true
+[safe]
+	directory = *
