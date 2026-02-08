@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "edit_predictions": {
+    "provider": "none"
+  },
   "ssh_connections": [
     {
       "host": "devbox",
@@ -39,9 +42,6 @@
   },
   "colorize_brackets": true,
   "cursor_blink": false,
-  "features": {
-    "edit_prediction_provider": "none",
-  },
   "format_on_save": "on",
   "git_hosting_providers": [
     {
