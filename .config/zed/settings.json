@@ -46,14 +46,6 @@
         // "plugins": ["prettier-plugin-sort-json"]
       },
     },
-    "Python": {
-      "formatter": {
-        "external": {
-          "arguments": ["-"],
-          "command": "black",
-        },
-      },
-    },
     "Elm": {
       "formatter": {
         "external": {
