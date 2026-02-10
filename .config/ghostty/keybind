@@ -15,6 +15,7 @@ keybind = cmd+n=text:\x1bOPn
 keybind = cmd+p=text:\x1bOPp
 keybind = cmd+;=text:\x1bOP;
 keybind = cmd+o=text:\x1bOPo
+keybind = cmd+f=text:\x1bOP?
 keybind = shift+cmd+d=text:\x1bOPD
 keybind = shift+cmd+p=text:\x1bOPP
 
