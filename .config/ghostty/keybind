@@ -16,7 +16,9 @@ keybind = cmd+p=text:\x1bOPp
 keybind = cmd+;=text:\x1bOP;
 keybind = cmd+o=text:\x1bOPo
 keybind = cmd+f=text:\x1bOP?
+keybind = cmd+r=text:\x1bOPr
 keybind = shift+cmd+d=text:\x1bOPD
+keybind = shift+cmd+n=text:\x1bOPN
 keybind = shift+cmd+p=text:\x1bOPP
 
 keybind = shift+cmd+1=goto_tab:1
