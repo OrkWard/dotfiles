@@ -10,8 +10,8 @@ set -l install_commands install i
 
 complete -c pnpm -f
 complete -c pnpm -a "(__get_scripts)"
-complete -c pnpm -f -l filter -s F -r -a "$(FEATURE=filter pnpm-shell-completion)" -d 'Select specified packages'
-complete -c pnpm -n "__fish_use_subcommand; or __has_filter" -f -a 'add remove install update publish'
+complete -c pnpm -f -l filter -s F -r -a "(FEATURE=filter pnpm-shell-completion)" -d 'Select specified packages'
+complete -c pnpm -n "__fish_use_subcommand; or __has_filter" -f -a "(__get_commands)"
 complete -c pnpm -n "not __fish_use_subcommand" -F
 
 # add relative options
@@ -48,50 +48,62 @@ complete -c pnpm -n "__fish_seen_subcommand_from publish" -l publish-branch -d '
 complete -c pnpm -n "__fish_seen_subcommand_from publish" -l recursive -s r -d 'Publish all packages from the workspace'
 complete -c pnpm -n "__fish_seen_subcommand_from publish" -l tag -x -d 'Registers the published package with the given tag'
 
+function __get_commands
+    echo -e "add\tcommand"
+    echo -e "remove\tcommand"
+    echo -e "install\tcommand"
+    echo -e "update\tcommand"
+    echo -e "publish\tcommand"
+end
+
 function __get_scripts
-  set -l cmdline (commandline -c)
-  if set -q __fish_pnpm_cmdline; and test "$cmdline" = "$__fish_pnpm_cmdline"
-    return 0
-  end
+    set -l cmdline (commandline -c)
+    if set -q __fish_pnpm_cmdline; and test "$cmdline" = "$__fish_pnpm_cmdline"
+        return 0
+    end
 
-  set -g __fish_pnpm_cmdline $cmdline
+    set -g __fish_pnpm_cmdline $cmdline
 
-  set -l tokens (commandline -opc)
-  set -e tokens[1] # assume the first token is `pnpm`
-  argparse 'F/filter=' -- $tokens 2>/dev/null
-  TARGET_PKG=$_flag_filter FEATURE=scripts pnpm-shell-completion
+    set -l tokens (commandline -opc)
+    set -e tokens[1] # assume the first token is `pnpm`
+    argparse 'F/filter=' -- $tokens 2>/dev/null
+
+    set -l scripts (TARGET_PKG=$_flag_filter FEATURE=scripts pnpm-shell-completion)
+    for script in $scripts
+        echo -e "$script\tscript"
+    end
 end
 
 function __get_deps
-  set -l cmdline (commandline -c)
-  if set -q __fish_pnpm_remove_cmdline; and test "$cmdline" = "$__fish_pnpm_remove_cmdline"
-    return 0
-  end
+    set -l cmdline (commandline -c)
+    if set -q __fish_pnpm_remove_cmdline; and test "$cmdline" = "$__fish_pnpm_remove_cmdline"
+        return 0
+    end
 
-  set -g __fish_pnpm_remove_cmdline $cmdline
+    set -g __fish_pnpm_remove_cmdline $cmdline
 
-  set -l tokens (commandline -opc)
-  set -e tokens[1] # assume the first token is `pnpm`
-  argparse 'F/filter=' -- $tokens 2>/dev/null
-  TARGET_PKG=$_flag_filter FEATURE=deps pnpm-shell-completion
+    set -l tokens (commandline -opc)
+    set -e tokens[1] # assume the first token is `pnpm`
+    argparse 'F/filter=' -- $tokens 2>/dev/null
+    TARGET_PKG=$_flag_filter FEATURE=deps pnpm-shell-completion
 end
 
 function __has_filter
-  set -l tokens (commandline -opc)
-  set -e tokens[1] # assume the first token is `pnpm`
-  argparse 'F/filter=' -- $tokens 2>/dev/null
-  if not count $_flag_filter
-    return 1
-  end
-  return 0
+    set -l tokens (commandline -opc)
+    set -e tokens[1] # assume the first token is `pnpm`
+    argparse 'F/filter=' -- $tokens 2>/dev/null
+    if not count $_flag_filter
+        return 1
+    end
+    return 0
 end
 
 function __could_add_global
-  if __has_filter
+    if __has_filter
+        return 1
+    end
+    if __fish_seen_subcommand_from add
+        return 0
+    end
     return 1
-  end
-  if __fish_seen_subcommand_from add
-    return 0
-  end
-  return 1
 end

@@ -26,8 +26,3 @@ else
         czmod --add "$PWD" 2>/dev/null &
     end
 end
-
-# ocaml
-if type -q opam
-    eval $(opam env)
-end
