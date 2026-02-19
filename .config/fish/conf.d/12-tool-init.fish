@@ -5,13 +5,6 @@ else
     atuin init fish | sed 's/-k up/up/' | source
 end
 
-# direnv
-if not type -q direnv
-    echo "direnv not found"
-else
-    direnv hook fish | source
-end
-
 # z.lua
 set -xg _ZL_CMD j
 set -xg _ZL_DATA_DIR $HOME/.local/share/zlua/
