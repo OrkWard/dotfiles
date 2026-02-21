@@ -31,7 +31,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-scriptease'
 Plug 'haya14busa/incsearch.vim'
 Plug 'justinmk/vim-sneak'
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'jiangmiao/auto-pairs'
 # theme
 Plug 'sonph/onehalf', { 'rtp': 'vim/' }
