@@ -1,3 +1,8 @@
+# mise
+if test (__fish_uname) = Linux
+    mise activate | source
+end
+
 # atuin
 if not type -q atuin
     echo "atuin not found"

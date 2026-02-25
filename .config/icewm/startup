@@ -1,0 +1,14 @@
+#!/bin/sh
+
+xset r rate 200 35
+xrandr --output DP-0 --mode 3840x2160 --rate 144
+dbus-update-activation-environment --systemd --all
+fcitx5 -d &
+xsettingsd &
+picom -b &
+nm-applet &
+1password --silent &
+flameshot &
+
+# redshift &
+# /usr/lib/notification-daemon-1.0/notification-daemon &
