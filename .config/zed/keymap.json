@@ -75,6 +75,8 @@
     "bindings": {
       "ctrl-p": ["workspace::SendKeystrokes", "up"],
       "ctrl-n": ["workspace::SendKeystrokes", "down"],
+      "ctrl-d": "editor::Delete",
+      "ctrl-t": "editor::Transpose",
     },
   },
   {
