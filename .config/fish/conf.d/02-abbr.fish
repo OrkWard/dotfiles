@@ -26,7 +26,7 @@ abbr ll "ls -alh"
 abbr la "ls -a"
 
 abbr serve "caddy file-server . --listen localhost:8080"
-abbr tree "lsd --tree --depth 2"
+abbr tree "tree -L2 -C"
 
 # zed
 abbr z 'zed -w'
@@ -50,9 +50,6 @@ abbr gpf "git push --force-with-lease"
 # pipe
 abbr p0 --position anywhere --set-cursor "%&> /dev/null"
 abbr pl --position anywhere --set-cursor "%| less"
-
-# zlua
-abbr jb "j -b"
 
 # docker
 abbr dc "docker compose"
