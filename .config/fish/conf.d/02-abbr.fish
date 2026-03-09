@@ -53,3 +53,6 @@ abbr pl --position anywhere --set-cursor "%| less"
 
 # docker
 abbr dc "docker compose"
+
+# pi
+abbr piew "pi --tools read,grep,find,ls"
