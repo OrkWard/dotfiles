@@ -73,8 +73,8 @@
   {
     "context": "vim_mode == insert && !showing_completions",
     "bindings": {
-      "ctrl-p": ["workspace::SendKeystrokes", "up"],
-      "ctrl-n": ["workspace::SendKeystrokes", "down"],
+      "ctrl-p": "editor::MoveUp",
+      "ctrl-n": "editor::MoveDown",
       "ctrl-d": "editor::Delete",
       "ctrl-t": "editor::Transpose",
     },
