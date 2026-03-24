@@ -99,10 +99,9 @@
     },
   },
   {
-    "context": "AgentPanel",
+    "context": "ProjectPanel && not_editing",
     "bindings": {
-      "cmd-n": "agent::NewExternalAgentThread",
-      "cmd-shift-n": "agent::NewTextThread",
+      "$": "workspace::OpenInTerminal",
     },
   },
 ]
