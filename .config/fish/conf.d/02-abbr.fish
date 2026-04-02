@@ -14,7 +14,7 @@ abbr hg "tmuxinator ghostty"
 abbr ht "hx ~/.config/tmux/tmux.conf"
 
 # yadm
-abbr yac "yadm add -u; and yadm commit -m (date)"
+abbr yac "yadm add -u; and yadm commit"
 abbr ys "yadm status"
 abbr yd "yadm diff"
 abbr yl "yadm pull"
