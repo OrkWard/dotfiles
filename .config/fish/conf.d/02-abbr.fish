@@ -8,10 +8,11 @@ abbr .. "cd .."
 abbr ... "cd ../.."
 abbr .... "cd ../../.."
 
-# helix
-abbr hf "tmuxinator fish"
-abbr hg "tmuxinator ghostty"
-abbr ht "hx ~/.config/tmux/tmux.conf"
+# vim
+abbr v "nvim"
+abbr vf "j fish"
+abbr vg "j ghostty"
+abbr vt "nvim ~/.config/tmux/tmux.conf"
 
 # yadm
 abbr yac "yadm add -u; and yadm commit"
