@@ -24,4 +24,7 @@ bind \ct _fzf_pick_file
 
 # pnpm
 set -gx PNPM_HOME $HOME/.local/share/pnpm
-fish_add_path --move $PNPM_HOME
+fish_add_path --path --move $PNPM_HOME
+
+# deno
+fish_add_path --path --move ~/.deno/bin

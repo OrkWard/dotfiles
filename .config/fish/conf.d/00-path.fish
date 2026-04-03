@@ -1,7 +1,7 @@
 # local bin
-fish_add_path $HOME/.local/bin
+fish_add_path --path --move $HOME/.local/bin
 # local script
-fish_add_path $HOME/.local/scripts
+fish_add_path --path --move $HOME/.local/scripts
 
 # homebrew
 if test $(uname -s) = Darwin
