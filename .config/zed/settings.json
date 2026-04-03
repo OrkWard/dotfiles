@@ -27,7 +27,6 @@
   "collaboration_panel": {
     "button": false,
   },
-  "colorize_brackets": true,
   "cursor_blink": false,
   "disable_ai": true,
   "format_on_save": "on",
@@ -94,7 +93,6 @@
       },
     },
   },
-  "max_tabs": 12,
   "notification_panel": {
     "button": false,
   },

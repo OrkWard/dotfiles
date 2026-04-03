@@ -13,14 +13,16 @@
       "cmd-d": "workspace::ToggleBottomDock",
       "cmd-j": "terminal_panel::ToggleFocus",
       "cmd-t": "task::Spawn",
-      "cmd-b": null,
-      "cmd-h": null,
       "cmd-shift-g": "git_panel::ToggleFocus",
       "cmd-alt-n": "workspace::NewWindow",
       "cmd-alt-,": "zed::OpenSettings",
       "cmd-,": "zed::OpenSettingsFile",
       "cmd-k cmd-s": "zed::OpenKeymapFile",
       "cmd-shift-s": "project_symbols::Toggle",
+    },
+    "unbind": {
+      "cmd-h": "zed::Hide",
+      "alt-cmd-h": "zed::HideOthers",
     },
   },
   {
@@ -30,6 +32,10 @@
       "cmd-k cmd-s": null,
       "cmd-?": null,
       "cmd-shift-a": "agent::ToggleFocus",
+    },
+    "unbind": {
+      "cmd-b": "workspace::ToggleLeftDock",
+      "cmd-alt-b": "workspace::ToggleRightDock",
     },
   },
   {
