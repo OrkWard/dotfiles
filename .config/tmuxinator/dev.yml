@@ -3,7 +3,18 @@ name: dev
 root: ~/
 
 windows:
-  - ~:
+  - tmuxinator:
       layout: main-vertical
+      root: ~/.config/tmuxinator
       panes:
-        - ~
+        - null
+  - mihomo:
+      layout: main-horizontal
+      panes:
+        - config:
+            - cd /opt/homebrew/etc/mihomo
+            - nvim config.yaml
+        - log:
+            - cd /opt/homebrew/var/log
+        - dev:
+            - cd ~/Repos/mihomo
