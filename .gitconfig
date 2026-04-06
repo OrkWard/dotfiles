@@ -23,6 +23,7 @@
 	dl = -c diff.external=difft log --ext-diff
 	ds = -c diff.external=difft show --ext-diff
 	dd = -c diff.external=difft diff
+	xpush = "!fish -c 'git push; and if test -x deploy; ./deploy $argv; else echo \"deploy is not executable\"; end'"
 [init]
 	defaultBranch = master
 [credential]
