@@ -59,6 +59,7 @@
     "context": "vim_mode == normal",
     "bindings": {
       "g *": "pane::DeploySearch",
+      "U": "vim::Redo",
     },
   },
   {

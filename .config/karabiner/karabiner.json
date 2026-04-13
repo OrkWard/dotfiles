@@ -1,7 +1,29 @@
 {
     "profiles": [
         {
-            "complex_modifications": { "parameters": { "basic.to_if_alone_timeout_milliseconds": 400 } },
+            "complex_modifications": {
+                "parameters": { "basic.to_if_alone_timeout_milliseconds": 400 },
+                "rules": [
+                    {
+                        "description": "Capslock to LeftShift+LeftControl",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
             "devices": [
                 {
                     "identifiers": {
@@ -34,7 +56,7 @@
                         },
                         {
                             "from": { "key_code": "left_control" },
-                            "to": [{ "key_code": "right_control" }]
+                            "to": [{ "key_code": "caps_lock" }]
                         },
                         {
                             "from": { "key_code": "left_option" },
@@ -51,7 +73,7 @@
                         },
                         {
                             "from": { "key_code": "left_control" },
-                            "to": [{ "key_code": "right_control" }]
+                            "to": [{ "key_code": "caps_lock" }]
                         },
                         {
                             "from": { "key_code": "right_command" },
