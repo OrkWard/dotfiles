@@ -93,9 +93,6 @@
       },
     },
   },
-  "notification_panel": {
-    "button": false,
-  },
   "outline_panel": {
     "dock": "right",
   },

@@ -1,4 +1,5 @@
 keybind = cmd+,=text:\x1bOP,
+keybind = cmd+0=text:\x1bOP0
 keybind = cmd+digit_0=text:\x1bOP0
 keybind = cmd+digit_1=text:\x1bOP1
 keybind = cmd+digit_2=text:\x1bOP2
