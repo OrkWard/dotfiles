@@ -1,0 +1,16 @@
+.shell "/bin/dash"
+
+alt - 1 : open -a Ghostty
+alt - 2 : open -a 'Google Chrome'
+alt - 3 : open -a Zed
+alt - 4 : open -a Lark
+alt - 5 : open -a 'Trae CN'
+alt - 8 : open -a DataGrip
+alt - 9 : open -a Proxyman
+alt - 0 : open -a Reminders
+ctrl - 0x18 : open -g "rectangle://execute-action?name=maximize"
+ctrl + alt - up : open -a Launchpad
+shift + alt - s : open -a Safari
+shift + alt - i : open -a 'System Settings'
+shift + alt - e : open -a Finder
+shift + alt - c : open -a CotEditor

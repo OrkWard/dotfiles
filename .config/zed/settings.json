@@ -7,10 +7,14 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "project_panel": {
+    "dock": "left"
+  },
   "edit_predictions": {
     "provider": "none",
   },
   "agent": {
+    "dock": "right",
     "favorite_models": [],
     "model_parameters": [],
   },
@@ -20,11 +24,13 @@
     },
   },
   "git_panel": {
+    "dock": "left",
     "tree_view": true,
   },
   "buffer_font_fallbacks": ["JetBrainsMono Nerd Font"],
   "buffer_font_size": 14.0,
   "collaboration_panel": {
+    "dock": "left",
     "button": false,
   },
   "cursor_blink": false,
