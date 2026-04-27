@@ -3,10 +3,10 @@
 alt - 1 : open -a Ghostty
 alt - 2 : open -a 'Google Chrome'
 alt - 3 : open -a Zed
-alt - 4 : open -a Lark
+alt - 4 : if [ $(hostname) = "airm3" ]; then open -a Telegram ; else open -a Lark; fi
 alt - 5 : open -a 'Trae CN'
-alt - 8 : open -a DataGrip
-alt - 9 : open -a Proxyman
+alt - 8 : if [ $(hostname) = "airm3" ]; then open -a 'iA Writer' ; else open -a DataGrip; fi
+alt - 9 : if [ $(hostname) = "airm3" ]; then open -a 1Password ; else open -a Proxyman; fi
 alt - 0 : open -a Reminders
 ctrl - 0x18 : open -g "rectangle://execute-action?name=maximize"
 ctrl + alt - up : open -a Launchpad
@@ -14,3 +14,4 @@ shift + alt - s : open -a Safari
 shift + alt - i : open -a 'System Settings'
 shift + alt - e : open -a Finder
 shift + alt - c : open -a CotEditor
+shift + alt - n : open -a Notes
