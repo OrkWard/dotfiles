@@ -1,0 +1,6 @@
+[submodule ".local/share/tmux/sensible"]
+	path = .local/share/tmux/sensible
+	url = https://github.com/tmux-plugins/tmux-sensible
+[submodule ".local/share/tmux/fingers"]
+	path = .local/share/tmux/fingers
+	url = https://github.com/Morantron/tmux-fingers
