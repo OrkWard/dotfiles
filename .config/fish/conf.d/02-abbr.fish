@@ -16,8 +16,10 @@ abbr vt "nvim ~/.config/tmux/tmux.conf"
 
 # yadm
 abbr yac "yadm add -u; and yadm commit"
+abbr ycm --set-cursor 'yadm commit -m "%"'
 abbr ys "yadm status"
 abbr yd "yadm diff"
+abbr yds "yadm diff --staged"
 abbr yl "yadm pull"
 abbr yp "yadm push"
 
