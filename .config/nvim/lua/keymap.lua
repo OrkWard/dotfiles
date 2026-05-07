@@ -42,13 +42,6 @@ map('n', '=q', 'gq', opts)
 -- <C-j> = Join without space (was gJ)
 map('n', '<C-j>', 'gJ', opts)
 
--- ================================== Sneak (s/S) ==================================
-
--- s{char}{char} = Jump forward to "char1char2"
--- S{char}{char} = Jump backward to "char1char2"
--- ;/, repeat f/t (keep default)
--- Configure in plugins
-
 -- ================================== Navigation (]/[) ==================================
 
 -- ]n/[n = Next/prev search + select
@@ -69,13 +62,6 @@ map('n', '<C-j>', 'gJ', opts)
 map('n', 'g~', '<NOP>', opts)
 map('n', 'gu', '<NOP>', opts)
 map('n', 'gU', '<NOP>', opts)
-
--- ================================== Marks (simplified) ==================================
-
--- ' = goto mark (was backtick)
--- m = set mark (unchanged)
--- Backtick freed
-map('n', '`', "'", opts)
 
 -- ================================== Emacs-style ==================================
 
@@ -100,20 +86,16 @@ end
 -- ================================== Edit Config Files (z prefix) ==================================
 
 map('n', 'zK', function()
-  vim.cmd('edit ~/.config/nvim/lua/keymaps.lua')
-end, opts)
-map('n', 'zU', function()
-  vim.cmd('edit ~/.config/nvim/lua/plugins.lua')
+  vim.cmd('edit ~/.config/nvim/lua/keymap.lua')
 end, opts)
 map('n', 'zP', function()
-  vim.cmd('edit ~/.config/nvim/lua/options.lua')
+  vim.cmd('edit ~/.config/nvim/lua/plugin.lua')
+end, opts)
+map('n', 'zU', function()
+  vim.cmd('edit ~/.config/nvim/lua/option.lua')
 end, opts)
 
--- ================================== Commands ==================================
+map('n', '<C-k>', function()
+  vim.cmd('mksession! /tmp/Session.nvim | restart source /tmp/Session.nvim')
+end, opts)
 
-vim.api.nvim_create_user_command('EditFiletype', function()
-  local ft = vim.bo.filetype
-  if ft ~= '' then
-    vim.cmd('edit ~/.config/nvim/after/ftplugin/' .. ft .. '.lua')
-  end
-end, {})

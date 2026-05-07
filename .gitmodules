@@ -4,3 +4,6 @@
 [submodule ".local/share/tmux/fingers"]
 	path = .local/share/tmux/fingers
 	url = https://github.com/Morantron/tmux-fingers
+[submodule ".local/share/nvim/site/pack/mini/opt/mini.pick"]
+	path = .local/share/nvim/site/pack/mini/opt/mini.pick
+	url = https://github.com/nvim-mini/mini.pick.git

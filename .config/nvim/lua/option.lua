@@ -6,8 +6,7 @@ opt.tabstop = 4 -- default 4
 opt.expandtab = true -- default space
 opt.shiftwidth = 0 -- follow ts
 opt.softtabstop = -1 -- follow sw
-opt.autoindent = true -- inherit indent from last line. this has no confict to
-                      -- si / ci / inde
+opt.autoindent = true -- inherit indent from last line. this has no confict to si / ci / inde
                       -- si / ci / inde is dumb and should not be used here
 
 -- Line numbers
@@ -31,19 +30,13 @@ opt.smartcase = true
 opt.hlsearch = true
 opt.incsearch = true
 
-opt.fillchars = {
-  vert = '│',
-  fold = '-',
-  eob = '~',
-  lastline = '@'
-}
-
 -- Session
 opt.sessionoptions = 'buffers,curdir,folds'
 
 -- UI
 opt.termguicolors = true
 opt.guicursor = 'n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50'
+vim.api.nvim_command('colorscheme zed_onelight')
 
 -- Keep cursor away from screen edges (scroll offset)
 opt.scrolloff = 5      -- Keep 5 lines above/below cursor
