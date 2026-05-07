@@ -3,44 +3,53 @@ local map = vim.keymap.set
 local opts = { noremap = true }
 
 -- Leader
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
 -- ================================== Core ==================================
 
-map('n', 'U', '<C-r>', opts)
-map('n', 'Y', 'y$', opts)
-map('n', '~', 'g~', opts)
+map("n", "U", "<C-r>", opts)
+map("n", "Y", "y$", opts)
+map("n", "~", "g~", opts)
 
 -- x/X Free
-map('n', 'x', '<NOP>', opts)
-map('n', 'X', '<NOP>', opts)
+map("n", "x", "<NOP>", opts)
+map("n", "X", "<NOP>", opts)
 
 -- ================================== Search ==================================
 
--- <Esc> in normal mode clears search highlights
-map('n', '<Esc>', '<Cmd>nohlsearch<CR>', opts)
+map("n", "<Esc>", "<Cmd>nohlsearch<CR>", opts)
 
 -- ================================== Indent ==================================
 
 -- Normal mode: >/< indent/unindent line (single tap)
 -- Visual mode: stay in visual after indent
-map('v', '>', '>gv', opts)
-map('v', '<', '<gv', opts)
+map("v", ">", ">gv", opts)
+map("v", "<", "<gv", opts)
 
 -- ================================== Format ==================================
 
--- == = Format line
--- =g = Format entire file (was gg=G)
--- = (visual) = Format selection
--- =q = Format to textwidth (was gq)
-map('n', '==', '==', opts)
-map('n', '=g', 'gg=G', opts)
-map('n', '=q', 'gq', opts)
+-- == -> Format line
+map("n", "==", "==", opts)
+-- =g -> Format entire file
+map("n", "=g", function()
+	local bufnr = vim.api.nvim_get_current_buf()
+	local conform = require("conform")
+	local to_run = conform.list_formatters_to_run(bufnr)
+	if #to_run > 0 then
+		conform.format({ bufnr = bufnr })
+	else
+		local view = vim.fn.winsaveview()
+		vim.cmd("normal! gg=G")
+		vim.fn.winrestview(view)
+	end
+end)
+-- =q -> Format to textwidth (was gq)
+map("n", "=q", "gq", opts)
 
 -- ================================== Join ==================================
 
 -- <C-j> = Join without space (was gJ)
-map('n', '<C-j>', 'gJ', opts)
+map("n", "<C-j>", "gJ", opts)
 
 -- ================================== Navigation (]/[) ==================================
 
@@ -56,45 +65,80 @@ map('n', '<C-j>', 'gJ', opts)
 -- ]C/[C = Next/prev comment + select
 -- Will be configured with treesitter/textobject plugins
 
+-- ================================= Exchange =====================================
+map("n", "cx", function()
+	require("substitute").operator()
+end)
+map("n", "cxx", function()
+	require("substitute").line()
+end)
+map("n", "cX", function()
+	require("substitute").eol()
+end)
+map("x", "X", function()
+	require("substitute").visual()
+end)
+
+-- =================================== Surround ====================================
+map("n", "xs", "<Plug>(nvim-surround-normal)")
+map("n", "xss", "<Plug>(nvim-surround-normal-cur)")
+map("n", "xS", "<Plug>(nvim-surround-normal-line)")
+map("n", "xSS", "<Plug>(nvim-surround-normal-cur-line)")
+map("v", "s", "<Plug>(nvim-surround-visual)")
+map("v", "S", "<Plug>(nvim-surround-visual-line)")
+map("n", "dm", "<Plug>(nvim-surround-delete)")
+map("n", "cm", "<Plug>(nvim-surround-change)")
+map("n", "cM", "<Plug>(nvim-surround-change-line)")
+
 -- ================================== Case (g~ -> ~) ==================================
 
--- Vanilla g~, gu, gU freed - use ~ operator instead
-map('n', 'g~', '<NOP>', opts)
-map('n', 'gu', '<NOP>', opts)
-map('n', 'gU', '<NOP>', opts)
+map("n", "g~", "<NOP>", opts)
+map("n", "gu", "<NOP>", opts)
+map("n", "gU", "<NOP>", opts)
 
 -- ================================== Emacs-style ==================================
 
 -- Insert mode + Command line
 local emacs_maps = {
-  ['<C-a>'] = '<Home>',
-  ['<C-b>'] = '<Left>',
-  ['<C-d>'] = '<Del>',
-  ['<C-e>'] = '<End>',
-  ['<C-f>'] = '<Right>',
-  ['<C-n>'] = '<Down>',
-  ['<C-p>'] = '<Up>',
-  ['<M-b>'] = '<S-Left>',
-  ['<M-f>'] = '<S-Right>',
+	["<C-a>"] = "<Home>",
+	["<C-b>"] = "<Left>",
+	["<C-d>"] = "<Del>",
+	["<C-e>"] = "<End>",
+	["<C-f>"] = "<Right>",
+	["<C-n>"] = "<Down>",
+	["<C-p>"] = "<Up>",
+	["<M-b>"] = "<S-Left>",
+	["<M-f>"] = "<S-Right>",
 }
 
 for k, v in pairs(emacs_maps) do
-  map('c', k, v, opts)
-  map('i', k, v, opts)
+	map("c", k, v, opts)
+	map("i", k, v, opts)
 end
+
+-- =============================== Picker ========================================
+map("n", "<leader>p", function()
+	MiniPick.builtin.files()
+end)
+
+map("n", "<leader>b", function()
+	MiniPick.builtin.buffers()
+end)
 
 -- ================================== Edit Config Files (z prefix) ==================================
 
-map('n', 'zK', function()
-  vim.cmd('edit ~/.config/nvim/lua/keymap.lua')
-end, opts)
-map('n', 'zP', function()
-  vim.cmd('edit ~/.config/nvim/lua/plugin.lua')
-end, opts)
-map('n', 'zU', function()
-  vim.cmd('edit ~/.config/nvim/lua/option.lua')
-end, opts)
-map('n', 'zC', function()
-  vim.cmd('edit ~/.config/nvim/lua/command.lua')
-end, opts)
-
+map("n", "zK", function()
+	vim.cmd("edit ~/.config/nvim/lua/keymap.lua")
+end)
+map("n", "zP", function()
+	vim.cmd("edit ~/.config/nvim/lua/plugin.lua")
+end)
+map("n", "zO", function()
+	vim.cmd("edit ~/.config/nvim/lua/option.lua")
+end)
+map("n", "zC", function()
+	vim.cmd("edit ~/.config/nvim/lua/command.lua")
+end)
+map("n", "zL", function()
+	vim.cmd("edit ~/.config/nvim/ftplugin/" .. vim.bo.filetype .. ".lua")
+end)
