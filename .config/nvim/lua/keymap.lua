@@ -94,8 +94,7 @@ end, opts)
 map('n', 'zU', function()
   vim.cmd('edit ~/.config/nvim/lua/option.lua')
 end, opts)
-
-map('n', '<C-k>', function()
-  vim.cmd('mksession! /tmp/Session.nvim | restart source /tmp/Session.nvim')
+map('n', 'zC', function()
+  vim.cmd('edit ~/.config/nvim/lua/command.lua')
 end, opts)
 

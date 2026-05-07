@@ -1,6 +1,11 @@
 -- ================================== Plugins ==================================
-vim.cmd("packadd mini.pick")
-vim.cmd("helptags " .. vim.fn.stdpath('data') .. '/site/pack/mini/opt/mini.pick/doc')
+function add(name)
+  vim.cmd("packadd " .. name)
+  vim.cmd("helptags " .. vim.fn.stdpath('data') .. '/site/pack/bundle/opt/' .. name .. '/doc')
+end
+
+-- mini.pick
+add("mini.pick")
 require('mini.pick').setup()
 
 vim.keymap.set('n', '<leader>p', function()
@@ -10,6 +15,20 @@ end)
 vim.keymap.set('n', '<leader>b', function()
     MiniPick.builtin.buffers()
 end)
+
+-- nvim-surround
+add("nvim-surround")
+require('nvim-surround').setup({})
+vim.keymap.set('n', 'xs', '<Plug>(nvim-surround-normal)')
+vim.keymap.set('n', 'xss', '<Plug>(nvim-surround-normal-cur)')
+vim.keymap.set('n', 'xS', '<Plug>(nvim-surround-normal-line)')
+vim.keymap.set('n', 'xSS', '<Plug>(nvim-surround-normal-cur-line)')
+vim.keymap.set('v', 's', '<Plug>(nvim-surround-visual)')
+vim.keymap.set('v', 'S', '<Plug>(nvim-surround-visual-line)')
+vim.keymap.set('n', 'dm', '<Plug>(nvim-surround-delete)')
+vim.keymap.set('n', 'cm', '<Plug>(nvim-surround-change)')
+vim.keymap.set('n', 'cM', '<Plug>(nvim-surround-change-line)')
+
 
 -- require('lazy').setup({
 --   -- Statusline (replaces airline)
@@ -78,28 +97,6 @@ end)
 --           icons_enabled = false,
 --         }
 --       })
---     end
---   },
---
---   -- Surround (replaces vim-surround)
---   -- cm = change surround (was cs)
---   -- ds = delete surround
---   -- ys = add surround
---   {
---     'kylechui/nvim-surround',
---     version = '*',
---     event = 'VeryLazy',
---     config = function()
---       require('nvim-surround').setup({})
---       vim.keymap.set('n', 'ys', '<Plug>(nvim-surround-normal)')
---       vim.keymap.set('n', 'yss', '<Plug>(nvim-surround-normal-cur)')
---       vim.keymap.set('n', 'yS', '<Plug>(nvim-surround-normal-line)')
---       vim.keymap.set('n', 'ySS', '<Plug>(nvim-surround-normal-cur-line)')
---       vim.keymap.set('x', 'S', '<Plug>(nvim-surround-visual)')
---       vim.keymap.set('x', 'gS', '<Plug>(nvim-surround-visual-line)')
---       vim.keymap.set('n', 'ds', '<Plug>(nvim-surround-delete)')
---       vim.keymap.set('n', 'cm', '<Plug>(nvim-surround-change)')
---       vim.keymap.set('n', 'cM', '<Plug>(nvim-surround-change-line)')
 --     end
 --   },
 --
