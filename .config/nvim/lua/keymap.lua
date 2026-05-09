@@ -15,6 +15,15 @@ map("n", "~", "g~", opts)
 map("n", "x", "<NOP>", opts)
 map("n", "X", "<NOP>", opts)
 
+-- =================================== Jump ==================================
+
+map("n", 's', function()
+	vim.cmd('HopChar2AC')
+end)
+map('n', 'S', function()
+	vim.cmd('HopChar2BC')
+end)
+
 -- ================================== Search ==================================
 
 map("n", "<Esc>", "<Cmd>nohlsearch<CR>", opts)

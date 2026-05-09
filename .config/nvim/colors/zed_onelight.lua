@@ -261,5 +261,23 @@ hl(0, "TelescopeSelection", { fg = colors.ui_text, bg = colors.gray, bold = true
 hl(0, "TelescopeSelectionCaret", { fg = colors.blue })
 hl(0, "TelescopeMatching", { fg = colors.blue, bold = true })
 
+-- MiniPick
+hl(0, "MiniPickNormal", { fg = colors.black, bg = colors.dark_gray })
+hl(0, "MiniPickBorder", { fg = colors.dark_gray, bg = colors.dark_gray })
+hl(0, "MiniPickBorderBusy", { fg = colors.blue, bg = colors.dark_gray })
+hl(0, "MiniPickBorderText", { fg = colors.light_gray, bg = colors.dark_gray })
+hl(0, "MiniPickCursor", { reverse = true })
+hl(0, "MiniPickPrompt", { fg = colors.black, bg = colors.gray })
+hl(0, "MiniPickPromptCaret", { fg = colors.blue, bg = colors.gray, bold = true })
+hl(0, "MiniPickPromptPrefix", { fg = colors.ui_text_reversed, bg = colors.blue, bold = true })
+hl(0, "MiniPickHeader", { fg = colors.orange, bold = true })
+hl(0, "MiniPickMatchCurrent", { fg = colors.ui_text, bg = colors.gray, bold = true })
+hl(0, "MiniPickMatchMarked", { fg = colors.black, bg = colors.blue_gray })
+hl(0, "MiniPickMatchRanges", { fg = colors.blue, bold = true })
+hl(0, "MiniPickPreviewLine", { bg = colors.faint_gray })
+hl(0, "MiniPickPreviewRegion", { bg = colors.blue_gray })
+hl(0, "MiniPickIconDirectory", { fg = colors.blue })
+hl(0, "MiniPickIconFile", { fg = colors.light_gray })
+
 -- Inlay hints
 hl(0, "LspInlayHint", { fg = colors.violet, bold = true })

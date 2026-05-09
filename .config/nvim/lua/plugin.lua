@@ -7,16 +7,67 @@ vim.pack.add({
 	"https://github.com/lukas-reineke/indent-blankline.nvim.git",
 	"https://github.com/gbprod/substitute.nvim.git",
 	"https://github.com/nvim-lualine/lualine.nvim.git",
-	"https://github.com/folke/flash.nvim",
+	"https://github.com/smoka7/hop.nvim.git",
+	"https://github.com/altermo/ultimate-autopair.nvim.git",
 })
 
--- mini.pick
 require("mini.pick").setup()
+do
+	local pick = require("mini.pick")
 
--- nvim-surround
+	local function buffers_recent(local_opts)
+		local_opts = vim.tbl_deep_extend("force", { include_current = false, include_unlisted = false }, local_opts or {})
+		local cur_buf = vim.api.nvim_get_current_buf()
+		local infos = vim.fn.getbufinfo()
+		local items = {}
+		for _, info in ipairs(infos) do
+			if (local_opts.include_unlisted or info.listed == 1) and (local_opts.include_current or info.bufnr ~= cur_buf) then
+				local name = info.name ~= "" and vim.fn.fnamemodify(info.name, ":~:.") or "[No Name]"
+				table.insert(items, { text = name, bufnr = info.bufnr, _lastused = info.lastused or 0 })
+			end
+		end
+
+		table.sort(items, function(a, b) return a._lastused > b._lastused end)
+		for _, item in ipairs(items) do
+			item._lastused = nil
+		end
+
+		return pick.start({ source = { name = "Buffers", items = items, show = pick.default_show } })
+	end
+
+	local function files_recent(local_opts)
+		local_opts = vim.tbl_deep_extend("force", { tool = nil }, local_opts or {})
+		local mtime_cache = {}
+		local function get_mtime(path, cwd)
+			local full = vim.fs.is_absolute(path) and path or (cwd .. "/" .. path)
+			local cached = mtime_cache[full]
+			if cached ~= nil then return cached end
+			local stat = vim.loop.fs_stat(full)
+			local mtime = stat and stat.mtime and stat.mtime.sec or 0
+			mtime_cache[full] = mtime
+			return mtime
+		end
+
+		local match_recent = function(stritems, inds, query)
+			if #query > 0 then return pick.default_match(stritems, inds, query) end
+			local opts = pick.get_picker_opts() or {}
+			local cwd = (opts.source and opts.source.cwd) or vim.fn.getcwd()
+			local res = vim.list_slice(inds, 1, #inds)
+			table.sort(res, function(a, b)
+				return get_mtime(stritems[a], cwd) > get_mtime(stritems[b], cwd)
+			end)
+			return res
+		end
+
+		return pick.builtin.files(local_opts, { source = { match = match_recent } })
+	end
+
+	pick.registry.buffers = buffers_recent
+	pick.registry.files = files_recent
+end
+
 require("nvim-surround").setup({})
 
--- conform.nvim
 require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
@@ -26,10 +77,10 @@ require("conform").setup({
 	},
 })
 
--- indent-blankline.nvim
-require("ibl").setup()
+require("ibl").setup({
+	indent = { char = "│" },
+})
 
--- substitute.nvim
 require("substitute").setup()
 do
 	local colors = {
@@ -96,9 +147,6 @@ do
 	})
 end
 
--- flash.nvim
-require("flash").setup({
-	modes = {
-		char = { keys = { "f", "F", "t", "T", ";", "," } },
-	},
-})
+require("hop").setup()
+
+require("ultimate-autopair").setup()
