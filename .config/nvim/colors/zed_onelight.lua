@@ -51,8 +51,9 @@ hl(0, "ColorColumn", { bg = colors.faint_gray })
 -- Selection
 hl(0, "Visual", { bg = colors.blue_gray })
 hl(0, "VisualNOS", { bg = colors.blue_gray })
-hl(0, "Search", { fg = colors.ui_text_reversed, bg = colors.blue })
-hl(0, "IncSearch", { fg = colors.ui_text_reversed, bg = colors.orange })
+hl(0, "Search", { fg = colors.black, bg = colors.blue_gray })
+hl(0, "IncSearch", { fg = colors.black, bg = colors.faint_gray, bold = true })
+hl(0, "CurSearch", { fg = colors.black, bg = colors.gray, bold = true })
 hl(0, "MatchParen", { fg = colors.dark_blue, bold = true })
 
 -- Status line

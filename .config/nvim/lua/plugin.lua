@@ -149,4 +149,17 @@ end
 
 require("hop").setup()
 
-require("ultimate-autopair").setup()
+require("ultimate-autopair").setup({
+	-- the split pair into three lines only triggers when no extra token between
+	cr = {
+		conf = {
+			cond = function(fn, o)
+				if fn.in_lisp() then return false end
+				local prev = o.col > 1 and o.line:sub(o.col - 1, o.col - 1) or ""
+				local nextc = o.line:sub(o.col, o.col)
+				local pairs = { ["("] = ")", ["["] = "]", ["{"] = "}" }
+				return pairs[prev] == nextc
+			end,
+		},
+	},
+})

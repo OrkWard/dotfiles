@@ -134,6 +134,10 @@ map("n", "<leader>b", function()
 	MiniPick.builtin.buffers()
 end)
 
+map("n", "<leader>f", function()
+	MiniPick.builtin.grep()
+end)
+
 -- ================================== Edit Config Files (z prefix) ==================================
 
 map("n", "zK", function()
