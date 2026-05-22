@@ -9,13 +9,14 @@ set -l up_commands update upgrade up
 set -l install_commands install i
 
 complete -c pnpm -f
-complete -c pnpm -a "(__get_scripts)"
+complete -c pnpm -n __pnpm_should_complete_files -F
+complete -c pnpm -n __pnpm_should_complete_scripts -a "(__get_scripts)"
 complete -c pnpm -f -l filter -s F -r -a "(FEATURE=filter pnpm-shell-completion)" -d 'Select specified packages'
-complete -c pnpm -n "__fish_use_subcommand; or __has_filter" -f -a "(__get_commands)"
-complete -c pnpm -n "not __fish_use_subcommand" -F
+complete -c pnpm -n __pnpm_should_complete_builtins -f -a "add remove install update publish" # just a little, add what needs here
+
 
 # add relative options
-complete -c pnpm -n __could_add_global -l global -s g -d 'Install a global package'
+complete -c pnpm -n "__fish_seen_subcommand_from add" -l global -s g -d 'Install a global package'
 complete -c pnpm -n "__fish_seen_subcommand_from add" -l save-dev -s D -d 'Save package to your `devDependencies`'
 complete -c pnpm -n "__fish_seen_subcommand_from add" -l save-peer -d 'Save package to your `peerDependencies` and `devDependencies`'
 
@@ -48,14 +49,75 @@ complete -c pnpm -n "__fish_seen_subcommand_from publish" -l publish-branch -d '
 complete -c pnpm -n "__fish_seen_subcommand_from publish" -l recursive -s r -d 'Publish all packages from the workspace'
 complete -c pnpm -n "__fish_seen_subcommand_from publish" -l tag -x -d 'Registers the published package with the given tag'
 
-function __get_commands
-    echo -e "add\tcommand"
-    echo -e "remove\tcommand"
-    echo -e "install\tcommand"
-    echo -e "update\tcommand"
-    echo -e "publish\tcommand"
+# Return positional args (i.e. non-flag tokens) before the token currently
+# being completed, with `--filter/-F <pkg>` removed.
+function __pnpm__positionals_before_current
+    set -l tokens (commandline -pxc)
+    set -l cur (commandline -ct)
+
+    # Drop the current token.
+    # - If the cursor is in the middle of a token, `-ct` is non-empty.
+    # - If the commandline ends with a space, fish still includes an empty token
+    #   in `-pxc`; treat that as the current token as well.
+    if test -n "$cur"; and test (count $tokens) -ge 2; and test "$tokens[-1]" = "$cur"
+        set -e tokens[-1]
+    else if test -z "$cur"; and test (count $tokens) -ge 2; and test -z "$tokens[-1]"
+        set -e tokens[-1]
+    end
+
+    set -e tokens[1]
+
+    # Strip the known option(s) that take an argument so their values don't look
+    # like a positional command.
+    argparse 'F/filter=' -- $tokens 2>/dev/null
+
+    # Keep only non-flag tokens (positional args)
+    set -l pos
+    for t in $argv
+        if string match -q -- '-*' $t
+            continue
+        end
+        set -a pos $t
+    end
+
+    if test (count $pos) -gt 0
+        printf '%s\n' $pos
+    end
 end
 
+# don't have any positionals or just a single `run`
+function __pnpm_should_complete_scripts
+    set -l pos (__pnpm__positionals_before_current)
+    if test (count $pos) -eq 0
+        return 0
+    end
+    if test (count $pos) -eq 1; and test "$pos[1]" = run
+        return 0
+    end
+    return 1
+end
+
+# there is no positionals
+function __pnpm_should_complete_builtins
+    set -l pos (__pnpm__positionals_before_current)
+    test (count $pos) -eq 0
+end
+
+# - disable for: `pnpm <TAB>` / `pnpm [flags] <TAB>`
+# - disable for: `pnpm run <TAB>` / `pnpm [flags] run <TAB>`
+# - enable for:  everything after a command/script is present
+function __pnpm_should_complete_files
+    set -l pos (__pnpm__positionals_before_current)
+    if test (count $pos) -eq 0
+        return 1
+    end
+    if test (count $pos) -eq 1; and test "$pos[1]" = run
+        return 1
+    end
+    return 0
+end
+
+# get scripts for a package
 function __get_scripts
     set -l cmdline (commandline -c)
     if set -q __fish_pnpm_cmdline; and test "$cmdline" = "$__fish_pnpm_cmdline"
@@ -70,10 +132,12 @@ function __get_scripts
 
     set -l scripts (TARGET_PKG=$_flag_filter FEATURE=scripts pnpm-shell-completion)
     for script in $scripts
+        test -n "$script"; or continue
         echo -e "$script\tscript"
     end
 end
 
+# get deps for a package
 function __get_deps
     set -l cmdline (commandline -c)
     if set -q __fish_pnpm_remove_cmdline; and test "$cmdline" = "$__fish_pnpm_remove_cmdline"
@@ -88,22 +152,3 @@ function __get_deps
     TARGET_PKG=$_flag_filter FEATURE=deps pnpm-shell-completion
 end
 
-function __has_filter
-    set -l tokens (commandline -opc)
-    set -e tokens[1] # assume the first token is `pnpm`
-    argparse 'F/filter=' -- $tokens 2>/dev/null
-    if not count $_flag_filter
-        return 1
-    end
-    return 0
-end
-
-function __could_add_global
-    if __has_filter
-        return 1
-    end
-    if __fish_seen_subcommand_from add
-        return 0
-    end
-    return 1
-end

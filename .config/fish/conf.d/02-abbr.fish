@@ -15,8 +15,7 @@ abbr vg "j ghostty"
 abbr vt "nvim ~/.config/tmux/tmux.conf"
 
 # yadm
-abbr yac "yadm add -u; and yadm commit"
-abbr ycm --set-cursor 'yadm commit -m "%"'
+abbr yac --set-cursor 'yadm add -u; yadm commit -m "%"'
 abbr ys "yadm status"
 abbr yd "yadm diff"
 abbr yds "yadm diff --staged"
@@ -57,5 +56,3 @@ abbr pl --position anywhere --set-cursor "%| less"
 # docker
 abbr dc "docker compose"
 
-# pi
-abbr piew "pi --tools read,grep,find,ls"

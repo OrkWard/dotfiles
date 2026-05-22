@@ -4,7 +4,6 @@ alt - 1 : open -a Ghostty
 alt - 2 : open -a 'Google Chrome'
 alt - 3 : open -a Zed
 alt - 4 : if [ $(hostname) = "airm3" ]; then open -a Telegram ; else open -a Lark; fi
-alt - 5 : open -a 'Trae CN'
 alt - 8 : if [ $(hostname) = "airm3" ]; then open -a 'iA Writer' ; else open -a DataGrip; fi
 alt - 9 : if [ $(hostname) = "airm3" ]; then open -a 1Password ; else open -a Proxyman; fi
 alt - 0 : open -a Reminders
