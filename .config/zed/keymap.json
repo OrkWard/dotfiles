@@ -111,4 +111,10 @@
       "$": "workspace::OpenInTerminal",
     },
   },
+  {
+    "context": "Editor && showing_completions",
+    "unbind": {
+      "Enter": "editor::ConfirmCompletion",
+    },
+  },
 ]

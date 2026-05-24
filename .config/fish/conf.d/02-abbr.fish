@@ -48,6 +48,7 @@ abbr gl "git pull"
 abbr gp "git push"
 abbr gca "git commit --amend"
 abbr gpf "git push --force-with-lease"
+abbr gxp "git xpush"
 
 # pipe
 abbr p0 --position anywhere --set-cursor "%&> /dev/null"
