@@ -24,7 +24,7 @@ abbr yp "yadm push"
 
 # ls
 abbr l ls
-abbr ll "ls -alh"
+abbr ll "ls -alhF"
 abbr la "ls -a"
 
 abbr serve "caddy file-server . --listen localhost:8080"

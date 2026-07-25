@@ -24,18 +24,18 @@ map('n', 'S', function()
 	vim.cmd('HopChar2BC')
 end)
 
--- ================================== Search ==================================
+-- ================================== Search ====================================
 
 map("n", "<Esc>", "<Cmd>nohlsearch<CR>", opts)
 
--- ================================== Indent ==================================
+-- ================================== Indent ====================================
 
 -- Normal mode: >/< indent/unindent line (single tap)
 -- Visual mode: stay in visual after indent
 map("v", ">", ">gv", opts)
 map("v", "<", "<gv", opts)
 
--- ================================== Format ==================================
+-- ================================== Format ====================================
 
 -- == -> Format line
 map("n", "==", "==", opts)
@@ -55,12 +55,12 @@ end)
 -- =q -> Format to textwidth (was gq)
 map("n", "=q", "gq", opts)
 
--- ================================== Join ==================================
+-- ================================== Join ========================================
 
 -- <C-j> = Join without space (was gJ)
 map("n", "<C-j>", "gJ", opts)
 
--- ================================== Navigation (]/[) ==================================
+-- =============================== Navigation (]/[) ===============================
 
 -- ]n/[n = Next/prev search + select
 -- ]N/[N = Next/prev search (goto only)
@@ -99,7 +99,7 @@ map("n", "dm", "<Plug>(nvim-surround-delete)")
 map("n", "cm", "<Plug>(nvim-surround-change)")
 map("n", "cM", "<Plug>(nvim-surround-change-line)")
 
--- ================================== Case (g~ -> ~) ==================================
+-- =============================== Case (g~ -> ~) ==================================
 
 map("n", "g~", "<NOP>", opts)
 map("n", "gu", "<NOP>", opts)
@@ -138,8 +138,12 @@ map("n", "<leader>f", function()
 	MiniPick.builtin.grep()
 end)
 
--- ================================== Edit Config Files (z prefix) ==================================
+-- =============================== Picker ========================================
+-- TODO
+-- map("n", "<M-C>", ) -> c without override reg
+-- map("n", "<M-D>", ) -> d without override reg
 
+-- =========================== Edit Config Files (z prefix) =======================
 map("n", "zK", function()
 	vim.cmd("edit ~/.config/nvim/lua/keymap.lua")
 end)
@@ -155,3 +159,4 @@ end)
 map("n", "zL", function()
 	vim.cmd("edit ~/.config/nvim/ftplugin/" .. vim.bo.filetype .. ".lua")
 end)
+

@@ -39,6 +39,13 @@
     },
   },
   {
+    "context": "Pane",
+    "bindings": {
+      "cmd-f": "pane::DeploySearch",
+      "cmd-shift-f": "workspace::NewSearch",
+    },
+  },
+  {
     "context": "Terminal",
     "bindings": {
       "alt-`": ["terminal::SendText", "\u001b`"],
@@ -52,7 +59,7 @@
     "context": "Editor",
     "bindings": {
       "cmd-k cmd-t": "editor::RestartLanguageServer",
-      "cmd-h": "buffer_search::DeployReplace",
+      "cmd-f": "pane::DeploySearch",
     },
   },
   {

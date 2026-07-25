@@ -22,9 +22,5 @@ set -gx FZF_DEFAULT_OPTS "--color light --color 'fg+:red,bg+:-1' --pointer '' \
   --bind 'ctrl-/:toggle-preview'"
 bind \ct _fzf_pick_file
 
-# pnpm
-set -gx PNPM_HOME $HOME/.local/share/pnpm
-fish_add_path --path --move $PNPM_HOME
-
 # deno
 fish_add_path --path --move ~/.deno/bin

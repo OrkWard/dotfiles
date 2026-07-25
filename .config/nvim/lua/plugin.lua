@@ -16,18 +16,24 @@ do
 	local pick = require("mini.pick")
 
 	local function buffers_recent(local_opts)
-		local_opts = vim.tbl_deep_extend("force", { include_current = false, include_unlisted = false }, local_opts or {})
+		local_opts =
+			vim.tbl_deep_extend("force", { include_current = false, include_unlisted = false }, local_opts or {})
 		local cur_buf = vim.api.nvim_get_current_buf()
 		local infos = vim.fn.getbufinfo()
 		local items = {}
 		for _, info in ipairs(infos) do
-			if (local_opts.include_unlisted or info.listed == 1) and (local_opts.include_current or info.bufnr ~= cur_buf) then
+			if
+				(local_opts.include_unlisted or info.listed == 1)
+				and (local_opts.include_current or info.bufnr ~= cur_buf)
+			then
 				local name = info.name ~= "" and vim.fn.fnamemodify(info.name, ":~:.") or "[No Name]"
 				table.insert(items, { text = name, bufnr = info.bufnr, _lastused = info.lastused or 0 })
 			end
 		end
 
-		table.sort(items, function(a, b) return a._lastused > b._lastused end)
+		table.sort(items, function(a, b)
+			return a._lastused > b._lastused
+		end)
 		for _, item in ipairs(items) do
 			item._lastused = nil
 		end
@@ -41,7 +47,9 @@ do
 		local function get_mtime(path, cwd)
 			local full = vim.fs.is_absolute(path) and path or (cwd .. "/" .. path)
 			local cached = mtime_cache[full]
-			if cached ~= nil then return cached end
+			if cached ~= nil then
+				return cached
+			end
 			local stat = vim.loop.fs_stat(full)
 			local mtime = stat and stat.mtime and stat.mtime.sec or 0
 			mtime_cache[full] = mtime
@@ -49,7 +57,9 @@ do
 		end
 
 		local match_recent = function(stritems, inds, query)
-			if #query > 0 then return pick.default_match(stritems, inds, query) end
+			if #query > 0 then
+				return pick.default_match(stritems, inds, query)
+			end
 			local opts = pick.get_picker_opts() or {}
 			local cwd = (opts.source and opts.source.cwd) or vim.fn.getcwd()
 			local res = vim.list_slice(inds, 1, #inds)
@@ -154,12 +164,17 @@ require("ultimate-autopair").setup({
 	cr = {
 		conf = {
 			cond = function(fn, o)
-				if fn.in_lisp() then return false end
+				if fn.in_lisp() then
+					return false
+				end
 				local prev = o.col > 1 and o.line:sub(o.col - 1, o.col - 1) or ""
 				local nextc = o.line:sub(o.col, o.col)
 				local pairs = { ["("] = ")", ["["] = "]", ["{"] = "}" }
 				return pairs[prev] == nextc
 			end,
 		},
+	},
+	bs = {
+		delete_from_end = false,
 	},
 })
