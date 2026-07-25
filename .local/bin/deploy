@@ -1,0 +1,9 @@
+#!/usr/bin/env fish
+if test -x ./deploy
+    ./deploy $argv
+else if test -e ./deploy
+    echo "deploy is not executable"
+else
+    echo "deploy is not exist"
+end
+
