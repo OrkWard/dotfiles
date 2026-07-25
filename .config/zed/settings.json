@@ -9,7 +9,7 @@
 {
   "cli_default_open_behavior": "new_window",
   "project_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "edit_predictions": {
     "provider": "none",
@@ -45,6 +45,15 @@
     },
   ],
   "languages": {
+    "CSharp": {
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "csharpier",
+          "arguments": ["format"],
+        },
+      },
+    },
     "JSONC": {
       "prettier": {
         "allowed": true,

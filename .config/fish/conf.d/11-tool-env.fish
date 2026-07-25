@@ -22,5 +22,8 @@ set -gx FZF_DEFAULT_OPTS "--color light --color 'fg+:red,bg+:-1' --pointer '' \
   --bind 'ctrl-/:toggle-preview'"
 bind \ct _fzf_pick_file
 
+# dotnet
+fish_add_path --path --move ~/.dotnet/tools
+
 # deno
 fish_add_path --path --move ~/.deno/bin
