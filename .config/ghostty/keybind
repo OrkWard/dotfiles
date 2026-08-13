@@ -6,6 +6,10 @@ keybind = cmd+digit_2=text:\x1bOP2
 keybind = cmd+digit_3=text:\x1bOP3
 keybind = cmd+digit_4=text:\x1bOP4
 keybind = cmd+digit_5=text:\x1bOP5
+keybind = cmd+digit_6=text:\x1bOP6
+keybind = cmd+digit_7=text:\x1bOP7
+keybind = cmd+digit_8=text:\x1bOP8
+keybind = cmd+digit_9=text:\x1bOP9
 keybind = cmd+d=text:\x1bOPd
 keybind = cmd+w=text:\x1bOPw
 keybind = cmd+h=text:\x1bOPh
