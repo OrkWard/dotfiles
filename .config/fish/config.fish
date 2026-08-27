@@ -1,4 +1,4 @@
-# ================== env =========================
+# ==================== env =====================
 set -gx EDITOR nvim
 set -gx LC_ALL en_US.UTF-8
 set -gx LC_CTYPE en_US.UTF-8 # for mosh on MacOS
@@ -13,21 +13,19 @@ set -gx FZF_DEFAULT_OPTS "--color light --color 'fg+:red,bg+:-1' --pointer '' \
   --bind 'ctrl-u:preview-page-up' \
   --bind 'ctrl-/:toggle-preview'"
 
-if [ "$TERM_PROGRAM" = zed ]
-    set -gx VISUAL "zed -w"
-end
+if status is-login
+    # ================ path ====================
+    # homebrew
+    if test $(uname -s) = Darwin
+        /opt/homebrew/bin/brew shellenv fish | source
+        set -gx HOMEBREW_NO_ENV_HINTS 1
+    end
 
-# ================ path ====================
-# homebrew
-if test $(uname -s) = Darwin
-    eval $(/opt/homebrew/bin/brew shellenv)
-    set -gx HOMEBREW_NO_ENV_HINTS 1
+    # local bin
+    fish_add_path --path --move $HOME/.local/bin
+    # local script
+    fish_add_path --path --move $HOME/.local/scripts
 end
-
-# local bin
-fish_add_path --path --move $HOME/.local/bin
-# local script
-fish_add_path --path --move $HOME/.local/scripts
 
 if status is-interactive
     # ================ prompt ===================
@@ -108,7 +106,6 @@ if status is-interactive
 
     # pipe
     abbr p0 --position anywhere --set-cursor "%&> /dev/null"
-    abbr pl --position anywhere --set-cursor "%| less"
 
     # docker
     abbr dc "docker compose"
@@ -131,4 +128,8 @@ if status is-interactive
 
     # zoxide
     zoxide init --cmd j fish | source
+
+    if [ "$TERM_PROGRAM" = zed ]
+        set -gx VISUAL "zed -w"
+    end
 end

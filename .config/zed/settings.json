@@ -115,6 +115,12 @@
   "proxy": "http://localhost:9090",
   "relative_line_numbers": "enabled",
   "snippet_sort_order": "top",
+  "terminal": {
+    "shell": {
+      // should not be a login terminal
+      "program": "/opt/homebrew/bin/fish",
+    },
+  },
   "title_bar": {
     "show_sign_in": false,
     "show_user_picture": false,
