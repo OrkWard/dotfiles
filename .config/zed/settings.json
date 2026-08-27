@@ -54,6 +54,13 @@
         },
       },
     },
+    "EJS": {
+      "format_on_save": "on",
+      "prettier": {
+        "allowed": true,
+        "plugins": ["@orkward/prettier-plugin-ejs"],
+      },
+    },
     "JSONC": {
       "prettier": {
         "allowed": true,
