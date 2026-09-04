@@ -1,4 +1,9 @@
 # ==================== env =====================
+set -gx XDG_DATA_HOME $HOME/.local/share
+set -gx XDG_CONFIG_HOME $HOME/.config
+set -gx XDG_STATE_HOME $HOME/.local/state
+set -gx XDG_CACHE_HOME $HOME/.cache
+
 set -gx EDITOR nvim
 set -gx LC_ALL en_US.UTF-8
 set -gx LC_CTYPE en_US.UTF-8 # for mosh on MacOS
@@ -25,6 +30,8 @@ if status is-login
     fish_add_path --path --move $HOME/.local/bin
     # local script
     fish_add_path --path --move $HOME/.local/scripts
+    # rustup
+    fish_add_path --path --move "$(brew --prefix rustup)/bin"
 end
 
 if status is-interactive
