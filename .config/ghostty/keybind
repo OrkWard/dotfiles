@@ -12,6 +12,7 @@ keybind = cmd+digit_8=text:\x1bOP8
 keybind = cmd+digit_9=text:\x1bOP9
 keybind = cmd+d=text:\x1bOPd
 keybind = cmd+w=text:\x1bOPw
+keybind = cmd+s=text:\x1bOPs
 keybind = cmd+h=text:\x1bOPh
 keybind = cmd+l=text:\x1bOPl
 keybind = cmd+j=text:\x1bOPj
@@ -25,9 +26,11 @@ keybind = cmd+r=text:\x1bOPr
 keybind = shift+cmd+d=text:\x1bOPD
 keybind = shift+cmd+n=text:\x1bOPN
 keybind = shift+cmd+p=text:\x1bOPP
+keybind = shift+cmd+s=text:\x1bOPS
+keybind = shift+cmd+;=text:\x1bOP:
 
-keybind = shift+cmd+1=goto_tab:1
-keybind = shift+cmd+2=goto_tab:2
-keybind = shift+cmd+3=goto_tab:3
-keybind = shift+cmd+w=close_surface
+keybind = option+cmd+1=goto_tab:1
+keybind = option+cmd+2=goto_tab:2
+keybind = option+cmd+3=goto_tab:3
+keybind = option+cmd+w=close_surface
 
