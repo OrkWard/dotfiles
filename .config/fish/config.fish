@@ -13,10 +13,7 @@ set -gx GOPATH $HOME/.go
 set -gx GCC_COLORS 'error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 set -gx LS_COLORS 'di=1;38;5;25:ln=38;5;30:ex=1;38;5;28:or=1;38;5;124:mi=1;38;5;124:pi=38;5;130:so=38;5;90:bd=38;5;94:cd=38;5;94:*.go=38;5;24:*.md=38;5;58:*.json=38;5;94:*.yaml=38;5;94:*.yml=38;5;94:*.toml=38;5;94:*.zip=38;5;124:*.gz=38;5;124:*.tar=38;5;124:*.jpg=38;5;90:*.png=38;5;90:*.gif=38;5;90:*.log=38;5;240'
 set -gx BAT_THEME GitHub
-set -gx FZF_DEFAULT_OPTS "--color light --color 'fg+:red,bg+:-1' --pointer '' \
-  --bind 'ctrl-d:preview-page-down' \
-  --bind 'ctrl-u:preview-page-up' \
-  --bind 'ctrl-/:toggle-preview'"
+set -gx FZF_DEFAULT_OPTS "--color light --color 'fg+:red,bg+:-1' --pointer ''"
 
 if status is-login
     # ================ path ====================
@@ -125,14 +122,14 @@ if status is-interactive
 
     bind \ct _fzf_pick_file
 
-    # ================ tool init ===================
-    # atuin
-    if not type -q atuin
-        echo "atuin not found"
-    else
-        atuin init fish | sed 's/-k up/up/' | source
+    function _fzf_pick_history
+        set -l result (history --null --show-time=(set_color 888888)'%F %T'(set_color normal)'%t' | fzf --ansi --read0 --print0 --no-wrap --no-multi-line --ellipsis='...' --delimiter='\t' --nth=2.. --accept-nth=2.. --scheme=history --query=(commandline) | string split0); and commandline -r -- "$result"
+        commandline -f repaint
     end
 
+    bind \cr _fzf_pick_history
+
+    # ================ tool init ===================
     # zoxide
     zoxide init --cmd j fish | source
 

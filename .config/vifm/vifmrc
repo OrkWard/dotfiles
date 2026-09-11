@@ -19,6 +19,7 @@ mark b ~/.config/bash
 colorscheme Paper
 
 set mouse=a
+set tuioptions+=u
 
 fileviewer */ ls --color=always
 fileviewer .*/ ls --color=always

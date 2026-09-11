@@ -7,6 +7,9 @@ alt - 4 : if [ $(hostname) = "airm3" ]; then open -a Telegram ; else open -a Lar
 alt - 8 : if [ $(hostname) = "airm3" ]; then open -a 'iA Writer' ; else open -a DataGrip; fi
 alt - 9 : if [ $(hostname) = "airm3" ]; then open -a 1Password ; else open -a Proxyman; fi
 alt - 0 : open -a Reminders
+alt - a : /opt/homebrew/bin/wetype-cli english
+alt - z : /opt/homebrew/bin/wetype-cli chinese
+f18 : /opt/homebrew/bin/wetype-cli toggle
 ctrl - 0x18 : open -g "rectangle://execute-action?name=maximize"
 ctrl + alt - up : open -a Launchpad
 shift + alt - s : open -a Safari
