@@ -11,6 +11,7 @@ alt - a : /opt/homebrew/bin/wetype-cli english
 alt - z : /opt/homebrew/bin/wetype-cli chinese
 f18 : /opt/homebrew/bin/wetype-cli toggle
 ctrl - 0x18 : open -g "rectangle://execute-action?name=maximize"
+ctrl + shift - 0x18 : open -g "rectangle://execute-action?name=almost-maximize"
 ctrl + alt - up : open -a Launchpad
 shift + alt - s : open -a Safari
 shift + alt - i : open -a 'System Settings'
