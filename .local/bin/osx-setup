@@ -29,19 +29,6 @@ sudo nvram BootPreference=%01
 # Set highlight color to orange
 # defaults write NSGlobalDomain AppleHighlightColor -string "1.000000 0.874510 0.701961 Orange"
 
-# Disable Tahoe's floating sidebar
-defaults write NSGlobalDomain NSSplitViewItemSidebarDefaultsToFloatingAppearance -bool true
-# Or just reduce the floating radius, default is 19
-# defaults write -g NSSplitViewItemGlassMinimumCornerRadius -float 10
-
-# Reduce Tahoe's default big radius for every native window, default is 26
-defaults write NSGlobalDomain NSConvolutionOverride1 -float 12
-
-# Globally disable liquid glass for Tahoe. Note: need sudo
-# sudo mkdir -p /Library/Preferences/FeatureFlags/Domain
-# sudo defaults write /Library/Preferences/FeatureFlags/Domain/SwiftUI Solarium -dict Enabled -bool false
-# defaults write NSGlobalDomain com.apple.SwiftUI.SolariumForceFallback -bool true
-
 # Show scrollbars when scrolling
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
@@ -450,6 +437,18 @@ defaults write com.apple.Maps AppleLanguages -array "zh-Hans" "en-US"
 # Set iterm2 to use custom folder as preference store place
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.config/iterm2"
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+
+###############################################################################
+# Tahoe related (run only on need)                                            #
+###############################################################################
+# Disable Tahoe's floating sidebar
+# defaults write NSGlobalDomain NSSplitViewItemSidebarDefaultsToFloatingAppearance -bool true
+# Or just reduce the floating radius, default is 19
+# defaults write -g NSSplitViewItemGlassMinimumCornerRadius -float 10
+
+# Reduce Tahoe's default big radius for every native window, default is 26
+# defaults write NSGlobalDomain NSConvolutionOverride1 -float 12
+
 
 ###############################################################################
 # Kill affected applications                                                  #
