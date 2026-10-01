@@ -1,4 +1,0 @@
-require('option')
-require('keymap')
-require('command')
-require('plugin')
