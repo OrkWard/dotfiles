@@ -42,11 +42,11 @@ set -l prompt 'Switch session: '
 test "$mode" = p; and set prompt 'Switch window: '
 test "$mode" = t; and set prompt 'Switch tree: '
 set -l script (string escape -- (status filename))
-set -l selected (candidates "$mode" "$current" | fzf --tmux center,80%,60%,border-native \
+set -l selected (candidates "$mode" "$current" | env TMUX_PANE="$origin" fzf --tmux center,80%,60%,border-native \
     --delimiter='\t' --with-nth=3.. --no-multi --layout=reverse \
     --prompt="$prompt" \
     --preview="fish -N $script preview {1} {2}" \
-    --preview-border=sharp --preview-window=right:50%)
+    --scrollbar='│ ' --preview-border=sharp --preview-window=right:50%:noinfo)
 if test -n "$selected"
     set -l target (string split -f 2 \t -- "$selected")
     tmux switch-client -c "$client" -t "$target"

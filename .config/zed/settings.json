@@ -24,6 +24,7 @@
       "type": "registry",
     },
   },
+  "use_on_type_format": false,
   "git_panel": {
     "dock": "left",
     "tree_view": true,
