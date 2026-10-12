@@ -10,7 +10,7 @@
 [merge]
 	conflictstyle = zdiff3
 [diff]
-	external = difft
+	external = difft --display side-by-side-show-both
 	algorithm = histogram
 [include]
 	path = .gitconfig.local
@@ -20,9 +20,9 @@
 	wt = worktree
 	adog = log --all --decorate --oneline --graph
 	dog = log --decorate --oneline --graph
-	dl = -c diff.external=difft log --ext-diff
-	ds = -c diff.external=difft show --ext-diff
-	dd = -c diff.external=difft diff
+	dl = log --ext-diff
+	ds = show --ext-diff
+	dd = diff
 [init]
 	defaultBranch = master
 [credential]

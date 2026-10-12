@@ -37,6 +37,16 @@
   },
   "cursor_blink": false,
   "disable_ai": true,
+  "file_types": {
+    // Use plain YAML + SchemaStore instead of docker-language-server's
+    // vendored compose-spec snapshot.
+    "YAML": [
+      "docker-compose*.yml",
+      "docker-compose*.yaml",
+      "compose*.yml",
+      "compose*.yaml",
+    ],
+  },
   "format_on_save": "on",
   "git_hosting_providers": [
     {
@@ -46,6 +56,12 @@
     },
   ],
   "languages": {
+    "Dockerfile": {
+      "language_servers": [
+        "dockerfile-language-server",
+        "!docker-language-server",
+      ],
+    },
     "CSharp": {
       "format_on_save": "on",
       "formatter": {
