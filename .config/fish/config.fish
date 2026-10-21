@@ -116,14 +116,19 @@ if status is-interactive
 
     # ================ fzf ===================
     function _fzf_pick_file
-        set -l result (fzf --query=(commandline -t)); and commandline -rt -- "$result"
+        set -l result (fd --type f --hidden --follow --exclude .git | fzf --query=(commandline -t)); and commandline -rt -- "$result"
         commandline -f repaint
     end
 
     bind \ct _fzf_pick_file
 
     function _fzf_pick_history
-        set -l result (history --null --show-time=(set_color 888888)'%F %T'(set_color normal)'%t' | fzf --ansi --read0 --print0 --no-wrap --no-multi-line --ellipsis='...' --delimiter='\t' --nth=2.. --accept-nth=2.. --scheme=history --query=(commandline) | string split0); and commandline -r -- "$result"
+        if set -l result (history --null --show-time=(set_color 888888)'%F %T'(set_color normal)'%t' | fzf --ansi --read0 --print0 --no-wrap --no-multi-line --ellipsis='...' --delimiter='\t' --nth=2.. --accept-nth=2.. --scheme=history --query=(commandline) --expect=tab | string split0)
+            commandline -r -- "$result[2]"
+            if test "$result[1]" != tab
+                commandline -f execute
+            end
+        end
         commandline -f repaint
     end
 
