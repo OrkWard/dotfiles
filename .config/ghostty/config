@@ -14,3 +14,6 @@ macos-option-as-alt = true
 confirm-close-surface = false
 drag-handle = never
 
+
+custom-shader = /Users/bytedance/.config/ghostty/shaders/box-margin.glsl
+custom-shader-animation = false
